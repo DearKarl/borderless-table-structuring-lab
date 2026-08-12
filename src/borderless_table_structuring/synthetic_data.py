@@ -25,6 +25,82 @@ LICENSE_DECISION = "APPROVED_REBUILD_ONLY"
 ZERO_SHA256 = "0" * 64
 
 
+def _deterministic_rng(namespace: str, *parts: object) -> random.Random:
+    digest = hashlib.sha256(
+        "|".join([namespace, *(str(part) for part in parts)]).encode("utf-8")
+    ).digest()
+    return random.Random(int.from_bytes(digest[:16], "big"))
+
+
+def _deterministic_label(base_seed: int, row: int, col: int) -> str:
+    digest = hashlib.sha256(
+        f"cell-text|{base_seed}|{row}|{col}".encode("utf-8")
+    ).hexdigest()
+    return f"S{digest[:10].upper()}-R{row + 1}-C{col + 1}"
+
+
+def _geometry_profile(base_seed: int, rows: int, columns: int) -> dict[str, Any]:
+    rng = _deterministic_rng("geometry-2026.08.12.6", base_seed, rows, columns)
+    width = rng.randrange(820, 1241)
+    margin_x = rng.randrange(22, 59)
+    margin_y = rng.randrange(20, 53)
+    available_width = width - 2 * margin_x
+    weights = [rng.randrange(65, 151) for _ in range(columns)]
+    weight_sum = sum(weights)
+    raw_widths = [max(48, round(available_width * weight / weight_sum)) for weight in weights]
+    raw_widths[-1] += available_width - sum(raw_widths)
+    if raw_widths[-1] < 42:
+        transfer = 42 - raw_widths[-1]
+        donor = max(range(columns - 1), key=lambda index: raw_widths[index])
+        raw_widths[donor] -= transfer
+        raw_widths[-1] += transfer
+    row_heights = [rng.randrange(30, 52) for _ in range(rows)]
+    return {
+        "width": width,
+        "margin_x": margin_x,
+        "margin_y": margin_y,
+        "column_widths": raw_widths,
+        "row_heights": row_heights,
+        "cell_padding_x": rng.randrange(4, 10),
+        "cell_padding_y": rng.randrange(3, 8),
+    }
+
+
+@lru_cache(maxsize=1)
+def _font_candidates() -> tuple[tuple[str, str, str], ...]:
+    candidates = (
+        ("arial", "/System/Library/Fonts/Supplemental/Arial.ttf"),
+        ("courier-new", "/System/Library/Fonts/Supplemental/Courier New.ttf"),
+        ("georgia", "/System/Library/Fonts/Supplemental/Georgia.ttf"),
+        ("times-new-roman", "/System/Library/Fonts/Supplemental/Times New Roman.ttf"),
+        ("dejavu-sans", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+        ("dejavu-serif", "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"),
+        ("dejavu-mono", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"),
+    )
+    available: list[tuple[str, str, str]] = []
+    for family, raw_path in candidates:
+        path = Path(raw_path)
+        if path.is_file():
+            available.append((family, str(path), _sha256(path.read_bytes())))
+    if not available:
+        available.append(("pillow-default", "PILLOW_EMBEDDED_DEFAULT", "embedded"))
+    return tuple(available)
+
+
+def _render_profile(base_seed: int, phenomenon: str) -> dict[str, Any]:
+    rng = _deterministic_rng("renderer-2026.08.12.6", base_seed, phenomenon)
+    fonts = _font_candidates()
+    family, source, source_sha256 = fonts[rng.randrange(len(fonts))]
+    return {
+        "font_family_id": family,
+        "font_source": source,
+        "font_source_sha256": source_sha256,
+        "font_size": rng.randrange(9, 15),
+        "text_rgb": [rng.randrange(18, 47), rng.randrange(24, 55), rng.randrange(30, 67)],
+        "text_spacing": rng.randrange(1, 4),
+    }
+
+
 @dataclass(frozen=True)
 class CoverageRequest:
     category: str
@@ -85,12 +161,15 @@ def _primitive_table(
     phenomenon: str,
     header_depth: int,
 ) -> dict[str, Any]:
-    rng = random.Random(base_seed)
-    width = 960
-    margin_x = 36
-    margin_y = 30
-    row_height = 34 + rng.randrange(0, 9)
-    col_width = (width - 2 * margin_x) / columns
+    geometry = _geometry_profile(base_seed, rows, columns)
+    margin_x = geometry["margin_x"]
+    margin_y = geometry["margin_y"]
+    x_edges = [margin_x]
+    for col_width in geometry["column_widths"]:
+        x_edges.append(x_edges[-1] + col_width)
+    y_edges = [margin_y]
+    for row_height in geometry["row_heights"]:
+        y_edges.append(y_edges[-1] + row_height)
     tokens: list[dict[str, Any]] = []
     cells: list[dict[str, Any]] = []
     greek = ("alpha", "beta", "gamma", "delta", "sigma")
@@ -104,16 +183,19 @@ def _primitive_table(
             elif "multiline" in phenomenon and (row + col) % 3 == 0:
                 text = f"Group {row + 1}\nMeasure {col + 1}"
             else:
-                text = f"T{base_seed % 10007:04d}-R{row + 1}-C{col + 1}"
-            x0 = margin_x + col * col_width
-            x1 = margin_x + (col + 1) * col_width
-            y0 = margin_y + row * row_height
-            y1 = margin_y + (row + 1) * row_height
+                text = _deterministic_label(base_seed, row, col)
+            x0, x1 = x_edges[col], x_edges[col + 1]
+            y0, y1 = y_edges[row], y_edges[row + 1]
             owner = _cell_id(row, col)
             token = {
                 "token_id": token_id,
                 "text": text,
-                "bbox": [x0 + 5, y0 + 5, x1 - 5, y1 - 5],
+                "bbox": [
+                    x0 + geometry["cell_padding_x"],
+                    y0 + geometry["cell_padding_y"],
+                    x1 - geometry["cell_padding_x"],
+                    y1 - geometry["cell_padding_y"],
+                ],
                 "owner_cell_id": owner,
                 "confidence": 1.0,
                 "grid_row": row,
@@ -239,6 +321,35 @@ def _gold_table(
         table = _merge_region(table, 0, 0, 1, 2)
     if ("mixed" in phenomenon or category == "complex_correction") and rows >= 4:
         table = _merge_region(table, 1, columns - 1, 2, 1)
+    # Realized topology diversity is generated from the complete seed rather
+    # than from a small repeating shape pool.  These legal, non-overlapping
+    # body spans make the final Canonical state the source of truth while
+    # providing enough structural families for split isolation at 40k scale.
+    rng = _deterministic_rng(
+        "topology-2026.08.12.6", base_seed, rows, columns, phenomenon, category
+    )
+    candidates = [
+        (row, col, 1, 2)
+        for row in range(max(1, header_depth), rows)
+        for col in range(columns - 1)
+    ] + [
+        (row, col, 2, 1)
+        for row in range(max(1, header_depth), rows - 1)
+        for col in range(columns)
+    ]
+    rng.shuffle(candidates)
+    target_spans = min(
+        len(candidates),
+        2 + rng.randrange(0, min(9, max(2, rows * columns // 10))),
+    )
+    added = 0
+    for row, col, rowspan, colspan in candidates:
+        if added >= target_spans:
+            break
+        updated = _merge_region(table, row, col, rowspan, colspan)
+        if updated["semantic_state_sha256"] != table["semantic_state_sha256"]:
+            table = updated
+            added += 1
     return table
 
 
@@ -251,6 +362,18 @@ def _first_spanning_cell(table: dict[str, Any]) -> dict[str, Any] | None:
         ),
         None,
     )
+
+
+def _merge_first_available_pair(
+    table: dict[str, Any], reverse_rows: bool = True
+) -> tuple[dict[str, Any], tuple[int, int] | None]:
+    row_order: Iterable[int] = range(table["rows"] - 1, -1, -1) if reverse_rows else range(table["rows"])
+    for row in row_order:
+        for col in range(table["columns"] - 1):
+            updated = _merge_region(table, row, col, 1, 2)
+            if updated["semantic_state_sha256"] != table["semantic_state_sha256"]:
+                return updated, (row, col)
+    return copy.deepcopy(table), None
 
 
 def _prior_for_edit(
@@ -273,8 +396,9 @@ def _prior_for_edit(
         prior = _merge_region(prior, 0, 0, 2, 1)
         operations.append("merge_orthogonal_span")
     else:
-        row = prior["rows"] - 1
-        prior = _merge_region(prior, row, 0, 1, 2)
+        prior, merged_at = _merge_first_available_pair(prior)
+        if merged_at is None:
+            raise ValueError(f"no deterministic merge region available: {phenomenon}")
         operations.append("merge_body_pair")
 
     if category == "complex_correction":
@@ -282,8 +406,9 @@ def _prior_for_edit(
         if spanning is not None:
             prior = _split_spanning_cell(prior, spanning["cell_id"])
             operations.append("split_additional_span")
-        row = max(1, prior["rows"] - 2)
-        prior = _merge_region(prior, row, 0, 1, 2)
+        prior, merged_at = _merge_first_available_pair(prior)
+        if merged_at is None:
+            raise ValueError("no additional merge region available")
         operations.append("merge_additional_pair")
     if prior["semantic_state_sha256"] == gold["semantic_state_sha256"]:
         raise ValueError(f"edit phenomenon produced identity: {phenomenon}")
@@ -312,13 +437,19 @@ def _difference(prior: dict[str, Any], gold: dict[str, Any]) -> list[dict[str, A
 def _draw_table(
     table: dict[str, Any], phenomenon: str, base_seed: int
 ) -> tuple[bytes, str, dict[str, Any]]:
-    rng = random.Random(base_seed ^ 0x5EED)
-    width = 960
+    rng = _deterministic_rng("draw-2026.08.12.6", base_seed, phenomenon)
+    width = int(max(cell["bbox"][2] for cell in table["cells"]) + rng.randrange(22, 61))
     height = int(max(cell["bbox"][3] for cell in table["cells"]) + 30)
     background = (248, 250, 252) if "color" in phenomenon else (255, 255, 255)
     image = Image.new("RGB", (width, height), background)
     draw = ImageDraw.Draw(image)
-    font = ImageFont.load_default()
+    render_profile = _render_profile(base_seed, phenomenon)
+    if render_profile["font_source"] == "PILLOW_EMBEDDED_DEFAULT":
+        font = ImageFont.load_default(size=render_profile["font_size"])
+    else:
+        font = ImageFont.truetype(
+            render_profile["font_source"], render_profile["font_size"]
+        )
     weak = "weak" in phenomenon or "missing" in phenomenon
     border = (210, 216, 224) if weak else (88, 98, 112)
     border_width = 1 if weak else 2
@@ -330,9 +461,9 @@ def _draw_table(
             draw.multiline_text(
                 (box[0] + 6, box[1] + 6),
                 cell["text"][:48],
-                fill=(28, 36, 48),
+                fill=tuple(render_profile["text_rgb"]),
                 font=font,
-                spacing=2,
+                spacing=render_profile["text_spacing"],
             )
     blur = 0.0
     if any(key in phenomenon for key in ("blur", "noise", "compression")):
@@ -356,8 +487,49 @@ def _draw_table(
             "gaussian_blur_radius": blur,
             "border_condition": "weak_or_partial" if weak else "visible",
             "background_rgb": list(background),
+            **render_profile,
         },
     )
+
+
+def _generative_identity(
+    base_seed: int,
+    rows: int,
+    columns: int,
+    phenomenon: str,
+    category: str,
+    realized_structure_sha256: str | None = None,
+) -> dict[str, Any]:
+    geometry = _geometry_profile(base_seed, rows, columns)
+    renderer = _render_profile(base_seed, phenomenon)
+    header_depth = 2 if "header" in phenomenon or category == "complex_correction" else 1
+    components = {
+        "structure": {
+            "rows": rows,
+            "columns": columns,
+            "header_depth": header_depth,
+            "span_profile": {
+                "horizontal": "span" in phenomenon
+                or category in {"single_minimal_edit", "complex_correction"},
+                "vertical": "mixed" in phenomenon or category == "complex_correction",
+            },
+            "realized_structure_sha256": realized_structure_sha256,
+        },
+        "content": {
+            "namespace": _sha256(f"content|{base_seed}".encode("utf-8")),
+            "phenomenon": phenomenon,
+        },
+        "geometry": geometry,
+        "renderer": renderer,
+    }
+    return {
+        "generative_family_key": _sha256(_stable_json(components)),
+        "generative_components": components,
+        "template_family_key": _sha256(_stable_json(components["structure"])),
+        "content_family_key": _sha256(_stable_json(components["content"])),
+        "geometry_family_key": _sha256(_stable_json(components["geometry"])),
+        "renderer_family_key": _sha256(_stable_json(components["renderer"])),
+    }
 
 
 def _expand_coverage(path: Path) -> list[CoverageRequest]:
@@ -385,6 +557,25 @@ def _shape_pool(shuffle_seed: int = 2026081204) -> tuple[tuple[int, int], ...]:
     return tuple(values)
 
 
+def _sample_shape(base_seed: int, config: dict[str, Any]) -> tuple[int, int]:
+    structure = config.get("structure", {})
+    minimum_rows = int(structure.get("rows", {}).get("minimum", 3))
+    maximum_rows = int(structure.get("rows", {}).get("maximum", 28))
+    minimum_columns = int(structure.get("columns", {}).get("minimum", 2))
+    maximum_columns = int(structure.get("columns", {}).get("maximum", 14))
+    maximum_cells = int(structure.get("maximum_cells", 240))
+    choices = [
+        (rows, columns)
+        for rows in range(minimum_rows, maximum_rows + 1)
+        for columns in range(minimum_columns, maximum_columns + 1)
+        if rows * columns <= maximum_cells
+    ]
+    if not choices:
+        raise ValueError("no valid table shapes under the frozen configuration")
+    rng = _deterministic_rng("shape-2026.08.12.6", base_seed)
+    return choices[rng.randrange(len(choices))]
+
+
 def _make_record(
     request: CoverageRequest,
     sample_index: int,
@@ -398,11 +589,20 @@ def _make_record(
     schema_release: str = SCHEMA_RELEASE,
     generator_release: str = RELEASE,
     shape_shuffle_seed: int = 2026081204,
+    base_seed_override: int | None = None,
+    family_nonce: int = 0,
 ) -> tuple[dict[str, Any], bytes]:
     seed = int(config["seed_start"]) + sample_index
-    base_seed = int(config["seed_start"]) + 100000 + base_family_index
-    shape_pool = _shape_pool(shape_shuffle_seed)
-    rows, columns = shape_pool[base_family_index % len(shape_pool)]
+    base_seed = (
+        base_seed_override
+        if base_seed_override is not None
+        else int(config["seed_start"]) + 100000 + base_family_index
+    )
+    if base_seed_override is None:
+        shape_pool = _shape_pool(shape_shuffle_seed)
+        rows, columns = shape_pool[base_family_index % len(shape_pool)]
+    else:
+        rows, columns = _sample_shape(base_seed, config)
     pair_id = f"pair-{pair_index:06d}" if pair_index is not None else None
     family = pair_id or f"family-{base_family_index:06d}"
     rendering_phenomenon = shared_phenomenon or request.phenomenon
@@ -412,6 +612,29 @@ def _make_record(
     # edit-capable structural profile.
     gold_category = "single_minimal_edit" if pair_index is not None else request.category
     gold = _gold_table(base_seed, rows, columns, rendering_phenomenon, gold_category)
+    realized_structure = {
+        "rows": gold["rows"],
+        "columns": gold["columns"],
+        "cells": [
+            {
+                "row": cell["row"],
+                "col": cell["col"],
+                "rowspan": cell["rowspan"],
+                "colspan": cell["colspan"],
+                "tag": cell["tag"],
+            }
+            for cell in gold["cells"]
+        ],
+    }
+    realized_structure_sha256 = _sha256(_stable_json(realized_structure))
+    generative = _generative_identity(
+        base_seed,
+        rows,
+        columns,
+        rendering_phenomenon,
+        gold_category,
+        realized_structure_sha256,
+    )
     if request.gate_label == "KEEP":
         prior = copy.deepcopy(gold)
         operations: list[str] = []
@@ -420,6 +643,27 @@ def _make_record(
     difference = _difference(prior, gold)
     image_bytes, pixel_sha, render_parameters = _draw_table(gold, rendering_phenomenon, base_seed)
     image_name = f"images/{dataset_release}-{sample_index:06d}.png"
+    identity = {
+        "generation_seed": seed,
+        "document_cluster_id": f"document-{generative['generative_family_key']}",
+        "source_family_id": f"project-authored-{generative['generative_family_key']}",
+        "template_family_id": f"template-{generative['template_family_key']}",
+        "content_family_id": f"content-{generative['content_family_key']}",
+        "renderer_family_id": f"renderer-{generative['renderer_family_key']}",
+        "font_family_id": render_parameters["font_family_id"],
+        "counterfactual_pair_id": pair_id,
+    }
+    allowed_identity = schema["properties"]["identity"].get("properties", {})
+    if "counterfactual_group_id" in allowed_identity:
+        identity["counterfactual_group_id"] = pair_id
+    if "generative_family_key" in allowed_identity:
+        identity["generative_family_key"] = generative["generative_family_key"]
+    if "generative_components" in allowed_identity:
+        identity["generative_components"] = generative["generative_components"]
+    if "family_nonce" in allowed_identity:
+        identity["family_nonce"] = family_nonce
+    if "base_seed" in allowed_identity:
+        identity["base_seed"] = base_seed
     record = {
         "schema_release": schema_release,
         "dataset_release": dataset_release,
@@ -427,16 +671,7 @@ def _make_record(
         "role": request.role,
         "gate_label": request.gate_label,
         "category": request.category,
-        "identity": {
-            "generation_seed": seed,
-            "document_cluster_id": f"document-{request.role}-{family}",
-            "source_family_id": f"project-authored-{request.role}-{family}",
-            "template_family_id": f"template-{request.role}-{family}",
-            "content_family_id": f"content-{request.role}-{family}",
-            "renderer_family_id": f"renderer-{request.role}-{family}",
-            "font_family_id": f"pillow-default-{request.role}-{family}",
-            "counterfactual_pair_id": pair_id,
-        },
+        "identity": identity,
         "provenance": {
             "generator_release": generator_release,
             "source_id": "project-authored-synthetic-content",
@@ -623,6 +858,13 @@ def _license_manifest() -> dict[str, Any]:
             {
                 "source_id": "pillow-default-embedded-font",
                 "origin": "PILLOW_RUNTIME",
+                "redistribution": False,
+                "local_research_use": True,
+                "terminal_derivation": False,
+            },
+            {
+                "source_id": "local-system-font-rebuild-only",
+                "origin": "LOCAL_SYSTEM_FONT_RUNTIME",
                 "redistribution": False,
                 "local_research_use": True,
                 "terminal_derivation": False,
