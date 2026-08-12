@@ -1,0 +1,47 @@
+.DS_Store
+.env
+.env.*
+.idea/
+.vscode/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg-info
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Dataset payloads are stored in a separate private dataset repository.
+data/
+datasets/
+dataset/shards/
+dataset/cache/
+*.parquet
+*.arrow
+*.tar
+*.tar.gz
+*.webdataset
+
+# Model and experiment payloads are never committed here.
+artifacts/
+checkpoints/
+models/
+outputs/
+predictions/
+results/
+runs/
+*.bin
+*.ckpt
+*.onnx
+*.pt
+*.pth
+*.safetensors
+
+# Credentials and local access configuration.
+*.pem
+*.key
+credentials.json
+token.json

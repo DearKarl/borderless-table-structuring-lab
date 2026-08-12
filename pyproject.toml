@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "borderless-table-structuring-lab"
+version = "0.1.0"
+description = "Auditable data engineering and safe candidate integration for borderless table structuring."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  {name = "Borderless Table Structuring Lab"},
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4,<9",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = ["src"]
+testpaths = ["tests"]

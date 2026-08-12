@@ -1,0 +1,30 @@
+{
+  "schema_version": "mpr-tsr/post-omnidocbench-execution-contract-v6-seal",
+  "status": "FROZEN_ACTIVE_BENCHMARK_AWARE_SYNTHETIC_DATA_ENGINEERING",
+  "effective_at": "2026-08-12T00:00:00+08:00",
+  "language": "English",
+  "communication_language": "Chinese unless the user requests otherwise",
+  "contract_v5": {
+    "path": "POST_OMNIDOCBENCH_EXECUTION_CONTRACT_V5.md",
+    "sha256": "651d41371473c5e4959be5da89541b27014de7d4e6d0109d5c96b5862c504279",
+    "preserved": true
+  },
+  "contract_v6": {
+    "path": "POST_OMNIDOCBENCH_EXECUTION_CONTRACT_V6.md",
+    "sha256": "9972d93a519f07b8cf3baea1529cc5fbf67deb1fc96828c743c25a7472c0873a",
+    "active": true,
+    "mandatory_full_read_before_every_action": true
+  },
+  "active_target": "OMNIDOCBENCH_PROTOCOL_TABLE_TEDS_TOWARD_95_PLUS_WITH_RAW_NON_REGRESSION",
+  "benchmark_aware_category_engineering": true,
+  "terminal_page_or_gold_derivation_authorized": false,
+  "synthetic_omni_like_corpus_authorized": true,
+  "collaborator_handoff_authorized": true,
+  "raw_default": true,
+  "explicit_route": "TOPOLOGY_ONLY_DEFAULT_KEEP_RAW_TEXT_FROZEN",
+  "lora_route": "COMPLETE_CANONICAL_TABLE_CANDIDATE_TABLE_ONLY",
+  "primary_supervision": "FINAL_CANONICAL_TABLE_STATE_AND_ORDER_INVARIANT_STRUCTURAL_DIFFERENCE",
+  "completed_state": "STAGE4_AND_STAGE5_EXPERIMENTS_01_TO_03_SEALED",
+  "next_authorized_stage": "STAGE5_4_SYNTHETIC_DATA_SPECIFICATION_AND_COLLABORATOR_HANDOFF",
+  "hard_stop_before": "ANY_FULL_DATASET_MODEL_TRAINING_COMMAND"
+}
