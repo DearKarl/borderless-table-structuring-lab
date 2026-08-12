@@ -21,12 +21,12 @@ Every generated or newly sourced record must include:
 - document, template, content, and renderer family identifiers;
 - SHA256 entries for every payload and manifest record.
 
-## Terminal exclusion
+## Evaluation-data exclusion
 
-Customer50 and OmniDocBench terminal pages, crops, annotations, strings,
-coordinates, HTML, LaTeX, page metadata, identifiers, Gold records, embeddings,
-and transformations are prohibited inputs. No record may be selected because
-it resembles a specific terminal case.
+Restricted evaluation pages, crops, annotations, strings, coordinates, HTML,
+LaTeX, page metadata, identifiers, Gold records, embeddings, and transformations
+are prohibited inputs. No record may be selected because it resembles a
+specific evaluation case.
 
 ## License gate
 

@@ -2,8 +2,8 @@
 
 ## Goal
 
-Build a source-traceable, category-balanced, OmniDocBench-protocol-aware
-synthetic corpus without exposing terminal benchmark or Customer50 artifacts.
+Build a source-traceable, category-balanced synthetic corpus for borderless
+table structure recognition without exposing restricted evaluation artifacts.
 
 ## Recommended first assignment
 
@@ -21,7 +21,7 @@ Deliverables:
 - replay tests for every parameter family;
 - a small smoke manifest with pass, quarantine, and failure reason codes;
 - exact and perceptual duplicate reports;
-- an English Evidence Card.
+- an English experiment record.
 
 ## Other work packages
 
@@ -57,4 +57,4 @@ terminal labels, or start a full model training run.
 
 A contribution is accepted only after its source/license manifest,
 deterministic replay test, isolation audit, complete count accounting, English
-Evidence Card, and SHA256 seal pass review.
+experiment record and SHA256 manifest pass review.
