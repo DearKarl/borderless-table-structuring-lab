@@ -26,14 +26,15 @@ OmniDocBench is used as one document-parsing evaluation protocol. The methods
 and infrastructure in this repository are designed around the broader research
 problem of table structure recognition.
 
-## Research snapshot 2026.08.12.4
+## Research snapshot 2026.08.12.5
 
-The `2026.08.12.4` snapshot establishes the shared representation, evaluation,
-and synthetic-corpus specification for two independent modeling tracks. It
+The `2026.08.12.5` snapshot establishes the shared representation, evaluation,
+and frozen shared-corpus builder for two independent modeling tracks. It
 includes Canonical Table normalization, order-invariant topology targets,
-candidate-integrity checks, table-only model interfaces, a frozen 256-record
-generator-smoke design, and data-free regression tests. Model checkpoints and
-dataset payloads are maintained outside this repository.
+candidate-integrity checks, table-only model interfaces, a sealed 256-record
+generator smoke, a preregistered 40,000-record corpus design, scalable overlap
+audits, and data-free regression tests. Model checkpoints and dataset payloads
+are maintained outside this repository.
 
 Project-authored releases follow calendar versioning:
 
@@ -107,6 +108,7 @@ borderless-table-structuring-lab/
 ├── scripts/                   # Calendar-versioned corpus entry points
 ├── src/borderless_table_structuring/
 │   ├── canonical.py           # Canonical table normalization
+│   ├── shared_corpus.py       # Streaming shared-corpus build and audit
 │   ├── explicit.py            # Public Explicit-route interface
 │   ├── candidate_interfaces.py
 │   ├── candidate_integrity.py
@@ -145,7 +147,7 @@ compression, blur, background, and scanning artifacts.
 Dataset roles are assigned by document, template, content, renderer, and seed
 families before rendering. Exact and near-duplicate audits operate on images,
 text, normalized structure, geometry, and provenance. See the
-[synthetic data specification](docs/corpus/SYNTHETIC_DATA_SPECIFICATION_2026.08.12.4.md)
+[shared-corpus specification](docs/corpus/SHARED_CORPUS_SPECIFICATION_2026.08.12.md)
 and [data governance guide](docs/corpus/DATA_GOVERNANCE_2026.08.12.1.md).
 
 ## Installation
@@ -173,6 +175,17 @@ Generate the bounded synthetic-data smoke into a new external payload path:
 python scripts/generate_data_smoke_2026.08.12.4.py \
   --output /absolute/path/to/data-smoke-2026.08.12.4
 ```
+
+After independently verifying that sealed smoke, build the preregistered
+shared corpus into a different new external path:
+
+```bash
+python scripts/build_shared_corpus_2026.08.12.py \
+  --output /absolute/path/to/shared-corpus-2026.08.12
+```
+
+The builder is CPU-first, streams the 40,000 records, and refuses an existing
+output path. Use `--verify-only` for an independent payload and checksum pass.
 
 ## Reproducible research
 
