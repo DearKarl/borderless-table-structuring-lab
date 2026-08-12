@@ -1,4 +1,4 @@
-# Reproducibility
+# Reproducibility 2026.08.12.1
 
 ## Immutable inputs
 
@@ -17,6 +17,7 @@ Never reuse an output directory. A run writes to a new directory containing:
 - `quarantine.jsonl`;
 - `SHA256SUMS`;
 - `EXPERIMENT_RECORD.md`;
+- `EVIDENCE_CARD.md`;
 - an immutable checksum manifest.
 
 ## Determinism

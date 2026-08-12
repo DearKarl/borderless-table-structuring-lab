@@ -1,10 +1,13 @@
-# Data Governance
+# Data Governance 2026.08.12.1
 
 ## Roles
 
 Every record has exactly one immutable role: `train`, `development`,
 `holdout`, or `terminal`. Roles are assigned before rendering and before any
 model or metric is run.
+
+The active smoke allocation and role-level counts are frozen in
+[`SPLIT_AND_ISOLATION_POLICY_2026.08.12.1.md`](SPLIT_AND_ISOLATION_POLICY_2026.08.12.1.md).
 
 ## Required provenance
 

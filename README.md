@@ -26,13 +26,14 @@ OmniDocBench is used as one document-parsing evaluation protocol. The methods
 and infrastructure in this repository are designed around the broader research
 problem of table structure recognition.
 
-## Research snapshot 2026.08.12
+## Research snapshot 2026.08.12.1
 
-The `2026.08.12` snapshot establishes the shared representation and evaluation
-foundation for two independent modeling tracks. It includes Canonical Table
-normalization, order-invariant topology targets, candidate-integrity checks,
-table-only model interfaces, and synthetic data-free tests. Model checkpoints
-and dataset payloads are maintained outside this repository.
+The `2026.08.12.1` snapshot establishes the shared representation, evaluation,
+and synthetic-corpus specification for two independent modeling tracks. It
+includes Canonical Table normalization, order-invariant topology targets,
+candidate-integrity checks, table-only model interfaces, a frozen 256-record
+generator-smoke design, and data-free regression tests. Model checkpoints and
+dataset payloads are maintained outside this repository.
 
 Project-authored releases follow calendar versioning:
 
@@ -54,7 +55,7 @@ separate signals so that a structural hypothesis can be inspected and replayed.
 The current repository includes the candidate representation, reversible
 interface, and validation primitives needed by the model.
 
-See [Explicit Layout Transformer](docs/methods/EXPLICIT_LAYOUT_TRANSFORMER.md).
+See [Explicit Layout Transformer](docs/methods/EXPLICIT_LAYOUT_TRANSFORMER_2026.08.12.1.md).
 
 ### LoRA Table Model
 
@@ -96,11 +97,11 @@ The common foundation provides:
 borderless-table-structuring-lab/
 ├── dataset/                   # External dataset registry; no payloads
 ├── docs/
-│   ├── methods/               # Research-track formulations
-│   ├── DATA_GOVERNANCE.md
-│   ├── DATASET_STORAGE_AND_SHARING.md
-│   ├── REPRODUCIBILITY.md
-│   └── SYNTHETIC_CORPUS_SPECIFICATION.md
+│   ├── corpus/                # CalVer data specifications and policies
+│   ├── experiment-records/    # Sealed public research evidence
+│   ├── methods/               # CalVer research-track formulations
+│   └── REPRODUCIBILITY_2026.08.12.1.md
+├── configs/                   # Calendar-versioned generation parameters
 ├── schemas/                   # Calendar-versioned record schemas
 ├── src/borderless_table_structuring/
 │   ├── canonical.py           # Canonical table normalization
@@ -142,8 +143,8 @@ compression, blur, background, and scanning artifacts.
 Dataset roles are assigned by document, template, content, renderer, and seed
 families before rendering. Exact and near-duplicate audits operate on images,
 text, normalized structure, geometry, and provenance. See the
-[synthetic corpus specification](docs/SYNTHETIC_CORPUS_SPECIFICATION.md) and
-[data governance guide](docs/DATA_GOVERNANCE.md).
+[synthetic data specification](docs/corpus/SYNTHETIC_DATA_SPECIFICATION_2026.08.12.1.md)
+and [data governance guide](docs/corpus/DATA_GOVERNANCE_2026.08.12.1.md).
 
 ## Installation
 
@@ -172,8 +173,8 @@ and complete failure accounting. Dataset payloads and model weights are stored
 outside Git; this repository contains the code, schemas, manifests, and
 documentation needed to reproduce them.
 
-For details, see [Reproducibility](docs/REPRODUCIBILITY.md) and
-[Dataset Storage and Sharing](docs/DATASET_STORAGE_AND_SHARING.md).
+For details, see [Reproducibility](docs/REPRODUCIBILITY_2026.08.12.1.md) and
+[Dataset Storage and Sharing](docs/corpus/DATASET_STORAGE_AND_SHARING_2026.08.12.1.md).
 
 ## Collaboration
 
