@@ -1,0 +1,77 @@
+{
+  "configuration_release": "2026.08.12.3",
+  "dataset_release": "data-smoke-2026.08.12.3",
+  "schema_release": "synthetic-table-record-2026.08.12.3",
+  "seed_namespace": "borderless-table-structuring-data-smoke-2026.08.12.3",
+  "seed_start": 202608120300000,
+  "requested_records": 256,
+  "allow_failed_seed_replacement": false,
+  "gate_costs": {
+    "false_edit": 4.0,
+    "missed_edit": 1.0,
+    "uncertain_action": "KEEP"
+  },
+  "categories": {
+    "exact_keep": {"count": 64, "gate_label": "KEEP"},
+    "hard_keep": {"count": 64, "gate_label": "KEEP"},
+    "single_minimal_edit": {"count": 64, "gate_label": "EDIT"},
+    "complex_correction": {"count": 64, "gate_label": "EDIT"}
+  },
+  "roles_per_category": {
+    "train": 44,
+    "development": 12,
+    "holdout": 8
+  },
+  "counterfactual_pairs": {
+    "minimum_pairs": 64,
+    "same_role_required": true,
+    "shared_fields": [
+      "content_family_id",
+      "template_family_id",
+      "font_family_id",
+      "renderer_family_id",
+      "base_degradation"
+    ]
+  },
+  "structure": {
+    "rows": {"minimum": 2, "maximum": 28},
+    "columns": {"minimum": 2, "maximum": 14},
+    "header_depth": {"minimum": 0, "maximum": 4},
+    "span_fraction": {"minimum": 0.0, "maximum": 0.45},
+    "empty_cell_fraction": {"minimum": 0.0, "maximum": 0.35},
+    "maximum_cells": 240
+  },
+  "rendering": {
+    "canvas_width_px": [960, 1280, 1600, 2048],
+    "dpi": [96, 150, 200, 300],
+    "font_size_px": {"minimum": 12, "maximum": 32},
+    "cell_padding_px": {"minimum": 4, "maximum": 18},
+    "rotation_degrees": {"minimum": -4.0, "maximum": 4.0},
+    "border_alpha": {"minimum": 0.0, "maximum": 1.0},
+    "jpeg_quality": {"minimum": 55, "maximum": 100},
+    "gaussian_blur_radius": {"minimum": 0.0, "maximum": 1.8},
+    "noise_sigma": {"minimum": 0.0, "maximum": 12.0}
+  },
+  "corruptions": {
+    "single_minimal_edit_exactly_one": true,
+    "complex_correction_minimum_operations": 2,
+    "complex_correction_maximum_operations": 4,
+    "accepted_prior_must_remain_canonical_legal": true,
+    "invalid_grid_fixtures_are_test_only": true,
+    "allowed": [
+      "extra_split",
+      "missing_split",
+      "incorrect_merge",
+      "missing_merge",
+      "span_extent_error",
+      "token_ownership_error",
+      "geometry_inconsistency",
+      "row_or_column_assignment_error"
+    ]
+  },
+  "determinism": {
+    "semantic_replay_runs": 2,
+    "normalized_pixel_replay_runs": 2,
+    "sha256_algorithm": "sha256"
+  }
+}

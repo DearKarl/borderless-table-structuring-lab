@@ -1,0 +1,9 @@
+{
+  "artifact": "EVIDENCE_CARD_DATA_SMOKE_2026.08.12.4.md",
+  "artifact_sha256": "8ba511acc70a777be4f80d5cb4b4f171e42ad4e1f21baba0b1273fdd61dbda1a",
+  "dataset_release": "data-smoke-2026.08.12.4",
+  "release": "2026.08.12.4",
+  "status": "PASS_SEALED_FOR_SHARED_CORPUS_BUILD",
+  "terminal_inputs_used": false,
+  "training_started": false
+}
