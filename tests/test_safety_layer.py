@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 
-from mpr_tsr_splitmerge_v2.safety_layer import (
+from borderless_table_structuring.safety_layer import (
     ExpectedGainEvidence,
     SafetyPolicy,
     assemble_table_only,
@@ -40,16 +40,16 @@ def _record(cells=None):
         "provenance": {
             "sample_id": "dev-fixture-001",
             "producer": "unit-fixture",
-            "producer_version": "v1",
+            "producer_release": "2026.08.12",
             "purpose": "nonterminal_correctness_fixture",
             "input_image_sha256": "0" * 64,
-            "terminal_benchmarks_visible": False,
+            "restricted_evaluation_visible": False,
         },
     }
 
 
 POLICY = SafetyPolicy(
-    policy_id="stage2-preregistered-v1",
+    policy_id="synthetic-preregistered-2026.08.12",
     minimum_expected_gain=0.0,
     threshold_source="NONTERMINAL_PREREGISTERED",
     text_policy="OCR_GROUNDED",
@@ -73,7 +73,7 @@ def test_overlap_fails_and_rolls_back_exactly():
         raw,
         candidate,
         policy=POLICY,
-        expected_gain=ExpectedGainEvidence(1.0, "dev-protocol-v1", "NONTERMINAL_DEVELOPMENT"),
+        expected_gain=ExpectedGainEvidence(1.0, "development-protocol-2026.08.12", "NONTERMINAL_DEVELOPMENT"),
         ocr_tokens=OCR,
     )
     assert result["decision"] == "ROLLBACK"
@@ -112,14 +112,14 @@ def test_valid_changed_candidate_needs_positive_nonterminal_gain():
         raw,
         candidate,
         policy=POLICY,
-        expected_gain=ExpectedGainEvidence(0.0, "dev-protocol-v1", "NONTERMINAL_DEVELOPMENT"),
+        expected_gain=ExpectedGainEvidence(0.0, "development-protocol-2026.08.12", "NONTERMINAL_DEVELOPMENT"),
         ocr_tokens=OCR,
     )
     accepted = select_candidate_or_rollback(
         raw,
         candidate,
         policy=POLICY,
-        expected_gain=ExpectedGainEvidence(0.1, "dev-protocol-v1", "NONTERMINAL_DEVELOPMENT"),
+        expected_gain=ExpectedGainEvidence(0.1, "development-protocol-2026.08.12", "NONTERMINAL_DEVELOPMENT"),
         ocr_tokens=OCR,
     )
     assert missing["decision"] == "ROLLBACK"
@@ -132,11 +132,11 @@ def test_missing_geometry_and_bad_provenance_fail():
     raw = _record()
     candidate = deepcopy(raw)
     candidate["canonical_table"]["cells"][0].pop("geometry")
-    candidate["provenance"]["terminal_benchmarks_visible"] = True
+    candidate["provenance"]["restricted_evaluation_visible"] = True
     validation = validate_candidate(raw, candidate, policy=POLICY, ocr_tokens=OCR)
     assert validation["status"] == "FAIL"
     assert "GEOMETRY_MISSING_OR_INVALID" in validation["issues"]
-    assert "PROVENANCE_TERMINAL_VISIBILITY_NOT_FALSE" in validation["issues"]
+    assert "PROVENANCE_RESTRICTED_EVALUATION_VISIBILITY_NOT_FALSE" in validation["issues"]
 
 
 def test_table_only_assembler_freezes_every_other_page_block():
@@ -158,7 +158,7 @@ def test_table_only_assembler_freezes_every_other_page_block():
         raw,
         candidate,
         policy=POLICY,
-        expected_gain=ExpectedGainEvidence(0.1, "dev-protocol-v1", "NONTERMINAL_DEVELOPMENT"),
+        expected_gain=ExpectedGainEvidence(0.1, "development-protocol-2026.08.12", "NONTERMINAL_DEVELOPMENT"),
         ocr_tokens=OCR,
     )
     page = {

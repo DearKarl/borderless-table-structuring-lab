@@ -4,18 +4,18 @@ from copy import deepcopy
 
 import pytest
 
-from mpr_tsr_splitmerge_v2.candidate_interfaces import (
+from borderless_table_structuring.candidate_interfaces import (
     build_explicit_topology_candidate,
     build_lora_table_candidate,
     replay_explicit_to_raw,
     select_explicit_candidate,
     select_lora_candidate,
 )
-from mpr_tsr_splitmerge_v2.safety_layer import ExpectedGainEvidence, stable_sha256
+from borderless_table_structuring.safety_layer import ExpectedGainEvidence, stable_sha256
 
 
 OCR = [{"text": "A"}, {"text": "B"}]
-GAIN = ExpectedGainEvidence(0.1, "stage3-interface-fixture-v1", "NONTERMINAL_DEVELOPMENT")
+GAIN = ExpectedGainEvidence(0.1, "interface-fixture-2026.08.12", "NONTERMINAL_DEVELOPMENT")
 
 
 def _raw_record():
@@ -51,10 +51,10 @@ def _raw_record():
         "provenance": {
             "sample_id": "isolated-dev-fixture-001",
             "producer": "raw-mineru-fixture",
-            "producer_version": "v1",
-            "purpose": "nonterminal_stage3_fixture",
+            "producer_release": "2026.08.12",
+            "purpose": "synthetic_interface_fixture",
             "input_image_sha256": "0" * 64,
-            "terminal_benchmarks_visible": False,
+            "restricted_evaluation_visible": False,
         },
     }
 

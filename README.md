@@ -1,208 +1,204 @@
 # Borderless Table Structuring Lab
 
-Research infrastructure for auditable borderless-table structure recognition,
-Canonical Table supervision, safe Raw MinerU refinement, and independent
-Explicit and LoRA candidate routes.
+Research on recovering table structure from weak or absent visual boundaries.
+The repository brings together canonical table representations, controlled
+data generation, explicit topology modeling, and parameter-efficient
+generative adaptation in a shared experimental framework.
 
-This repository is designed as the long-lived project home. The initial
-revision contains the data-engineering and safety-integration layers only. It
-does **not** contain model weights, training payloads, terminal benchmark pages,
-Customer50 artifacts, or per-sample terminal predictions.
+## Overview
 
-## Table of contents
+Borderless tables rarely expose their structure through ruling lines alone.
+Their latent grid must be inferred from alignment, spacing, typography,
+semantic grouping, spanning cells, and document context. Small structural
+errors can then propagate into reading order, cell ownership, and content
+alignment.
 
-- [Research objective](#research-objective)
-- [Current repository scope](#current-repository-scope)
-- [Repository layout](#repository-layout)
-- [System design](#system-design)
-- [Data strategy](#data-strategy)
-- [Installation](#installation)
-- [Tests](#tests)
-- [Reproducibility and evidence](#reproducibility-and-evidence)
-- [Collaboration workflow](#collaboration-workflow)
-- [Roadmap](#roadmap)
-- [Governance and licensing](#governance-and-licensing)
+This lab studies the problem at three connected levels:
 
-## Research objective
+- **Representation:** how to describe topology, geometry, and content without
+  tying the target to one arbitrary edit sequence.
+- **Learning:** how explicit structural prediction and generative adaptation
+  behave under the same data and evaluation conditions.
+- **Data:** how to construct reproducible, source-traceable corpora that expose
+  structural phenomena systematically rather than through incidental examples.
 
-The project targets table-quality improvement under the OmniDocBench document
-parsing protocol while preserving the Raw MinerU document baseline. The core
-engineering principle is selective, auditable table correction:
+OmniDocBench is used as one document-parsing evaluation protocol. The methods
+and infrastructure in this repository are designed around the broader research
+problem of table structure recognition.
 
-1. Raw MinerU remains the default output.
-2. The Explicit route may propose minimal topology-only corrections with Raw
-   OCR text frozen.
-3. The LoRA route may propose one complete, table-only Canonical Table state.
-4. Both routes pass through the same legality, token-preservation, geometry,
-   provenance, expected-gain, assembly, and exact-Raw-rollback controls.
-5. Unsafe or unsupported candidates are rejected without modifying Raw.
+## Research snapshot 2026.08.12
 
-The target of Table TEDS above 95 is an engineering objective, not a guaranteed
-unobserved result. Public benchmark-aware development and independent terminal
-generalization must be reported separately.
+The `2026.08.12` snapshot establishes the shared representation and evaluation
+foundation for two independent modeling tracks. It includes Canonical Table
+normalization, order-invariant topology targets, candidate-integrity checks,
+table-only model interfaces, and synthetic data-free tests. Model checkpoints
+and dataset payloads are maintained outside this repository.
 
-## Current repository scope
+Project-authored releases follow calendar versioning:
 
-Included in the first revision:
+- research snapshots: `2026.08.12`, `2026.09.03`, and so on;
+- same-day revisions: `2026.08.12.1`, `2026.08.12.2`, and so on;
+- model artifacts: `explicit-2026.08.12` and `lora-2026.08.12`.
 
-- Canonical Table normalization and structural label utilities.
-- Direct-state and order-invariant target compilation.
-- Candidate-integrity checks.
-- Shared fail-closed validation and deterministic Raw rollback.
-- Explicit topology-only and LoRA complete-table candidate interfaces.
-- Synthetic unit fixtures and regression tests.
-- Canonical record schema.
-- English Evidence Cards and the active execution contract.
-- Dataset governance, storage, reproducibility, and collaborator handoff
-  documentation.
+External software and benchmark releases retain their original upstream names.
+The complete naming convention is documented in
+[CONTRIBUTING.md](CONTRIBUTING.md#calendar-versioning).
 
-Explicitly excluded:
+## Research tracks
 
-- Model implementations, adapters, checkpoints, or weights.
-- Full training corpora or rendered sample payloads.
-- Formal20k source records and compiled record payloads.
-- Customer50 content.
-- OmniDocBench pages, crops, annotations, recognized strings, coordinates,
-  HTML, LaTeX, page identifiers, or Gold records.
-- Per-sample terminal predictions or case-selection artifacts.
+### Explicit Layout Transformer
+
+The explicit track treats a table as a structured object and predicts sparse,
+order-invariant topology changes. Text, geometry, and cell ownership remain
+separate signals so that a structural hypothesis can be inspected and replayed.
+The current repository includes the candidate representation, reversible
+interface, and validation primitives needed by the model.
+
+See [Explicit Layout Transformer](docs/methods/EXPLICIT_LAYOUT_TRANSFORMER.md).
+
+### LoRA Table Model
+
+The generative track studies parameter-efficient adaptation for direct
+Canonical Table prediction. Instead of imitating one serialized sequence of
+split and merge actions, the model produces a complete table hypothesis that
+can be evaluated against the same representation and metrics as the explicit
+track.
+
+The LoRA implementation and ablation studies are maintained as an independent
+research contribution and are integrated through the shared Canonical Table
+interface.
+
+## Shared experimental foundation
+
+```mermaid
+flowchart LR
+    A["Table image and document context"] --> B["Visual, OCR, and geometry evidence"]
+    B --> C["Canonical Table representation"]
+    C --> D["Explicit topology model"]
+    C --> E["LoRA generative model"]
+    D --> F["Comparable table hypothesis"]
+    E --> F
+    F --> G["Topology, location, and content evaluation"]
+```
+
+The common foundation provides:
+
+- a canonical representation of rows, columns, spans, text, and geometry;
+- direct-state and order-invariant structural supervision;
+- deterministic rendering and synthetic-phenomenon generation;
+- token-ownership and geometry-integrity checks;
+- reproducible manifests, hashes, split isolation, and evidence records;
+- route-independent metrics, including GriTS and TEDS-compatible adapters.
 
 ## Repository layout
 
 ```text
 borderless-table-structuring-lab/
-├── .github/
-│   └── workflows/             # Continuous integration
-├── dataset/
-│   └── README.md              # External dataset registry and access policy
+├── dataset/                   # External dataset registry; no payloads
 ├── docs/
-│   ├── COLLABORATOR_HANDOFF.md
+│   ├── methods/               # Research-track formulations
 │   ├── DATA_GOVERNANCE.md
 │   ├── DATASET_STORAGE_AND_SHARING.md
 │   ├── REPRODUCIBILITY.md
 │   └── SYNTHETIC_CORPUS_SPECIFICATION.md
-├── evidence/                  # Nonterminal Evidence Cards only
-├── governance/                # Active execution contract and seal
-├── schemas/                   # Versioned record schemas
-├── scripts/                   # Deterministic data-layer compilers
-├── src/mpr_tsr_splitmerge_v2/
-│   ├── canonical.py
-│   ├── candidate_integrity.py
+├── schemas/                   # Calendar-versioned record schemas
+├── src/borderless_table_structuring/
+│   ├── canonical.py           # Canonical table normalization
+│   ├── explicit.py            # Public Explicit-route interface
 │   ├── candidate_interfaces.py
+│   ├── candidate_integrity.py
 │   ├── labels.py
 │   └── safety_layer.py
-├── tests/                     # Synthetic and deterministic unit tests
-├── CONTRIBUTING.md
-└── pyproject.toml
+└── tests/                     # Synthetic, data-free regression tests
 ```
 
-## System design
+The research tracks use the model names **Explicit Layout Transformer** and
+**LoRA Table Model**. Project-authored identifiers use the same calendar
+release as the surrounding research snapshot.
 
-The active representation is the final Canonical Table state plus an
-order-invariant structural difference. Historical ordered KEEP/SPLIT/MERGE
-programs are replay evidence, not primary supervision, because multiple action
-paths may lead to the same correct table.
+## Canonical Table representation
 
-The shared safety boundary checks:
+A record connects the rendered observation to an explicit table state:
 
-- Canonical legality and complete grid coverage.
-- OCR token ownership and text preservation.
-- Finite, non-degenerate physical geometry.
-- Provenance and table-only scope.
-- Frozen positive expected-gain evidence.
-- Non-table page-state stability.
-- Exact deterministic Raw rollback.
+- logical grid dimensions and cell spans;
+- physical cell geometry;
+- OCR tokens, confidence, and unique cell ownership;
+- source, renderer, template, and content provenance;
+- deterministic generation parameters and hashes;
+- direct Canonical Table supervision;
+- an order-invariant structural difference when a prior state is available.
 
-See [the synthetic corpus specification](docs/SYNTHETIC_CORPUS_SPECIFICATION.md)
-for the data contract and [the active execution contract](governance/POST_OMNIDOCBENCH_EXECUTION_CONTRACT_V6.md)
-for the current authorization boundary.
+Ordered action programs may be retained for analysis, but they are not treated
+as the unique description of a correct table.
 
-## Data strategy
+## Data methodology
 
-Training payloads are intentionally stored outside this Git repository.
-GitHub stores schemas, manifests, checksums, generators, validators, and
-Evidence Cards. A separate private dataset repository stores authorized data
-shards and is pinned by immutable revision and SHA256 manifest.
+The data pipeline is designed to vary structure and appearance independently.
+Structural families include hierarchical headers, row and column spans,
+mixed-dimensional spans, empty cells, and localized split/merge corrections.
+Rendering families cover border visibility, typography, resolution, rotation,
+compression, blur, background, and scanning artifacts.
 
-Recommended dataset repository name:
-
-```text
-DearKarl/borderless-table-structuring-data
-```
-
-The preferred format is versioned WebDataset or Parquet shards with a small
-JSONL manifest. See [dataset storage and sharing](docs/DATASET_STORAGE_AND_SHARING.md)
-and [the dataset registry](dataset/README.md).
+Dataset roles are assigned by document, template, content, renderer, and seed
+families before rendering. Exact and near-duplicate audits operate on images,
+text, normalized structure, geometry, and provenance. See the
+[synthetic corpus specification](docs/SYNTHETIC_CORPUS_SPECIFICATION.md) and
+[data governance guide](docs/DATA_GOVERNANCE.md).
 
 ## Installation
 
 Python 3.10 or newer is required.
 
 ```bash
+git clone https://github.com/DearKarl/borderless-table-structuring-lab.git
+cd borderless-table-structuring-lab
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e '.[dev]'
 ```
 
-## Tests
-
-Run the complete data-engineering test suite:
+Run the data-free test suite:
 
 ```bash
 pytest
 ```
 
-The committed tests use synthetic fixtures. They do not require terminal
-benchmark data, model weights, or a GPU.
+## Reproducible research
 
-## Reproducibility and evidence
+Experiments record the code revision, schema release, immutable data revision,
+root manifest hash, configuration hash, random seeds, environment, metrics,
+and complete failure accounting. Dataset payloads and model weights are stored
+outside Git; this repository contains the code, schemas, manifests, and
+documentation needed to reproduce them.
 
-Every data stage must freeze:
+For details, see [Reproducibility](docs/REPRODUCIBILITY.md) and
+[Dataset Storage and Sharing](docs/DATASET_STORAGE_AND_SHARING.md).
 
-- source and permitted-use inventory;
-- schema version and compiler revision;
-- deterministic seeds and render parameters;
-- train, development, holdout, and terminal roles;
-- exact and near-duplicate isolation reports;
-- generated, accepted, quarantined, and failed counts;
-- complete SHA256 manifests;
-- an English Evidence Card and seal.
+## Collaboration
 
-Detailed requirements are documented in
-[REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
+The two model tracks share representations and evaluation but keep model code
+and ablations independent. Suggested branch prefixes are:
 
-## Collaboration workflow
+- `explicit/` for explicit topology modeling;
+- `lora/` for generative adaptation and ablations;
+- `data/` for corpus construction and validation;
+- `eval/` for route-independent metrics and analysis.
 
-1. Read the active contract and seal before project work.
-2. Work on a dedicated branch.
-3. Change one declared variable per experiment.
-4. Add tests and an Evidence Card for data-affecting changes.
-5. Never commit datasets, credentials, weights, or terminal artifacts.
-6. Submit a pull request with source, license, isolation, and replay evidence.
+Contributions should include tests, a concise method note, and the provenance
+or experimental metadata needed to interpret the result. Large datasets,
+weights, credentials, and benchmark payloads must not be committed.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and
-[COLLABORATOR_HANDOFF.md](docs/COLLABORATOR_HANDOFF.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the review workflow.
 
-## Roadmap
+## Citation
 
-- [x] Canonical Data Layer vNext.
-- [x] Shared validator and exact Raw rollback.
-- [x] Independent Explicit and LoRA candidate interfaces.
-- [x] Bounded correctness smoke.
-- [ ] Freeze the synthetic-corpus specification and collaborator handoff.
-- [ ] Implement bounded generators and pass the data smoke.
-- [ ] Build a frozen shared corpus with complete overlap audits.
-- [ ] Run independent bounded Explicit and LoRA candidate pilots.
-- [ ] Stop at the mandatory pre-full-training discussion gate.
-- [ ] Add model code only after the corresponding governance decision.
+A project citation will be added with the first archival release. Until then,
+please cite the repository URL and the immutable commit used in an experiment.
 
-## Governance and licensing
+## License
 
-The repository is private and currently has no public redistribution license.
-Project code and newly authored synthetic assets require an explicit licensing
-decision before public release. Third-party datasets retain their own licenses
-and must not be redistributed merely because this repository is private.
-
-OmniDocBench and Customer50 terminal contents are prohibited from the training
-and development corpus. Any source with uncertain redistribution or downstream
-use rights must remain external until the license review passes.
+No public redistribution license has been assigned yet. Third-party datasets,
+fonts, evaluators, and pretrained models remain subject to their original
+licenses. Consult the repository maintainers before redistributing code or
+derived assets.

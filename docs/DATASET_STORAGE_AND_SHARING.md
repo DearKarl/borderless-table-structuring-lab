@@ -5,7 +5,7 @@
 Use two repositories with different responsibilities:
 
 1. `DearKarl/borderless-table-structuring-lab` stores code, schemas,
-   generators, manifests, checksums, tests, governance, and Evidence Cards.
+   generators, manifests, checksums, tests, and reproducibility records.
 2. `DearKarl/borderless-table-structuring-data` stores authorized dataset
    payloads in a private dataset service or object store.
 
@@ -66,10 +66,10 @@ The collaborator should initially receive the synthetic training and
 development roles. Holdout and terminal roles remain inaccessible to anyone
 performing generator or model optimization.
 
-## Existing Formal20k-derived records
+## Existing derived records
 
-Do not upload the current compiled Formal20k records until the source-license
-inventory confirms redistribution and downstream-use rights for every source.
+Do not upload compiled records until the source-license inventory confirms
+redistribution and downstream-use rights for every source.
 If redistribution is not authorized, share only:
 
 - the compiler;

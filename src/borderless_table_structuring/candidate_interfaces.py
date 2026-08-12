@@ -12,14 +12,14 @@ from .safety_layer import (
 
 
 EXPLICIT_POLICY = SafetyPolicy(
-    policy_id="stage3-explicit-topology-only-v1",
+    policy_id="explicit-topology-only-2026.08.12",
     minimum_expected_gain=0.0,
     threshold_source="NONTERMINAL_PREREGISTERED",
     text_policy="OCR_GROUNDED",
 )
 
 LORA_POLICY = SafetyPolicy(
-    policy_id="stage3-lora-table-only-v1",
+    policy_id="lora-table-only-2026.08.12",
     minimum_expected_gain=0.0,
     threshold_source="NONTERMINAL_PREREGISTERED",
     text_policy="OCR_GROUNDED",
@@ -87,10 +87,10 @@ def _route_provenance(
     return {
         "sample_id": str(raw.get("sample_id", "")),
         "producer": producer,
-        "producer_version": "v1",
+        "producer_release": "2026.08.12",
         "purpose": purpose,
         "input_image_sha256": str(raw.get("input_image_sha256", "")),
-        "terminal_benchmarks_visible": False,
+        "restricted_evaluation_visible": False,
         "raw_state_sha256": stable_sha256(raw_record),
     }
 
@@ -163,7 +163,7 @@ def build_explicit_topology_candidate(
     candidate_rows = int(rows if rows is not None else raw_table["rows"])
     candidate_cols = int(cols if cols is not None else raw_table["cols"])
     return {
-        "schema_version": "mpr-tsr/explicit-topology-candidate-v1",
+        "schema_release": "explicit-topology-candidate-2026.08.12",
         "canonical_table": {
             "rows": candidate_rows,
             "cols": candidate_cols,
@@ -177,7 +177,7 @@ def build_explicit_topology_candidate(
             "full_page_rewrite": False,
         },
         "replay": {
-            "schema_version": "mpr-tsr/explicit-reversible-replay-v1",
+            "schema_release": "explicit-reversible-replay-2026.08.12",
             "raw_state_sha256": stable_sha256(raw_record),
             "partitions": replay_partitions,
         },
@@ -211,7 +211,7 @@ def build_lora_table_candidate(
     if not isinstance(table, dict) or not isinstance(table.get("cells"), list):
         raise ValueError("LoRA output must contain one complete Canonical Table")
     return {
-        "schema_version": "mpr-tsr/lora-canonical-table-candidate-v1",
+        "schema_release": "lora-canonical-table-candidate-2026.08.12",
         "canonical_table": table,
         "candidate_interface": {
             "route": "LORA_TABLE_MODEL",

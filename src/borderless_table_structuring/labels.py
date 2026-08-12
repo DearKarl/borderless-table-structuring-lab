@@ -16,8 +16,8 @@ from .canonical import (
 
 
 CONTROL_POINTS = 4
-HEADER_POLICY_VERSION = "gold-functional-th-td/v1"
-RESIDUAL_EDIT_POLICY_VERSION = "logical-topology-minimal-edit/v1"
+HEADER_POLICY_RELEASE = "gold-functional-th-td/2026.08.12"
+RESIDUAL_EDIT_POLICY_RELEASE = "logical-topology-minimal-edit/2026.08.12"
 
 
 def _logical_box(
@@ -242,7 +242,7 @@ def compile_residual_edit_labels(
     text_edit = any(item["text_update"] for item in per_raw)
     header_edit = any(item["header_update"] for item in per_raw)
     return {
-        "policy_version": RESIDUAL_EDIT_POLICY_VERSION,
+        "policy_release": RESIDUAL_EDIT_POLICY_RELEASE,
         "alignment_basis": "normalized_logical_topology_only",
         "physical_bbox_used": False,
         "confidence_used": False,
@@ -271,7 +271,7 @@ def compile_residual_edit_labels(
             "cell_payload": structure_labels["cell_payload"],
         },
         "header_policy": {
-            "version": HEADER_POLICY_VERSION,
+            "release": HEADER_POLICY_RELEASE,
             "target_source": "public_gold_only",
             "classes": ["td", "th"],
             "raw_mineru_tag_is_observation_not_target": True,
@@ -499,7 +499,7 @@ def compile_structure_labels(
         "merge_down": merge_down,
         "header": header,
         "header_policy": {
-            "version": HEADER_POLICY_VERSION,
+            "release": HEADER_POLICY_RELEASE,
             "target_source": "public_gold_only",
             "classes": ["td", "th"],
         },

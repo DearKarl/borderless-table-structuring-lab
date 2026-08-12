@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from mpr_tsr_splitmerge_v2.candidate_integrity import (
-    audit_local_candidate_integrity,
+from borderless_table_structuring.candidate_integrity import (
+    audit_candidate_integrity,
 )
 
 
@@ -58,10 +58,10 @@ def _fixture(tmp_path: Path) -> tuple[Path, Path, dict[str, object]]:
             "gold_text_visible_to_recognizer": False,
             "gold_geometry_visible_to_recognizer": False,
             "candidate_text_frozen_before_gold_matching": True,
-            "terminal_benchmarks_visible": False,
+            "restricted_evaluation_visible": False,
             "crop_geometry_source": "frozen_paddleocr_token_bbox_only",
             "logical_projection_bbox_forbidden": True,
-            "candidate_proposal_policy": "policy-v1",
+            "candidate_proposal_policy": "proposal-policy-2026.08.12",
             "candidate_proposal_mode": "low_confidence_ocr_token_lines",
             "proposal_gate_threshold": 0.05,
             "token_confidence_threshold": 0.95,
@@ -79,7 +79,7 @@ def _fixture(tmp_path: Path) -> tuple[Path, Path, dict[str, object]]:
         "status": "PASS",
         "token_confidence_threshold": 0.95,
         "maximum_candidates_per_table": 1180,
-        "candidate_proposal_policy": "policy-v1",
+        "candidate_proposal_policy": "proposal-policy-2026.08.12",
         "candidate_proposal_mode": "low_confidence_ocr_token_lines",
         "proposal_gate_threshold": 0.05,
         "frozen_config_sha256": "config-sha",
@@ -93,7 +93,7 @@ def test_candidate_integrity_accepts_complete_gold_free_sidecar(
     tmp_path: Path,
 ) -> None:
     manifest, sidecar_dir, audit = _fixture(tmp_path)
-    report = audit_local_candidate_integrity(
+    report = audit_candidate_integrity(
         manifest, sidecar_dir, audit, expected_tables=1
     )
     assert report["status"] == "PASS"
@@ -110,7 +110,7 @@ def test_candidate_integrity_rejects_gold_field_and_bbox_misbinding(
     value["gold_text"] = "leak"
     value["token_candidates"][0]["absolute_bbox"] = [2, 2, 30, 12]
     _write_json(path, value)
-    report = audit_local_candidate_integrity(
+    report = audit_candidate_integrity(
         manifest, sidecar_dir, audit, expected_tables=1
     )
     assert report["status"] == "FAIL"
@@ -127,7 +127,7 @@ def test_candidate_integrity_rejects_missing_eligible_token(
     value["token_candidates"] = []
     value["proposal_count"] = 0
     _write_json(path, value)
-    report = audit_local_candidate_integrity(
+    report = audit_candidate_integrity(
         manifest, sidecar_dir, audit, expected_tables=1
     )
     assert report["status"] == "FAIL"

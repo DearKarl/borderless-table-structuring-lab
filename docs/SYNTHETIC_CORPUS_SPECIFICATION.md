@@ -1,6 +1,8 @@
 # Synthetic Corpus Specification
 
-Status: `DRAFT_FOR_STAGE_5_4_REVIEW`
+Research snapshot: `2026.08.12`
+
+Status: `RESEARCH_DRAFT`
 
 ## Primary record contract
 
@@ -18,11 +20,11 @@ Required identity fields:
 - `renderer_family_id`;
 - `generation_seed`;
 - `role`;
-- `schema_version`.
+- `schema_release`.
 
 Required provenance fields:
 
-- generator and version;
+- generator and calendar release;
 - source and license decision;
 - font sources;
 - render and degradation parameters;

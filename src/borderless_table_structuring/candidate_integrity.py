@@ -69,12 +69,12 @@ def _index_sidecars(
     return indexed
 
 
-def audit_local_candidate_integrity(
+def audit_candidate_integrity(
     manifest: Path,
     sidecar_dir: Path,
     candidate_audit: dict[str, Any],
     *,
-    expected_tables: int = 20000,
+    expected_tables: int,
 ) -> dict[str, Any]:
     issues: Counter[str] = Counter()
     totals: Counter[str] = Counter()
@@ -117,7 +117,7 @@ def audit_local_candidate_integrity(
                 "gold_text_visible_to_recognizer": False,
                 "gold_geometry_visible_to_recognizer": False,
                 "candidate_text_frozen_before_gold_matching": True,
-                "terminal_benchmarks_visible": False,
+                "restricted_evaluation_visible": False,
                 "crop_geometry_source": "frozen_paddleocr_token_bbox_only",
                 "logical_projection_bbox_forbidden": True,
                 "candidate_proposal_policy": expected_policy,
@@ -245,7 +245,7 @@ def audit_local_candidate_integrity(
         ),
     }
     return {
-        "schema_version": "mpr-tsr/formal20k-local-candidate-integrity-v1",
+        "schema_release": "candidate-integrity-2026.08.12",
         "status": "PASS" if all(checks.values()) else "FAIL",
         "checks": checks,
         "manifest": str(manifest.resolve()),
@@ -258,6 +258,5 @@ def audit_local_candidate_integrity(
             for name, count in sorted(view_count_distribution.items())
         },
         "issues": dict(sorted(issues.items())),
-        "customer50_visible": False,
-        "omnidocbench_visible": False,
+        "restricted_evaluation_visible": False,
     }

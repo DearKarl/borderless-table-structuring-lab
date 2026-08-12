@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "borderless-table-structuring-lab"
-version = "0.1.0"
-description = "Auditable data engineering and safe candidate integration for borderless table structuring."
+version = "2026.8.12"
+description = "Research on canonical representations, explicit topology modeling, and generative adaptation for borderless table structure recognition."
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [

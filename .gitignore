@@ -45,3 +45,7 @@ runs/
 *.key
 credentials.json
 token.json
+
+# Internal coordination records stay in the parent workspace, not this lab repo.
+governance/
+evidence/

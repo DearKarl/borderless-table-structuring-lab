@@ -129,15 +129,15 @@ def _provenance_issues(record: dict[str, Any]) -> list[str]:
     if not isinstance(provenance, dict):
         return ["PROVENANCE_MISSING"]
     issues: list[str] = []
-    for field in ("sample_id", "producer", "producer_version", "purpose", "input_image_sha256"):
+    for field in ("sample_id", "producer", "producer_release", "purpose", "input_image_sha256"):
         if not str(provenance.get(field, "")).strip():
             issues.append(f"PROVENANCE_{field.upper()}_MISSING")
-    if provenance.get("terminal_benchmarks_visible") is not False:
-        issues.append("PROVENANCE_TERMINAL_VISIBILITY_NOT_FALSE")
-    terminal_words = ("customer50", "omnidocbench")
+    if provenance.get("restricted_evaluation_visible") is not False:
+        issues.append("PROVENANCE_RESTRICTED_EVALUATION_VISIBILITY_NOT_FALSE")
+    terminal_words = ("private-evaluation", "restricted-evaluation")
     serialized = json.dumps(provenance, ensure_ascii=False).lower()
     if any(word in serialized for word in terminal_words):
-        issues.append("PROVENANCE_TERMINAL_REFERENCE_FORBIDDEN")
+        issues.append("PROVENANCE_RESTRICTED_EVALUATION_REFERENCE_FORBIDDEN")
     return issues
 
 
@@ -248,7 +248,7 @@ def validate_candidate(
     )
     unique_issues = sorted(set(issues))
     return {
-        "schema_version": "mpr-tsr/shared-safety-validation-v1",
+        "schema_release": "shared-candidate-validation-2026.08.12",
         "status": "PASS" if not unique_issues else "FAIL",
         "issues": unique_issues,
         "cell_count": len(cells),
@@ -356,7 +356,7 @@ def assemble_table_only(
     if not frozen_non_table:
         raise RuntimeError("Non-table page state changed during table assembly")
     return {
-        "schema_version": "mpr-tsr/table-only-assembly-v1",
+        "schema_release": "table-only-assembly-2026.08.12",
         "status": "PASS",
         "decision": selection.get("decision"),
         "output_page": output_page,
@@ -376,7 +376,7 @@ def _selection(
 ) -> dict[str, Any]:
     output_hash = stable_sha256(output)
     return {
-        "schema_version": "mpr-tsr/shared-safety-selection-v1",
+        "schema_release": "shared-candidate-selection-2026.08.12",
         "decision": decision,
         "reason_codes": sorted(set(reasons)),
         "output": output,
