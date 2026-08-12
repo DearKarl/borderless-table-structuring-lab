@@ -52,9 +52,11 @@ Included in the first revision:
 - Explicit topology-only and LoRA complete-table candidate interfaces.
 - Synthetic unit fixtures and regression tests.
 - Canonical record schema.
-- English Evidence Cards and the active execution contract.
+- Evidence Cards and the active execution contract.
 - Dataset governance, storage, reproducibility, and collaborator handoff
   documentation.
+- Public OTSL normalization and fixed-denominator paired-metric utilities.
+- Synthetic-data provenance guidance and manifest validation.
 
 Explicitly excluded:
 
