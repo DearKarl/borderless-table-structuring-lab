@@ -26,9 +26,9 @@ OmniDocBench is used as one document-parsing evaluation protocol. The methods
 and infrastructure in this repository are designed around the broader research
 problem of table structure recognition.
 
-## Research snapshot 2026.08.12.1
+## Research snapshot 2026.08.12.2
 
-The `2026.08.12.1` snapshot establishes the shared representation, evaluation,
+The `2026.08.12.2` snapshot establishes the shared representation, evaluation,
 and synthetic-corpus specification for two independent modeling tracks. It
 includes Canonical Table normalization, order-invariant topology targets,
 candidate-integrity checks, table-only model interfaces, a frozen 256-record
@@ -143,7 +143,7 @@ compression, blur, background, and scanning artifacts.
 Dataset roles are assigned by document, template, content, renderer, and seed
 families before rendering. Exact and near-duplicate audits operate on images,
 text, normalized structure, geometry, and provenance. See the
-[synthetic data specification](docs/corpus/SYNTHETIC_DATA_SPECIFICATION_2026.08.12.1.md)
+[synthetic data specification](docs/corpus/SYNTHETIC_DATA_SPECIFICATION_2026.08.12.2.md)
 and [data governance guide](docs/corpus/DATA_GOVERNANCE_2026.08.12.1.md).
 
 ## Installation
