@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "borderless-table-structuring/source-license-record/2026.08.12.1",
+  "title": "Source License Record 2026.08.12.1",
+  "type": "object",
+  "required": [
+    "schema_release",
+    "source_id",
+    "source_title",
+    "source_owner",
+    "acquisition_method",
+    "acquisition_date",
+    "source_revision",
+    "license",
+    "permissions",
+    "review",
+    "source_manifest_sha256"
+  ],
+  "properties": {
+    "schema_release": {"const": "source-license-record-2026.08.12.1"},
+    "source_id": {"type": "string", "minLength": 1},
+    "source_title": {"type": "string", "minLength": 1},
+    "source_owner": {"type": "string", "minLength": 1},
+    "acquisition_method": {"enum": ["PROJECT_AUTHORED", "DOWNLOAD", "LOCAL_REBUILD", "OTHER"]},
+    "acquisition_url": {"type": ["string", "null"]},
+    "acquisition_date": {"type": "string", "format": "date"},
+    "source_revision": {"type": "string", "minLength": 1},
+    "license": {
+      "type": "object",
+      "required": ["name", "version", "url", "text_sha256"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "url": {"type": ["string", "null"]},
+        "text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "permissions": {
+      "type": "object",
+      "required": ["redistribution", "modification", "derivatives", "research_use", "commercial_use", "attribution_required"],
+      "properties": {
+        "redistribution": {"type": "boolean"},
+        "modification": {"type": "boolean"},
+        "derivatives": {"type": "boolean"},
+        "research_use": {"type": "boolean"},
+        "commercial_use": {"type": ["boolean", "null"]},
+        "attribution_required": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "attribution_notice": {"type": ["string", "null"]},
+    "review": {
+      "type": "object",
+      "required": ["decision", "reviewer", "decision_date", "rationale"],
+      "properties": {
+        "decision": {"enum": ["APPROVED_REDISTRIBUTABLE", "APPROVED_REBUILD_ONLY", "QUARANTINED"]},
+        "reviewer": {"type": "string", "minLength": 1},
+        "decision_date": {"type": "string", "format": "date"},
+        "rationale": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

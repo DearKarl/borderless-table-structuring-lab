@@ -34,11 +34,17 @@ evaluation artifacts use calendar versioning without a `v` prefix.
 | Dataset release | `data-2026.08.12` | `data-2026.08.12.1` |
 | Schema release | `canonical-table-record-2026.08.12` | `canonical-table-record-2026.08.12.1` |
 | Experiment | `experiment-2026.08.12-<topic>` | append `.1` when needed |
+| Data smoke | `data-smoke-2026.08.12` | `data-smoke-2026.08.12.1` |
 
 Use the most precise meaningful date. The identifier does not claim that every
 artifact was created at exactly the same time; its purpose is to distinguish
 research states reproducibly. Upstream packages, datasets, and benchmarks keep
 their official external version names.
+
+Project-authored research documents other than conventional repository files
+such as `README.md`, `CONTRIBUTING.md`, and `LICENSE` include their CalVer in
+the filename. Do not rename upstream action versions, benchmark releases,
+pretrained-model names, or historical source-dataset identifiers.
 
 ## Branches and pull requests
 

@@ -1,4 +1,4 @@
-# Collaborator Handoff
+# Collaborator Handoff 2026.08.12.1
 
 ## Goal
 
@@ -22,6 +22,13 @@ Deliverables:
 - a small smoke manifest with pass, quarantine, and failure reason codes;
 - exact and perceptual duplicate reports;
 - an English experiment record.
+
+The frozen starting point is the
+[`2026.08.12.1` synthetic-data specification](SYNTHETIC_DATA_SPECIFICATION_2026.08.12.1.md),
+its [coverage matrix](COVERAGE_MATRIX_2026.08.12.1.csv), and the
+[`2026.08.12.1` generation parameters](../../configs/generation_parameters_2026.08.12.1.json).
+Changes require a new CalVer revision; collaborators must not edit the frozen
+files in place.
 
 ## Other work packages
 
