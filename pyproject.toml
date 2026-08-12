@@ -4,14 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "borderless-table-structuring-lab"
-version = "2026.8.12.2"
+version = "2026.8.12.4"
 description = "Research on canonical representations, explicit topology modeling, and generative adaptation for borderless table structure recognition."
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
   {name = "Borderless Table Structuring Lab"},
 ]
-dependencies = []
+dependencies = [
+  "jsonschema>=4.21,<5",
+  "Pillow>=10,<13",
+]
 
 [project.optional-dependencies]
 dev = [

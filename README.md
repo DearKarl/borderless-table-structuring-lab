@@ -26,9 +26,9 @@ OmniDocBench is used as one document-parsing evaluation protocol. The methods
 and infrastructure in this repository are designed around the broader research
 problem of table structure recognition.
 
-## Research snapshot 2026.08.12.2
+## Research snapshot 2026.08.12.4
 
-The `2026.08.12.2` snapshot establishes the shared representation, evaluation,
+The `2026.08.12.4` snapshot establishes the shared representation, evaluation,
 and synthetic-corpus specification for two independent modeling tracks. It
 includes Canonical Table normalization, order-invariant topology targets,
 candidate-integrity checks, table-only model interfaces, a frozen 256-record
@@ -38,7 +38,8 @@ dataset payloads are maintained outside this repository.
 Project-authored releases follow calendar versioning:
 
 - research snapshots: `2026.08.12`, `2026.09.03`, and so on;
-- same-day revisions: `2026.08.12.1`, `2026.08.12.2`, and so on;
+- same-day revisions: `2026.08.12.1`, `2026.08.12.2`, `2026.08.12.3`,
+  `2026.08.12.4`, and so on;
 - model artifacts: `explicit-2026.08.12` and `lora-2026.08.12`.
 
 External software and benchmark releases retain their original upstream names.
@@ -103,6 +104,7 @@ borderless-table-structuring-lab/
 │   └── REPRODUCIBILITY_2026.08.12.1.md
 ├── configs/                   # Calendar-versioned generation parameters
 ├── schemas/                   # Calendar-versioned record schemas
+├── scripts/                   # Calendar-versioned corpus entry points
 ├── src/borderless_table_structuring/
 │   ├── canonical.py           # Canonical table normalization
 │   ├── explicit.py            # Public Explicit-route interface
@@ -143,7 +145,7 @@ compression, blur, background, and scanning artifacts.
 Dataset roles are assigned by document, template, content, renderer, and seed
 families before rendering. Exact and near-duplicate audits operate on images,
 text, normalized structure, geometry, and provenance. See the
-[synthetic data specification](docs/corpus/SYNTHETIC_DATA_SPECIFICATION_2026.08.12.2.md)
+[synthetic data specification](docs/corpus/SYNTHETIC_DATA_SPECIFICATION_2026.08.12.4.md)
 and [data governance guide](docs/corpus/DATA_GOVERNANCE_2026.08.12.1.md).
 
 ## Installation
@@ -163,6 +165,13 @@ Run the data-free test suite:
 
 ```bash
 pytest
+```
+
+Generate the bounded synthetic-data smoke into a new external payload path:
+
+```bash
+python scripts/generate_data_smoke_2026.08.12.4.py \
+  --output /absolute/path/to/data-smoke-2026.08.12.4
 ```
 
 ## Reproducible research
