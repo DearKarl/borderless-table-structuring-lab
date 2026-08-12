@@ -7,6 +7,7 @@ import json
 import random
 from collections import Counter, defaultdict
 from dataclasses import dataclass
+from functools import lru_cache
 from io import BytesIO
 from pathlib import Path
 from typing import Any, Iterable
@@ -377,10 +378,11 @@ def _expand_coverage(path: Path) -> list[CoverageRequest]:
     return sorted(requests, key=lambda item: (order[item.category], item.role, item.phenomenon))
 
 
-def _shape_pool() -> list[tuple[int, int]]:
+@lru_cache(maxsize=None)
+def _shape_pool(shuffle_seed: int = 2026081204) -> tuple[tuple[int, int], ...]:
     values = [(rows, columns) for rows in range(3, 29) for columns in range(2, 15) if rows * columns <= 240]
-    random.Random(2026081204).shuffle(values)
-    return values
+    random.Random(shuffle_seed).shuffle(values)
+    return tuple(values)
 
 
 def _make_record(
@@ -392,10 +394,15 @@ def _make_record(
     license_manifest_sha256: str,
     schema: dict[str, Any],
     shared_phenomenon: str | None = None,
+    dataset_release: str = DATASET_RELEASE,
+    schema_release: str = SCHEMA_RELEASE,
+    generator_release: str = RELEASE,
+    shape_shuffle_seed: int = 2026081204,
 ) -> tuple[dict[str, Any], bytes]:
     seed = int(config["seed_start"]) + sample_index
     base_seed = int(config["seed_start"]) + 100000 + base_family_index
-    rows, columns = _shape_pool()[base_family_index]
+    shape_pool = _shape_pool(shape_shuffle_seed)
+    rows, columns = shape_pool[base_family_index % len(shape_pool)]
     pair_id = f"pair-{pair_index:06d}" if pair_index is not None else None
     family = pair_id or f"family-{base_family_index:06d}"
     rendering_phenomenon = shared_phenomenon or request.phenomenon
@@ -412,11 +419,11 @@ def _make_record(
         prior, operations = _prior_for_edit(gold, request.phenomenon, request.category)
     difference = _difference(prior, gold)
     image_bytes, pixel_sha, render_parameters = _draw_table(gold, rendering_phenomenon, base_seed)
-    image_name = f"images/{DATASET_RELEASE}-{sample_index:06d}.png"
+    image_name = f"images/{dataset_release}-{sample_index:06d}.png"
     record = {
-        "schema_release": SCHEMA_RELEASE,
-        "dataset_release": DATASET_RELEASE,
-        "sample_id": f"{DATASET_RELEASE}-{sample_index:06d}",
+        "schema_release": schema_release,
+        "dataset_release": dataset_release,
+        "sample_id": f"{dataset_release}-{sample_index:06d}",
         "role": request.role,
         "gate_label": request.gate_label,
         "category": request.category,
@@ -431,7 +438,7 @@ def _make_record(
             "counterfactual_pair_id": pair_id,
         },
         "provenance": {
-            "generator_release": RELEASE,
+            "generator_release": generator_release,
             "source_id": "project-authored-synthetic-content",
             "license_decision": LICENSE_DECISION,
             "license_manifest_sha256": license_manifest_sha256,

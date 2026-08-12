@@ -1,0 +1,62 @@
+{
+  "configuration_release": "2026.08.12",
+  "dataset_release": "shared-corpus-2026.08.12",
+  "generator_release": "2026.08.12.5",
+  "schema_release": "synthetic-table-record-2026.08.12.5",
+  "seed_namespace": "borderless-table-structuring-shared-corpus-2026.08.12",
+  "seed_start": 202608120000000,
+  "requested_records": 40000,
+  "allow_failed_seed_replacement": false,
+  "gate_costs": {
+    "false_edit": 4.0,
+    "missed_edit": 1.0,
+    "uncertain_action": "KEEP"
+  },
+  "categories": {
+    "exact_keep": {"count": 10000, "gate_label": "KEEP"},
+    "hard_keep": {"count": 10000, "gate_label": "KEEP"},
+    "single_minimal_edit": {"count": 10000, "gate_label": "EDIT"},
+    "complex_correction": {"count": 10000, "gate_label": "EDIT"}
+  },
+  "roles_per_category": {
+    "train": 7000,
+    "development": 2000,
+    "holdout": 1000
+  },
+  "counterfactual_pairs": {
+    "minimum_pairs": 10000,
+    "same_role_required": true,
+    "shared_fields": [
+      "content_family_id",
+      "template_family_id",
+      "font_family_id",
+      "renderer_family_id",
+      "base_degradation"
+    ]
+  },
+  "structure": {
+    "rows": {"minimum": 3, "maximum": 28},
+    "columns": {"minimum": 2, "maximum": 14},
+    "header_depth": {"minimum": 1, "maximum": 4},
+    "maximum_cells": 240
+  },
+  "corruptions": {
+    "single_minimal_edit_exactly_one": true,
+    "complex_correction_minimum_operations": 2,
+    "complex_correction_maximum_operations": 4,
+    "accepted_prior_must_remain_canonical_legal": true,
+    "invalid_grid_fixtures_are_test_only": true
+  },
+  "determinism": {
+    "semantic_replay_runs": 2,
+    "normalized_pixel_replay_runs": 2,
+    "sha256_algorithm": "sha256"
+  },
+  "execution": {
+    "cpu_first": true,
+    "stream_records": true,
+    "stream_checksums": true,
+    "maximum_records_in_memory": 2,
+    "progress_interval_records": 500
+  }
+}
