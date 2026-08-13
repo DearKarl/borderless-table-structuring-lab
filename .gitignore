@@ -40,6 +40,10 @@ runs/
 *.pth
 *.safetensors
 
+# Generated Raw-preserving smoke metadata.
+smoke_raw_preserving_v1.json
+raw_preserving_smoke_*.jsonl
+
 # Credentials and local access configuration.
 *.pem
 *.key

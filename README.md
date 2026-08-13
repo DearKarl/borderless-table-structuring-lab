@@ -144,6 +144,8 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e '.[dev]'
+# Add Pillow-backed terminal-blind rendering and perceptual-overlap audits.
+python -m pip install -e '.[dev,synthesis]'
 ```
 
 ## Tests
@@ -171,7 +173,10 @@ Every data stage must freeze:
 - an English Evidence Card and seal.
 
 Detailed requirements are documented in
-[REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
+[REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md). The bounded KEEP-majority pair
+contract, exact-Raw baseline, streaming family audit, and fail-closed perceptual
+overlap gate are described in
+[RAW_PRESERVING_SMOKE.md](docs/RAW_PRESERVING_SMOKE.md).
 
 ## Collaboration workflow
 
