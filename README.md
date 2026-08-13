@@ -1,5 +1,72 @@
 # Borderless Table Structuring Lab
 
+Research infrastructure for auditable borderless-table structure recognition,
+Canonical Table supervision, safe Raw MinerU refinement, and independent
+Explicit and LoRA candidate routes.
+
+This repository is designed as the long-lived project home. The initial
+revision contains the data-engineering and safety-integration layers only. It
+does **not** contain model weights, training payloads, terminal benchmark pages,
+Customer50 artifacts, or per-sample terminal predictions.
+
+## Table of contents
+
+- [Research objective](#research-objective)
+- [Current repository scope](#current-repository-scope)
+- [Repository layout](#repository-layout)
+- [System design](#system-design)
+- [Data strategy](#data-strategy)
+- [Installation](#installation)
+- [Tests](#tests)
+- [Reproducibility and evidence](#reproducibility-and-evidence)
+- [Collaboration workflow](#collaboration-workflow)
+- [Roadmap](#roadmap)
+- [Governance and licensing](#governance-and-licensing)
+
+## Research objective
+
+The project targets table-quality improvement under the OmniDocBench document
+parsing protocol while preserving the Raw MinerU document baseline. The core
+engineering principle is selective, auditable table correction:
+
+1. Raw MinerU remains the default output.
+2. The Explicit route may propose minimal topology-only corrections with Raw
+   OCR text frozen.
+3. The LoRA route may propose one complete, table-only Canonical Table state.
+4. Both routes pass through the same legality, token-preservation, geometry,
+   provenance, expected-gain, assembly, and exact-Raw-rollback controls.
+5. Unsafe or unsupported candidates are rejected without modifying Raw.
+
+The target of Table TEDS above 95 is an engineering objective, not a guaranteed
+unobserved result. Public benchmark-aware development and independent terminal
+generalization must be reported separately.
+
+## Current repository scope
+
+Included in the first revision:
+
+- Canonical Table normalization and structural label utilities.
+- Direct-state and order-invariant target compilation.
+- Candidate-integrity checks.
+- Shared fail-closed validation and deterministic Raw rollback.
+- Explicit topology-only and LoRA complete-table candidate interfaces.
+- Synthetic unit fixtures and regression tests.
+- Canonical record schema.
+- Evidence Cards and the active execution contract.
+- Dataset governance, storage, reproducibility, and collaborator handoff
+  documentation.
+- Public OTSL normalization and fixed-denominator paired-metric utilities.
+- Synthetic-data provenance guidance and manifest validation.
+
+Explicitly excluded:
+
+- Model implementations, adapters, checkpoints, or weights.
+- Full training corpora or rendered sample payloads.
+- Formal20k source records and compiled record payloads.
+- Customer50 content.
+- OmniDocBench pages, crops, annotations, recognized strings, coordinates,
+  HTML, LaTeX, page identifiers, or Gold records.
+- Per-sample terminal predictions or case-selection artifacts.
 Research on recovering table structure from weak or absent visual boundaries.
 The repository brings together canonical table representations, controlled
 data generation, explicit topology modeling, and parameter-efficient
@@ -171,6 +238,8 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e '.[dev]'
+# Add Pillow-backed terminal-blind rendering and perceptual-overlap audits.
+python -m pip install -e '.[dev,synthesis]'
 ```
 
 Run the data-free test suite:
@@ -208,7 +277,11 @@ documentation needed to reproduce them.
 For details, see [Reproducibility](docs/REPRODUCIBILITY_2026.08.12.1.md) and
 [Dataset Storage and Sharing](docs/corpus/DATASET_STORAGE_AND_SHARING_2026.08.12.1.md).
 
-## Collaboration
+Detailed requirements are documented in
+[REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md). The bounded KEEP-majority pair
+contract, exact-Raw baseline, streaming family audit, and fail-closed perceptual
+overlap gate are described in
+[RAW_PRESERVING_SMOKE.md](docs/RAW_PRESERVING_SMOKE.md).
 
 The two model tracks share representations and evaluation but keep model code
 and ablations independent. Suggested branch prefixes are:

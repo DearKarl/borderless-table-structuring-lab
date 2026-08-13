@@ -20,6 +20,9 @@ dependencies = [
 dev = [
   "pytest>=7.4,<9",
 ]
+synthesis = [
+  "Pillow>=10,<13",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}

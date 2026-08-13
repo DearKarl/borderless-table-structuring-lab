@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mpr-tsr/raw-preserving-pair-v1",
+  "title": "Raw-Preserving Candidate Pair",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sample_id",
+    "pair_group_id",
+    "role",
+    "image",
+    "raw_record",
+    "gold_record",
+    "candidate_record",
+    "oracle_decision",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "mpr-tsr/raw-preserving-pair-v1"},
+    "sample_id": {"type": "string", "minLength": 1},
+    "pair_group_id": {"type": "string", "minLength": 1},
+    "role": {"enum": ["train", "development", "holdout", "terminal"]},
+    "image": {
+      "type": "object",
+      "required": [
+        "relative_path",
+        "sha256",
+        "source_document_hash",
+        "table_index",
+        "image_size"
+      ],
+      "properties": {
+        "relative_path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\\\]+$"
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_document_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "table_index": {"type": "integer", "minimum": 0},
+        "image_size": {
+          "type": "array",
+          "prefixItems": [
+            {"type": "integer", "minimum": 1},
+            {"type": "integer", "minimum": 1}
+          ],
+          "items": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "raw_record": {"type": "object"},
+    "gold_record": {"type": "object"},
+    "candidate_record": {"type": ["object", "null"]},
+    "oracle_decision": {
+      "type": "object",
+      "required": ["action", "reason", "raw_good"],
+      "properties": {
+        "action": {"enum": ["KEEP_RAW", "ACCEPT_EDIT"]},
+        "reason": {"type": "string", "minLength": 1},
+        "raw_good": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "phenomenon_tags": {"type": "array", "items": {"type": "string"}},
+    "operator": {"type": "object"},
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator",
+        "generator_version",
+        "generation_seed",
+        "terminal_data_used",
+        "document_cluster_id",
+        "template_family_id",
+        "content_family_id",
+        "renderer_family_id"
+      ],
+      "properties": {
+        "generator": {"type": "string", "minLength": 1},
+        "generator_version": {"type": "string", "minLength": 1},
+        "generator_policy": {"const": "terminal_blind_v1"},
+        "generation_seed": {"type": "integer", "minimum": 0},
+        "terminal_data_used": {"const": false},
+        "document_cluster_id": {"type": "string", "minLength": 1},
+        "template_family_id": {"type": "string", "minLength": 1},
+        "content_family_id": {"type": "string", "minLength": 1},
+        "renderer_family_id": {"type": "string", "minLength": 1},
+        "family_plan_entry_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_dataset": {"type": "string", "minLength": 1},
+        "license": {"type": "string", "minLength": 1},
+        "font": {
+          "type": "object",
+          "required": ["source", "file_name", "sha256", "redistributed"],
+          "properties": {
+            "source": {"type": "string", "minLength": 1},
+            "file_name": {"type": "string", "minLength": 1},
+            "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "redistributed": {"const": false}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "provenance": {
+            "required": ["generator_policy"],
+            "properties": {
+              "generator_policy": {"const": "terminal_blind_v1"}
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "provenance": {
+            "required": [
+              "family_plan_entry_sha256",
+              "source_dataset",
+              "license",
+              "font"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}
