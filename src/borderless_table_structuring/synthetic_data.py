@@ -13,16 +13,26 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from jsonschema import Draft202012Validator
+from PIL import __version__ as PILLOW_VERSION
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from .canonical import canonical_cells, occupied_slots, table_shape, validate_cells
 
 
-RELEASE = "2026.08.12.4"
-DATASET_RELEASE = f"data-smoke-{RELEASE}"
-SCHEMA_RELEASE = f"synthetic-table-record-{RELEASE}"
+RELEASE = "2026.08.12.7"
+DATASET_RELEASE = "shared-corpus-2026.08.12.3"
+SCHEMA_RELEASE = "synthetic-table-record-2026.08.12.7"
 LICENSE_DECISION = "APPROVED_REBUILD_ONLY"
 ZERO_SHA256 = "0" * 64
+REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+FONT_INVENTORY_PATH = (
+    REPOSITORY_ROOT / "assets/fonts/FONT_ASSET_INVENTORY_2026.08.12.1.json"
+)
+FONT_UPSTREAM_REPOSITORY = "https://github.com/google/fonts"
+FONT_UPSTREAM_COMMIT = "038b637da7b3fd956a4ed93ffc607c3d5e4ce172"
+REGISTERED_FONT_FAMILIES = frozenset(
+    {"noto-sans", "noto-serif", "roboto-mono"}
+)
 
 
 def _deterministic_rng(namespace: str, *parts: object) -> random.Random:
@@ -40,7 +50,7 @@ def _deterministic_label(base_seed: int, row: int, col: int) -> str:
 
 
 def _geometry_profile(base_seed: int, rows: int, columns: int) -> dict[str, Any]:
-    rng = _deterministic_rng("geometry-2026.08.12.6", base_seed, rows, columns)
+    rng = _deterministic_rng("geometry-2026.08.12.7", base_seed, rows, columns)
     width = rng.randrange(820, 1241)
     margin_x = rng.randrange(22, 59)
     margin_y = rng.randrange(20, 53)
@@ -66,35 +76,84 @@ def _geometry_profile(base_seed: int, rows: int, columns: int) -> dict[str, Any]
     }
 
 
+def _resolve_registered_asset(relative_path: str, repository_root: Path) -> Path:
+    candidate = Path(relative_path)
+    if candidate.is_absolute() or ".." in candidate.parts:
+        raise ValueError(f"FONT_HOST_PATH_PROHIBITED: {relative_path}")
+    resolved = (repository_root / candidate).resolve()
+    try:
+        resolved.relative_to(repository_root.resolve())
+    except ValueError as error:
+        raise ValueError(f"FONT_PATH_ESCAPE: {relative_path}") from error
+    return resolved
+
+
+def _validate_font_inventory(
+    inventory_path: Path = FONT_INVENTORY_PATH,
+    repository_root: Path = REPOSITORY_ROOT,
+) -> tuple[dict[str, Any], ...]:
+    if not inventory_path.is_file():
+        raise FileNotFoundError(f"FONT_INVENTORY_MISSING: {inventory_path}")
+    inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+    if inventory.get("upstream_repository") != FONT_UPSTREAM_REPOSITORY:
+        raise ValueError("FONT_UPSTREAM_REPOSITORY_MISMATCH")
+    if inventory.get("upstream_commit") != FONT_UPSTREAM_COMMIT:
+        raise ValueError("FONT_UPSTREAM_COMMIT_MISMATCH")
+    assets = inventory.get("assets")
+    if not isinstance(assets, list):
+        raise ValueError("FONT_ASSET_LIST_MISSING")
+    families = {asset.get("font_family_id") for asset in assets}
+    if families != REGISTERED_FONT_FAMILIES or len(assets) != len(families):
+        raise ValueError(f"FONT_FAMILY_SET_MISMATCH: {sorted(families)}")
+    validated: list[dict[str, Any]] = []
+    for asset in sorted(assets, key=lambda item: item["font_family_id"]):
+        if asset.get("license_id") != "OFL-1.1":
+            raise ValueError(
+                f"FONT_LICENSE_NOT_APPROVED: {asset.get('font_family_id')}"
+            )
+        source_url = str(asset.get("source_url", ""))
+        required_prefix = (
+            f"https://raw.githubusercontent.com/google/fonts/"
+            f"{FONT_UPSTREAM_COMMIT}/ofl/"
+        )
+        if not source_url.startswith(required_prefix):
+            raise ValueError(
+                f"FONT_SOURCE_URL_NOT_FROZEN: {asset.get('font_family_id')}"
+            )
+        checked = dict(asset)
+        for path_key, sha_key, size_key in (
+            ("font_source", "font_source_sha256", "font_source_bytes"),
+            ("license_path", "license_sha256", "license_bytes"),
+            ("metadata_path", "metadata_sha256", "metadata_bytes"),
+        ):
+            relative_path = str(asset.get(path_key, ""))
+            resolved = _resolve_registered_asset(relative_path, repository_root)
+            if not resolved.is_file():
+                raise FileNotFoundError(
+                    f"FONT_REGISTERED_ASSET_MISSING: {relative_path}"
+                )
+            payload = resolved.read_bytes()
+            if len(payload) != int(asset.get(size_key, -1)):
+                raise ValueError(f"FONT_ASSET_SIZE_MISMATCH: {relative_path}")
+            if _sha256(payload) != asset.get(sha_key):
+                raise ValueError(f"FONT_ASSET_HASH_MISMATCH: {relative_path}")
+        validated.append(checked)
+    return tuple(validated)
+
+
 @lru_cache(maxsize=1)
-def _font_candidates() -> tuple[tuple[str, str, str], ...]:
-    candidates = (
-        ("arial", "/System/Library/Fonts/Supplemental/Arial.ttf"),
-        ("courier-new", "/System/Library/Fonts/Supplemental/Courier New.ttf"),
-        ("georgia", "/System/Library/Fonts/Supplemental/Georgia.ttf"),
-        ("times-new-roman", "/System/Library/Fonts/Supplemental/Times New Roman.ttf"),
-        ("dejavu-sans", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
-        ("dejavu-serif", "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"),
-        ("dejavu-mono", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"),
-    )
-    available: list[tuple[str, str, str]] = []
-    for family, raw_path in candidates:
-        path = Path(raw_path)
-        if path.is_file():
-            available.append((family, str(path), _sha256(path.read_bytes())))
-    if not available:
-        available.append(("pillow-default", "PILLOW_EMBEDDED_DEFAULT", "embedded"))
-    return tuple(available)
+def _font_candidates() -> tuple[dict[str, Any], ...]:
+    return _validate_font_inventory()
 
 
 def _render_profile(base_seed: int, phenomenon: str) -> dict[str, Any]:
-    rng = _deterministic_rng("renderer-2026.08.12.6", base_seed, phenomenon)
+    rng = _deterministic_rng("renderer-2026.08.12.7", base_seed, phenomenon)
     fonts = _font_candidates()
-    family, source, source_sha256 = fonts[rng.randrange(len(fonts))]
+    asset = fonts[rng.randrange(len(fonts))]
     return {
-        "font_family_id": family,
-        "font_source": source,
-        "font_source_sha256": source_sha256,
+        **asset,
+        "renderer_package": "Pillow",
+        "renderer_package_version": PILLOW_VERSION,
         "font_size": rng.randrange(9, 15),
         "text_rgb": [rng.randrange(18, 47), rng.randrange(24, 55), rng.randrange(30, 67)],
         "text_spacing": rng.randrange(1, 4),
@@ -326,7 +385,7 @@ def _gold_table(
     # body spans make the final Canonical state the source of truth while
     # providing enough structural families for split isolation at 40k scale.
     rng = _deterministic_rng(
-        "topology-2026.08.12.6", base_seed, rows, columns, phenomenon, category
+        "topology-2026.08.12.7", base_seed, rows, columns, phenomenon, category
     )
     candidates = [
         (row, col, 1, 2)
@@ -437,19 +496,17 @@ def _difference(prior: dict[str, Any], gold: dict[str, Any]) -> list[dict[str, A
 def _draw_table(
     table: dict[str, Any], phenomenon: str, base_seed: int
 ) -> tuple[bytes, str, dict[str, Any]]:
-    rng = _deterministic_rng("draw-2026.08.12.6", base_seed, phenomenon)
+    rng = _deterministic_rng("draw-2026.08.12.7", base_seed, phenomenon)
     width = int(max(cell["bbox"][2] for cell in table["cells"]) + rng.randrange(22, 61))
     height = int(max(cell["bbox"][3] for cell in table["cells"]) + 30)
     background = (248, 250, 252) if "color" in phenomenon else (255, 255, 255)
     image = Image.new("RGB", (width, height), background)
     draw = ImageDraw.Draw(image)
     render_profile = _render_profile(base_seed, phenomenon)
-    if render_profile["font_source"] == "PILLOW_EMBEDDED_DEFAULT":
-        font = ImageFont.load_default(size=render_profile["font_size"])
-    else:
-        font = ImageFont.truetype(
-            render_profile["font_source"], render_profile["font_size"]
-        )
+    font_path = _resolve_registered_asset(
+        render_profile["font_source"], REPOSITORY_ROOT
+    )
+    font = ImageFont.truetype(str(font_path), render_profile["font_size"])
     weak = "weak" in phenomenon or "missing" in phenomenon
     border = (210, 216, 224) if weak else (88, 98, 112)
     border_width = 1 if weak else 2
@@ -572,7 +629,7 @@ def _sample_shape(base_seed: int, config: dict[str, Any]) -> tuple[int, int]:
     ]
     if not choices:
         raise ValueError("no valid table shapes under the frozen configuration")
-    rng = _deterministic_rng("shape-2026.08.12.6", base_seed)
+    rng = _deterministic_rng("shape-2026.08.12.7", base_seed)
     return choices[rng.randrange(len(choices))]
 
 
@@ -684,7 +741,29 @@ def _make_record(
         },
         "rendering": {
             "parameters": render_parameters,
-            "font_sources": ["pillow-default-embedded-font"],
+            "font_sources": [
+                {
+                    key: render_parameters[key]
+                    for key in (
+                        "font_family_id",
+                        "font_source",
+                        "font_source_sha256",
+                        "font_source_bytes",
+                        "license_id",
+                        "license_path",
+                        "license_sha256",
+                        "license_bytes",
+                        "metadata_path",
+                        "metadata_sha256",
+                        "metadata_bytes",
+                        "upstream_repository",
+                        "upstream_commit",
+                        "source_url",
+                        "license_url",
+                        "metadata_url",
+                    )
+                }
+            ],
             "normalized_pixel_sha256": pixel_sha,
         },
         "payloads": {
@@ -844,6 +923,7 @@ def _overlap_report(records: list[dict[str, Any]], images: dict[str, bytes]) -> 
 
 
 def _license_manifest() -> dict[str, Any]:
+    font_assets = _font_candidates()
     return {
         "release": RELEASE,
         "decision": LICENSE_DECISION,
@@ -855,20 +935,17 @@ def _license_manifest() -> dict[str, Any]:
                 "local_research_use": True,
                 "terminal_derivation": False,
             },
-            {
-                "source_id": "pillow-default-embedded-font",
-                "origin": "PILLOW_RUNTIME",
-                "redistribution": False,
-                "local_research_use": True,
-                "terminal_derivation": False,
-            },
-            {
-                "source_id": "local-system-font-rebuild-only",
-                "origin": "LOCAL_SYSTEM_FONT_RUNTIME",
-                "redistribution": False,
-                "local_research_use": True,
-                "terminal_derivation": False,
-            },
+            *[
+                {
+                    "source_id": asset["font_family_id"],
+                    "origin": "GOOGLE_FONTS_PINNED_ASSET",
+                    "redistribution": True,
+                    "local_research_use": True,
+                    "terminal_derivation": False,
+                    **asset,
+                }
+                for asset in font_assets
+            ],
         ],
     }
 
@@ -892,6 +969,18 @@ def _validate_record_contract(record: dict[str, Any]) -> None:
         raise ValueError("TOKEN_OWNERSHIP_INVALID")
     if not _geometry_valid(record["gold"]) or not _geometry_valid(record["prior"]):
         raise ValueError("GEOMETRY_INVALID")
+    font_sources = record.get("rendering", {}).get("font_sources")
+    if not isinstance(font_sources, list) or len(font_sources) != 1:
+        raise ValueError("FONT_PROVENANCE_CARDINALITY_INVALID")
+    registered = {
+        asset["font_family_id"]: asset for asset in _font_candidates()
+    }
+    font_source = font_sources[0]
+    family = font_source.get("font_family_id")
+    if family not in registered or font_source != registered[family]:
+        raise ValueError("FONT_PROVENANCE_NOT_REGISTERED")
+    if record["identity"]["font_family_id"] != family:
+        raise ValueError("FONT_IDENTITY_MISMATCH")
 
 
 def _negative_grid_fixture() -> str:

@@ -26,15 +26,22 @@ OmniDocBench is used as one document-parsing evaluation protocol. The methods
 and infrastructure in this repository are designed around the broader research
 problem of table structure recognition.
 
-## Research snapshot 2026.08.12.5
+## Research snapshot 2026.08.13.1
 
-The `2026.08.12.5` snapshot establishes the shared representation, evaluation,
-and frozen shared-corpus builder for two independent modeling tracks. It
-includes Canonical Table normalization, order-invariant topology targets,
-candidate-integrity checks, table-only model interfaces, a sealed 256-record
-generator smoke, a preregistered 40,000-record corpus design, scalable overlap
-audits, and data-free regression tests. Model checkpoints and dataset payloads
-are maintained outside this repository.
+The `2026.08.13.1` snapshot establishes the shared representation and
+deterministic 40,000-record corpus foundation for two independent modeling
+tracks. The sealed shared corpus has 28,000 training, 8,000 development, and
+4,000 holdout records; it balances exact KEEP, hard KEEP, single minimal-edit,
+and complex-correction categories, with counterfactual groups and isolated
+roles. It includes Canonical Table normalization, order-invariant topology
+targets, candidate-integrity checks, deterministic font provenance, and
+data-free regression tests. Model checkpoints and dataset payloads are
+maintained outside this repository.
+
+The Explicit adapter and its E0 assurance have passed. Its E1 real-data local
+smoke is in preparation. The LoRA model-free adapter has passed; its L0
+processor and token audit is in preparation. Neither route has completed a
+local training smoke or full training.
 
 Project-authored releases follow calendar versioning:
 
@@ -54,18 +61,21 @@ The complete naming convention is documented in
 The explicit track treats a table as a structured object and predicts sparse,
 order-invariant topology changes. Text, geometry, and cell ownership remain
 separate signals so that a structural hypothesis can be inspected and replayed.
-The current repository includes the candidate representation, reversible
-interface, and validation primitives needed by the model.
+The current repository includes a topology-only candidate representation,
+default KEEP behavior, frozen OCR-token projection, minimal split/merge
+interfaces, shared validation primitives, and exact Raw rollback on a failed
+candidate.
 
 See [Explicit Layout Transformer](docs/methods/EXPLICIT_LAYOUT_TRANSFORMER_2026.08.12.1.md).
 
 ### LoRA Table Model
 
 The generative track studies parameter-efficient adaptation for direct
-Canonical Table prediction. Instead of imitating one serialized sequence of
-split and merge actions, the model produces a complete table hypothesis that
-can be evaluated against the same representation and metrics as the explicit
-track.
+Canonical Table prediction with a frozen visual path and language-decoder
+adapters. Instead of imitating one serialized sequence of split and merge
+actions, the model produces one complete table-only hypothesis that is strictly
+parsed, evaluated through the shared safety validator, and rolled back exactly
+to Raw when it is unsafe.
 
 The LoRA implementation and ablation studies are maintained as an independent
 research contribution and are integrated through the shared Canonical Table

@@ -18,9 +18,9 @@ from .synthetic_data import (
 )
 
 
-GENERATOR_RELEASE = "2026.08.12.6"
-DATASET_RELEASE = "shared-corpus-2026.08.12.2"
-PLAN_RELEASE = "latent-plan-2026.08.12.1"
+GENERATOR_RELEASE = "2026.08.12.7"
+DATASET_RELEASE = "shared-corpus-2026.08.12.3"
+PLAN_RELEASE = "latent-plan-2026.08.12.2"
 ROLE_ORDER = ("train", "development", "holdout")
 CATEGORY_ORDER = (
     "exact_keep",
@@ -116,7 +116,7 @@ def _stable_member_order(
         key = _sha256(
             _stable_json(
                 {
-                    "namespace": "component-first-family-pairing-2026.08.12.6",
+                    "namespace": "component-first-family-pairing-2026.08.12.7",
                     "category": category,
                     "phenomenon": phenomenon,
                     "ordinal": ordinal,

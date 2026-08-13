@@ -50,7 +50,10 @@ def test_public_explicit_interface_preserves_identity() -> None:
     candidate = build_explicit_topology_candidate(
         raw,
         partitions=None,
-        ocr_tokens=[{"text": "A"}, {"text": "B"}],
+        ocr_tokens=[
+            {"text": "A", "bbox": [0, 0, 10, 10]},
+            {"text": "B", "bbox": [10, 0, 20, 10]},
+        ],
     )
     assert candidate == raw
     assert candidate is not raw
@@ -71,7 +74,10 @@ def test_public_explicit_interface_is_reversible() -> None:
                 "col_end": 2,
             }
         ],
-        ocr_tokens=[{"text": "A"}, {"text": "B"}],
+        ocr_tokens=[
+            {"text": "A", "bbox": [0, 0, 10, 10]},
+            {"text": "B", "bbox": [10, 0, 20, 10]},
+        ],
     )
     assert candidate["canonical_table"]["cells"][0]["text"] == "AB"
     assert replay_explicit_to_raw(raw, candidate) == raw_snapshot

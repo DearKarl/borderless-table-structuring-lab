@@ -72,6 +72,28 @@ def _union_bbox(cells: Iterable[dict[str, Any]]) -> list[float]:
     ]
 
 
+def _token_bbox(indexes: list[int], ocr_tokens: list[dict[str, Any]]) -> list[float]:
+    boxes: list[list[float]] = []
+    for index in indexes:
+        if index >= len(ocr_tokens):
+            raise ValueError("OCR token index is outside the supplied sidecar")
+        value = ocr_tokens[index].get("bbox")
+        if not isinstance(value, list) or len(value) != 4:
+            raise ValueError("Split token geometry is missing")
+        box = [float(item) for item in value]
+        if box[2] <= box[0] or box[3] <= box[1]:
+            raise ValueError("Split token geometry is invalid")
+        boxes.append(box)
+    if not boxes:
+        raise ValueError("A split candidate cell must own at least one OCR token")
+    return [
+        min(box[0] for box in boxes),
+        min(box[1] for box in boxes),
+        max(box[2] for box in boxes),
+        max(box[3] for box in boxes),
+    ]
+
+
 def _ocr_text(indexes: list[int], ocr_tokens: list[dict[str, Any]]) -> str:
     if any(index >= len(ocr_tokens) for index in indexes):
         raise ValueError("OCR token index is outside the supplied sidecar")
@@ -106,9 +128,10 @@ def build_explicit_topology_candidate(
     """Build a reversible topology-only candidate with OCR-copy text.
 
     ``None`` is the preregistered default ``KEEP`` action and returns an exact
-    Raw copy. A changed proposal partitions every Raw cell exactly once. The
-    interface can merge or reorganize topology, but it cannot invent, drop,
-    duplicate, or rerecognize text tokens.
+    Raw copy. A changed proposal assigns each Raw OCR token to exactly one
+    candidate cell. A Raw cell may therefore be split into several candidate
+    cells, and several Raw cells may be merged into one candidate cell. Text is
+    always a deterministic projection of frozen OCR tokens.
     """
 
     if partitions is None:
@@ -122,7 +145,21 @@ def build_explicit_topology_candidate(
             raise ValueError("Raw cell IDs are not unique")
         indexed[cell_id] = cell
 
-    used: list[str] = []
+    raw_tokens_by_cell: dict[str, list[int]] = {
+        cell_id: _tokens(cell) for cell_id, cell in indexed.items()
+    }
+    raw_token_owner: dict[int, str] = {}
+    for cell_id, token_indexes in raw_tokens_by_cell.items():
+        for token_index in token_indexes:
+            if token_index >= len(ocr_tokens):
+                raise ValueError("Raw OCR token index is outside the supplied sidecar")
+            if token_index in raw_token_owner:
+                raise ValueError("Raw OCR token ownership is duplicated")
+            raw_token_owner[token_index] = cell_id
+    if set(raw_token_owner) != set(range(len(ocr_tokens))):
+        raise ValueError("Raw OCR token ownership must cover the sidecar exactly")
+
+    used_tokens: list[int] = []
     candidate_cells: list[dict[str, Any]] = []
     replay_partitions: list[dict[str, Any]] = []
     for index, partition in enumerate(partitions):
@@ -133,11 +170,38 @@ def build_explicit_topology_candidate(
             sources = [indexed[source_id] for source_id in source_ids]
         except KeyError as error:
             raise ValueError(f"Unknown Raw source cell ID: {error.args[0]}") from error
-        used.extend(source_ids)
-        token_indexes = sorted(index for cell in sources for index in _tokens(cell))
-        if len(token_indexes) != len(set(token_indexes)):
-            raise ValueError("A topology partition duplicates OCR token ownership")
+        declared_tokens = partition.get("ocr_token_indexes")
+        if declared_tokens is None:
+            token_indexes = sorted(
+                token_index
+                for source_id in source_ids
+                for token_index in raw_tokens_by_cell[source_id]
+            )
+        elif not isinstance(declared_tokens, list) or not all(
+            isinstance(token_index, int) and token_index >= 0
+            for token_index in declared_tokens
+        ):
+            raise ValueError("Candidate OCR token assignment is invalid")
+        else:
+            token_indexes = sorted(declared_tokens)
+        if not token_indexes or len(token_indexes) != len(set(token_indexes)):
+            raise ValueError("A candidate cell needs unique OCR token ownership")
+        allowed_tokens = {
+            token_index
+            for source_id in source_ids
+            for token_index in raw_tokens_by_cell[source_id]
+        }
+        if not set(token_indexes).issubset(allowed_tokens):
+            raise ValueError("Candidate OCR token is not owned by its Raw sources")
+        if set(source_ids) != {raw_token_owner[token_index] for token_index in token_indexes}:
+            raise ValueError("Candidate Raw sources do not exactly bind assigned tokens")
+        used_tokens.extend(token_indexes)
         candidate_id = str(partition.get("cell_id", f"explicit-{index:04d}"))
+        geometry = (
+            _union_bbox(sources)
+            if set(token_indexes) == allowed_tokens
+            else _token_bbox(token_indexes, ocr_tokens)
+        )
         candidate_cells.append(
             {
                 "cell_id": candidate_id,
@@ -148,22 +212,26 @@ def build_explicit_topology_candidate(
                 "text": _ocr_text(token_indexes, ocr_tokens),
                 "tag": "th" if all(str(cell.get("tag", "td")) == "th" for cell in sources) else "td",
                 "ocr_token_indexes": token_indexes,
-                "geometry": {"status": "present", "bbox": _union_bbox(sources)},
+                "geometry": {"status": "present", "bbox": geometry},
                 "source_raw_cell_ids": source_ids,
             }
         )
         replay_partitions.append(
-            {"candidate_cell_id": candidate_id, "source_raw_cell_ids": source_ids}
+            {
+                "candidate_cell_id": candidate_id,
+                "source_raw_cell_ids": source_ids,
+                "ocr_token_indexes": token_indexes,
+            }
         )
 
-    if len(used) != len(set(used)):
-        raise ValueError("A Raw cell is referenced by multiple topology partitions")
-    if set(used) != set(indexed):
-        raise ValueError("Topology proposal must cover every Raw cell exactly once")
+    if len(used_tokens) != len(set(used_tokens)):
+        raise ValueError("Candidate OCR token ownership is duplicated")
+    if set(used_tokens) != set(raw_token_owner):
+        raise ValueError("Candidate OCR token ownership must cover Raw exactly")
     candidate_rows = int(rows if rows is not None else raw_table["rows"])
     candidate_cols = int(cols if cols is not None else raw_table["cols"])
     return {
-        "schema_release": "explicit-topology-candidate-2026.08.12",
+        "schema_release": "explicit-topology-candidate-2026.08.13.1",
         "canonical_table": {
             "rows": candidate_rows,
             "cols": candidate_cols,
@@ -173,11 +241,11 @@ def build_explicit_topology_candidate(
             "route": "EXPLICIT_LAYOUT_TRANSFORMER",
             "scope": "TABLE_ONLY",
             "default_action": "KEEP",
-            "text_policy": "OCR_COPY_ONLY",
+            "text_policy": "FROZEN_TOKEN_PROJECTION",
             "full_page_rewrite": False,
         },
         "replay": {
-            "schema_release": "explicit-reversible-replay-2026.08.12",
+            "schema_release": "explicit-reversible-replay-2026.08.13.1",
             "raw_state_sha256": stable_sha256(raw_record),
             "partitions": replay_partitions,
         },

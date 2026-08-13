@@ -106,6 +106,9 @@ def test_counterfactual_pair_shares_edit_capable_gold_and_image() -> None:
         license_sha,
         schema,
         shared,
+        dataset_release="data-smoke-2026.08.12.4",
+        schema_release="synthetic-table-record-2026.08.12.4",
+        generator_release="2026.08.12.4",
     )
     edit, edit_image = _make_record(
         CoverageRequest(
@@ -118,6 +121,9 @@ def test_counterfactual_pair_shares_edit_capable_gold_and_image() -> None:
         license_sha,
         schema,
         shared,
+        dataset_release="data-smoke-2026.08.12.4",
+        schema_release="synthetic-table-record-2026.08.12.4",
+        generator_release="2026.08.12.4",
     )
     assert keep["gold"]["full_state_sha256"] == edit["gold"]["full_state_sha256"]
     assert keep_image == edit_image
@@ -142,6 +148,9 @@ def test_single_cross_role_structure_signal_is_not_a_hard_overlap() -> None:
         config,
         license_sha,
         schema,
+        dataset_release="data-smoke-2026.08.12.4",
+        schema_release="synthetic-table-record-2026.08.12.4",
+        generator_release="2026.08.12.4",
     )
     second, second_image = _make_record(
         CoverageRequest("exact_keep", "KEEP", "ordinary_grid", "holdout"),
@@ -151,6 +160,9 @@ def test_single_cross_role_structure_signal_is_not_a_hard_overlap() -> None:
         config,
         license_sha,
         schema,
+        dataset_release="data-smoke-2026.08.12.4",
+        schema_release="synthetic-table-record-2026.08.12.4",
+        generator_release="2026.08.12.4",
     )
     report = _overlap_report(
         [first, second],

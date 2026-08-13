@@ -14,7 +14,10 @@ from borderless_table_structuring.candidate_interfaces import (
 from borderless_table_structuring.safety_layer import ExpectedGainEvidence, stable_sha256
 
 
-OCR = [{"text": "A"}, {"text": "B"}]
+OCR = [
+    {"text": "A", "bbox": [0, 0, 10, 10]},
+    {"text": "B", "bbox": [10, 0, 20, 10]},
+]
 GAIN = ExpectedGainEvidence(0.1, "interface-fixture-2026.08.12", "NONTERMINAL_DEVELOPMENT")
 
 
@@ -100,9 +103,9 @@ def test_explicit_changed_topology_preserves_tokens_and_is_reversible():
     assert stable_sha256(replayed) == stable_sha256(raw)
 
 
-def test_explicit_rejects_duplicate_or_incomplete_source_coverage():
+def test_explicit_rejects_incomplete_token_coverage():
     raw = _raw_record()
-    with pytest.raises(ValueError, match="cover every Raw cell"):
+    with pytest.raises(ValueError, match="token ownership must cover Raw exactly"):
         build_explicit_topology_candidate(
             raw,
             partitions=[
