@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "borderless-table-structuring/synthetic-table-record/2026.08.12.5",
+  "title": "Synthetic Table Record 2026.08.12.5",
+  "type": "object",
+  "required": [
+    "schema_release",
+    "dataset_release",
+    "sample_id",
+    "role",
+    "gate_label",
+    "category",
+    "identity",
+    "provenance",
+    "rendering",
+    "payloads",
+    "gold",
+    "prior",
+    "views",
+    "audits"
+  ],
+  "properties": {
+    "schema_release": {"const": "synthetic-table-record-2026.08.12.5"},
+    "dataset_release": {"const": "shared-corpus-2026.08.12"},
+    "sample_id": {"type": "string", "pattern": "^shared-corpus-2026\\.08\\.12-[0-9]{6}$"},
+    "role": {"enum": ["train", "development", "holdout"]},
+    "gate_label": {"enum": ["KEEP", "EDIT", "QUARANTINE"]},
+    "category": {"enum": ["exact_keep", "hard_keep", "single_minimal_edit", "complex_correction"]},
+    "identity": {
+      "type": "object",
+      "required": ["generation_seed", "document_cluster_id", "source_family_id", "template_family_id", "content_family_id", "renderer_family_id", "font_family_id", "counterfactual_pair_id"],
+      "properties": {
+        "generation_seed": {"type": "integer", "minimum": 0},
+        "document_cluster_id": {"type": "string", "minLength": 1},
+        "source_family_id": {"type": "string", "minLength": 1},
+        "template_family_id": {"type": "string", "minLength": 1},
+        "content_family_id": {"type": "string", "minLength": 1},
+        "renderer_family_id": {"type": "string", "minLength": 1},
+        "font_family_id": {"type": "string", "minLength": 1},
+        "counterfactual_pair_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["generator_release", "source_id", "license_decision", "license_manifest_sha256", "terminal_inputs_used"],
+      "properties": {
+        "generator_release": {"const": "2026.08.12.5"},
+        "source_id": {"type": "string", "minLength": 1},
+        "license_decision": {"enum": ["APPROVED_REDISTRIBUTABLE", "APPROVED_REBUILD_ONLY", "QUARANTINED"]},
+        "license_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "terminal_inputs_used": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "rendering": {"type": "object", "required": ["parameters", "font_sources", "normalized_pixel_sha256"]},
+    "payloads": {"type": "object", "required": ["image_path", "image_sha256", "record_sha256"]},
+    "gold": {"$ref": "#/$defs/canonicalTable"},
+    "prior": {"$ref": "#/$defs/canonicalTable"},
+    "views": {
+      "type": "object",
+      "required": ["gate", "explicit", "lora"],
+      "properties": {
+        "gate": {"type": "object", "required": ["label", "false_edit_cost", "missed_edit_cost"]},
+        "explicit": {"type": "object", "required": ["prior_state_sha256", "order_invariant_difference", "raw_text_frozen"]},
+        "lora": {"type": "object", "required": ["complete_canonical_target", "table_only"]}
+      },
+      "additionalProperties": false
+    },
+    "audits": {
+      "type": "object",
+      "required": ["schema_valid", "canonical_legal", "prior_canonical_legal", "grid_complete", "prior_grid_complete", "gold_recompiled", "token_ownership_valid", "geometry_valid", "semantic_replay_valid", "normalized_pixel_replay_valid", "cross_role_overlap_clear"]
+    }
+  },
+  "$defs": {
+    "canonicalTable": {
+      "type": "object",
+      "required": ["rows", "columns", "cells", "tokens", "semantic_state_sha256", "full_state_sha256"],
+      "properties": {
+        "rows": {"type": "integer", "minimum": 1},
+        "columns": {"type": "integer", "minimum": 1},
+        "cells": {"type": "array", "minItems": 1},
+        "tokens": {"type": "array"},
+        "semantic_state_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "full_state_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

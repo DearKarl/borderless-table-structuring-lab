@@ -1,0 +1,58 @@
+{
+  "configuration_release": "2026.08.12.7",
+  "dataset_release": "shared-corpus-2026.08.12.3",
+  "generator_release": "2026.08.12.7",
+  "schema_release": "synthetic-table-record-2026.08.12.7",
+  "seed_namespace": "borderless-table-structuring-shared-corpus-2026.08.12.3",
+  "seed_start": 202608120000000,
+  "requested_records": 40000,
+  "allow_failed_seed_replacement": false,
+  "font_inventory": "assets/fonts/FONT_ASSET_INVENTORY_2026.08.12.1.json",
+  "font_policy": {
+    "allowed_license_ids": ["OFL-1.1"],
+    "system_fonts_allowed": false,
+    "embedded_fallback_allowed": false,
+    "network_loading_during_generation_allowed": false,
+    "silent_substitution_allowed": false
+  },
+  "categories": {
+    "exact_keep": {"count": 10000, "gate_label": "KEEP"},
+    "hard_keep": {"count": 10000, "gate_label": "KEEP"},
+    "single_minimal_edit": {"count": 10000, "gate_label": "EDIT"},
+    "complex_correction": {"count": 10000, "gate_label": "EDIT"}
+  },
+  "roles_per_category": {
+    "train": 7000,
+    "development": 2000,
+    "holdout": 1000
+  },
+  "counterfactual_pairs": {
+    "minimum_pairs": 10000,
+    "same_role_required": true
+  },
+  "structure": {
+    "rows": {"minimum": 3, "maximum": 28},
+    "columns": {"minimum": 2, "maximum": 14},
+    "header_depth": {"minimum": 1, "maximum": 4},
+    "maximum_cells": 240
+  },
+  "release_stages": {
+    "latent_plan_records": 40000,
+    "adversarial_rendered_smoke_records": 4096,
+    "scale_extrapolation_stress_records": 16384,
+    "corpus_candidate_records": 40000
+  },
+  "hard_gates": {
+    "cross_role_exact_overlap_maximum": 0,
+    "cross_role_unresolved_near_overlap_maximum": 0,
+    "builder_verifier_disagreements_maximum": 0,
+    "manual_waiver_allowed": false,
+    "training_requires_train_ready_seal": true
+  },
+  "execution": {
+    "cpu_first": true,
+    "progress_interval_records": 500,
+    "terminal_inputs_used": false,
+    "model_training": false
+  }
+}

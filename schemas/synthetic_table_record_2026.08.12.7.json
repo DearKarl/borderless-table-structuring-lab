@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "borderless-table-structuring/synthetic-table-record/2026.08.12.7",
+  "title": "Synthetic Table Record 2026.08.12.7",
+  "type": "object",
+  "required": [
+    "schema_release", "dataset_release", "sample_id", "role", "gate_label",
+    "category", "identity", "provenance", "rendering", "payloads", "gold",
+    "prior", "views", "audits"
+  ],
+  "properties": {
+    "schema_release": {"const": "synthetic-table-record-2026.08.12.7"},
+    "dataset_release": {"const": "shared-corpus-2026.08.12.3"},
+    "sample_id": {
+      "type": "string",
+      "pattern": "^shared-corpus-2026\\.08\\.12\\.3-[0-9]{6}$"
+    },
+    "role": {"enum": ["train", "development", "holdout"]},
+    "gate_label": {"enum": ["KEEP", "EDIT", "QUARANTINE"]},
+    "category": {
+      "enum": [
+        "exact_keep", "hard_keep", "single_minimal_edit", "complex_correction"
+      ]
+    },
+    "identity": {
+      "type": "object",
+      "required": [
+        "generation_seed", "document_cluster_id", "source_family_id",
+        "template_family_id", "content_family_id", "renderer_family_id",
+        "font_family_id", "counterfactual_pair_id", "generative_family_key",
+        "generative_components", "counterfactual_group_id", "family_nonce",
+        "base_seed"
+      ],
+      "properties": {
+        "generation_seed": {"type": "integer", "minimum": 0},
+        "document_cluster_id": {"type": "string", "minLength": 1},
+        "source_family_id": {"type": "string", "minLength": 1},
+        "template_family_id": {"type": "string", "minLength": 1},
+        "content_family_id": {"type": "string", "minLength": 1},
+        "renderer_family_id": {"type": "string", "minLength": 1},
+        "font_family_id": {"enum": ["noto-sans", "noto-serif", "roboto-mono"]},
+        "counterfactual_pair_id": {"type": ["string", "null"]},
+        "generative_family_key": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "generative_components": {
+          "type": "object",
+          "required": ["structure", "content", "geometry", "renderer"],
+          "additionalProperties": false,
+          "properties": {
+            "structure": {"type": "object"},
+            "content": {"type": "object"},
+            "geometry": {"type": "object"},
+            "renderer": {"type": "object"}
+          }
+        },
+        "counterfactual_group_id": {"type": ["string", "null"]},
+        "family_nonce": {"type": "integer", "minimum": 0},
+        "base_seed": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_release", "source_id", "license_decision",
+        "license_manifest_sha256", "terminal_inputs_used"
+      ],
+      "properties": {
+        "generator_release": {"const": "2026.08.12.7"},
+        "source_id": {"const": "project-authored-synthetic-content"},
+        "license_decision": {
+          "enum": ["APPROVED_REDISTRIBUTABLE", "APPROVED_REBUILD_ONLY"]
+        },
+        "license_manifest_sha256": {
+          "type": "string", "pattern": "^[0-9a-f]{64}$"
+        },
+        "terminal_inputs_used": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "rendering": {
+      "type": "object",
+      "required": ["parameters", "font_sources", "normalized_pixel_sha256"],
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "required": [
+            "font_family_id", "font_source", "font_source_sha256",
+            "font_source_bytes", "license_id", "license_path",
+            "license_sha256", "license_bytes", "metadata_path",
+            "metadata_sha256", "metadata_bytes", "upstream_repository",
+            "upstream_commit", "source_url", "license_url", "metadata_url", "renderer_package",
+            "renderer_package_version", "font_size"
+          ],
+          "properties": {
+            "font_family_id": {"enum": ["noto-sans", "noto-serif", "roboto-mono"]},
+            "font_source": {
+              "type": "string",
+              "pattern": "^assets/fonts/(notosans|notoserif|robotomono)/[^/]+\\.ttf$"
+            },
+            "font_source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "font_source_bytes": {"type": "integer", "minimum": 1},
+            "license_id": {"const": "OFL-1.1"},
+            "license_path": {
+              "type": "string",
+              "pattern": "^assets/fonts/(notosans|notoserif|robotomono)/OFL\\.txt$"
+            },
+            "license_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "license_bytes": {"type": "integer", "minimum": 1},
+            "metadata_path": {
+              "type": "string",
+              "pattern": "^assets/fonts/(notosans|notoserif|robotomono)/METADATA\\.pb$"
+            },
+            "metadata_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "metadata_bytes": {"type": "integer", "minimum": 1},
+            "upstream_repository": {"const": "https://github.com/google/fonts"},
+            "upstream_commit": {"const": "038b637da7b3fd956a4ed93ffc607c3d5e4ce172"},
+            "source_url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/"
+            },
+            "license_url": {"type": "string", "minLength": 1},
+            "metadata_url": {"type": "string", "minLength": 1},
+            "renderer_package": {"const": "Pillow"},
+            "renderer_package_version": {"type": "string", "minLength": 1},
+            "font_size": {"type": "integer", "minimum": 1}
+          },
+          "additionalProperties": true
+        },
+        "font_sources": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {"$ref": "#/$defs/fontAsset"}
+        },
+        "normalized_pixel_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "payloads": {
+      "type": "object",
+      "required": ["image_path", "image_sha256", "record_sha256"]
+    },
+    "gold": {"$ref": "#/$defs/canonicalTable"},
+    "prior": {"$ref": "#/$defs/canonicalTable"},
+    "views": {
+      "type": "object",
+      "required": ["gate", "explicit", "lora"],
+      "properties": {
+        "gate": {"type": "object", "required": ["label", "false_edit_cost", "missed_edit_cost"]},
+        "explicit": {"type": "object", "required": ["prior_state_sha256", "order_invariant_difference", "raw_text_frozen"]},
+        "lora": {"type": "object", "required": ["complete_canonical_target", "table_only"]}
+      },
+      "additionalProperties": false
+    },
+    "audits": {
+      "type": "object",
+      "required": [
+        "schema_valid", "canonical_legal", "prior_canonical_legal",
+        "grid_complete", "prior_grid_complete", "gold_recompiled",
+        "token_ownership_valid", "geometry_valid", "semantic_replay_valid",
+        "normalized_pixel_replay_valid", "cross_role_overlap_clear"
+      ]
+    }
+  },
+  "$defs": {
+    "fontAsset": {
+      "type": "object",
+      "required": [
+        "font_family_id", "font_source", "font_source_sha256",
+        "font_source_bytes", "license_id", "license_path", "license_sha256",
+        "license_bytes", "metadata_path", "metadata_sha256", "metadata_bytes",
+        "upstream_repository", "upstream_commit", "source_url", "license_url", "metadata_url"
+      ],
+      "properties": {
+        "font_family_id": {"enum": ["noto-sans", "noto-serif", "roboto-mono"]},
+        "font_source": {"type": "string", "pattern": "^assets/fonts/"},
+        "font_source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "font_source_bytes": {"type": "integer", "minimum": 1},
+        "license_id": {"const": "OFL-1.1"},
+        "license_path": {"type": "string", "pattern": "^assets/fonts/"},
+        "license_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "license_bytes": {"type": "integer", "minimum": 1},
+        "metadata_path": {"type": "string", "pattern": "^assets/fonts/"},
+        "metadata_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "metadata_bytes": {"type": "integer", "minimum": 1},
+        "upstream_repository": {"const": "https://github.com/google/fonts"},
+        "upstream_commit": {"const": "038b637da7b3fd956a4ed93ffc607c3d5e4ce172"},
+        "source_url": {"type": "string", "minLength": 1},
+        "license_url": {"type": "string", "minLength": 1},
+        "metadata_url": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "canonicalTable": {
+      "type": "object",
+      "required": [
+        "rows", "columns", "cells", "tokens", "full_state_sha256",
+        "semantic_state_sha256"
+      ],
+      "properties": {
+        "rows": {"type": "integer", "minimum": 1},
+        "columns": {"type": "integer", "minimum": 1},
+        "cells": {"type": "array", "minItems": 1},
+        "tokens": {"type": "array"},
+        "full_state_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "semantic_state_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

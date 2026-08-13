@@ -4,6 +4,7 @@
 .idea/
 .vscode/
 .venv/
+.venv*/
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -49,3 +50,7 @@ raw_preserving_smoke_*.jsonl
 *.key
 credentials.json
 token.json
+
+# Internal coordination records stay in the parent workspace, not this lab repo.
+governance/
+evidence/

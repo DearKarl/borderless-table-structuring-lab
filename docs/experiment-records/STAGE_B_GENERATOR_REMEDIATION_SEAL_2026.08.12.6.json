@@ -1,0 +1,27 @@
+{
+  "schema_version": "borderless-table-structuring/stage-b-generator-remediation-seal-2026.08.12.6",
+  "status": "STAGE_B_PASS_AWAITING_USER_NOTIFICATION_BEFORE_STAGE_C",
+  "generator_release": "2026.08.12.6",
+  "contract": {
+    "path": "POST_OMNIDOCBENCH_EXECUTION_CONTRACT_V8.md",
+    "sha256": "e62f1fa6fb5a84c8b919256531ca2665c179607a8c84ff1da7f9f6ec15405cc6"
+  },
+  "evidence_card": {
+    "path": "EVIDENCE_CARD_GENERATOR_REMEDIATION_2026.08.12.6.md",
+    "sha256": "e1086ee5931560522ff5765b6016a9ab02ed7985b95c85084e4921741b2fe1f9"
+  },
+  "verification": {
+    "tests_passed": 54,
+    "tests_failed": 0,
+    "component_first_split_assignment": true,
+    "role_free_family_construction": true,
+    "previous_collision_fixture_rejected": true,
+    "training_interlock_passed": true,
+    "terminal_inputs_used": false,
+    "model_training_started": false
+  },
+  "next_stage": "STAGE_C_FULL_SIZE_LATENT_PLAN_PREFLIGHT",
+  "stage_c_started": false,
+  "user_notification_required_before_stage_c": true,
+  "model_training_authorized": false
+}

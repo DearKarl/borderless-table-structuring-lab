@@ -1,0 +1,62 @@
+{
+  "inventory_release": "2026.08.12.1",
+  "upstream_repository": "https://github.com/google/fonts",
+  "upstream_commit": "038b637da7b3fd956a4ed93ffc607c3d5e4ce172",
+  "license_policy": "OFL-1.1_ONLY",
+  "assets": [
+    {
+      "font_family_id": "noto-sans",
+      "font_source": "assets/fonts/notosans/NotoSans[wdth,wght].ttf",
+      "font_source_sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+      "font_source_bytes": 2049096,
+      "license_id": "OFL-1.1",
+      "license_path": "assets/fonts/notosans/OFL.txt",
+      "license_sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+      "license_bytes": 4396,
+      "metadata_path": "assets/fonts/notosans/METADATA.pb",
+      "metadata_sha256": "9fd9566184e9833ae3a33b8950e2782a8abb1f0a9d6fb2c51b3fb615f2d78cfe",
+      "metadata_bytes": 32340,
+      "upstream_repository": "https://github.com/google/fonts",
+      "upstream_commit": "038b637da7b3fd956a4ed93ffc607c3d5e4ce172",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/notosans/NotoSans%5Bwdth%2Cwght%5D.ttf",
+      "license_url": "https://raw.githubusercontent.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/notosans/OFL.txt",
+      "metadata_url": "https://raw.githubusercontent.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/notosans/METADATA.pb"
+    },
+    {
+      "font_family_id": "noto-serif",
+      "font_source": "assets/fonts/notoserif/NotoSerif[wdth,wght].ttf",
+      "font_source_sha256": "4d8e6761424656867019081a1a01336f3cb086982682698714054fc33f782713",
+      "font_source_bytes": 1887192,
+      "license_id": "OFL-1.1",
+      "license_path": "assets/fonts/notoserif/OFL.txt",
+      "license_sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+      "license_bytes": 4396,
+      "metadata_path": "assets/fonts/notoserif/METADATA.pb",
+      "metadata_sha256": "659cf6a2475eabfa3e3bbb92e3ed15c604e6fb035b3b1057d469cc88e67357bb",
+      "metadata_bytes": 29397,
+      "upstream_repository": "https://github.com/google/fonts",
+      "upstream_commit": "038b637da7b3fd956a4ed93ffc607c3d5e4ce172",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/notoserif/NotoSerif%5Bwdth%2Cwght%5D.ttf",
+      "license_url": "https://raw.githubusercontent.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/notoserif/OFL.txt",
+      "metadata_url": "https://raw.githubusercontent.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/notoserif/METADATA.pb"
+    },
+    {
+      "font_family_id": "roboto-mono",
+      "font_source": "assets/fonts/robotomono/RobotoMono[wght].ttf",
+      "font_source_sha256": "66a80e79d17e4c7cabd162e2916578a4cc08fd19eef6e2a643305eae9c567b2b",
+      "font_source_bytes": 183700,
+      "license_id": "OFL-1.1",
+      "license_path": "assets/fonts/robotomono/OFL.txt",
+      "license_sha256": "50ab8dd54680d3473f649c9db86fece88434d097c7834475c1c72d2f8c429215",
+      "license_bytes": 4395,
+      "metadata_path": "assets/fonts/robotomono/METADATA.pb",
+      "metadata_sha256": "8aa7709a44aa1f10bc5f4710af9440e364d2fb4e6056cc05a0e9d0d40826a9b5",
+      "metadata_bytes": 1353,
+      "upstream_repository": "https://github.com/google/fonts",
+      "upstream_commit": "038b637da7b3fd956a4ed93ffc607c3d5e4ce172",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/robotomono/RobotoMono%5Bwght%5D.ttf",
+      "license_url": "https://raw.githubusercontent.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/robotomono/OFL.txt",
+      "metadata_url": "https://raw.githubusercontent.com/google/fonts/038b637da7b3fd956a4ed93ffc607c3d5e4ce172/ofl/robotomono/METADATA.pb"
+    }
+  ]
+}
