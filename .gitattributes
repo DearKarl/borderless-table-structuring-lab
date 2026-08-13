@@ -1,0 +1,20 @@
+# Evidence cards are sealed by SHA256 over their bytes, so the checked-out bytes
+# must be identical on every platform. Without this, a Windows checkout under
+# core.autocrlf=true rewrites LF to CRLF and every sealed artifact fails to
+# verify. Measured on 5820ff3, all three sealed evidence cards mismatched in a
+# Windows working tree while their LF blobs matched the recorded digests
+# exactly, confirming line endings rather than content drift as the cause.
+* text=auto eol=lf
+
+# Font binaries carry the provenance work and must never be line-ending
+# normalized; three of them legitimately contain CR bytes.
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.zip binary
