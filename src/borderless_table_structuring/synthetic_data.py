@@ -9,7 +9,7 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from functools import lru_cache
 from io import BytesIO
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any, Iterable
 
 from jsonschema import Draft202012Validator
@@ -78,7 +78,15 @@ def _geometry_profile(base_seed: int, rows: int, columns: int) -> dict[str, Any]
 
 def _resolve_registered_asset(relative_path: str, repository_root: Path) -> Path:
     candidate = Path(relative_path)
-    if candidate.is_absolute() or ".." in candidate.parts:
+    # Path() follows the host flavour, so a POSIX absolute path is not absolute on
+    # Windows and a drive-letter path is not absolute on POSIX. Registered assets
+    # must be rejected under either flavour, independently of where this runs.
+    if (
+        candidate.is_absolute()
+        or PurePosixPath(relative_path).is_absolute()
+        or PureWindowsPath(relative_path).is_absolute()
+        or ".." in candidate.parts
+    ):
         raise ValueError(f"FONT_HOST_PATH_PROHIBITED: {relative_path}")
     resolved = (repository_root / candidate).resolve()
     try:
