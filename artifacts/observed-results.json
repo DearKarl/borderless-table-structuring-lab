@@ -1,0 +1,44 @@
+{
+  "schema": "project-observed-results/v1",
+  "as_of": "2026-09-13",
+  "scope": "Highest evidenced completed results in this project, not a global SOTA claim or verified public leaderboard listing.",
+  "protocol": "Local frozen OmniDocBench full-page official protocol, page-macro full Table TEDS",
+  "pages": 1651,
+  "table_samples": 764,
+  "evaluator_commit": "147cd5ac9472002f5751221d390bf00abdbc0d2f",
+  "success_threshold": {"metric": "full_table_teds", "operator": ">", "value": 95.0},
+  "training": {
+    "name": "Explicit-v2 Original",
+    "full_table_teds": 93.0862668980718,
+    "structure_table_teds": 95.70961193860337,
+    "adopted_edits": 0,
+    "interpretation": "Equals fixed MinerU Raw; no observed learned correction gain.",
+    "checkpoint_sha256": "c1615ce37de058e82b0ec33a84fb06afb25d4f6d4dfa401ff1e67f9d547019f0",
+    "prediction_seal_sha256": "4232aa86a6343f87eec17cd9eeb7606a059a5d42e5186a2a096c95417b1f1120",
+    "aggregate_source_sha256": "a3e26a56157d6e4301d6df47af572f823f86062aaaf3be0b7dfb1e94c5c377c2",
+    "weight_release_status": "PENDING_EXACT_LOCAL_WEIGHT_RESTORATION",
+    "target_achieved": false
+  },
+  "hybrid": {
+    "name": "Frozen anchored PP-OCRv5 and Tesseract sidecar 2026.09.09.2",
+    "full_table_teds": 93.08808257262936,
+    "structure_table_teds": 95.70961193860337,
+    "delta_full_vs_raw_points": 0.0018156745575623745,
+    "committed_cells": 2,
+    "changed_pages": 2,
+    "interpretation": "Tiny completed system gain; known continuation-line crop defect; research-only.",
+    "paired_summary_sha256": "99dfb9d59537949b1c3f44b362761a757eee9d69566e36dd4d4e07630b35689f",
+    "paired_ready_sha256": "20548f529efcf73387e9743ff8df8e0e9c1ef45dd21b3ab607c62e0865563533",
+    "correction_receipt_sha256": "262d27484d64f3a20ceaa8a420df80ad18615fe69c64284156f2d93910569059",
+    "portable_adapter_full_benchmark_status": "NOT_SEPARATELY_SCORED",
+    "target_achieved": false
+  },
+  "current_attempt": {
+    "name": "Local native NaviDC table collection",
+    "status": "IN_PROGRESS_NOT_A_RELEASED_WINNER",
+    "full_table_teds": null,
+    "structure_table_teds": null,
+    "training": false
+  },
+  "distribution_boundary": "Aggregate metadata only. Private pages, reference answers, per-record results, credentials and historical contracts are not distributed. Source receipts remain in the internal archive."
+}

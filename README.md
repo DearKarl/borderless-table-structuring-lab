@@ -1,237 +1,65 @@
 # Borderless Table Structuring Lab
 
-Research on recovering table structure from weak or absent visual boundaries.
-The repository brings together canonical table representations, controlled
-data generation, explicit topology modeling, and parameter-efficient
-generative adaptation in a shared experimental framework.
+Correcting a fixed MinerU parser through two separate routes: **Training** and **Hybrid**. Neither route has achieved our target: **Official OmniDocBench full Table TEDS strictly greater than 95.00**.
 
-## Overview
+## Current results
 
-Borderless tables rarely expose their structure through ruling lines alone.
-Their latent grid must be inferred from alignment, spacing, typography,
-semantic grouping, spanning cells, and document context. Small structural
-errors can then propagate into reading order, cell ownership, and content
-alignment.
+These are local executions of the complete official protocol, not verified public leaderboard listings. Scores are full Table TEDS, not Overall or structure-only scores. The complete input contains 1,651 pages.
 
-This lab studies the problem at three connected levels:
+| Route / version | Full TEDS | Structure TEDS | Interpretation |
+|---|---:|---:|---|
+| Fixed MinerU Raw | 93.0862668980718 | 95.70961193860337 | Production fallback |
+| **Training: Explicit-v2 Original** | **93.0862668980718** | 95.70961193860337 | Best verified trained checkpoint; zero adopted edits, equal to Raw |
+| **Hybrid: anchored PP-OCRv5 + Tesseract** | **93.08808257262936** | 95.70961193860337 | Highest completed system aggregate; tiny gain and known crop defect |
+| Hybrid: native NaviDC table collection | Pending | Pending | Current local full evaluation; not a released winner |
 
-- **Representation:** how to describe topology, geometry, and content without
-  tying the target to one arbitrary edit sequence.
-- **Learning:** how explicit structural prediction and generative adaptation
-  behave under the same data and evaluation conditions.
-- **Data:** how to construct reproducible, source-traceable corpora that expose
-  structural phenomena systematically rather than through incidental examples.
+Hybrid's completed gain is only **0.0018156746 percentage points**. It is research-only, not a reliable production corrector. The ongoing NaviDC attempt is not promoted before its full result. This release consolidates existing work for collaborators; no further optimization is underway. [Aggregate result metadata and evidence hashes](artifacts/observed-results.json) identify the archived results without distributing benchmark data.
 
-OmniDocBench is used as one document-parsing evaluation protocol. The methods
-and infrastructure in this repository are designed around the broader research
-problem of table structure recognition.
+## Training route
 
-## Research snapshot 2026.08.13.1
+A learned Explicit model predicts structured repairs on top of MinerU outputs. The best evidenced checkpoint is **Explicit-v2 Original**, `checkpoint-003111-joint_low_lr`. Later evaluated trained variants scored lower.
 
-The `2026.08.13.1` snapshot establishes the shared representation and
-deterministic 40,000-record corpus foundation for two independent modeling
-tracks. The sealed shared corpus has 28,000 training, 8,000 development, and
-4,000 holdout records; it balances exact KEEP, hard KEEP, single minimal-edit,
-and complex-correction categories, with counterfactual groups and isolated
-roles. It includes Canonical Table normalization, order-invariant topology
-targets, candidate-integrity checks, deterministic font provenance, and
-data-free regression tests. Model checkpoints and dataset payloads are
-maintained outside this repository.
+**Exact winning weights are currently missing from the local release workspace.** [Training documentation](training/README.md) and [model metadata](training/model_manifest.json) preserve the result and identity. No lower-scoring checkpoint or third-party MinerU weights are substituted. This is not yet a downloadable Training model release.
 
-The Explicit adapter and its E0 assurance have passed. Its E1 real-data local
-smoke is in preparation. The LoRA model-free adapter has passed; its L0
-processor and token audit is in preparation. Neither route has completed a
-local training smoke or full training.
+## Hybrid route
 
-Project-authored releases follow calendar versioning:
+No new project model is trained. Fixed MinerU Raw outputs, image-only OCR geometry, PP-OCRv5 recognition, and Tesseract recognition are combined through a frozen, conservative ASCII cell-text policy. Exact table markup and cell count are preserved.
 
-- research snapshots: `2026.08.12`, `2026.09.03`, and so on;
-- same-day revisions: `2026.08.12.1`, `2026.08.12.2`, `2026.08.12.3`,
-  `2026.08.12.4`, and so on;
-- model artifacts: `explicit-2026.08.12` and `lora-2026.08.12`.
+Read the [Hybrid guide](hybrid/README.md) for installation, input formats, token detection, correction commands, runtime versions, and limitations. The portable table adapter preserves the archived policy but is **not itself a newly scored full-benchmark run**. Its known continuation-line crop defect is disclosed, not silently repaired while retaining the old score.
 
-External software and benchmark releases retain their original upstream names.
-The complete naming convention is documented in
-[CONTRIBUTING.md](CONTRIBUTING.md#calendar-versioning).
-
-## Research tracks
-
-### Explicit Layout Transformer
-
-The explicit track treats a table as a structured object and predicts sparse,
-order-invariant topology changes. Text, geometry, and cell ownership remain
-separate signals so that a structural hypothesis can be inspected and replayed.
-The current repository includes a topology-only candidate representation,
-default KEEP behavior, frozen OCR-token projection, minimal split/merge
-interfaces, shared validation primitives, and exact Raw rollback on a failed
-candidate.
-
-See [Explicit Layout Transformer](docs/methods/EXPLICIT_LAYOUT_TRANSFORMER_2026.08.12.1.md).
-
-### LoRA Table Model
-
-The generative track studies parameter-efficient adaptation for direct
-Canonical Table prediction with a frozen visual path and language-decoder
-adapters. Instead of imitating one serialized sequence of split and merge
-actions, the model produces one complete table-only hypothesis that is strictly
-parsed, evaluated through the shared safety validator, and rolled back exactly
-to Raw when it is unsafe.
-
-The LoRA implementation and ablation studies are maintained as an independent
-research contribution and are integrated through the shared Canonical Table
-interface.
-
-## Shared experimental foundation
-
-```mermaid
-flowchart LR
-    A["Table image and document context"] --> B["Visual, OCR, and geometry evidence"]
-    B --> C["Canonical Table representation"]
-    C --> D["Explicit topology model"]
-    C --> E["LoRA generative model"]
-    D --> F["Comparable table hypothesis"]
-    E --> F
-    F --> G["Topology, location, and content evaluation"]
-```
-
-The common foundation provides:
-
-- a canonical representation of rows, columns, spans, text, and geometry;
-- direct-state and order-invariant structural supervision;
-- deterministic rendering and synthetic-phenomenon generation;
-- token-ownership and geometry-integrity checks;
-- reproducible manifests, hashes, split isolation, and evidence records;
-- route-independent metrics, including GriTS and TEDS-compatible adapters.
-
-## Repository layout
-
-```text
-borderless-table-structuring-lab/
-├── dataset/                   # External dataset registry; no payloads
-├── docs/
-│   ├── corpus/                # CalVer data specifications and policies
-│   ├── experiment-records/    # Sealed public research evidence
-│   ├── methods/               # CalVer research-track formulations
-│   └── REPRODUCIBILITY_2026.08.12.1.md
-├── configs/                   # Calendar-versioned generation parameters
-├── schemas/                   # Calendar-versioned record schemas
-├── scripts/                   # Calendar-versioned corpus entry points
-├── src/borderless_table_structuring/
-│   ├── canonical.py           # Canonical table normalization
-│   ├── shared_corpus.py       # Streaming shared-corpus build and audit
-│   ├── explicit.py            # Public Explicit-route interface
-│   ├── candidate_interfaces.py
-│   ├── candidate_integrity.py
-│   ├── labels.py
-│   └── safety_layer.py
-└── tests/                     # Synthetic, data-free regression tests
-```
-
-The research tracks use the model names **Explicit Layout Transformer** and
-**LoRA Table Model**. Project-authored identifiers use the same calendar
-release as the surrounding research snapshot.
-
-## Canonical Table representation
-
-A record connects the rendered observation to an explicit table state:
-
-- logical grid dimensions and cell spans;
-- physical cell geometry;
-- OCR tokens, confidence, and unique cell ownership;
-- source, renderer, template, and content provenance;
-- deterministic generation parameters and hashes;
-- direct Canonical Table supervision;
-- an order-invariant structural difference when a prior state is available.
-
-Ordered action programs may be retained for analysis, but they are not treated
-as the unique description of a correct table.
-
-## Data methodology
-
-The data pipeline is designed to vary structure and appearance independently.
-Structural families include hierarchical headers, row and column spans,
-mixed-dimensional spans, empty cells, and localized split/merge corrections.
-Rendering families cover border visibility, typography, resolution, rotation,
-compression, blur, background, and scanning artifacts.
-
-Dataset roles are assigned by document, template, content, renderer, and seed
-families before rendering. Exact and near-duplicate audits operate on images,
-text, normalized structure, geometry, and provenance. See the
-[shared-corpus specification](docs/corpus/SHARED_CORPUS_SPECIFICATION_2026.08.12.md)
-and [data governance guide](docs/corpus/DATA_GOVERNANCE_2026.08.12.1.md).
-
-## Installation
-
-Python 3.10 or newer is required.
+## Download and run
 
 ```bash
 git clone https://github.com/DearKarl/borderless-table-structuring-lab.git
 cd borderless-table-structuring-lab
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e '.[dev]'
+python3 scripts/download_release.py --route hybrid --output models/hybrid
 ```
 
-Run the data-free test suite:
+The downloader verifies archive parts and every extracted file and refuses an existing output directory. Mirrored large assets live in the `hybrid-2026.09.13.1` GitHub Release, not Git history. The converted PP-OCR recognizer is fetched from its **pinned official upstream revision**, with the recorded SHA256, instead of being mirrored or relicensed here. See [artifact inventory](artifacts/hybrid-2026.09.13.1.json).
 
-```bash
-pytest
+Continue with [Hybrid setup and commands](hybrid/README.md). Locator and correction use separate pinned Python environments; install native Tesseract for your platform. MinerU base weights are included for provenance and optional upstream parsing. The historical Raw score used MLX on Apple Silicon, not an interchangeable generic backend.
+
+Use your own matching table image and Raw HTML. No benchmark images, Gold, customer data, or historical execution contracts are distributed. Data-free integration checks are not TEDS gains.
+
+## Layout
+
+```text
+training/       Best trained checkpoint identity, result, restoration verifier
+hybrid/         Best completed policy and portable inference tools
+artifacts/      File inventory, pinned downloads, checksums
+scripts/        Verified model downloader
+notices/        Third-party licenses and provenance
+tests/          Data-free package/interface checks
 ```
 
-Generate the bounded synthetic-data smoke into a new external payload path:
+Earlier research files remain recoverable in Git history at commit `0f28d9512825101e61a0f9480e4815b9f1e75261`. Cleanup affects this compact release, not the original research archive or checkpoints.
 
-```bash
-python scripts/generate_data_smoke_2026.08.12.4.py \
-  --output /absolute/path/to/data-smoke-2026.08.12.4
-```
+## Evaluation integrity
 
-After independently verifying that sealed smoke, build the preregistered
-shared corpus into a different new external path:
+Use unchanged OmniDocBench v1.6 full-page matching and page-macro full Table TEDS. Frozen evaluator commit: `147cd5ac9472002f5751221d390bf00abdbc0d2f`. Official inputs were evaluation-only; Gold stayed inside the evaluator; Customer50 was deferred. Repeated aggregate benchmark exposure exists.
 
-```bash
-python scripts/build_shared_corpus_2026.08.12.py \
-  --output /absolute/path/to/shared-corpus-2026.08.12
-```
+Results belong to exact model, input, policy, runtime, and assembly versions. A different backend, portable adapter, upstream author score, or successful load does not reproduce the reported score by itself. Preserve Raw fallback and report known errors honestly.
 
-The builder is CPU-first, streams the 40,000 records, and refuses an existing
-output path. Use `--verify-only` for an independent payload and checksum pass.
+## Licenses
 
-## Reproducible research
-
-Experiments record the code revision, schema release, immutable data revision,
-root manifest hash, configuration hash, random seeds, environment, metrics,
-and complete failure accounting. Dataset payloads and model weights are stored
-outside Git; this repository contains the code, schemas, manifests, and
-documentation needed to reproduce them.
-
-For details, see [Reproducibility](docs/REPRODUCIBILITY_2026.08.12.1.md) and
-[Dataset Storage and Sharing](docs/corpus/DATASET_STORAGE_AND_SHARING_2026.08.12.1.md).
-
-## Collaboration
-
-The two model tracks share representations and evaluation but keep model code
-and ablations independent. Suggested branch prefixes are:
-
-- `explicit/` for explicit topology modeling;
-- `lora/` for generative adaptation and ablations;
-- `data/` for corpus construction and validation;
-- `eval/` for route-independent metrics and analysis.
-
-Contributions should include tests, a concise method note, and the provenance
-or experimental metadata needed to interpret the result. Large datasets,
-weights, credentials, and benchmark payloads must not be committed.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the review workflow.
-
-## Citation
-
-A project citation will be added with the first archival release. Until then,
-please cite the repository URL and the immutable commit used in an experiment.
-
-## License
-
-No public redistribution license has been assigned yet. Third-party datasets,
-fonts, evaluators, and pretrained models remain subject to their original
-licenses. Consult the repository maintainers before redistributing code or
-derived assets.
+Project-authored code has no blanket public redistribution license assigned; contact the maintainer for use beyond authorized project collaboration. Third-party components retain their own terms. MinerU model weights, MinerU software, PaddleOCR, PDF-Extract-Kit converted weights, and Tesseract do not share one uniform license. Read [third-party notices](notices/) before use.

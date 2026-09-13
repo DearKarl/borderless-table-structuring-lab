@@ -1,0 +1,40 @@
+{
+  "schema": "best-trained-model-handoff/v1",
+  "route": "Training",
+  "name": "Explicit-v2 Original",
+  "checkpoint": "checkpoint-003111-joint_low_lr",
+  "availability": "MISSING_EXACT_LOCAL_WEIGHTS_NOT_RELEASED",
+  "download_url": null,
+  "files": {
+    "MANIFEST.json": "5db28f62ee2f40e1e7a56903f76d6bc52089c8c358646c5e7969d079b4d1cafd",
+    "model.safe-state": "c1615ce37de058e82b0ec33a84fb06afb25d4f6d4dfa401ff1e67f9d547019f0"
+  },
+  "source_closure_sha256": "21410c16efab81330104d9a05d9fc66e5f368e33fced4b67c7449e1889526a2f",
+  "architecture": {"cross_modal_fusion": true, "grounding_aware_decision_fusion": true},
+  "thresholds": {
+    "gate": 0.5,
+    "maximum_risk": 0.6,
+    "maximum_uncertainty": 0.6,
+    "minimum_benefit": 0.45,
+    "minimum_owner_probability": 0.35,
+    "minimum_text_probability": 0.35,
+    "minimum_grid_shape_probability": 0.5,
+    "minimum_merge_probability": 0.8,
+    "minimum_split_probability": 0.8
+  },
+  "observed_result": {
+    "evaluation_scope": "LOCAL_COMPLETE_OFFICIAL_PROTOCOL_NOT_PUBLIC_LISTING",
+    "full_table_teds_percent": 93.0862668980718,
+    "structure_table_teds_percent": 95.70961193860337,
+    "structure_minus_full": 2.62334504053157,
+    "table_records": 764,
+    "adopted_operations": 0,
+    "equals_raw_fallback": true,
+    "objective_strictly_above_95_met": false,
+    "aggregate_source_file_sha256": "a3e26a56157d6e4301d6df47af572f823f86062aaaf3be0b7dfb1e94c5c377c2",
+    "prediction_seal_file_sha256": "4232aa86a6343f87eec17cd9eeb7606a059a5d42e5186a2a096c95417b1f1120"
+  },
+  "substitution_allowed": false,
+  "portable_inference_verified": false,
+  "private_or_benchmark_payload_included": false
+}

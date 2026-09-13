@@ -1,0 +1,105 @@
+{
+  "source_config_sha256": "708c747d2be006e5d0d42a3b9c7b14d67bfb1ea45d1be103edbdfe53e94b6e49",
+  "runtime": {
+    "python": "3.12.2",
+    "paddleocr": "3.5.0",
+    "paddlepaddle": "3.3.1",
+    "paddlex": "3.5.0",
+    "numpy": "1.26.4",
+    "opencv_contrib_python": "4.10.0.84",
+    "pillow": "10.4.0"
+  },
+  "runtime_controls": {
+    "environment": {
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "reason": "Prevent an Accelerate BLAS worker crash under macOS memory pressure without changing PaddleOCR model weights, thresholds, parser, or normal-image predictor arguments."
+  },
+  "engine": {
+    "device": "cpu",
+    "engine": "paddle",
+    "enable_hpi": false,
+    "enable_mkldnn": true,
+    "cpu_threads": 10,
+    "precision": "fp32",
+    "use_tensorrt": false,
+    "enable_cinn": false
+  },
+  "models": {
+    "text_detection": {
+      "name": "PP-OCRv5_server_det",
+      "directory": "locator/PP-OCRv5_server_det",
+      "artifact_files": [
+        "config.json",
+        "inference.json",
+        "inference.pdiparams",
+        "inference.yml"
+      ],
+      "artifact_sha256": "e297ad2f0aa6aa897f38b8d6b7ea1e90a7168f05943c9450b41de99225b2fd07"
+    },
+    "textline_orientation": {
+      "name": "PP-LCNet_x1_0_textline_ori",
+      "directory": "locator/PP-LCNet_x1_0_textline_ori",
+      "artifact_files": [
+        "inference.json",
+        "inference.pdiparams",
+        "inference.yml"
+      ],
+      "artifact_sha256": "1a299687f7209244aead935765058949e2313480d450cb15f5d5cb9d0be60cd9"
+    },
+    "text_recognition": {
+      "name": "PP-OCRv5_server_rec",
+      "directory": "locator/PP-OCRv5_server_rec",
+      "artifact_files": [
+        "config.json",
+        "inference.json",
+        "inference.pdiparams",
+        "inference.yml"
+      ],
+      "artifact_sha256": "0e38fd1143fd7355ab678abcc5ebe725ac6471ef849a7ed34df5f7205aee666a"
+    }
+  },
+  "pipeline": {
+    "use_doc_orientation_classify": false,
+    "use_doc_unwarping": false,
+    "use_textline_orientation": true,
+    "textline_orientation_batch_size": 6,
+    "text_recognition_batch_size": 6,
+    "text_det_limit_side_len": 64,
+    "text_det_limit_type": "min",
+    "text_det_max_side_limit": 4000,
+    "text_det_thresh": 0.3,
+    "text_det_box_thresh": 0.6,
+    "text_det_unclip_ratio": 1.5,
+    "text_rec_score_thresh": 0.0,
+    "return_word_box": false
+  },
+  "large_image_fallback": {
+    "policy_version": "paddleocr-v5-large-image-uniform/v4",
+    "trigger": "tiered_image_pixels_strictly_greater_than",
+    "tiers": [
+      {
+        "name": "large_over_3mp",
+        "image_pixels_strictly_greater_than": 3000000,
+        "predict_overrides": {
+          "text_det_limit_type": "max",
+          "text_det_limit_side_len": 640
+        }
+      }
+    ],
+    "output_coordinates": "original_table_crop_coordinates",
+    "normal_path_is_predecessor_semantically_identical": true,
+    "terminal_metrics_or_gold_used_to_choose_policy": false
+  },
+  "parser": {
+    "version": "paddleocr-v5-full-table-to-token/v1",
+    "bbox_format": "absolute_xyxy_in_table_crop",
+    "polygon_format": "clockwise_or_model_order_absolute_xy_pairs",
+    "empty_text_policy": "drop_and_count",
+    "invalid_geometry_policy": "drop_and_count",
+    "reading_order": "PaddleOCR sorted detection order"
+  }
+}
