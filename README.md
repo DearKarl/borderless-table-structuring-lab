@@ -2,6 +2,45 @@
 
 Correcting a fixed MinerU parser through two separate routes: **Training** and **Hybrid**. Neither route has achieved our target: **Official OmniDocBench full Table TEDS strictly greater than 95.00**.
 
+## Architecture and research entry points
+
+```text
+Fixed MinerU parser output + source table image
+  |
+  +-- Training: encoded cells / OCR candidates -> Explicit-v2 Transformer
+  |             -> decision / topology / ownership / text heads
+  |             -> historical guarded executor -> Original fallback
+  |             Public package: exact weights + tensor-level inference
+  |
+  +-- Hybrid: OCR geometry + PP-OCRv5 + Tesseract
+                -> anchored text consensus -> conservative HTML text patches
+                -> unchanged markup or Original fallback
+                Public package: table image + Raw HTML correction adapter
+```
+
+The **Data Engineering layer** supplies aligned images, Raw tables, cell/token
+geometry, candidate text, and typed interfaces. The **model/decision layer**
+either learns repair decisions (Training) or uses frozen recognition consensus
+(Hybrid). Raw fallback and final committed output must remain distinct from
+model proposals. Private data preparation pipelines are not distributed here.
+
+New collaborators should choose one entry point:
+
+1. **Study the trained architecture:** read [Training](training/README.md), download
+   its exact checkpoint, run the CPU smoke command, then inspect
+   `training/runtime/model.py`. Full PDF correction is not packaged for this route.
+2. **Try an actual correction adapter:** follow [Hybrid](hybrid/README.md) using
+   your own table image and Raw HTML. Keep its known limitations visible.
+3. **Understand evidence and contribute:** read [observed results](artifacts/observed-results.json)
+   and [contribution rules](CONTRIBUTING.md). Start from an isolated, project-authored
+   example; never treat interface tests as measured benchmark improvements.
+
+The repository is a compact **model and inference handoff**, not the historical
+experiment archive or a claim of fully reproducible end-to-end training.
+Weights live in separate GitHub Releases; datasets, runs, historical contracts,
+private logs, and temporary files are excluded. Third-party notices are required
+provenance, not obsolete experiment files.
+
 ## Current results
 
 These are local executions of the complete official protocol, not verified public leaderboard listings. Scores are full Table TEDS, not Overall or structure-only scores. The complete input contains 1,651 pages.
