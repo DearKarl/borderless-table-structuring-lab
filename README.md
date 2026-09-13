@@ -19,7 +19,7 @@ Hybrid's completed gain is only **0.0018156746 percentage points**. It is resear
 
 A learned Explicit model predicts structured repairs on top of MinerU outputs. The best evidenced checkpoint is **Explicit-v2 Original**, `checkpoint-003111-joint_low_lr`. Later evaluated trained variants scored lower.
 
-**Exact winning weights are currently missing from the local release workspace.** [Training documentation](training/README.md) and [model metadata](training/model_manifest.json) preserve the result and identity. No lower-scoring checkpoint or third-party MinerU weights are substituted. This is not yet a downloadable Training model release.
+**The exact winning checkpoint has been recovered, hash-verified, and published separately.** Download it with `python3 training/download_model.py`. [Training documentation](training/README.md) provides CPU installation, strict loading, and a synthetic inference command. The archived model and safe-state reader are byte-identical to the research source. This is a runnable tensor-level model package, not a turnkey PDF correction pipeline or a newly reproduced benchmark score. No lower-scoring checkpoint or third-party MinerU weights are substituted.
 
 ## Hybrid route
 
@@ -33,6 +33,8 @@ Read the [Hybrid guide](hybrid/README.md) for installation, input formats, token
 git clone https://github.com/DearKarl/borderless-table-structuring-lab.git
 cd borderless-table-structuring-lab
 python3 scripts/download_release.py --route hybrid --output models/hybrid
+# Independent project-trained model (4.75 MB):
+python3 training/download_model.py --output models/training/model.safe-state
 ```
 
 The downloader verifies archive parts and every extracted file and refuses an existing output directory. Mirrored large assets live in the `hybrid-2026.09.13.1` GitHub Release, not Git history. The converted PP-OCR recognizer is fetched from its **pinned official upstream revision**, with the recorded SHA256, instead of being mirrored or relicensed here. See [artifact inventory](artifacts/hybrid-2026.09.13.1.json).
@@ -44,7 +46,7 @@ Use your own matching table image and Raw HTML. No benchmark images, Gold, custo
 ## Layout
 
 ```text
-training/       Best trained checkpoint identity, result, restoration verifier
+training/       Trained model downloader, exact architecture, CPU inference and result
 hybrid/         Best completed policy and portable inference tools
 artifacts/      File inventory, pinned downloads, checksums
 scripts/        Verified model downloader

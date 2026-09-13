@@ -13,10 +13,18 @@ SPEC.loader.exec_module(VERIFIER)
 
 def test_manifest_truthful():
     manifest = json.loads((ROOT / "training/model_manifest.json").read_text())
-    assert manifest["availability"] == "MISSING_EXACT_LOCAL_WEIGHTS_NOT_RELEASED"
-    assert manifest["download_url"] is None
+    assert manifest["availability"] == "EXACT_WEIGHTS_GITHUB_RELEASE"
+    assert manifest["download_url"].endswith('/training-explicit-v2-original-2026.09.13.1/model.safe-state')
+    assert set(manifest['files']) == {'model.safe-state'}
+    assert manifest['saved_metadata']['update'] == 894
     assert manifest["observed_result"]["adopted_operations"] == 0
     assert not manifest["observed_result"]["objective_strictly_above_95_met"]
+
+
+def test_inference_source_bytes_match_archive():
+    manifest = json.loads((ROOT / 'training/model_manifest.json').read_text())
+    for name, expected in manifest['inference_source_files'].items():
+        assert hashlib.sha256((ROOT / 'training' / name).read_bytes()).hexdigest() == expected
 
 
 def test_wrong_or_missing_file_rejected(tmp_path):

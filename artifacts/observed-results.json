@@ -16,7 +16,8 @@
     "checkpoint_sha256": "c1615ce37de058e82b0ec33a84fb06afb25d4f6d4dfa401ff1e67f9d547019f0",
     "prediction_seal_sha256": "4232aa86a6343f87eec17cd9eeb7606a059a5d42e5186a2a096c95417b1f1120",
     "aggregate_source_sha256": "a3e26a56157d6e4301d6df47af572f823f86062aaaf3be0b7dfb1e94c5c377c2",
-    "weight_release_status": "PENDING_EXACT_LOCAL_WEIGHT_RESTORATION",
+    "weight_release_status": "EXACT_WEIGHTS_GITHUB_RELEASE",
+    "release_tag": "training-explicit-v2-original-2026.09.13.1",
     "target_achieved": false
   },
   "hybrid": {

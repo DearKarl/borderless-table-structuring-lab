@@ -3,11 +3,19 @@
   "route": "Training",
   "name": "Explicit-v2 Original",
   "checkpoint": "checkpoint-003111-joint_low_lr",
-  "availability": "MISSING_EXACT_LOCAL_WEIGHTS_NOT_RELEASED",
-  "download_url": null,
+  "availability": "EXACT_WEIGHTS_GITHUB_RELEASE",
+  "download_url": "https://github.com/DearKarl/borderless-table-structuring-lab/releases/download/training-explicit-v2-original-2026.09.13.1/model.safe-state",
+  "release_tag": "training-explicit-v2-original-2026.09.13.1",
+  "weight_bytes": 4754162,
   "files": {
-    "MANIFEST.json": "5db28f62ee2f40e1e7a56903f76d6bc52089c8c358646c5e7969d079b4d1cafd",
     "model.safe-state": "c1615ce37de058e82b0ec33a84fb06afb25d4f6d4dfa401ff1e67f9d547019f0"
+  },
+  "original_private_manifest_sha256": "5db28f62ee2f40e1e7a56903f76d6bc52089c8c358646c5e7969d079b4d1cafd",
+  "saved_metadata": {"update": 894, "epoch": 2, "stage": "joint_low_lr", "exposures": 14298},
+  "checkpoint_name_note": "The directory label 003111 is preserved verbatim; saved metadata records update 894. Do not infer the update from the directory name.",
+  "inference_source_files": {
+    "runtime/model.py": "4a99896598b2731e5ff20e05aa563ce607886e988916669014547d300549501a",
+    "runtime/safe_state.py": "af6e492bf7c5776cc6baca407b432a24139974bddd56795d434a23702e035384"
   },
   "source_closure_sha256": "21410c16efab81330104d9a05d9fc66e5f368e33fced4b67c7449e1889526a2f",
   "architecture": {"cross_modal_fusion": true, "grounding_aware_decision_fusion": true},
@@ -35,6 +43,9 @@
     "prediction_seal_file_sha256": "4232aa86a6343f87eec17cd9eeb7606a059a5d42e5186a2a096c95417b1f1120"
   },
   "substitution_allowed": false,
-  "portable_inference_verified": false,
+  "portable_inference_verified": true,
+  "portable_inference_scope": "Exact 135-tensor strict checkpoint load and synthetic CPU tensor forward only; not PDF correction or score reproduction.",
+  "full_correction_pipeline_verified": false,
+  "optimizer_and_training_state_distribution": "Preserved in private local archive, not public release assets.",
   "private_or_benchmark_payload_included": false
 }
