@@ -1,0 +1,31 @@
+{
+  "schema": "native-local-evaluation-progress-snapshot/v1",
+  "as_of": "2026-09-16",
+  "model": "StarDoc-AI/NaviDC-OCR",
+  "revision": "710ea2e26d794fe89cbf3ece0402707c332a8671",
+  "policy": "NAVIDC_NATIVE_TABLE_COLLECTION_WITH_MINERU_NONTABLE_V1",
+  "completed_pages": 633,
+  "total_pages": 1651,
+  "shard_completed_pages": [
+    413,
+    220,
+    0,
+    0
+  ],
+  "successful_cached_generations": 890,
+  "coverage_percent": 38.340399757722594,
+  "coverage_is_accuracy": false,
+  "full_table_teds": null,
+  "structure_table_teds": null,
+  "status": "FULL_RESULT_PENDING",
+  "runtime_snapshot": "Old paused processes no longer exist; non-overwriting local continuation prepared. Read private current run for live status.",
+  "resume_does_not_change_science": true,
+  "source_progress_receipt_sha256": "641d260514f39f5f1d4bca708d4d891498fa68afce9b42d351fa41b4c89db36c",
+  "pause_receipt_sha256": "4881c30f77acf3f0fb41bdc5c9d88b23b8e0eb4ae98c1b79faf0950423bbc462",
+  "preserved_page_ledger_sha256": "34f0e54e8e56cda3650053b4dc2767080571d079f417131e1f633c5bc5d9ff82",
+  "preserved_call_ledger_sha256": "ffa04336e36c42d28909041f37c5a821034a76d3dbc724010e17765231ecc730",
+  "distribution": "Aggregate snapshot only. Predictions, source images, reference answers and resumable run cache are not distributed in this public repository.",
+  "official_images_and_raw_usage": "evaluation-only",
+  "gold_model_facing_usage": 0,
+  "customer50": "deferred"
+}

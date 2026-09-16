@@ -1,0 +1,23 @@
+{
+  "schema": "training-original-aggregate-projection/v1",
+  "scope": "Sanitized projection, not a byte-identical copy of the complete evaluator output",
+  "name": "Explicit-v2 Original",
+  "pages": 1651,
+  "full_table_teds": 93.0862668980718,
+  "structure_table_teds": 95.70961193860337,
+  "gap": 2.623345040531575,
+  "source_keys": {
+    "full": "table.page.TEDS.ALL * 100",
+    "structure": "table.page.TEDS_structure_only.ALL * 100"
+  },
+  "metric_samples": 665,
+  "metric_errors": 0,
+  "metric_timeouts": 0,
+  "detected_table_records": 764,
+  "adopted_edits": 0,
+  "source_sha256": "a3e26a56157d6e4301d6df47af572f823f86062aaaf3be0b7dfb1e94c5c377c2",
+  "checkpoint_sha256": "c1615ce37de058e82b0ec33a84fb06afb25d4f6d4dfa401ff1e67f9d547019f0",
+  "local_official_protocol": true,
+  "public_leaderboard_acceptance": false,
+  "target_achieved": false
+}

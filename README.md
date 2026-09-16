@@ -60,9 +60,14 @@ These are local executions of the complete official protocol, not verified publi
 | Fixed MinerU Raw | 93.0862668980718 | 95.70961193860337 | Production fallback |
 | **Training: Explicit-v2 Original** | **93.0862668980718** | 95.70961193860337 | Best verified trained checkpoint; zero adopted edits, equal to Raw |
 | **Hybrid: anchored PP-OCRv5 + Tesseract** | **93.08808257262936** | 95.70961193860337 | Highest completed system aggregate; tiny gain and known crop defect |
+| Hybrid: complete-cell correction cycle 001 | 93.08512970738767 | 95.70961193860337 | Below Raw; preserved, not promoted |
 | Hybrid: native NaviDC table collection | Pending | Pending | Current local full evaluation; not a released winner |
 
 Hybrid's completed gain is only **0.0018156746 percentage points**. It is research-only, not a reliable production corrector. The NaviDC attempt is not promoted before its full result. The current research task is to finish that existing frozen local evaluation, not restart SFT or treat upstream paper scores as project results. [Aggregate result metadata and evidence hashes](artifacts/observed-results.json) identify the archived results without distributing benchmark data.
+
+The [local result archive](artifacts/results/README.md) includes the completed
+paired summaries/READY bindings, a failed-launch receipt and the pending native
+progress snapshot. Below-baseline results are retained, not hidden.
 
 ## Training route
 

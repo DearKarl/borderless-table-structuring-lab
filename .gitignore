@@ -35,6 +35,16 @@ outputs/
 predictions/
 results/
 runs/
+# Public aggregate-only result archive; page payloads stay excluded.
+!artifacts/results/
+artifacts/results/**
+!artifacts/results/**/
+!artifacts/results/README.md
+!artifacts/results/**/PAIRED_TABLE_SUMMARY.json
+!artifacts/results/**/READY.json
+!artifacts/results/**/FAILURE.json
+!artifacts/results/**/AGGREGATE.json
+!artifacts/results/**/PROGRESS_2026-09-16.json
 *.bin
 *.ckpt
 *.onnx

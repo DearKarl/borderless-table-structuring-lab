@@ -40,6 +40,17 @@
     "portable_adapter_full_benchmark_status": "NOT_SEPARATELY_SCORED",
     "target_achieved": false
   },
+  "other_completed_hybrid": {
+    "name": "Complete-cell correction cycle 001",
+    "full_table_teds": 93.08512970738767,
+    "structure_table_teds": 95.70961193860337,
+    "delta_full_vs_raw_points": -0.0011371906841333157,
+    "changed_pages": 14,
+    "promoted": false,
+    "paired_summary_sha256": "aac4ae5a0d1b191ad6c3bc8a8759257801a344fd24563e4ee08dabccb7f71261",
+    "public_summary": "artifacts/results/complete-cell-cycle-001/PAIRED_TABLE_SUMMARY.json",
+    "target_achieved": false
+  },
   "current_attempt": {
     "name": "Local native NaviDC table collection",
     "status": "FULL_RESULT_PENDING_NOT_A_RELEASED_WINNER",

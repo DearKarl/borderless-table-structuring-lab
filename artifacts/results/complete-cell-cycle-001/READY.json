@@ -1,0 +1,6 @@
+{
+  "command_freeze_sha256": "28b922a5b6fad54437b4eaca2d2f103a5465b38600dc6bc7ec7f993522e8a578",
+  "schema": "mineru-sidecar-paired-official-table-evaluation/2026.09.09.2",
+  "status": "COMPLETED_PAIRED_LOCAL_OFFICIAL_TABLE_EVALUATION",
+  "summary_sha256": "aac4ae5a0d1b191ad6c3bc8a8759257801a344fd24563e4ee08dabccb7f71261"
+}
