@@ -1,10 +1,14 @@
 {
   "schema": "project-observed-results/v1",
-  "as_of": "2026-09-13",
+  "as_of": "2026-09-16",
   "scope": "Highest evidenced completed results in this project, not a global SOTA claim or verified public leaderboard listing.",
   "protocol": "Local frozen OmniDocBench full-page official protocol, page-macro full Table TEDS",
   "pages": 1651,
-  "table_samples": 764,
+  "historical_metric_denominators": {
+    "fixed_gt_table_pages": 458,
+    "evaluator_matched_samples": 665,
+    "scope": "Completed Raw/Training Original and OCR Hybrid aggregates only; not a native NaviDC sample-count claim. Page-macro aggregation and matched-sample counts are distinct."
+  },
   "evaluator_commit": "147cd5ac9472002f5751221d390bf00abdbc0d2f",
   "success_threshold": {"metric": "full_table_teds", "operator": ">", "value": 95.0},
   "training": {
@@ -12,6 +16,8 @@
     "full_table_teds": 93.0862668980718,
     "structure_table_teds": 95.70961193860337,
     "adopted_edits": 0,
+    "detected_table_records": 764,
+    "detected_table_records_scope": "Adoption denominator, not the page-macro metric denominator.",
     "interpretation": "Equals fixed MinerU Raw; no observed learned correction gain.",
     "checkpoint_sha256": "c1615ce37de058e82b0ec33a84fb06afb25d4f6d4dfa401ff1e67f9d547019f0",
     "prediction_seal_sha256": "4232aa86a6343f87eec17cd9eeb7606a059a5d42e5186a2a096c95417b1f1120",
@@ -36,10 +42,21 @@
   },
   "current_attempt": {
     "name": "Local native NaviDC table collection",
-    "status": "IN_PROGRESS_NOT_A_RELEASED_WINNER",
+    "status": "FULL_RESULT_PENDING_NOT_A_RELEASED_WINNER",
     "full_table_teds": null,
     "structure_table_teds": null,
-    "training": false
+    "training": false,
+    "architecture_documentation": "hybrid/native_tables/README.md",
+    "model_revision": "710ea2e26d794fe89cbf3ece0402707c332a8671",
+    "last_committed_handoff_boundary": {
+      "as_of": "2026-09-15",
+      "pages": 633,
+      "total_pages": 1651,
+      "shard_pages": [413, 220, 0, 0],
+      "is_live_status": false,
+      "interpretation": "Page coverage only, not accuracy or a partial TEDS estimate. Resume authorized on 2026-09-16; current execution is tracked in the private local run."
+    },
+    "portable_package_full_benchmark_status": "NOT_SEPARATELY_SCORED"
   },
   "distribution_boundary": "Aggregate metadata only. Private pages, reference answers, per-record results, credentials and historical contracts are not distributed. Source receipts remain in the internal archive."
 }

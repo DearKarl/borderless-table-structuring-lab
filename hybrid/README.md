@@ -9,8 +9,9 @@ not evidence of general improvement over MinerU. See the aggregate evidence in
 the repository's result records. Keep exact MinerU raw as the production fallback.
 
 The newer **MinerU + NaviDC native-table collection** experiment is a different
-challenger. Its current local run is not completed/scored at publication time.
-Do not attribute this sidecar's score to NaviDC or call the challenger the winner.
+challenger. Its architecture and handoff are in [native_tables](native_tables/README.md).
+Its current local run is not completed/scored at publication time. Do not
+attribute this sidecar's score to NaviDC or call the challenger the winner.
 
 ## What is runnable here
 

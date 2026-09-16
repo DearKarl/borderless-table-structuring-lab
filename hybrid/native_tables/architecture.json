@@ -1,0 +1,103 @@
+{
+  "schema": "native-table-architecture/1",
+  "policy": "NAVIDC_NATIVE_TABLE_COLLECTION_WITH_MINERU_NONTABLE_V1",
+  "release_scope": "Research architecture and model-free parser/assembly only; no end-to-end benchmark reproduction claim",
+  "training_updates": 0,
+  "baseline": {
+    "model": "opendatalab/MinerU2.5-Pro-2604-1.2B",
+    "full_table_teds": 93.0862668980718
+  },
+  "candidate_model": {
+    "repo_id": "StarDoc-AI/NaviDC-OCR",
+    "revision": "710ea2e26d794fe89cbf3ece0402707c332a8671",
+    "weights_sha256": "9817b18041bd96403f75e38a33b28ed0cd5fb2641f67eead673afabd3c408109",
+    "custom_source_sha256": "7adac1cc17009f9f1b8e0c58284d7c0b9989a590f017b9e5964cc42270207922",
+    "loader": "Pinned custom NaviOCR class; strict empty missing/unexpected/mismatched/error sets; never generic Qwen substitute"
+  },
+  "input": {
+    "color": "RGB",
+    "layout_size": [
+      1036,
+      1036
+    ],
+    "layout_resize": "PIL.BICUBIC",
+    "crop": "floor(normalized_coordinate_1000 * original_dimension / 1000)",
+    "rotation": "native up/right/down/left -> PIL counterclockwise 0/90/180/270; expand=True",
+    "recognition_minimum_edge": 28,
+    "recognition_maximum_aspect": 50,
+    "recognition_padding": "centered white on short axis",
+    "recognition_enlargement": "ceil proportional dimensions; PIL.BICUBIC",
+    "processor_min_pixels": 3136,
+    "processor_max_pixels": 12845056
+  },
+  "prompts": {
+    "system": "You are a helpful assistant.",
+    "layout": "\nAnalyze the image layout.",
+    "table": "\nThis is the image of a table. Please output the table in OTSL format."
+  },
+  "generation": {
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "batch_size": 1,
+    "do_sample": false,
+    "use_cache": true,
+    "max_new_tokens": 4096,
+    "repetition_penalty": 1.05,
+    "custom_ngram_or_frequency_penalty": false
+  },
+  "selection": {
+    "all_pages": true,
+    "exact_native_label": "table",
+    "all_tables_in_native_layout_order": true,
+    "successful_zero_tables_valid": true,
+    "score_or_disagreement_selector": false
+  },
+  "assembly": {
+    "replace": "entire native page table collection",
+    "preserve": "exact byte complement of all uniquely mapped raw table spans",
+    "append_separator_hex": "0a0a",
+    "append_terminal_hex": "0a",
+    "preserve_caption_table_interleaving": false,
+    "structure_may_change": true,
+    "invalid_completed_page": "whole-page exact Raw",
+    "missing_work_or_unknown_failure": "stop without completed prediction",
+    "resource_failure": "pause without Raw fill"
+  },
+  "observed_runtime": {
+    "host": "Apple M4 Pro; 24 GiB unified memory",
+    "platform": "macOS 26.6.2 arm64",
+    "python": "3.10.20",
+    "torch": "2.12.0",
+    "transformers": "4.57.6",
+    "pillow": "12.2.0",
+    "device": "MPS",
+    "mps_allocator_cap_gib": 12,
+    "concurrent_models": 1,
+    "fresh_process_per_uncached_generation": true,
+    "vision_query_chunk_rows": 256,
+    "vision_full_attention_blocks": [
+      7,
+      15,
+      23,
+      31
+    ],
+    "decoder_query_chunk_rows": 256,
+    "decoder_mask": "absolute-row causal; full original K/V",
+    "full_original_kv": true,
+    "implicit_cpu_fallback": false,
+    "mixed_temporal_runtime_prefix": true,
+    "byte_equivalence_claimed": false
+  },
+  "evaluation_snapshot": {
+    "as_of": "2026-09-15",
+    "completed_pages": 633,
+    "total_pages": 1651,
+    "full_table_teds": null,
+    "status": "PENDING; user-paused at snapshot",
+    "public_leaderboard_acceptance": false,
+    "scope": "Local frozen Official-protocol run; not public leaderboard acceptance",
+    "gold_model_facing": 0,
+    "customer50": "deferred"
+  },
+  "evidence_boundary": "Published 97.05 belongs to the author's separate system/protocol; it is not our candidate score."
+}

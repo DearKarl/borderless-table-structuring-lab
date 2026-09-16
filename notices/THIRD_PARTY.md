@@ -19,6 +19,19 @@ not a verified public leaderboard submission or a result above 95.
 The inventory pins each file by SHA256 and byte count. Upstream model-card
 scores are the authors' claims, not this project's reproduced scores.
 
+## Current native-table experiment (separate upstream download)
+
+The pending MinerU + NaviDC architecture is documented in
+[`hybrid/native_tables/README.md`](../hybrid/native_tables/README.md).
+It uses unchanged `StarDoc-AI/NaviDC-OCR` weights at the exact revision recorded in
+that package's model manifest. These weights are **not** in the older Hybrid
+release archives above. The documented upstream download plus local verifier
+checks the pinned files against their SHA256 values. The
+[pinned upstream model card](https://huggingface.co/StarDoc-AI/NaviDC-OCR/blob/710ea2e26d794fe89cbf3ece0402707c332a8671/README.md)
+declares Apache-2.0 and is itself hash-bound in that manifest. Upstream claims
+do not establish a project benchmark result. This experiment still has no
+completed full Table TEDS score.
+
 ## Required separately downloaded file
 
 `ocr/ch_PP-OCRv5_rec_server_infer.pth` is **not mirrored in the GitHub assets**.

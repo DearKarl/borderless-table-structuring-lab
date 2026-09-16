@@ -13,4 +13,10 @@ python -m pip install pytest Pillow
 python -m pytest -q tests
 ```
 
-The current phase is handoff and consolidation. Another optimization or training campaign requires a new owner decision. Earlier research snapshots remain in Git history.
+The current research priority is completing the already-frozen native-table
+hybrid evaluation. The completed OCR sidecar, the unscored native-table
+experiment, and Training must keep separate identities. Do not change the
+running experiment by editing its portable handoff, or claim that package
+tests reproduce a full benchmark result. Another scientific configuration or
+training campaign requires a new owner decision. Earlier research snapshots
+remain in Git history.
