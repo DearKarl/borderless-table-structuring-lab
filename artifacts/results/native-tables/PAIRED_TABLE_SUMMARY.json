@@ -1,0 +1,66 @@
+{
+  "aggregate_source_files": {
+    "baseline": {
+      "metric_result_sha256": "28a9d1f867d75365216b8fa3607ee8bde856a80101665a3e72f74836371ef6b8",
+      "run_summary_sha256": "5e5764d34f35e7a55da3fd01d884e9a496d9805bd15bba876c8102735a0336d3"
+    },
+    "candidate": {
+      "metric_result_sha256": "536e3645d862fb9683d10207df97a00e5651990b777535170793a625c92e9940",
+      "run_summary_sha256": "2ff617ab05d273950b7d54df37845ed40e4fa86547767b0fb2660535e602c0f2"
+    }
+  },
+  "arms": {
+    "baseline": {
+      "TEDS": {
+        "percent_0_to_100": 93.0862668980718,
+        "raw_0_to_1": 0.930862668980718,
+        "source_key": "table.page.TEDS.ALL",
+        "table_page_denominator": 458
+      },
+      "TEDS_structure": {
+        "percent_0_to_100": 95.70961193860337,
+        "raw_0_to_1": 0.9570961193860337,
+        "source_key": "table.page.TEDS_structure_only.ALL",
+        "table_page_denominator": 458
+      },
+      "evaluator_counts": {
+        "error_case_count": 0,
+        "sample_count": 665,
+        "timeout_case_count": 0
+      }
+    },
+    "candidate": {
+      "TEDS": {
+        "percent_0_to_100": 98.75068667701048,
+        "raw_0_to_1": 0.9875068667701048,
+        "source_key": "table.page.TEDS.ALL",
+        "table_page_denominator": 458
+      },
+      "TEDS_structure": {
+        "percent_0_to_100": 99.2913812392524,
+        "raw_0_to_1": 0.9929138123925241,
+        "source_key": "table.page.TEDS_structure_only.ALL",
+        "table_page_denominator": 458
+      },
+      "evaluator_counts": {
+        "error_case_count": 0,
+        "sample_count": 665,
+        "timeout_case_count": 0
+      }
+    }
+  },
+  "changed_pages": 466,
+  "command_freeze_sha256": "566b1477679498f1cf4f2cf12445540487824a0786f4e6942c1141db1641f67e",
+  "completed_at": "2026-09-17T15:00:20.093882+00:00",
+  "delta_percentage_points_candidate_minus_baseline": {
+    "TEDS": 5.664419778938679,
+    "TEDS_structure": 3.5817693006490288
+  },
+  "local_evaluation_not_public_submission": true,
+  "overall_score_computed": false,
+  "pages": 1651,
+  "schema": "mineru-sidecar-paired-official-table-evaluation/2026.09.09.2",
+  "score_feedback_to_training_or_sidecar_selection_authorized": false,
+  "snapshot_integrity_before_after": true,
+  "status": "COMPLETED_PAIRED_LOCAL_OFFICIAL_TABLE_EVALUATION"
+}
