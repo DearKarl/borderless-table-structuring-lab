@@ -9,14 +9,14 @@ Do not commit benchmark/customer payloads, credentials, internal handoffs, histo
 Run the data-free package checks:
 
 ```bash
-python -m pip install pytest Pillow
+python -m pip install -e '.[test]'
 python -m pytest -q tests
 ```
 
-The current research priority is completing the already-frozen native-table
-hybrid evaluation. The completed OCR sidecar, the unscored native-table
-experiment, and Training must keep separate identities. Do not change the
-running experiment by editing its portable handoff, or claim that package
-tests reproduce a full benchmark result. Another scientific configuration or
-training campaign requires a new owner decision. Earlier research snapshots
-remain in Git history.
+The native-table research evaluation completed on 2026-09-17. The integrated
+application is now the main Hybrid entry point. Keep its historical scored
+result, any new portable execution, the old OCR sidecar and Training distinct.
+Do not claim package tests reproduce benchmark performance. Changes to an
+active run's code/input bindings are rejected; use a new output directory.
+Keep the extracted scientific functions and frozen upstream evaluator source
+unchanged unless a new, explicit recipe and its evidence are provided.

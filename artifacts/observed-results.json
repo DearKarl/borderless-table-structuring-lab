@@ -1,16 +1,22 @@
 {
   "schema": "project-observed-results/v1",
-  "as_of": "2026-09-16",
+  "as_of": "2026-09-17",
   "scope": "Highest evidenced completed results in this project, not a global SOTA claim or verified public leaderboard listing.",
   "protocol": "Local frozen OmniDocBench full-page official protocol, page-macro full Table TEDS",
   "pages": 1651,
-  "historical_metric_denominators": {
+  "metric_denominators": {
     "fixed_gt_table_pages": 458,
     "evaluator_matched_samples": 665,
-    "scope": "Completed Raw/Training Original and OCR Hybrid aggregates only; not a native NaviDC sample-count claim. Page-macro aggregation and matched-sample counts are distinct."
+    "scope": "Completed paired Raw/OCR Hybrid and native NaviDC Hybrid evaluations. Native baseline and candidate each have 665 matched samples. Page-macro aggregation and matched-sample counts are distinct."
   },
+  "best_completed_system": "Local native NaviDC table collection with MinerU non-table content",
+  "best_trained_checkpoint": "Explicit-v2 Original; equal to fixed Raw with zero adopted edits",
   "evaluator_commit": "147cd5ac9472002f5751221d390bf00abdbc0d2f",
-  "success_threshold": {"metric": "full_table_teds", "operator": ">", "value": 95.0},
+  "success_threshold": {
+    "metric": "full_table_teds",
+    "operator": ">",
+    "value": 95
+  },
   "training": {
     "name": "Explicit-v2 Original",
     "full_table_teds": 93.0862668980718,
@@ -33,7 +39,7 @@
     "delta_full_vs_raw_points": 0.0018156745575623745,
     "committed_cells": 2,
     "changed_pages": 2,
-    "interpretation": "Tiny completed system gain; known continuation-line crop defect; research-only.",
+    "interpretation": "Historical sidecar result, no longer the highest completed system; tiny gain, known continuation-line crop defect, research-only.",
     "paired_summary_sha256": "99dfb9d59537949b1c3f44b362761a757eee9d69566e36dd4d4e07630b35689f",
     "paired_ready_sha256": "20548f529efcf73387e9743ff8df8e0e9c1ef45dd21b3ab607c62e0865563533",
     "correction_receipt_sha256": "262d27484d64f3a20ceaa8a420df80ad18615fe69c64284156f2d93910569059",
@@ -52,22 +58,64 @@
     "target_achieved": false
   },
   "current_attempt": {
-    "name": "Local native NaviDC table collection",
-    "status": "FULL_RESULT_PENDING_NOT_A_RELEASED_WINNER",
-    "full_table_teds": null,
-    "structure_table_teds": null,
+    "name": "Local native NaviDC table collection with MinerU non-table content",
+    "status": "COMPLETED_LOCAL_OFFICIAL_PROTOCOL_TARGET_MET",
+    "completed_on": "2026-09-17",
+    "pages": 1651,
+    "successful_canonical_generation_calls": 2296,
+    "full_table_teds": 98.75068667701048,
+    "structure_table_teds": 99.2913812392524,
+    "structure_minus_full_gap_points": 0.5406945622419244,
+    "baseline_full_table_teds": 93.0862668980718,
+    "baseline_structure_table_teds": 95.70961193860337,
+    "delta_full_vs_raw_points": 5.664419778938679,
+    "delta_structure_vs_raw_points": 3.5817693006490288,
+    "fixed_gt_table_pages": 458,
+    "baseline_evaluation": {
+      "matched_samples": 665,
+      "errors": 0,
+      "timeouts": 0
+    },
+    "candidate_evaluation": {
+      "matched_samples": 665,
+      "errors": 0,
+      "timeouts": 0
+    },
+    "paired_summary_sha256": "5ccecac587dc99528e6e0881453c682dac7fc72089ed2d9901f18b9b064b1542",
+    "paired_ready_sha256": "15069ed43f1d89dd562fa307e07f95c36e68efa403383304f48436d086ad5e4d",
+    "public_summary": "artifacts/results/native-tables/PAIRED_TABLE_SUMMARY.json",
+    "public_ready": "artifacts/results/native-tables/READY.json",
+    "public_aggregate": "artifacts/results/native-tables/AGGREGATE.json",
+    "target_achieved": true,
+    "verified_public_leaderboard_acceptance": false,
+    "global_sota_claimed": false,
+    "production_guarantee": false,
     "training": false,
     "architecture_documentation": "hybrid/native_tables/README.md",
     "model_revision": "710ea2e26d794fe89cbf3ece0402707c332a8671",
-    "last_committed_handoff_boundary": {
+    "historical_handoff_boundary": {
       "as_of": "2026-09-15",
       "pages": 633,
       "total_pages": 1651,
-      "shard_pages": [413, 220, 0, 0],
+      "shard_pages": [
+        413,
+        220,
+        0,
+        0
+      ],
       "is_live_status": false,
-      "interpretation": "Page coverage only, not accuracy or a partial TEDS estimate. Resume authorized on 2026-09-16; current execution is tracked in the private local run."
+      "public_progress": "artifacts/results/native-tables/PROGRESS_2026-09-16.json",
+      "interpretation": "Historical pause boundary only, no longer current. Page coverage was not accuracy or a partial TEDS estimate. The full run subsequently completed on 2026-09-17."
     },
-    "portable_package_full_benchmark_status": "NOT_SEPARATELY_SCORED"
+    "portable_package_full_benchmark_status": "NOT_SEPARATELY_SCORED",
+    "portable_package_end_to_end_pipeline": true,
+    "portable_assembler_consumer_format_gate": "INCLUDED_EVALUATED_ASSEMBLER003",
+    "runtime_provenance": "Mixed local MPS temporal execution epochs are retained. Full-K/V query chunking and final Q1 synchronization plus unused allocator-cache release are resource adaptations; the final step did not change model weights, image preparation, prompts or generation settings. No token-bit identity, uniform original runtime, CUDA equivalence or causal quality benefit is claimed.",
+    "author_score_reproduced": false,
+    "upstream_author_full_table_teds": 97.05,
+    "weights_distribution": "Pinned NaviDC upstream download, not silently included in the older Hybrid release archive.",
+    "repeated_aggregate_benchmark_exposure": true,
+    "interpretation": "Highest completed project system; local scored target met. Integrated image+fixed-Raw wrapper is now included; not a newly trained checkpoint, public listing, global SOTA or separately rescored portable execution."
   },
   "distribution_boundary": "Aggregate metadata only. Private pages, reference answers, per-record results, credentials and historical contracts are not distributed. Source receipts remain in the internal archive."
 }

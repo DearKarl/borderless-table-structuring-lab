@@ -1,17 +1,19 @@
-"""Pure whole-page assembly copied without scientific edits from the frozen project.
-
-Only publication, dataset and host-specific loading code was excluded.
-See provenance.json for exact source hash and extracted functions.
-"""
+"""Whole-page assembly from evaluated assembler003, with a lazy local consumer binding."""
 import hashlib
 from html.parser import HTMLParser
 
+def consumer_closure(text, native):
+    from .consumer import consumer_closure as check
+    return check(text, native)
+
 POLICY = "NAVIDC_NATIVE_TABLE_COLLECTION_WITH_MINERU_NONTABLE_V1"
+
+
 POLICY_DETAILS = {"name": "WHOLE_NATIVE_TABLE_COLLECTION_OR_WHOLE_PAGE_EXACT_RAW",
-    "successful_zero_tables": "remove all old tables; no quality fallback",
-    "append_separator_hex": "0a0a", "append_terminal_hex": "0a",
-    "non_table_chunks_preserved": True, "original_table_interleaving_preserved": False,
-    "structure_may_change": True, "count_or_text_disagreement_gate": False}
+          "successful_zero_tables": "remove all old tables; no quality fallback",
+          "append_separator_hex": "0a0a", "append_terminal_hex": "0a",
+          "non_table_chunks_preserved": True, "original_table_interleaving_preserved": False,
+          "structure_may_change": True, "count_or_text_disagreement_gate": False}
 
 
 class BindingError(RuntimeError):
@@ -131,9 +133,11 @@ def assemble_page(raw, tables, native_status, native_tables, failure_reason=None
         found = [out[start:end].encode("utf-8") for start, end in TableSpans(out).spans]
         if found != native or not final.startswith(complement):
             raise AssemblyAbstain("FINAL_TABLE_COLLECTION_SERIALIZATION_INVALID")
+        consumer = consumer_closure(out, [value.decode("utf-8") for value in native])
         return final, {**note, "status": "NATIVE_COLLECTION_ASSEMBLED", "reason": None,
             "used_native_tables": len(native), "final_sha256": digest(final),
             "non_table_complement_sha256": digest(complement), "append_bytes": len(suffix),
+            "official_consumer_format_check": consumer,
             "chunks": [{"start_byte": start, "end_byte": end, "bytes": len(chunk),
                         "sha256": digest(chunk)} for start, end, chunk in chunks]}
     except (AssemblyAbstain, UnicodeError, ValueError) as exc:

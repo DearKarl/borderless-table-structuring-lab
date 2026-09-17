@@ -1,0 +1,62 @@
+{
+  "schema": "integrated-system-engineering-validation/1",
+  "date": "2026-09-18",
+  "system_version": "0.2.0",
+  "scientific_policy": "NAVIDC_NATIVE_TABLE_COLLECTION_WITH_MINERU_NONTABLE_V1",
+  "historical_result_recomputed": false,
+  "public_leaderboard_submission": false,
+  "tests": {"passed": 77, "failed": 0, "model_free": true},
+  "static_checks": {"pyflakes_project_code": "PASS"},
+  "distribution_check": {
+    "wheel_build": "PASS",
+    "installed_wheel_import_outside_checkout": "PASS",
+    "installed_wheel_assembly_and_vendored_format_gate": "PASS",
+    "complete_clean_inference_environment_install": "NOT_EXERCISED; real model smoke used separate venv with inherited pinned packages"
+  },
+  "cached_output_reassembly": {
+    "pages": 1651,
+    "byte_identical_final_markdown": 1651,
+    "complete_native_pages_checked_with_portable_raw_span_parser": 1639,
+    "selected_original_definitions_ast_identical": 22,
+    "unchanged_attention_helpers": 3,
+    "model_calls": 0,
+    "gold_access": false,
+    "metric_calls": 0,
+    "historical_prediction_manifest_sha256": "7abe2504aa9ca686b21cad242ddcd65f254497872540cdf4a2ea5b3971f496a6"
+  },
+  "real_model_smoke": {
+    "input": "Project-authored invented inventory page from examples/create_demo.py",
+    "model_revision": "710ea2e26d794fe89cbf3ece0402707c332a8671",
+    "device": "MPS",
+    "pages_completed": 1,
+    "canonical_calls": 2,
+    "completed_call_token_counts": [50, 67],
+    "all_terminal_eos": true,
+    "status": "NATIVE_COLLECTION_ASSEMBLED",
+    "resume_additional_calls": 0,
+    "ready_sha256": "c679d11448bb8bdb74cbb0689d842a654ad5d705b3f34d79970d4cd54b607b8f",
+    "prediction_sha256": "c95d7464f157158b412b9f5d416a52119489e349e60e577d7f5414c40c85459c",
+    "scored": false,
+    "gold_model_facing": 0,
+    "environment_note": "Separate venv inherited pinned inference packages. SciPy 1.15.3 Mach-O import failed on this host before model execution; 1.14.1 imports successfully and is pinned for this new wrapper. Original research environment was not modified."
+  },
+  "model_distribution": {
+    "local_all_14_files_hash_verified": true,
+    "upstream_config_and_custom_source_redownload_hash_verified": true,
+    "upstream_weight_url_head_status": 200,
+    "full_weights_redownloaded_for_this_release": false
+  },
+  "evaluation_adapter": {
+    "frozen_evaluator_source_files_verified": 54,
+    "plan_only_and_execution_orchestration_unit_tests": "PASS",
+    "local_docker_execution": "NOT_RUN_DAEMON_OFFLINE",
+    "github_linux_docker_invented_fixture": "CHECK_RELEASE_COMMIT_ACTIONS",
+    "benchmark_scoring_for_packaging": false
+  },
+  "limitations": [
+    "Input boundary requires source page images and separately obtained fixed MinerU Raw Markdown.",
+    "New portable runtime has not completed a separate full Official benchmark evaluation.",
+    "CUDA code path is unvalidated on hardware and is not claimed equivalent to historical MPS.",
+    "Images, Gold, private predictions/caches, VPN credentials and Handoff are not distributed."
+  ]
+}

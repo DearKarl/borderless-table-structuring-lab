@@ -2,8 +2,8 @@
 
 This release keeps original pretrained weights unchanged. They are not models
 trained by this project. The project Training route is documented separately.
-The Hybrid sidecar is the best completed local official-protocol system so far,
-not a verified public leaderboard submission or a result above 95.
+The native-table Hybrid is now the highest completed local Official-protocol
+system. Its result is not a verified public leaderboard submission.
 
 ## Mirrored pretrained artifacts
 
@@ -21,7 +21,7 @@ scores are the authors' claims, not this project's reproduced scores.
 
 ## Current native-table experiment (separate upstream download)
 
-The pending MinerU + NaviDC architecture is documented in
+The completed MinerU + NaviDC system is documented in
 [`hybrid/native_tables/README.md`](../hybrid/native_tables/README.md).
 It uses unchanged `StarDoc-AI/NaviDC-OCR` weights at the exact revision recorded in
 that package's model manifest. These weights are **not** in the older Hybrid
@@ -29,8 +29,21 @@ release archives above. The documented upstream download plus local verifier
 checks the pinned files against their SHA256 values. The
 [pinned upstream model card](https://huggingface.co/StarDoc-AI/NaviDC-OCR/blob/710ea2e26d794fe89cbf3ece0402707c332a8671/README.md)
 declares Apache-2.0 and is itself hash-bound in that manifest. Upstream claims
-do not establish a project benchmark result. This experiment still has no
-completed full Table TEDS score.
+do not establish a project benchmark result. The project's own completed local
+result is documented separately; the integrated wrapper is not separately scored.
+
+## Frozen evaluator and format source
+
+The OmniDocBench source snapshot under `evaluation/omnidocbench` is bound to
+commit `147cd5ac9472002f5751221d390bf00abdbc0d2f`; individual files are recorded in
+`SOURCE_MANIFEST.json`. It retains the upstream Apache-2.0 LICENSE and source
+notices, including the table-metric attribution. Three unmodified format files
+are also included under `hybrid/native_tables/vendor/omnidocbench` with their
+LICENSE/NOTICE. Inference executes only selected pure format functions, never
+Gold matching or metrics. Source: https://github.com/opendatalab/OmniDocBench.
+The new application and Docker adapter do not imply upstream endorsement or
+public leaderboard acceptance. Optional formula-CDM vendored code is retained
+as source provenance but is not a supported scoring mode of this wrapper.
 
 ## Required separately downloaded file
 

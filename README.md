@@ -1,154 +1,173 @@
 # Borderless Table Structuring Lab
 
-Correcting a fixed MinerU parser through two separate routes: **Training** and **Hybrid**. Neither route has achieved our target: **Official OmniDocBench full Table TEDS strictly greater than 95.00**.
+An integrated, auditable **MinerU + NaviDC native-table system**, alongside a
+separate **Training** route. The command-line application `btsl` coordinates
+model acquisition, input validation, layout inference, table recognition,
+whole-page assembly, recovery, and isolated evaluation.
 
-## Architecture and research entry points
+**Highest completed project result:** full Table TEDS **98.75068667701048**,
+structure TEDS **99.2913812392524**, over 1,651 pages in the **local frozen
+Official OmniDocBench protocol**. This is **not** verified public leaderboard
+acceptance, a global SOTA claim, or a score automatically inherited by a new
+installation. [Original aggregate evidence](artifacts/results/native-tables/PAIRED_TABLE_SUMMARY.json).
+
+## Two distinct research routes
+
+| Route | Deliverable | Observed full Table TEDS |
+|---|---|---:|
+| **Integrated Hybrid** | Frozen MinerU non-table output + pretrained NaviDC native table collection; unified inference/evaluation application | **98.75068667701048** |
+| **Training** | Exact Explicit-v2 Original weights and tensor-level inference | **93.0862668980718**, equal to Raw; zero adopted edits |
+| Fixed MinerU Raw | Reference baseline and exact fallback | 93.0862668980718 |
+
+The Hybrid improves full TEDS by **5.664419778938679 points** in the completed
+paired run. Both arms used 458 GT-table pages and 665 matched samples, with no
+evaluation errors/timeouts. Structure TEDS alone is not the objective.
+[Complete results and limitations](artifacts/observed-results.json).
+
+This is **modular software integration**, not weight fusion or a newly trained
+joint model. Its integration includes a typed input boundary, pinned model
+loader, crop geometry, strict OTSL parser, complete-page replacement policy,
+consumer-format checks, atomic output receipts, resumable execution and an
+evaluation adapter. It does not cherry-pick cells or consult reference answers.
+
+## System architecture
 
 ```text
-Fixed MinerU parser output + source page/table image
-  |
-  +-- Training: encoded cells / OCR candidates -> Explicit-v2 Transformer
-  |             -> decision / topology / ownership / text heads
-  |             -> historical guarded executor -> Original fallback
-  |             Public package: exact weights + tensor-level inference
-  |
-  +-- Hybrid
-        +-- Completed reference: OCR geometry + PP-OCRv5 + Tesseract
-        |     -> anchored text consensus -> conservative HTML text patches
-        |     Public package: table-image / Raw-HTML correction adapter
-        |
-        +-- Current unscored experiment: pinned NaviDC-OCR
-              -> native page layout -> every native table crop -> OTSL / HTML
-              -> native table collection + MinerU non-table content
-              -> whole-page Original fallback on defined execution failure
+Source page images + frozen MinerU Raw Markdown
+                 │
+       source-only manifest + SHA checks
+                 │
+       NaviDC layout on every page
+                 │
+       original-resolution table crops
+                 │
+       native OTSL → strict owner-grid → HTML
+                 │
+       complete table collection assembly
+       + byte-preserved MinerU non-table complement
+       + frozen consumer-format validation
+                 │
+       final Markdown + per-page/run receipts
+                 │
+       separate frozen Official evaluator ← Gold (evaluation only)
 ```
 
-The **Data Engineering layer** supplies aligned images, Raw tables, cell/token
-geometry, candidate text, and typed interfaces. The **model/decision layer**
-either learns repair decisions (Training) or uses frozen OCR consensus / native
-table collection replacement (Hybrid). Raw fallback and final committed output must remain distinct from
-model proposals. Private data preparation pipelines are not distributed here.
+A defined page parse/crop/assembly failure restores the **whole Raw page**.
+Missing work, OOM or a model/runtime failure stops execution; it is never
+silently counted as a completed Raw page. Valid zero-table predictions are
+valid outputs. Table structure can change. Caption/table interleaving is not
+preserved; no Overall-document-quality improvement is claimed.
 
-New collaborators should choose one entry point:
+## Install and run
 
-1. **Study the trained architecture:** read [Training](training/README.md), download
-   its exact checkpoint, run the CPU smoke command, then inspect
-   `training/runtime/model.py`. Full PDF correction is not packaged for this route.
-2. **Study the current mature-model combination:** read
-   [native table architecture and handoff](hybrid/native_tables/README.md).
-   This is separate from the historical sidecar and has no completed score.
-3. **Try the completed reference's table adapter:** follow
-   [Hybrid sidecar](hybrid/README.md) using your own table image and Raw HTML.
-   Keep its known limitations visible.
-4. **Understand evidence and contribute:** read [observed results](artifacts/observed-results.json)
-   and [contribution rules](CONTRIBUTING.md). Start from an isolated, project-authored
-   example; never treat interface tests as measured benchmark improvements.
-
-The repository is a compact **model and inference handoff**, not the historical
-experiment archive or a claim of fully reproducible end-to-end training.
-Archived weights live in separate GitHub Releases; current NaviDC weights use a
-pinned upstream download. Datasets, runs, historical contracts,
-private logs, and temporary files are excluded. Third-party notices are required
-provenance, not obsolete experiment files.
-
-## Current results
-
-These are local executions of the complete official protocol, not verified public leaderboard listings. Scores are full Table TEDS, not Overall or structure-only scores. The complete input contains 1,651 pages.
-
-| Route / version | Full TEDS | Structure TEDS | Interpretation |
-|---|---:|---:|---|
-| Fixed MinerU Raw | 93.0862668980718 | 95.70961193860337 | Production fallback |
-| **Training: Explicit-v2 Original** | **93.0862668980718** | 95.70961193860337 | Best verified trained checkpoint; zero adopted edits, equal to Raw |
-| **Hybrid: anchored PP-OCRv5 + Tesseract** | **93.08808257262936** | 95.70961193860337 | Highest completed system aggregate; tiny gain and known crop defect |
-| Hybrid: complete-cell correction cycle 001 | 93.08512970738767 | 95.70961193860337 | Below Raw; preserved, not promoted |
-| Hybrid: native NaviDC table collection | Pending | Pending | Current local full evaluation; not a released winner |
-
-Hybrid's completed gain is only **0.0018156746 percentage points**. It is research-only, not a reliable production corrector. The NaviDC attempt is not promoted before its full result. The current research task is to finish that existing frozen local evaluation, not restart SFT or treat upstream paper scores as project results. [Aggregate result metadata and evidence hashes](artifacts/observed-results.json) identify the archived results without distributing benchmark data.
-
-The [local result archive](artifacts/results/README.md) includes the completed
-paired summaries/READY bindings, a failed-launch receipt and the pending native
-progress snapshot. Below-baseline results are retained, not hidden.
-
-## Training route
-
-A learned Explicit model predicts structured repairs on top of MinerU outputs. The best evidenced checkpoint is **Explicit-v2 Original**, `checkpoint-003111-joint_low_lr`. Later evaluated trained variants scored lower.
-
-**The exact best verified Training checkpoint has been recovered, hash-verified, and published separately.** Download it with `python3 training/download_model.py`. [Training documentation](training/README.md) provides CPU installation, strict loading, and a synthetic inference command. The archived model and safe-state reader are byte-identical to the research source. This is a runnable tensor-level model package, not a turnkey PDF correction pipeline or a newly reproduced benchmark score. No lower-scoring checkpoint or third-party MinerU weights are substituted.
-
-## Hybrid route
-
-### Current experiment: mature native-table model
-
-The current candidate combines **fixed MinerU2.5-Pro-2604-1.2B non-table output**
-with **NaviDC-OCR's complete native table collection**. NaviDC revision
-`710ea2e26d794fe89cbf3ece0402707c332a8671` is pinned; the upstream project's
-later TeleOCR name does not change the checkpoint being evaluated.
-
-Every page gets native layout inference, including Raw pages with no detected
-tables. All native table regions are recognized and strictly parsed from OTSL.
-On success, all original table spans are removed and all native tables are
-appended in layout order. Valid zero-table predictions remain zero. Defined
-page execution/parse/assembly failures restore the entire Raw page. Missing
-work or memory exhaustion never becomes a fabricated Raw-completed page.
-Structure can change; original table/caption interleaving is not preserved.
-
-This is output-level composition, **not weight averaging, a learned selector,
-per-cell cherry-picking, or a new trained checkpoint**. Published author scores
-do not establish this hybrid's score. The local evaluation's last committed
-handoff boundary is **633/1,651 pages (38.34%)**; the full score is pending.
-This is a dated checkpoint of work, not live progress or accuracy.
-
-See [the native-table package](hybrid/native_tables/README.md) for the
-architecture, pinned model/runtime details, available code and exact
-reproducibility limits. Third-party weights are obtained from the pinned
-upstream source, not silently included in the older Hybrid release archive.
-The portable assembler exposes predecessor pure writeback logic; the current
-private run also checks the Official consumer's exact table extraction. That
-consumer-format gate is not packaged, so a portable READY file is not an
-Official-evaluation admission receipt.
-
-### Completed reference: anchored OCR consensus
-
-No new project model is trained. Fixed MinerU Raw outputs, image-only OCR geometry, PP-OCRv5 recognition, and Tesseract recognition are combined through a frozen, conservative ASCII cell-text policy. Exact table markup and cell count are preserved.
-
-Read the [Hybrid guide](hybrid/README.md) for installation, input formats, token detection, correction commands, runtime versions, and limitations. The portable table adapter preserves the archived policy but is **not itself a newly scored full-benchmark run**. Its known continuation-line crop defect is disclosed, not silently repaired while retaining the old score.
-
-## Download and run
+macOS Apple Silicon is the exercised inference backend. Linux/CUDA BF16 is an
+explicit alternative implementation path, **not yet hardware-validated or
+claimed equivalent**. Use Python **3.10** and a fresh environment. Allow about
+3 GB for pinned NaviDC assets plus runtime packages and per-call caches.
+The observed MPS host has 24 GiB unified memory; the model allocator cap is
+12 GiB. Runtime and image-size requirements are not silently reduced.
 
 ```bash
 git clone https://github.com/DearKarl/borderless-table-structuring-lab.git
 cd borderless-table-structuring-lab
-python3 scripts/download_release.py --route hybrid --output models/hybrid
-# Independent project-trained model (4.75 MB):
-python3 training/download_model.py --output models/training/model.safe-state
+python3.10 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[inference,test]'
+btsl download --model-dir models/NaviDC-OCR
+btsl verify-model --model-dir models/NaviDC-OCR
 ```
 
-The downloader verifies archive parts and every extracted file and refuses an existing output directory. Mirrored large assets live in the `hybrid-2026.09.13.1` GitHub Release, not Git history. The converted PP-OCR recognizer is fetched from its **pinned official upstream revision**, with the recorded SHA256, instead of being mirrored or relicensed here. See [artifact inventory](artifacts/hybrid-2026.09.13.1.json).
+The downloader pins upstream revision
+`710ea2e26d794fe89cbf3ece0402707c332a8671` and checks all 14 files by
+SHA256 and size. Weights are downloaded from their upstream source, **not
+embedded in Git or the older OCR-sidecar Release**. Custom model code is
+hash-verified before import. Keep its license and model card.
 
-Continue with [Hybrid setup and commands](hybrid/README.md). Locator and correction use separate pinned Python environments; install native Tesseract for your platform. MinerU base weights are included for provenance and optional upstream parsing. The historical Raw score used MLX on Apple Silicon, not an interchangeable generic backend.
+To run an invented example through the real model:
 
-Use your own matching table image and Raw HTML. No benchmark images, Gold, customer data, or historical execution contracts are distributed. Data-free integration checks are not TEDS gains.
+```bash
+python examples/create_demo.py --output runs/demo-input
+btsl prepare --input-dir runs/demo-input
+btsl run --manifest runs/demo-input/manifest.json \
+  --model-dir models/NaviDC-OCR --device mps --output runs/demo
+btsl verify --run runs/demo
+```
 
-## Layout
+For your data, place matching filenames under `input/images/` and
+`input/raw/`, for example `page-001.png` and `page-001.md`.
+Then substitute that directory in `prepare`. The explicit upstream boundary
+is **original page images plus fixed MinerU Raw Markdown**. This application
+does not silently regenerate MinerU using a different backend. Obtain Raw
+with your separately versioned MinerU deployment. The historical fixed Raw
+used MinerU2.5-Pro-2604-1.2B on MLX; generic upstream reruns are new baselines.
+
+Final outputs are `runs/demo/pages/*.md`. Resume with the identical command
+plus `--resume`; verified completed generations/pages are not repeated.
+After inspecting an incomplete call, an explicit `--resume --retry-failed`
+creates a new attempt while retaining the failed one. Do not edit code, model
+files or input data inside a frozen run.
+
+## Evaluate
+
+[Detailed inference and evaluation guide](hybrid/native_tables/README.md)
+contains the complete commands, data boundary, failure semantics and
+reproduction limits. The frozen evaluator source and Docker build recipe
+are included. Scoring requires legally obtained benchmark annotations and a
+complete prediction directory; annotations never enter model inference.
+
+```bash
+docker build --platform linux/amd64 -f evaluation/Dockerfile -t btsl-evaluator:0.2.0 .
+btsl evaluate --run runs/official --gold /path/to/OmniDocBench.json \
+  --baseline /path/to/fixed-raw-markdown --output runs/official-eval
+# Review the plan, then repeat with --execute to invoke the evaluator.
+```
+
+The default checks the exact historical 1,651-page Official annotation hash.
+A different dataset must explicitly use `--dataset custom --expected-pages N`;
+it must not be reported as the same Official protocol. Evaluation runs in a
+separate network-disabled container, never in the model process. Each scoring
+output is non-overwriting. A fresh Docker build is recorded as a new runtime,
+not falsely identified as the historical image.
+
+The new portable wrapper is **not separately full-benchmark-scored**.
+The historical run included mixed MPS resource epochs; no cross-device
+token/score identity is promised. The assembly extraction and runtime wrappers
+are distinguishable in [provenance](hybrid/native_tables/provenance.json).
+[Release validation](artifacts/integrated-system-validation-2026.09.18.json)
+documents engineering checks, not new accuracy evidence.
+
+## Training route and historical references
+
+The best verified project-trained checkpoint remains **Explicit-v2 Original**,
+`checkpoint-003111-joint_low_lr`. Download its exact weights separately:
+
+```bash
+python training/download_model.py --output models/training/model.safe-state
+```
+
+[Training setup](training/README.md) provides architecture, strict loading and
+CPU tensor-level inference. It is not a turnkey PDF correction pipeline.
+The older PP-OCRv5/Tesseract sidecar is preserved under
+[hybrid/README.md](hybrid/README.md); its tiny gain and known crop defect are
+not hidden. Its older weight Release is not the new NaviDC system.
+
+## Repository map
 
 ```text
-training/       Trained model downloader, exact architecture, CPU inference and result
-hybrid/         Best completed OCR sidecar and portable inference tools
-  native_tables/ Current unscored NaviDC architecture and portable handoff
-artifacts/      File inventory, pinned downloads, checksums
-scripts/        Verified model downloader
-notices/        Third-party licenses and provenance
-tests/          Data-free package/interface checks
+btsl/                         Unified application, inputs, model, pipeline, evaluator adapter
+hybrid/native_tables/         Scientific parser, assembly, pinned model and runtime recipes
+  runtime/                    Extracted original inference functions and memory adapters
+  vendor/omnidocbench/         Frozen Gold-free consumer-format functions and notices
+evaluation/                   Isolated evaluator recipe and exact scored source snapshot
+examples/                     Invented image/Raw example; no benchmark data
+training/                     Separate trained model and downloader
+tests/                        Data-free software checks
+artifacts/                    Model manifests and aggregate-only evidence
+notices/                      Third-party provenance and license texts
 ```
 
-Earlier research files remain recoverable in Git history at commit `0f28d9512825101e61a0f9480e4815b9f1e75261`. Cleanup affects this compact release, not the original research archive or checkpoints.
-
-## Evaluation integrity
-
-Use unchanged OmniDocBench v1.6 full-page matching and page-macro full Table TEDS. Frozen evaluator commit: `147cd5ac9472002f5751221d390bf00abdbc0d2f`. Official inputs were evaluation-only; Gold stayed inside the evaluator; Customer50 was deferred. Repeated aggregate benchmark exposure exists.
-
-Results belong to exact model, input, policy, runtime, and assembly versions. A different backend, portable adapter, upstream author score, or successful load does not reproduce the reported score by itself. Preserve Raw fallback and report known errors honestly.
-
-## Licenses
-
-Project-authored code has no blanket public redistribution license assigned; contact the maintainer for use beyond authorized project collaboration. Third-party components retain their own terms. MinerU model weights, MinerU software, PaddleOCR, PDF-Extract-Kit converted weights, and Tesseract do not share one uniform license. Read [third-party notices](notices/) before use.
+No private Handoff, VPN configuration, credentials, benchmark images/Gold,
+customer documents, private per-page results or historical execution contracts
+are published. See [contribution rules](CONTRIBUTING.md) and
+[third-party notices](notices/THIRD_PARTY.md). A new clone does not include the
+private benchmark prediction cache or guarantee a public leaderboard listing.

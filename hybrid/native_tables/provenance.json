@@ -1,7 +1,7 @@
 {
   "schema": "native-table-portable-provenance/1",
-  "release_date": "2026-09-16",
-  "scope": "Project-authored pure parsing/assembly and research architecture; no upstream model implementation or private benchmark orchestration",
+  "release_date": "2026-09-18",
+  "scope": "Integrated inference/evaluation wrapper; original scientific functions extracted, consumer-format source and frozen evaluator vendored with notices",
   "formats": {
     "original_basename": "navidc_page_format_001.py",
     "original_sha256": "40fed19f79ed3e82a8176712ca2224aa88571bf783c457d19d30a5ad87bfcc78",
@@ -9,28 +9,33 @@
     "byte_identical": true
   },
   "assembly": {
-    "original_basename": "assemble_navidc_official_pages_001.py",
-    "original_sha256": "86c8f6e166b45cf5fbbe6979ff5f9a7e5b5bcfa26e42c718d60996740015bb15",
+    "original_basename": "assemble_navidc_official_pages_003.py",
+    "original_sha256": "0fe1e926d013a2178e024b8632caab64bd5984d8614e6026fb33aab155adc384",
     "release_path": "assembly.py",
-    "unchanged_ast_definitions": ["BindingError", "AssemblyAbstain", "require", "digest", "TableSpans", "raw_chunks", "assemble_page"],
+    "unchanged_ast_definitions": [
+      "BindingError",
+      "AssemblyAbstain",
+      "require",
+      "digest",
+      "TableSpans",
+      "raw_chunks",
+      "assemble_page"
+    ],
     "removed": "Dataset counts, host paths, benchmark publication/evaluator adapters, receipt loader and private inventory handling",
     "scientific_function_edits": false,
     "current_research_assembler": "assemble_navidc_official_pages_003.py",
-    "current_official_consumer_projection_closure_included": false,
-    "limitation": "Predecessor001 HTML table closure only; leftover Markdown/LaTeX table projections are not checked against the Official consumer. Portable READY is not current Official admission."
+    "current_official_consumer_projection_closure_included": true,
+    "limitation": "Gold-free format closure is not metric evaluation. Original caption/table interleaving is not preserved."
   },
   "portable_integration": {
-    "new_files": ["assemble.py", "verify_model.py", "example.py"],
-    "purpose": "Strict user-owned JSON boundary, synthetic example, model hashes and no-overwrite CLI",
-    "inference_executed_for_packaging": false,
+    "entrypoint": "python -m btsl",
+    "input": "Source image and fixed MinerU Raw Markdown for every page",
+    "inference_implemented": true,
+    "official_consumer_format_gate": true,
+    "frozen_evaluator_included": true,
     "benchmark_executed_for_packaging": false,
-    "end_to_end_inference_portability_verified": false,
-    "official_consumer_format_verified": false
+    "verification_report": "../../artifacts/integrated-system-validation-2026.09.18.json"
   },
-  "observed_not_vendored_resource_sources": [
-    {"basename": "navidc_vision_query_chunk_sdpa_001.py", "sha256": "dc9a75a83537c62308b7e6303d7c665719f5425c9313545aa77c3e961dbf2dcd"},
-    {"basename": "navidc_decoder_query_chunk_sdpa_001.py", "sha256": "4ba5c30400282a83b428b0f3f5da2c713240411a421893753659388cc28d495d"}
-  ],
   "evidence_boundary": {
     "model_card_license_declaration": "Apache-2.0",
     "upstream_source_and_weights_redistributed": false,
@@ -38,7 +43,25 @@
     "official_model_input_scope_of_original_run": "evaluation-only",
     "gold_model_facing": 0,
     "customer50": "deferred",
-    "candidate_full_table_teds": null,
+    "candidate_full_table_teds": 98.75068667701048,
+    "candidate_structure_table_teds": 99.2913812392524,
+    "paired_summary_sha256": "5ccecac587dc99528e6e0881453c682dac7fc72089ed2d9901f18b9b064b1542",
+    "portable_package_separately_scored": false,
     "public_leaderboard_acceptance": false
-  }
+  },
+  "vendored_resource_sources": [
+    {
+      "basename": "navidc_vision_query_chunk_sdpa_001.py",
+      "sha256": "dc9a75a83537c62308b7e6303d7c665719f5425c9313545aa77c3e961dbf2dcd"
+    },
+    {
+      "basename": "navidc_decoder_query_chunk_sdpa_001.py",
+      "sha256": "4ba5c30400282a83b428b0f3f5da2c713240411a421893753659388cc28d495d"
+    },
+    {
+      "basename": "navidc_decoder_query_chunk_sdpa_002.py",
+      "sha256": "026cb33e7dfc349366c6c26d152b1e5877bf03599cdd28c6211a44023130d8df"
+    }
+  ],
+  "extraction_manifest": "runtime/EXTRACTION.json"
 }

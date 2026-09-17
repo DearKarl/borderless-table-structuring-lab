@@ -83,7 +83,7 @@ def main():
                    source_image_sha256=digest(image),
                    native_record_sha256=digest(args.native.read_bytes()),
                    model_executed=False, scored=False,
-                   official_consumer_format_verified=False,
+                   official_consumer_format_verified=receipt["status"] == "NATIVE_COLLECTION_ASSEMBLED",
                    scope="User-owned outputs; not a verified benchmark result")
     args.output_dir.mkdir(parents=True, exist_ok=False)
     with (args.output_dir / "page.md").open("xb") as stream:

@@ -1,7 +1,7 @@
 {
   "schema": "native-table-architecture/1",
   "policy": "NAVIDC_NATIVE_TABLE_COLLECTION_WITH_MINERU_NONTABLE_V1",
-  "release_scope": "Research architecture and model-free parser/assembly only; no end-to-end benchmark reproduction claim",
+  "release_scope": "Integrated source-image + fixed MinerU Markdown inference, verified whole-page assembly, resumable artifacts and isolated frozen Official-protocol evaluation; new wrapper not separately benchmark-scored",
   "training_updates": 0,
   "baseline": {
     "model": "opendatalab/MinerU2.5-Pro-2604-1.2B",
@@ -86,18 +86,22 @@
     "full_original_kv": true,
     "implicit_cpu_fallback": false,
     "mixed_temporal_runtime_prefix": true,
-    "byte_equivalence_claimed": false
+    "byte_equivalence_claimed": false,
+    "final_q1_resource_recovery": "Pre/post original native SDPA synchronization and unused MPS allocator-cache release; no model, precision, image, token or scoring change"
   },
   "evaluation_snapshot": {
-    "as_of": "2026-09-15",
-    "completed_pages": 633,
+    "as_of": "2026-09-17",
+    "completed_pages": 1651,
     "total_pages": 1651,
-    "full_table_teds": null,
-    "status": "PENDING; user-paused at snapshot",
+    "successful_generation_calls": 2296,
+    "full_table_teds": 98.75068667701048,
+    "structure_table_teds": 99.2913812392524,
+    "paired_summary_sha256": "5ccecac587dc99528e6e0881453c682dac7fc72089ed2d9901f18b9b064b1542",
+    "status": "COMPLETED_LOCAL_OFFICIAL_PROTOCOL; scored target >95 met",
     "public_leaderboard_acceptance": false,
     "scope": "Local frozen Official-protocol run; not public leaderboard acceptance",
     "gold_model_facing": 0,
     "customer50": "deferred"
   },
-  "evidence_boundary": "Published 97.05 belongs to the author's separate system/protocol; it is not our candidate score."
+  "evidence_boundary": "Historical 98.75068667701048 belongs to the completed local frozen hybrid run, not public leaderboard acceptance. This integrated wrapper preserves extracted scientific functions, but a new execution needs its own score."
 }

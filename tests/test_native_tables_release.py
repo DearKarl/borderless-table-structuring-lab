@@ -112,7 +112,9 @@ def test_parser_byte_identity_and_manifest_scope():
     assert len(manifest["files"]) == 14
     assert manifest["revision"] == "710ea2e26d794fe89cbf3ece0402707c332a8671"
     architecture = json.loads((root / "architecture.json").read_text())
-    assert architecture["evaluation_snapshot"]["full_table_teds"] is None
+    summary = json.loads((ROOT / "artifacts/results/native-tables/PAIRED_TABLE_SUMMARY.json").read_text())
+    assert architecture["evaluation_snapshot"]["full_table_teds"] == summary["arms"]["candidate"]["TEDS"]["percent_0_to_100"]
+    assert architecture["evaluation_snapshot"]["public_leaderboard_acceptance"] is False
     assert architecture["generation"]["max_new_tokens"] == 4096
 
 
@@ -126,7 +128,7 @@ def test_cli_synthetic_roundtrip_no_overwrite_no_torch(tmp_path):
     subprocess.run(command, cwd=ROOT, check=True)
     ready = json.loads((output_dir / "READY.json").read_text())
     receipt = json.loads((output_dir / "receipt.json").read_text())
-    assert receipt["official_consumer_format_verified"] is False
+    assert receipt["official_consumer_format_verified"] is True
     assert ready["page_sha256"] == hashlib.sha256((output_dir / "page.md").read_bytes()).hexdigest()
     assert subprocess.run(command, cwd=ROOT, capture_output=True).returncode != 0
     subprocess.run([sys.executable, "-c", "import sys; import hybrid.native_tables.assemble; assert 'torch' not in sys.modules"], cwd=ROOT, check=True)
