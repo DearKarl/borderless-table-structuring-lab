@@ -1,33 +1,15 @@
-# Native-table hybrid — completed local research result
+# Native-table hybrid — unscored research architecture
 
-This is the highest completed **non-training system** in this project, separate from the previously
+This is the current **non-training** experiment, separate from the previously
 scored OCR-consensus system in `../README.md`. It combines fixed MinerU output
 with an entire table collection predicted by pretrained NaviDC-OCR. It does not
 average model weights or ask a newly trained editor to select text actions.
 
-**Completed 2026-09-17:** all **1,651 pages** and **2,296 successful canonical
-generation calls** are preserved. The frozen local Official-protocol evaluation
-scored full Table TEDS **98.75068667701048** and structure TEDS
-**99.2913812392524**, meeting the project's full-TEDS >95 target. This is not a
-verified public leaderboard acceptance, global SOTA claim, or production guarantee.
-The benchmark and private execution archive are not included in this repository.
-Downloading this package does not run or resume that evaluation.
-
-| Paired system | Full Table TEDS | Structure TEDS |
-|---|---:|---:|
-| Fixed MinerU Raw | 93.0862668980718 | 95.70961193860337 |
-| Native-table Hybrid | 98.75068667701048 | 99.2913812392524 |
-
-The gains are **5.664419778938679** full-TEDS points and
-**3.5817693006490288** structure-TEDS points; the candidate's
-structure-minus-full gap is **0.5406945622419244** points. Both evaluations used
-458 GT-table pages and 665 matched samples, with zero evaluation errors and
-zero timeouts. See the [immutable paired result](../../artifacts/results/native-tables/PAIRED_TABLE_SUMMARY.json),
-its [READY binding](../../artifacts/results/native-tables/READY.json), and the
-[aggregate projection](../../artifacts/results/native-tables/AGGREGATE.json).
-The earlier 633-page pause and 2026-09-16 progress file remain dated history,
-not current status. The best trained checkpoint remains Explicit-v2 Original,
-equal to Raw; this system result is not a new trained-model result.
+**Snapshot:** 633 / 1,651 local evaluation pages were committed when the user
+paused the job on 2026-09-15. The full Table TEDS result is **PENDING**, not zero,
+not above 95, and not a public leaderboard acceptance. These counts describe the
+research run, not a benchmark included in this repository. Restarting it is a
+separate operation; downloading this package does not resume anything.
 
 ## Architecture and intended benefit
 
@@ -58,9 +40,9 @@ NaviDC-OCR **97.05** motivates this experiment, but belongs to the authors'
 system and protocol. It is **not** this hybrid's measured score. Independent
 public-image inspection found actual bracket repairs and heading-span changes,
 but also a lost column and row/content errors. That evidence supports testing,
-not a guaranteed gain. The completed frozen local evaluation above establishes
-this candidate's aggregate result, not universal superiority. A public listing
-still needs a separate real submission/acceptance receipt.
+not a guaranteed gain. Only a completed frozen Official-protocol evaluation
+can establish this candidate's result; a public listing needs a separate real
+submission/acceptance receipt.
 
 ## What this directory actually provides
 
@@ -78,7 +60,7 @@ still needs a separate real submission/acceptance receipt.
 **This release is not an end-to-end inference runner.** The long-running local
 controller, its private page/cache inventory and the Official evaluator are not
 shipped. The portable CLI validates/assembles outputs; it does not recreate the
-private page/cache archive, load NaviDC, run MinerU or claim token-equivalent reproduction.
+633-page cache, load NaviDC, run MinerU or claim token-equivalent reproduction.
 The model's upstream architecture is obtained at the pinned revision below.
 The observed MPS query-chunk adapters and process scheduler are documented,
 not reimplemented here or silently substituted with a different runtime.
@@ -157,12 +139,8 @@ CPU fallback. Vision full-attention blocks 7/15/23/31 use 256-query chunks with
 all original keys/values. A later decoder resource recovery also uses 256-query
 chunks, full K/V and explicit absolute causal offsets. This is a memory change,
 not reduced-resolution/window attention or a promise of bit-identical tokens.
-The final resource epoch synchronizes the original one-query (Q1) SDPA path
-before and after execution and releases unused MPS allocator cache. It changes
-neither model weights nor image/prompt/generation settings; it is not a claim
-that cache release improves quality or preserves token-bit identity.
 The preserved temporal prefix spans more than one local OS/resource recipe;
-the completed evaluation retains that mixed-arithmetic provenance. A different machine/runtime
+final evaluation must disclose that provenance. A different machine/runtime
 needs its own recorded execution binding, not a false identity claim.
 
 ## Model-free quickstart
@@ -254,6 +232,5 @@ as an untouched holdout. Always retain below-target results and exact artifacts.
   a complete pinned protocol, not a substitute syntax, fixture or action score.
 
 The code tests in this directory protect serialization and scope. They do not
-establish model quality or reproduce the author's 97.05. The strict project
-target **full Table TEDS > 95.00** is met by the separately completed frozen
-local research evaluation above, not by these tests or the portable CLI.
+establish model quality, reproduce the author's 97.05, or show that the strict
+project target **full Table TEDS > 95.00** has been achieved.

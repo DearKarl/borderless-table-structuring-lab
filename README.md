@@ -1,6 +1,6 @@
 # Borderless Table Structuring Lab
 
-Correcting a fixed MinerU parser through two separate routes: **Training** and **Hybrid**. On 2026-09-17, the native-table Hybrid completed the local frozen Official OmniDocBench protocol with **full Table TEDS 98.75068667701048**, meeting the project target of **strictly greater than 95.00**. This is not a verified public leaderboard listing, a global SOTA claim, or a production guarantee.
+Correcting a fixed MinerU parser through two separate routes: **Training** and **Hybrid**. Neither route has achieved our target: **Official OmniDocBench full Table TEDS strictly greater than 95.00**.
 
 ## Architecture and research entry points
 
@@ -17,7 +17,7 @@ Fixed MinerU parser output + source page/table image
         |     -> anchored text consensus -> conservative HTML text patches
         |     Public package: table-image / Raw-HTML correction adapter
         |
-        +-- Highest completed project system: pinned NaviDC-OCR
+        +-- Current unscored experiment: pinned NaviDC-OCR
               -> native page layout -> every native table crop -> OTSL / HTML
               -> native table collection + MinerU non-table content
               -> whole-page Original fallback on defined execution failure
@@ -36,7 +36,7 @@ New collaborators should choose one entry point:
    `training/runtime/model.py`. Full PDF correction is not packaged for this route.
 2. **Study the current mature-model combination:** read
    [native table architecture and handoff](hybrid/native_tables/README.md).
-   This is the highest completed project system, separate from the historical sidecar.
+   This is separate from the historical sidecar and has no completed score.
 3. **Try the completed reference's table adapter:** follow
    [Hybrid sidecar](hybrid/README.md) using your own table image and Raw HTML.
    Keep its known limitations visible.
@@ -51,7 +51,7 @@ pinned upstream download. Datasets, runs, historical contracts,
 private logs, and temporary files are excluded. Third-party notices are required
 provenance, not obsolete experiment files.
 
-## Current results — completed 2026-09-17
+## Current results
 
 These are local executions of the complete official protocol, not verified public leaderboard listings. Scores are full Table TEDS, not Overall or structure-only scores. The complete input contains 1,651 pages.
 
@@ -59,17 +59,15 @@ These are local executions of the complete official protocol, not verified publi
 |---|---:|---:|---|
 | Fixed MinerU Raw | 93.0862668980718 | 95.70961193860337 | Production fallback |
 | **Training: Explicit-v2 Original** | **93.0862668980718** | 95.70961193860337 | Best verified trained checkpoint; zero adopted edits, equal to Raw |
-| Hybrid: anchored PP-OCRv5 + Tesseract | 93.08808257262936 | 95.70961193860337 | Historical sidecar; tiny gain and known crop defect |
+| **Hybrid: anchored PP-OCRv5 + Tesseract** | **93.08808257262936** | 95.70961193860337 | Highest completed system aggregate; tiny gain and known crop defect |
 | Hybrid: complete-cell correction cycle 001 | 93.08512970738767 | 95.70961193860337 | Below Raw; preserved, not promoted |
-| **Hybrid: native NaviDC table collection** | **98.75068667701048** | **99.2913812392524** | Highest completed project system; local scored target met |
+| Hybrid: native NaviDC table collection | Pending | Pending | Current local full evaluation; not a released winner |
 
-The native-table Hybrid completed **1,651 pages and 2,296 successful canonical generation calls**. Against fixed Raw, its full-TEDS gain is **5.664419778938679 percentage points** and its structure-TEDS gain is **3.5817693006490288 points**; its structure-minus-full gap is **0.5406945622419244 points**. The paired evaluation used 458 GT-table pages and 665 matched samples for each system, with zero evaluation errors and zero timeouts for both. The historical OCR sidecar's gain remains only 0.0018156745575623745 points. Best completed **system** and best **trained checkpoint** are distinct: Explicit-v2 Original still equals Raw, with zero adopted edits.
-
-[Aggregate result metadata and evidence hashes](artifacts/observed-results.json) identify the completed local result without distributing benchmark data. The score belongs to the frozen research pipeline, not the portable package, the upstream author's pipeline, or an unverified production deployment.
+Hybrid's completed gain is only **0.0018156746 percentage points**. It is research-only, not a reliable production corrector. The NaviDC attempt is not promoted before its full result. The current research task is to finish that existing frozen local evaluation, not restart SFT or treat upstream paper scores as project results. [Aggregate result metadata and evidence hashes](artifacts/observed-results.json) identify the archived results without distributing benchmark data.
 
 The [local result archive](artifacts/results/README.md) includes the completed
-paired summaries/READY bindings, a failed-launch receipt and the dated native
-progress snapshot as history. Below-baseline results are retained, not hidden.
+paired summaries/READY bindings, a failed-launch receipt and the pending native
+progress snapshot. Below-baseline results are retained, not hidden.
 
 ## Training route
 
@@ -79,12 +77,12 @@ A learned Explicit model predicts structured repairs on top of MinerU outputs. T
 
 ## Hybrid route
 
-### Highest completed system: mature native-table model
+### Current experiment: mature native-table model
 
-The completed system combines **fixed MinerU2.5-Pro-2604-1.2B non-table output**
+The current candidate combines **fixed MinerU2.5-Pro-2604-1.2B non-table output**
 with **NaviDC-OCR's complete native table collection**. NaviDC revision
 `710ea2e26d794fe89cbf3ece0402707c332a8671` is pinned; the upstream project's
-later TeleOCR name does not change the checkpoint evaluated here.
+later TeleOCR name does not change the checkpoint being evaluated.
 
 Every page gets native layout inference, including Raw pages with no detected
 tables. All native table regions are recognized and strictly parsed from OTSL.
@@ -96,21 +94,20 @@ Structure can change; original table/caption interleaving is not preserved.
 
 This is output-level composition, **not weight averaging, a learned selector,
 per-cell cherry-picking, or a new trained checkpoint**. Published author scores
-do not establish this hybrid's score. Its own completed local full Table TEDS
-is **98.75068667701048**. The earlier 633/1,651-page paused handoff remains a
-dated historical snapshot, not current progress or a partial accuracy measure.
+do not establish this hybrid's score. The local evaluation's last committed
+handoff boundary is **633/1,651 pages (38.34%)**; the full score is pending.
+This is a dated checkpoint of work, not live progress or accuracy.
 
 See [the native-table package](hybrid/native_tables/README.md) for the
 architecture, pinned model/runtime details, available code and exact
 reproducibility limits. Third-party weights are obtained from the pinned
 upstream source, not silently included in the older Hybrid release archive.
-The portable package is **not an end-to-end inference/evaluation pipeline**.
-Its assembler exposes predecessor pure writeback logic; the completed
-private run also checked the Official consumer's exact table extraction. That
+The portable assembler exposes predecessor pure writeback logic; the current
+private run also checks the Official consumer's exact table extraction. That
 consumer-format gate is not packaged, so a portable READY file is not an
 Official-evaluation admission receipt.
 
-### Historical completed reference: anchored OCR consensus
+### Completed reference: anchored OCR consensus
 
 No new project model is trained. Fixed MinerU Raw outputs, image-only OCR geometry, PP-OCRv5 recognition, and Tesseract recognition are combined through a frozen, conservative ASCII cell-text policy. Exact table markup and cell count are preserved.
 
@@ -136,8 +133,8 @@ Use your own matching table image and Raw HTML. No benchmark images, Gold, custo
 
 ```text
 training/       Trained model downloader, exact architecture, CPU inference and result
-hybrid/         Historical OCR sidecar and portable inference tools
-  native_tables/ Highest completed system's architecture and limited portable handoff
+hybrid/         Best completed OCR sidecar and portable inference tools
+  native_tables/ Current unscored NaviDC architecture and portable handoff
 artifacts/      File inventory, pinned downloads, checksums
 scripts/        Verified model downloader
 notices/        Third-party licenses and provenance
@@ -151,14 +148,6 @@ Earlier research files remain recoverable in Git history at commit `0f28d9512825
 Use unchanged OmniDocBench v1.6 full-page matching and page-macro full Table TEDS. Frozen evaluator commit: `147cd5ac9472002f5751221d390bf00abdbc0d2f`. Official inputs were evaluation-only; Gold stayed inside the evaluator; Customer50 was deferred. Repeated aggregate benchmark exposure exists.
 
 Results belong to exact model, input, policy, runtime, and assembly versions. A different backend, portable adapter, upstream author score, or successful load does not reproduce the reported score by itself. Preserve Raw fallback and report known errors honestly.
-
-The completed native run preserves mixed local MPS execution epochs: a committed
-temporal prefix, full-K/V query-chunk resource adaptations, and a final Q1 path
-with synchronization and unused allocator-cache release. Model weights, image
-preparation and generation settings were unchanged by that final resource step.
-This is not a claim of bit-identical tokens, a quality benefit from cache release,
-CUDA equivalence, or a uniform original runtime. Repeated aggregate exposure
-remains disclosed; the local result does not establish global SOTA or production reliability.
 
 ## Licenses
 

@@ -86,22 +86,18 @@
     "full_original_kv": true,
     "implicit_cpu_fallback": false,
     "mixed_temporal_runtime_prefix": true,
-    "byte_equivalence_claimed": false,
-    "final_q1_resource_recovery": "Pre/post original native SDPA synchronization and unused MPS allocator-cache release; no model, precision, image, token or scoring change"
+    "byte_equivalence_claimed": false
   },
   "evaluation_snapshot": {
-    "as_of": "2026-09-17",
-    "completed_pages": 1651,
+    "as_of": "2026-09-15",
+    "completed_pages": 633,
     "total_pages": 1651,
-    "successful_generation_calls": 2296,
-    "full_table_teds": 98.75068667701048,
-    "structure_table_teds": 99.2913812392524,
-    "paired_summary_sha256": "5ccecac587dc99528e6e0881453c682dac7fc72089ed2d9901f18b9b064b1542",
-    "status": "COMPLETED_LOCAL_OFFICIAL_PROTOCOL; scored target >95 met",
+    "full_table_teds": null,
+    "status": "PENDING; user-paused at snapshot",
     "public_leaderboard_acceptance": false,
     "scope": "Local frozen Official-protocol run; not public leaderboard acceptance",
     "gold_model_facing": 0,
     "customer50": "deferred"
   },
-  "evidence_boundary": "Published 97.05 belongs to the author's separate system/protocol. Our 98.75068667701048 is a completed local frozen hybrid result, not public leaderboard acceptance or reproduction by this partial portable package."
+  "evidence_boundary": "Published 97.05 belongs to the author's separate system/protocol; it is not our candidate score."
 }
