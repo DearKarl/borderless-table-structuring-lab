@@ -66,6 +66,9 @@ def evaluate(run, gold, output, docker_image, dataset="official", expected_pages
     output.mkdir(parents=True)
     shutil.copytree(source, output / "frozen_evaluator")
     verify_source(output / "frozen_evaluator")
+    # The parent /workspace mount is read-only. Its nested writable result
+    # mountpoint must exist before Docker starts; Docker cannot create it there.
+    (output / "frozen_evaluator/result").mkdir(exist_ok=True)
     (output / "results").mkdir()
     for arm, predictions in arms.items():
         shutil.copytree(predictions, output / "inputs" / arm)

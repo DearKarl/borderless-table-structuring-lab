@@ -159,6 +159,7 @@ def test_evaluator_orchestration_with_fake_container(tmp_path, monkeypatch):
     def fake_container(command, **kwargs):
         assert command[:3] == ["docker", "run", "--rm"]
         assert command[command.index("--network") + 1] == "none"
+        assert (output / "frozen_evaluator/result").is_dir()
         publish(output / "results/candidate_quick_match_metric_result.json", {
             "match_debug": {"page_count": 1}, "table": {"page": {
                 "TEDS": {"ALL": 0.25}, "TEDS_structure_only": {"ALL": 0.50}}}})
