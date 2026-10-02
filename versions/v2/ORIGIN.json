@@ -1,0 +1,133 @@
+{
+  "source_archive": "FROZEN_CODE_v2.zip",
+  "source_archive_sha256": "59f03c6d1b253a898730001786671a9c48608f999aae4ee5aa9e2a8bc0dbe343",
+  "members": [
+    {
+      "path": "hybrid_v2_tele_base/__init__.py",
+      "original_sha256": "f0de55b933f90b6723a3984654cc7fc6f8a8155726573ba9ae0c10998918200d",
+      "public_sha256": "f0de55b933f90b6723a3984654cc7fc6f8a8155726573ba9ae0c10998918200d"
+    },
+    {
+      "path": "hybrid_v2_tele_base/audit.py",
+      "original_sha256": "e528b9bb470e0697dbf3356da1c6780a256076f0ac015e1782ae61b684306ee1",
+      "public_sha256": "e528b9bb470e0697dbf3356da1c6780a256076f0ac015e1782ae61b684306ee1"
+    },
+    {
+      "path": "hybrid_v2_tele_base/environment_probe.py",
+      "original_sha256": "7388915ee8a61649e588a661a99b199564796009feeb4a9b1ccad25b9da96e24",
+      "public_sha256": "7388915ee8a61649e588a661a99b199564796009feeb4a9b1ccad25b9da96e24"
+    },
+    {
+      "path": "hybrid_v2_tele_base/expert_process.py",
+      "original_sha256": "c0cfdc78f81b746eaa89648ab4d2f0aabfb9493a0a6780f811152ec12973db92",
+      "public_sha256": "c0cfdc78f81b746eaa89648ab4d2f0aabfb9493a0a6780f811152ec12973db92"
+    },
+    {
+      "path": "hybrid_v2_tele_base/full_score.py",
+      "original_sha256": "22b3f847d54e00a30deef6e7b50c33878eb24e0b92597b2a44d4057f3f6bbe8a",
+      "public_sha256": "1a45978e59f2797115be7e5dc9e2cd6c059a143de4f6b05f0f0f2b95229e1660"
+    },
+    {
+      "path": "hybrid_v2_tele_base/full_state.py",
+      "original_sha256": "7ebaf8af6591f89322346333480fed276f2e56b295fa535df43beddedc446d9f",
+      "public_sha256": "7ebaf8af6591f89322346333480fed276f2e56b295fa535df43beddedc446d9f"
+    },
+    {
+      "path": "hybrid_v2_tele_base/full_worker.py",
+      "original_sha256": "ce3c369ab2cea208b85d91ece6c81b54a4a092ea43974ffff24004faea3e8fd1",
+      "public_sha256": "ce3c369ab2cea208b85d91ece6c81b54a4a092ea43974ffff24004faea3e8fd1"
+    },
+    {
+      "path": "hybrid_v2_tele_base/lock_checks.py",
+      "original_sha256": "89cfba1de199086b72191f34a8e10a97efc60d0439ef7da4ece21df35e794fbd",
+      "public_sha256": "89cfba1de199086b72191f34a8e10a97efc60d0439ef7da4ece21df35e794fbd"
+    },
+    {
+      "path": "hybrid_v2_tele_base/paddle_formula_worker.py",
+      "original_sha256": "b5e9e70cd59797edb3e7ceb04b17aacd829815a9003b03ae23a0f50477d9f6e9",
+      "public_sha256": "b5e9e70cd59797edb3e7ceb04b17aacd829815a9003b03ae23a0f50477d9f6e9"
+    },
+    {
+      "path": "hybrid_v2_tele_base/region_protocol.py",
+      "original_sha256": "cf548cde2ac9645b517aa0c0a59614f5c72bf3fe630bc9a2005b11121f87cd12",
+      "public_sha256": "cf548cde2ac9645b517aa0c0a59614f5c72bf3fe630bc9a2005b11121f87cd12"
+    },
+    {
+      "path": "hybrid_v2_tele_base/run_full.py",
+      "original_sha256": "cbba4609acc8944e25abd48cee22e78abdabd6bb251956d4f97bef611863d7aa",
+      "public_sha256": "4a1d152169fd171a411b4668a1e25ff5168d245974affc9d8bc96d07c6dff95d"
+    },
+    {
+      "path": "hybrid_v2_tele_base/run_smoke.py",
+      "original_sha256": "970934f14046dcab85088e1ceba1a7b72afd8fa81ae363d6080f9072b5d1dcf7",
+      "public_sha256": "2242ff4d33664d783ab0cfcf0d782aa9684e7fa353bbd62298e5d384dc20dc46"
+    },
+    {
+      "path": "hybrid_v2_tele_base/runtime_load.py",
+      "original_sha256": "16c51065345daa90221470cb28536757419986c4ad84f9a470bf64dd3a7d5361",
+      "public_sha256": "16c51065345daa90221470cb28536757419986c4ad84f9a470bf64dd3a7d5361"
+    },
+    {
+      "path": "hybrid_v2_tele_base/runtime_resources.py",
+      "original_sha256": "b64bfa5cad08571b3e0392cda01bbd1347f7bcc30ad2c19ae9ce081b27db3397",
+      "public_sha256": "b64bfa5cad08571b3e0392cda01bbd1347f7bcc30ad2c19ae9ce081b27db3397"
+    },
+    {
+      "path": "hybrid_v2_tele_base/smoke.py",
+      "original_sha256": "04bcbb9fabdf3d3189aafb57117b3e9b3e4d828f16e7cf114f8083ffc0951328",
+      "public_sha256": "04bcbb9fabdf3d3189aafb57117b3e9b3e4d828f16e7cf114f8083ffc0951328"
+    },
+    {
+      "path": "hybrid_v2_tele_base/tele_adapter.py",
+      "original_sha256": "5bac374c6a5e5dfd404d45c6550de34d353433193ac56acf114fa712c016a6d5",
+      "public_sha256": "5bac374c6a5e5dfd404d45c6550de34d353433193ac56acf114fa712c016a6d5"
+    },
+    {
+      "path": "hybrid_v2_tele_base/test_audit.py",
+      "original_sha256": "7b77889d53a0f2b0531c3c51eb3f69f899cd91fcfe3177ce233dedb8a5f8999c",
+      "public_sha256": "7b77889d53a0f2b0531c3c51eb3f69f899cd91fcfe3177ce233dedb8a5f8999c"
+    },
+    {
+      "path": "hybrid_v2_tele_base/test_audit_persistence.py",
+      "original_sha256": "010dad4587d01f5ae20f1bc3f432194990fa1064202beaa2b9c2ad37f044d199",
+      "public_sha256": "010dad4587d01f5ae20f1bc3f432194990fa1064202beaa2b9c2ad37f044d199"
+    },
+    {
+      "path": "hybrid_v2_tele_base/test_audit_tensors.py",
+      "original_sha256": "0350122d624de332912226faa5cb8454af84198067487095287434f3222f3226",
+      "public_sha256": "0350122d624de332912226faa5cb8454af84198067487095287434f3222f3226"
+    },
+    {
+      "path": "hybrid_v2_tele_base/test_contract.py",
+      "original_sha256": "c46be111ad70d9e0e850a2516066f3148f41e556dc594f1ab466f0b3f5b8bc9a",
+      "public_sha256": "f6cdcf0c938de4053f4b5ee1a3e6109267ac0e1d39bef13b460af47b43e6a385"
+    },
+    {
+      "path": "hybrid_v2_tele_base/test_full_state.py",
+      "original_sha256": "b1c500c7ca6d3a88039e6b50df41e8fd262a854fb3578fddd5423e7d3855fd02",
+      "public_sha256": "b1c500c7ca6d3a88039e6b50df41e8fd262a854fb3578fddd5423e7d3855fd02"
+    },
+    {
+      "path": "hybrid_v2_tele_base/test_locks.py",
+      "original_sha256": "bef91593a00981521f092472e72b63240e90d319a2794abfc12b68cef7dc4f3a",
+      "public_sha256": "bef91593a00981521f092472e72b63240e90d319a2794abfc12b68cef7dc4f3a"
+    },
+    {
+      "path": "official_entry.py",
+      "original_sha256": "79dd63ae8b0bd19301374f170ab95569af69fe68a65416799a24a83e2390f0bd",
+      "public_sha256": "79dd63ae8b0bd19301374f170ab95569af69fe68a65416799a24a83e2390f0bd"
+    },
+    {
+      "path": "verify_smoke.py",
+      "original_sha256": "bf888c7f85e4adc99b6e25f9b19c434be31db1912d31caea417df2d5314410cf",
+      "public_sha256": "bf888c7f85e4adc99b6e25f9b19c434be31db1912d31caea417df2d5314410cf"
+    }
+  ],
+  "supplemental_source": "Project-owned paired scheduling, resource recovery and score admission modules",
+  "publication_changes": [
+    "Example root paths",
+    "Container label namespace",
+    "Explicit GPU and external source environment variables"
+  ],
+  "gpu_rerun": false
+}

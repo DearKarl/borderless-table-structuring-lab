@@ -1,0 +1,42 @@
+{
+  "name": "V31-CONSERVATIVE-r1",
+  "admission_score": 0.9,
+  "table_native_coverage": 0.8,
+  "table_union_area_ratio": 1.25,
+  "table_expansion_pixels": 2,
+  "max_table_expansions": 2,
+  "max_additions": 2,
+  "max_candidate_overlap": 0.01,
+  "anchor_horizontal_overlap": 0.5,
+  "max_formula_requests": 32,
+  "repetition_period": 16,
+  "repetition_count": 4,
+  "add_labels": {
+    "text": "text",
+    "display_formula": "equation",
+    "table": "table"
+  },
+  "formula_type": "equation",
+  "protected_commands": [
+    "verb",
+    "verbatim",
+    "lstinline",
+    "lstlisting",
+    "mintinline",
+    "minted",
+    "catcode",
+    "csname",
+    "endcsname",
+    "def",
+    "edef",
+    "gdef",
+    "xdef",
+    "newcommand",
+    "renewcommand"
+  ],
+  "formula_query": "Formula Recognition:",
+  "min_pixels": 112896,
+  "max_pixels": 1003520,
+  "max_new_tokens": 4096,
+  "quality_claim": false
+}

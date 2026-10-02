@@ -1,0 +1,24 @@
+{
+  "revision": "f133a71e9e91c3621c7ce8994200a7b394a06eb3",
+  "image": "ghcr.io/zeng-weijun/omnidocbench-eval@sha256:6116ad72172e763b5c43e963d5efebf2093f2362b975f58156ce4f6c9142e617",
+  "config_sha256": "56db52659910273376223a5646eabfaff21b25dc30f434e1c90aab1a233d335a",
+  "entry_sha256": "79dd63ae8b0bd19301374f170ab95569af69fe68a65416799a24a83e2390f0bd",
+  "python": "/opt/miniconda310/envs/omnidocbench_v16_smoke_20260408_py310/bin/python",
+  "source": "assets/official-source",
+  "source_files": {
+    "REPLACE_WITH_ORIGINAL_SOURCE_LOCK": "REPLACE_WITH_64_HEX"
+  },
+  "source_receipt": "assets/OFFICIAL_SOURCE_READY.json",
+  "config": "assets/end2end-full.yaml",
+  "original_entry": "assets/original_entry.py",
+  "gt_sha256": "REPLACE_WITH_REVIEWED_GT_SHA256",
+  "lease_directory": "/srv/hybrid-runtime-leases",
+  "budget": {
+    "cpus": 24,
+    "ram_gib": 128,
+    "swap_gib": 0,
+    "shm_gib": 8,
+    "total_seconds": 259200,
+    "cleanup_seconds": 240
+  }
+}

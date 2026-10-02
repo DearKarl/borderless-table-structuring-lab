@@ -1,0 +1,76 @@
+{
+  "schema": "evaluated-function-extraction/1",
+  "records": [
+    {
+      "source": "navidc_vision_query_chunk_sdpa_001.py",
+      "source_sha256": "dc9a75a83537c62308b7e6303d7c665719f5425c9313545aa77c3e961dbf2dcd",
+      "byte_identical": true
+    },
+    {
+      "source": "navidc_decoder_query_chunk_sdpa_001.py",
+      "source_sha256": "4ba5c30400282a83b428b0f3f5da2c713240411a421893753659388cc28d495d",
+      "byte_identical": true
+    },
+    {
+      "source": "navidc_decoder_query_chunk_sdpa_002.py",
+      "source_sha256": "026cb33e7dfc349366c6c26d152b1e5877bf03599cdd28c6211a44023130d8df",
+      "byte_identical": true
+    },
+    {
+      "source": "run_navidc_fullpage_probe_003.py",
+      "source_sha256": "e95be1f65102496e26dce3ff63efd6f23f1e4f80088c618b18f36143c403bf2f",
+      "destination": "hybrid/native_tables/runtime/native_ops.py",
+      "definitions": [
+        "PROMPTS",
+        "REGION_PREPARATION",
+        "crop_block",
+        "generate",
+        "image_binding",
+        "prepare_recognition_image"
+      ],
+      "binding_only_replacements": {}
+    },
+    {
+      "source": "run_navidc_independent_panel_002.py",
+      "source_sha256": "c5f7549abcc15253113c3ba1c16dc8a07214fd83369a04e60939a9081e8e3c51",
+      "destination": "hybrid/native_tables/runtime/generation.py",
+      "definitions": [
+        "check_loading_info",
+        "digest",
+        "generation_record"
+      ],
+      "binding_only_replacements": {}
+    },
+    {
+      "source": "assemble_navidc_official_pages_003.py",
+      "source_sha256": "0fe1e926d013a2178e024b8632caab64bd5984d8614e6026fb33aab155adc384",
+      "destination": "hybrid/native_tables/consumer.py",
+      "definitions": [
+        "canonical",
+        "consumer_closure",
+        "consumer_tables",
+        "official_tools"
+      ],
+      "binding_only_replacements": {
+        "ROOT / \"evaluations/official-cycle-001/frozen_evaluator/src/core/preprocess\"": "Path(__file__).parent / \"vendor/omnidocbench\""
+      }
+    },
+    {
+      "source": "assemble_navidc_official_pages_003.py",
+      "source_sha256": "0fe1e926d013a2178e024b8632caab64bd5984d8614e6026fb33aab155adc384",
+      "destination": "hybrid/native_tables/assembly.py",
+      "definitions": [
+        "AssemblyAbstain",
+        "BindingError",
+        "POLICY",
+        "POLICY_DETAILS",
+        "TableSpans",
+        "assemble_page",
+        "digest",
+        "raw_chunks",
+        "require"
+      ],
+      "binding_only_replacements": {}
+    }
+  ]
+}

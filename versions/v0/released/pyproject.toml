@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "borderless-table-system"
+version = "0.2.0"
+description = "Auditable MinerU and NaviDC native-table integration and evaluation"
+requires-python = ">=3.10"
+dependencies = ["Pillow==12.2.0"]
+
+[project.optional-dependencies]
+inference = ["torch==2.12.0", "torchvision==0.27.0", "transformers==4.57.6", "safetensors==0.7.0", "accelerate==1.13.0", "huggingface-hub==0.36.2", "numpy==2.2.6", "scipy==1.14.1"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+btsl = "btsl.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["btsl*", "hybrid.native_tables*"]
+namespaces = true
+
+[tool.setuptools.package-data]
+"hybrid.native_tables" = ["*.json", "vendor/omnidocbench/*", "runtime/*.json"]

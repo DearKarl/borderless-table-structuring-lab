@@ -1,0 +1,23 @@
+{
+  "archive": "TELE_DEADLINE_RESUME_v1.zip",
+  "archive_sha256": "c8f3be3ce16ca75409258d80087e9d2745f081a49ab71fe0e385720c4861c75c",
+  "members": [
+    {
+      "path": "launcher.py",
+      "original_sha256": "7347cc8e004988572fe239c1fe41fb03235db2e21151107a0c669df494b52d57",
+      "public_sha256": "0ca60fcafac9243ce91d6b785902621b4991328840b12e59d6ee3b13b8d4291f"
+    },
+    {
+      "path": "tele_deadline_evidence.py",
+      "original_sha256": "778b15a248fe81b8b72db6f6d04934b88a8b858e35c2e69ed131c1cd2fd78697",
+      "public_sha256": "778b15a248fe81b8b72db6f6d04934b88a8b858e35c2e69ed131c1cd2fd78697"
+    },
+    {
+      "path": "test_tele_deadline.py",
+      "original_sha256": "62ce3dd5f5b00564d262835abf218ba80ed91b40cc6c4ec41ec549a7075c9131",
+      "public_sha256": "62ce3dd5f5b00564d262835abf218ba80ed91b40cc6c4ec41ec549a7075c9131"
+    }
+  ],
+  "private_run_records_included": false,
+  "gpu_rerun": false
+}

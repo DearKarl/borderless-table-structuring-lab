@@ -1,0 +1,4 @@
+OmniDocBench, OpenDataLab, Apache-2.0.
+Source commit 147cd5ac9472002f5751221d390bf00abdbc0d2f.
+These three source files are unmodified. Only selected pure AST definitions are executed by consumer.py.
+https://github.com/opendatalab/OmniDocBench

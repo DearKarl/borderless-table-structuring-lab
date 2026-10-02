@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "measurement_scope": "Historical local evaluation; no verified public leaderboard position claimed",
+  "dataset": "OmniDocBench",
+  "pages": 1651,
+  "evaluator_source_revision": "f133a71e9e91c3621c7ce8994200a7b394a06eb3",
+  "evaluator_config_sha256": "56db52659910273376223a5646eabfaff21b25dc30f434e1c90aab1a233d335a",
+  "evaluator_image": "ghcr.io/zeng-weijun/omnidocbench-eval@sha256:6116ad72172e763b5c43e963d5efebf2093f2362b975f58156ce4f6c9142e617",
+  "overall_formula": "((1 - text_page_average_Edit_dist) * 100 + formula_page_CDM_ALL * 100 + table_page_TEDS_ALL * 100) / 3",
+  "overall_excludes": [
+    "reading_order_Edit_dist",
+    "table_structure_TEDS"
+  ],
+  "display_rounding": "README rounds full-precision metrics to six decimal places; notebook component-rounding results are separate",
+  "rows": [
+    {
+      "id": "mineru",
+      "system": "MinerU2.5-Pro-2605-1.2B",
+      "status": "Measured",
+      "metrics": {
+        "text_accuracy": 93.51622619431672,
+        "text_Edit_dist": 0.06483773805683274,
+        "formula_CDM": 95.5532055552125,
+        "table_TEDS": 90.43454876576574,
+        "table_structure_TEDS": 93.1013309593628,
+        "reading_order_Edit_dist": 0.1529003165858699,
+        "Overall": 93.16799350509831
+      },
+      "evidence": "v1-recomputed",
+      "truncation_policy": "Empty primary output for truncated native generations; V0 uses the frozen raw backbone",
+      "terminal_counts": {
+        "success": 1624,
+        "failed": 0,
+        "truncated": 27
+      },
+      "raw_aggregate": {
+        "filename": "REMOTE_M_metric_result.json",
+        "sha256": "d4bc27bfe71717ddb50e2be6539c7980904537c7d009cd72ea5f9f7fc69db532"
+      },
+      "quick_match_fallback_pages": 2,
+      "page_match_timeouts": 0
+    },
+    {
+      "id": "paddle",
+      "system": "PaddleOCR-VL1.6 fresh-v1 control",
+      "status": "Measured",
+      "metrics": {
+        "text_accuracy": 94.70856877133102,
+        "text_Edit_dist": 0.052914312286689864,
+        "formula_CDM": 96.7803825338281,
+        "table_TEDS": 94.14546437639719,
+        "table_structure_TEDS": 96.51312685329414,
+        "reading_order_Edit_dist": 0.14071238847557252,
+        "Overall": 95.21147189385209
+      },
+      "evidence": "v1-recomputed",
+      "truncation_policy": "Empty primary output for truncated native generations; V0 uses the frozen raw backbone",
+      "terminal_counts": {
+        "success": 1627,
+        "failed": 13,
+        "truncated": 11
+      },
+      "raw_aggregate": {
+        "filename": "REMOTE_P_metric_result.json",
+        "sha256": "9a6b60c62399498c0fdafc641c7c8b51cf085e9d93f424f9691428b44658ecbf"
+      },
+      "quick_match_fallback_pages": 3,
+      "page_match_timeouts": 0
+    },
+    {
+      "id": "tele",
+      "system": "TeleOCR paired-v2 raw",
+      "status": "Measured",
+      "metrics": {
+        "text_Edit_dist": 0.029861849741916843,
+        "text_accuracy": 97.01381502580831,
+        "formula_CDM": 98.59962167715973,
+        "table_TEDS": 96.69188992008256,
+        "table_structure_TEDS": 98.03693897133226,
+        "reading_order_Edit_dist": 0.11917601272073922,
+        "Overall": 97.4351088743502
+      },
+      "notebook_overall_after_component_rounding": 97.43066666666665,
+      "matching_coverage": {
+        "text_block": {
+          "matched_samples": 19265
+        },
+        "display_formula": {
+          "matched_samples": 2352
+        },
+        "table": {
+          "matched_samples": 665
+        },
+        "reading_order": {
+          "matched_samples": 1638
+        }
+      },
+      "evidence": "v2-results",
+      "truncation_policy": "Native TeleOCR truncated content retained",
+      "model_revision": "8706730e41382f4a8f2562616d47225fee8e2f7a",
+      "tele_source_revision": "9921cffe380efe4e2fa010258b3d0c3cb70bab2d",
+      "raw_aggregate": {
+        "filename": "pred_quick_match_metric_result.json",
+        "sha256": "11563460b1f286a59023e3ca6187809a30fd658bf04656e158482d24ad3f975b"
+      },
+      "quick_match_fallback_pages": 0,
+      "page_match_timeouts": 0,
+      "terminal_counts": {
+        "success": 1650,
+        "failed": 1
+      },
+      "failure_policy": "One timed-out page retains empty primary output and remains in the denominator"
+    },
+    {
+      "id": "v0",
+      "system": "Hybrid V0 CUDA",
+      "status": "Measured",
+      "metrics": {
+        "text_Edit_dist": 0.06483305002210377,
+        "text_accuracy": 93.51669499778963,
+        "formula_CDM": 95.5532055552125,
+        "table_TEDS": 94.72785680519368,
+        "table_structure_TEDS": 96.59970148900065,
+        "reading_order_Edit_dist": 0.1542065940826236,
+        "Overall": 94.59925245273193
+      },
+      "evidence": "v0-recomputed",
+      "truncation_policy": "Empty primary output for truncated native generations; V0 uses the frozen raw backbone",
+      "raw_aggregate": {
+        "filename": "10-pred_quick_match_metric_result.json",
+        "sha256": "17f283940c2afe59d0783b171d0f0ecc3e10d99ca5450175db535d8b5e5aa852"
+      },
+      "quick_match_fallback_pages": 2,
+      "page_match_timeouts": 0,
+      "assembly_counts": {
+        "assembled": 1247,
+        "raw_retained": 404,
+        "assembly_abstention": 393,
+        "native_abstention": 11
+      }
+    },
+    {
+      "id": "v1",
+      "system": "Hybrid V1 fresh",
+      "status": "Measured",
+      "metrics": {
+        "text_accuracy": 93.49034936282037,
+        "text_Edit_dist": 0.06509650637179633,
+        "formula_CDM": 95.72759809483571,
+        "table_TEDS": 90.43454876576574,
+        "table_structure_TEDS": 93.1013309593628,
+        "reading_order_Edit_dist": 0.15405470026163065,
+        "Overall": 93.2174987411406
+      },
+      "evidence": "v1-recomputed",
+      "truncation_policy": "Empty primary output for truncated native generations; V0 uses the frozen raw backbone",
+      "terminal_counts": {
+        "success": 1624,
+        "failed": 0,
+        "truncated": 27
+      },
+      "raw_aggregate": {
+        "filename": "REMOTE_H_metric_result.json",
+        "sha256": "b34a1e51a540657c358aa008b1a03e30c023ce40427ef5c4ec567a62417100b7"
+      },
+      "quick_match_fallback_pages": 2,
+      "page_match_timeouts": 0
+    },
+    {
+      "id": "v2",
+      "system": "Hybrid V2 Tele-base",
+      "status": "Measured",
+      "metrics": {
+        "text_Edit_dist": 0.029911656188504773,
+        "text_accuracy": 97.00883438114953,
+        "formula_CDM": 97.47933197689134,
+        "table_TEDS": 96.69188992008256,
+        "table_structure_TEDS": 98.03693897133226,
+        "reading_order_Edit_dist": 0.11926161170532251,
+        "Overall": 97.06001875937447
+      },
+      "notebook_overall_after_component_rounding": 97.057,
+      "matching_coverage": {
+        "text_block": {
+          "matched_samples": 19266
+        },
+        "display_formula": {
+          "matched_samples": 2352
+        },
+        "table": {
+          "matched_samples": 665
+        },
+        "reading_order": {
+          "matched_samples": 1638
+        }
+      },
+      "evidence": "v2-results",
+      "truncation_policy": "Native TeleOCR truncated content retained",
+      "model_revision": "8706730e41382f4a8f2562616d47225fee8e2f7a",
+      "tele_source_revision": "9921cffe380efe4e2fa010258b3d0c3cb70bab2d",
+      "raw_aggregate": {
+        "filename": "pred_quick_match_metric_result.json",
+        "sha256": "d76ebdf47f7a2d692f1bc4c6276b9ca8ce11676bd8b6279423652aa12f27911e"
+      },
+      "quick_match_fallback_pages": 0,
+      "page_match_timeouts": 0,
+      "terminal_counts": {
+        "success": 1650,
+        "failed": 1
+      },
+      "failure_policy": "One timed-out page retains empty primary output and remains in the denominator"
+    },
+    {
+      "id": "v3_1",
+      "system": "Hybrid V3.1",
+      "status": "Pending",
+      "metrics": null
+    },
+    {
+      "id": "v3_2",
+      "system": "Hybrid V3.2",
+      "status": "Pending",
+      "metrics": null
+    }
+  ],
+  "paired_v2_delta_overall": -0.37509011497573397,
+  "comparability_notes": [
+    "MinerU/Paddle/V1 truncate to empty primary output; Tele/V2 retain native truncated content. Cross-group comparisons are contextual.",
+    "Paddle development Overall 95.14238890128128 is a distinct earlier run, not the fresh control row.",
+    "Earlier native-table MPS results use a different model revision and older evaluator, and are excluded from this whole-page table.",
+    "V3.1/V3.2 bounded engineering checks are not completed benchmark measurements."
+  ],
+  "evidence_files": {
+    "v0-recomputed": {
+      "filename": "RECOMPUTED.json",
+      "sha256": "6ffd1172230d46e9246b4bbb39c990690f21bedfab955ba4002bc28830071e8a",
+      "publication": "Only aggregate fields reproduced; private source records are not distributed"
+    },
+    "v1-recomputed": {
+      "filename": "RESULTS_RECOMPUTED.json",
+      "sha256": "ca2bcbee41e7259c593fa09431176318bd4bd51b095d681e3621fc99477abf48",
+      "publication": "Only aggregate fields reproduced; private source records are not distributed"
+    },
+    "v2-results": {
+      "filename": "RESULTS.json",
+      "sha256": "7592fad8ff43a6152a6f5e7956a421318d4f7ea53e8ffa4a4cbce29e753bf9ce",
+      "publication": "Only aggregate fields reproduced; private source records are not distributed"
+    },
+    "v2-protocol": {
+      "filename": "FREEZE_AND_ENTRIES.json",
+      "sha256": "16d3326f2ff7e8eb4aad65dba499e03d202d5e98c48deaac18e639222e75c814",
+      "publication": "Only aggregate fields reproduced; private source records are not distributed"
+    }
+  },
+  "new_inference": false,
+  "new_scoring": false,
+  "dataset_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+  "dataset_repository": "opendatalab/OmniDocBench",
+  "input_manifest_sha256": "7c061cd411bc1b81d24f81857bb52fa83ffdf944c39386d803f5bbfef9d56c81",
+  "annotation_sha256": "a45cd84b04ad8b793e775089640e6b681209abea33ead54c1828ddca35fae496",
+  "metric_scales": {
+    "Overall_CDM_TEDS_TEDS_S": "0 to 100",
+    "edit_distances": "0 to 1"
+  },
+  "raw_metric_paths": {
+    "text_Edit_dist": "text_block.all.Edit_dist.ALL_page_avg",
+    "formula_CDM": "100 * display_formula.page.CDM.ALL",
+    "table_TEDS": "100 * table.page.TEDS.ALL"
+  },
+  "model_pins": [
+    {
+      "repository": "opendatalab/MinerU2.5-Pro-2605-1.2B",
+      "revision": "bff20d4ae2bf202df9f45284b4d43681555a97ed"
+    },
+    {
+      "repository": "PaddlePaddle/PaddleOCR-VL-1.6",
+      "revision": "c5630abae1d940eafe0697512a0325494b02ab42"
+    },
+    {
+      "repository": "StarDoc-AI/TeleOCR",
+      "revision": "8706730e41382f4a8f2562616d47225fee8e2f7a"
+    },
+    {
+      "repository": "StarDoc-AI/NaviDC-OCR",
+      "revision": "710ea2e26d794fe89cbf3ece0402707c332a8671"
+    }
+  ]
+}

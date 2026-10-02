@@ -1,0 +1,22 @@
+{
+  "pages": "SET_APPROVED_PAGE_COUNT",
+  "native_calls_per_page": "SET_APPROVED_CAP",
+  "expert_calls_per_page": 0,
+  "model_loads": "SET_APPROVED_TOTAL_INCLUDING_AUXILIARIES",
+  "load_seconds": 600,
+  "page_seconds": 900,
+  "request_seconds": "SET_APPROVED_REQUEST_DEADLINE",
+  "total_seconds": "SET_APPROVED_TOTAL",
+  "cleanup_seconds": 240,
+  "page_audit_seconds": 15,
+  "cpus": "SET_APPROVED_CPU",
+  "ram_gib": "SET_APPROVED_RAM",
+  "swap_gib": 0,
+  "shm_gib": "SET_APPROVED_SHM",
+  "gpu_allowlist": [
+    "GPU-REPLACE-WITH-OWNED-UUID"
+  ],
+  "customer_gpu_uuids": [
+    "GPU-REPLACE-WITH-EXCLUDED-UUID"
+  ]
+}

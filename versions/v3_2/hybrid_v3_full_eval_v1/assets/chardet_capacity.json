@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "component": "chardet",
+  "method": "exact_auxiliary_inventory",
+  "members": {
+    "chardet/models/models.bin": "963fe385892c1f106c80872fa227f924d25ab80c954fc73a8a6073abb4d9c66f",
+    "chardet/models/idf.bin": "d980a1ff8b913a62af43d4b39fcab16b452528c88ef50f352c0db180ee99d3ad",
+    "chardet/models/rowmax.bin": "c828b88267bcdd86bba58ec0f716c59a27a149d700306e48d71692582b9d94fc",
+    "chardet/models/confusion.bin": "1c853cd04b400bd2d3772fcaddc4466b32d32db703a7aa415df5a20810bf9ecb"
+  },
+  "counts": {
+    "stored_elements": 23297029,
+    "unique_trainable": 23199744,
+    "buffers": 90721,
+    "static_elements": 6564
+  },
+  "categories": [
+    {
+      "name": "bigram_tables",
+      "shape": [
+        353,
+        256,
+        256
+      ],
+      "category": "parameter",
+      "numel": 23134208
+    },
+    {
+      "name": "idf",
+      "shape": [
+        256,
+        256
+      ],
+      "category": "parameter",
+      "numel": 65536
+    },
+    {
+      "name": "l2_norms",
+      "shape": [
+        353
+      ],
+      "category": "buffer",
+      "numel": 353
+    },
+    {
+      "name": "rowmax",
+      "shape": [
+        353,
+        256
+      ],
+      "category": "buffer",
+      "numel": 90368
+    },
+    {
+      "name": "confusion",
+      "shape": [
+        2188,
+        3
+      ],
+      "category": "static",
+      "numel": 6564,
+      "description": "95 variable-length tables; flattened stored numeric entries"
+    }
+  ],
+  "reader_sources": {
+    "chardet/models/__init__.py": "f55476ef041fc26d9ad6dae54ac2f4efecaf17acc6cf74e6db02e314a505d586",
+    "chardet/pipeline/confusion.py": "c3bce12004e06ba5f2b3e0b518cb5cf794905a9e7f970b9431a259c6a9275cef"
+  },
+  "source_receipts": {
+    "root_evidence_sha256": "df38e28a735f6bf5896563c828efa4938716164156518de2bd0518a84fefd6c6",
+    "auxiliary_classification_sha256": "09342150ccf68c66b32e26d148994091b64157a09a653455d9ad8ef4a8171cd4"
+  }
+}

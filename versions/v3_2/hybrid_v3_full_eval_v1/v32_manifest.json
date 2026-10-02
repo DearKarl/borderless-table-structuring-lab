@@ -1,0 +1,36 @@
+{
+  "schema": "V32-TEXT-ADAPTER-CPU-001/v1",
+  "model_repo": "ATH-MaaS/OvisOCR2",
+  "model_revision": "1fc9221b7823a371d6e97f92d527cc847e24e107",
+  "allowlist": [
+    "text"
+  ],
+  "official_prompt": "\nExtract all readable content from the image in natural human reading order and output the result as a single Markdown document. For charts or images, represent them using an HTML image tag: <img src=\"images/bbox_{left}_{top}_{right}_{bottom}.jpg\" />, where left, top, right, bottom are bounding box coordinates scaled to [0, 1000). Format formulas as LaTeX. Format tables as HTML: <table>...</table>. Transcribe all other text as standard Markdown. Preserve the original text without translation or paraphrasing.",
+  "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267",
+  "chat_template_sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+  "official_preprocessor_sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+  "official_config_sha256": "b90b86f35c8e6925ef74ee04d0e758f0a845c83a42089ad82bbaa948de9b4204",
+  "vllm_version": "0.22.1",
+  "chat_template_options": {
+    "tokenize": false,
+    "add_generation_prompt": true,
+    "enable_thinking": false
+  },
+  "image_processor_call": {
+    "images_kwargs": {
+      "min_pixels": 200704,
+      "max_pixels": 8294400
+    }
+  },
+  "sampling": {
+    "max_tokens": 16384,
+    "temperature": 0.0,
+    "ignore_eos": false,
+    "stop": null,
+    "stop_token_ids": []
+  },
+  "eos_token_id": 248044,
+  "cleaning_policy": "outer-whitespace-only-v1; no image filtering, no repeat trimming, no inline-math rewriting",
+  "completion_policy": "finished+stop+last-token-EOS; absent or ambiguous evidence falls back",
+  "quality_policy": "protocol-accepted is not quality-selected"
+}

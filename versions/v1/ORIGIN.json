@@ -1,0 +1,153 @@
+{
+  "source_archive_sha256": "670551ee64d6e5f995f0e98c1fbe22347e42aac0afb473cc87c0eeaffa1cb152",
+  "source_archive": "FROZEN_CODE.zip",
+  "members": [
+    {
+      "path": "hybrid/__init__.py",
+      "original_sha256": "5572fa0736fcc41450f3ece1ab39d270e999989c95d857785d103a7e25afcc8f",
+      "public_sha256": "5572fa0736fcc41450f3ece1ab39d270e999989c95d857785d103a7e25afcc8f"
+    },
+    {
+      "path": "hybrid/formula_v0/__init__.py",
+      "original_sha256": "cdab5e29291700f4d35214373810ddfe2838ad54ee45d4f182d2260b1b890e22",
+      "public_sha256": "cdab5e29291700f4d35214373810ddfe2838ad54ee45d4f182d2260b1b890e22"
+    },
+    {
+      "path": "hybrid/formula_v0/core.py",
+      "original_sha256": "993a012ba3360529bdd43ca890e8b129a4e7d65290243321607f8f2130d9b63f",
+      "public_sha256": "993a012ba3360529bdd43ca890e8b129a4e7d65290243321607f8f2130d9b63f"
+    },
+    {
+      "path": "hybrid/hybrid_v1/__init__.py",
+      "original_sha256": "7369374256ee323e18f4f184d3fda051722d8aab8dc01afd8e851650158e0add",
+      "public_sha256": "7369374256ee323e18f4f184d3fda051722d8aab8dc01afd8e851650158e0add"
+    },
+    {
+      "path": "hybrid/hybrid_v1/assembly.py",
+      "original_sha256": "3c490da7af044570b65b48267d394e55d78685abb87b21502bb5cb316bf9082a",
+      "public_sha256": "3c490da7af044570b65b48267d394e55d78685abb87b21502bb5cb316bf9082a"
+    },
+    {
+      "path": "hybrid/hybrid_v1/cache.py",
+      "original_sha256": "581d20a310f5a31cea8bcb98f6c1f11c2668b733807eacf16a82ce6db8c84648",
+      "public_sha256": "581d20a310f5a31cea8bcb98f6c1f11c2668b733807eacf16a82ce6db8c84648"
+    },
+    {
+      "path": "hybrid/hybrid_v1/cache_path_v3.py",
+      "original_sha256": "54fa7c99b875ad7942398df01d9a454db80a415f7d69551f5cd855f6ea29d958",
+      "public_sha256": "f41d27b0e923d3cd3c8926754073ea9881ba6f38c77cc6b2269a90f304e5c4e1"
+    },
+    {
+      "path": "hybrid/hybrid_v1/capacity.py",
+      "original_sha256": "fe9443d9f3b10ea79d3472e5856667ece370ac35db2cfd6b08440c71ce073b67",
+      "public_sha256": "fe9443d9f3b10ea79d3472e5856667ece370ac35db2cfd6b08440c71ce073b67"
+    },
+    {
+      "path": "hybrid/hybrid_v1/fresh_contract.py",
+      "original_sha256": "180ca5b27304d66b93cfbdd76b744310010f7fa4f93d710f010f3ab0a80c2f99",
+      "public_sha256": "180ca5b27304d66b93cfbdd76b744310010f7fa4f93d710f010f3ab0a80c2f99"
+    },
+    {
+      "path": "hybrid/hybrid_v1/native.py",
+      "original_sha256": "8ccb243d8c337b68deae73a76321d9e323c8dc00f9506f672d7750a21f734ea5",
+      "public_sha256": "3bd08814ec6fb86d3533af6e09357c9f85ba3fcf474d07ee09feb82a94e0d4b8"
+    },
+    {
+      "path": "hybrid/hybrid_v1/page_paths.py",
+      "original_sha256": "ea09a0e945eea0f9505501fc333c33b34d4bf631f41dc6784c6fc0d56dbbc2db",
+      "public_sha256": "ea09a0e945eea0f9505501fc333c33b34d4bf631f41dc6784c6fc0d56dbbc2db"
+    },
+    {
+      "path": "hybrid/hybrid_v1/predict.py",
+      "original_sha256": "b46471c9d06801909996f2b7831401b82bb53a6620c10469f670fef6bdd04d1a",
+      "public_sha256": "b46471c9d06801909996f2b7831401b82bb53a6620c10469f670fef6bdd04d1a"
+    },
+    {
+      "path": "scripts/hybrid_v1.py",
+      "original_sha256": "66c0b95b5b002364f95ea1be19c74e817df8887d2312ad152eff1c72a8c15321",
+      "public_sha256": "66c0b95b5b002364f95ea1be19c74e817df8887d2312ad152eff1c72a8c15321"
+    },
+    {
+      "path": "native-code/capture_utils.py",
+      "original_sha256": "d91b56f2d343fda64688c9b44d3934ba1cdc417026abb5822e73782e5605605d",
+      "public_sha256": "d91b56f2d343fda64688c9b44d3934ba1cdc417026abb5822e73782e5605605d"
+    },
+    {
+      "path": "native-code/complementarity_ovis_smoke.py",
+      "original_sha256": "3d198fa4bfe6bec6c1365f656b895255b8b5d05d429b07ffab8f67c068c0db27",
+      "public_sha256": "3d198fa4bfe6bec6c1365f656b895255b8b5d05d429b07ffab8f67c068c0db27"
+    },
+    {
+      "path": "native-code/core.py",
+      "original_sha256": "8522f06abb6b8efb0e14df576e6a89d4e8c7770487a14525748f1ff9e1caa5c0",
+      "public_sha256": "8522f06abb6b8efb0e14df576e6a89d4e8c7770487a14525748f1ff9e1caa5c0"
+    },
+    {
+      "path": "native-code/device_proof.py",
+      "original_sha256": "6a99da0279499ecb094ab6f42835eee6eba735aab7ba8ed06ddfb49d57b9db34",
+      "public_sha256": "6a99da0279499ecb094ab6f42835eee6eba735aab7ba8ed06ddfb49d57b9db34"
+    },
+    {
+      "path": "native-code/docker_mount.py",
+      "original_sha256": "533d01666769c48b6e3792f987f62f3c1fa20bf4905c2cefc6c500487e2f98bf",
+      "public_sha256": "533d01666769c48b6e3792f987f62f3c1fa20bf4905c2cefc6c500487e2f98bf"
+    },
+    {
+      "path": "native-code/image_only_audit.py",
+      "original_sha256": "f8c15a58d3beb2b1a48b23ce06104add795a288112db14bd02d390028655d66f",
+      "public_sha256": "f8c15a58d3beb2b1a48b23ce06104add795a288112db14bd02d390028655d66f"
+    },
+    {
+      "path": "native-code/MODEL_MANIFEST.json",
+      "original_sha256": "d062d5366c4607965466769048308a721d3491cdfd52c2101f792a7bf7c72562",
+      "public_sha256": "d062d5366c4607965466769048308a721d3491cdfd52c2101f792a7bf7c72562"
+    },
+    {
+      "path": "native-code/native_controller.py",
+      "original_sha256": "bae32fbd1fa4829c1e299fa0780bccf0ae72158c36c76b22dd213e71456507e0",
+      "public_sha256": "a757fe8357d8eb4f82ef2ba3ffe2299bd92729ef7ec37abd1c8c9f9e684942a7"
+    },
+    {
+      "path": "native-code/native_full.py",
+      "original_sha256": "e585e62f63a918957a497d13a82b11d01f7c70f4e9a55ddfaedbf6a0866b60f3",
+      "public_sha256": "bd60c70abe4c1206fca4e111a58fa69b05d14f91b80d5727116f6daa982ddd2d"
+    },
+    {
+      "path": "native-code/native_schema.py",
+      "original_sha256": "6746a70eeee3d1d53bbd186fb81f4966685d39437217018ec3230e87b317c8e2",
+      "public_sha256": "6746a70eeee3d1d53bbd186fb81f4966685d39437217018ec3230e87b317c8e2"
+    },
+    {
+      "path": "native-code/native_stop_audit.py",
+      "original_sha256": "417084a1613fc2fa6e23794ebffb0c91baf4a78dca22a8f369736f839d92e561",
+      "public_sha256": "417084a1613fc2fa6e23794ebffb0c91baf4a78dca22a8f369736f839d92e561"
+    },
+    {
+      "path": "native-code/paddle_full.py",
+      "original_sha256": "d577581d9224a3b3b679560641f6deebb0878210905ee70692549feca6384bb3",
+      "public_sha256": "d577581d9224a3b3b679560641f6deebb0878210905ee70692549feca6384bb3"
+    },
+    {
+      "path": "native-code/PADDLE_PARAMETERS_TEMPLATE.json",
+      "original_sha256": "9b5316d04ddf067d07597d2fd7eb970799798261c96ac9a8880a058314fa69d3",
+      "public_sha256": "9b5316d04ddf067d07597d2fd7eb970799798261c96ac9a8880a058314fa69d3"
+    },
+    {
+      "path": "native-code/page_paths.py",
+      "original_sha256": "ea09a0e945eea0f9505501fc333c33b34d4bf631f41dc6784c6fc0d56dbbc2db",
+      "public_sha256": "ea09a0e945eea0f9505501fc333c33b34d4bf631f41dc6784c6fc0d56dbbc2db"
+    },
+    {
+      "path": "native-code/watchdog_policy.py",
+      "original_sha256": "7bc6747b6c2e6d339b3bba645fb2b3853f6b436570b07bb87a032b214fa95c92",
+      "public_sha256": "7bc6747b6c2e6d339b3bba645fb2b3853f6b436570b07bb87a032b214fa95c92"
+    }
+  ],
+  "publication_changes": [
+    "Example root paths",
+    "Container label namespace",
+    "Explicit GPU allowlist"
+  ],
+  "private_runtime_records_included": false,
+  "gpu_rerun": false
+}

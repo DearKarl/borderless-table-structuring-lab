@@ -1,0 +1,66 @@
+{
+  "members": [
+    {
+      "destination": "native_code/hybrid_v2_tele_base/__init__.py",
+      "sha256": "f0de55b933f90b6723a3984654cc7fc6f8a8155726573ba9ae0c10998918200d",
+      "origin": "original project-owned frozen V2 native support",
+      "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa"
+    },
+    {
+      "destination": "native_code/hybrid_v2_tele_base/runtime_load.py",
+      "sha256": "16c51065345daa90221470cb28536757419986c4ad84f9a470bf64dd3a7d5361",
+      "origin": "original project-owned frozen V2 native support",
+      "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa"
+    },
+    {
+      "destination": "native_code/hybrid_v2_tele_base/smoke.py",
+      "sha256": "04bcbb9fabdf3d3189aafb57117b3e9b3e4d828f16e7cf114f8083ffc0951328",
+      "origin": "original project-owned frozen V2 native support",
+      "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa"
+    },
+    {
+      "destination": "native_code/hybrid_v2_tele_base/region_protocol.py",
+      "sha256": "cf548cde2ac9645b517aa0c0a59614f5c72bf3fe630bc9a2005b11121f87cd12",
+      "origin": "original project-owned frozen V2 native support",
+      "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa"
+    },
+    {
+      "destination": "native_code/hybrid_v2_tele_base/audit.py",
+      "sha256": "e528b9bb470e0697dbf3356da1c6780a256076f0ac015e1782ae61b684306ee1",
+      "origin": "original project-owned frozen V2 native support",
+      "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa"
+    },
+    {
+      "destination": "native_code/hybrid_v2_tele_base/tele_adapter.py",
+      "sha256": "5bac374c6a5e5dfd404d45c6550de34d353433193ac56acf114fa712c016a6d5",
+      "origin": "original project-owned frozen V2 native support",
+      "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa"
+    },
+    {
+      "destination": "native_code/hybrid_v2_tele_base/expert_process.py",
+      "sha256": "c0cfdc78f81b746eaa89648ab4d2f0aabfb9493a0a6780f811152ec12973db92",
+      "origin": "original project-owned frozen V2 native support",
+      "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa"
+    },
+    {
+      "destination": "native_code/hybrid_v2_tele_base/runtime_resources.py",
+      "sha256": "b64bfa5cad08571b3e0392cda01bbd1347f7bcc30ad2c19ae9ce081b27db3397",
+      "origin": "original project-owned frozen V2 native support",
+      "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa"
+    },
+    {
+      "destination": "native_code/hybrid_v2_tele_base/paddle_formula_worker.py",
+      "sha256": "b5e9e70cd59797edb3e7ceb04b17aacd829815a9003b03ae23a0f50477d9f6e9",
+      "origin": "original project-owned frozen V2 native support",
+      "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa"
+    }
+  ],
+  "no_weights_or_private_freeze_included": true,
+  "external_source": {
+    "repository": "https://github.com/caipeng328/TeleOCR",
+    "revision": "9921cffe380efe4e2fa010258b3d0c3cb70bab2d",
+    "redistributed": false,
+    "required_member_hashes": "PARENT_ASSET_LOCK.json:model_files.tele_source",
+    "license_note": "Consult the pinned upstream terms; no license grant for external source is made by this archive."
+  }
+}

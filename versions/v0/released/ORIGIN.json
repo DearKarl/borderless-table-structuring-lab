@@ -1,0 +1,173 @@
+{
+  "archive": "release-f059b62-v3.zip",
+  "archive_sha256": "c437e646bebac82ef27374383759685328c9f4bb835f83e6a63a80bc0c2b143f",
+  "members": [
+    {
+      "path": "README.md",
+      "original_sha256": "1dd309102b90092a8f0631ffa98149447e8a858613bcc268a3634fdbdcae90ef",
+      "public_sha256": "c4f4e7e114e42cc95174c9709e6fa984812970df55fbeca54c14a9d3d4957732"
+    },
+    {
+      "path": "btsl/__init__.py",
+      "original_sha256": "b8841faf8748ff9d5fe45f82835087723a88afaa89cd85ab12d3d1263f47ff5e",
+      "public_sha256": "b8841faf8748ff9d5fe45f82835087723a88afaa89cd85ab12d3d1263f47ff5e"
+    },
+    {
+      "path": "btsl/__main__.py",
+      "original_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "public_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279"
+    },
+    {
+      "path": "btsl/cli.py",
+      "original_sha256": "ca93614475e928a802cbc6c5c3e9ed374b7050fe81941c70e199b095ced29679",
+      "public_sha256": "ca93614475e928a802cbc6c5c3e9ed374b7050fe81941c70e199b095ced29679"
+    },
+    {
+      "path": "btsl/evaluate.py",
+      "original_sha256": "fba93858a8831cc093c9da413b1a20d710cffcb4786b7f79cbaf8d884e82bb84",
+      "public_sha256": "fba93858a8831cc093c9da413b1a20d710cffcb4786b7f79cbaf8d884e82bb84"
+    },
+    {
+      "path": "btsl/inputs.py",
+      "original_sha256": "9f61aad67b8feb7d444a606ffef484a5f34c97433cfa7e8fdc25e2ccb0615aa9",
+      "public_sha256": "9f61aad67b8feb7d444a606ffef484a5f34c97433cfa7e8fdc25e2ccb0615aa9"
+    },
+    {
+      "path": "btsl/io.py",
+      "original_sha256": "0c13262e07c7d1dd3f0726072cf87245a3e273d4017a470e8ee323ec9ec19408",
+      "public_sha256": "0c13262e07c7d1dd3f0726072cf87245a3e273d4017a470e8ee323ec9ec19408"
+    },
+    {
+      "path": "btsl/model.py",
+      "original_sha256": "bf90cb5fc30f2f54e242e2105193046dc580dc5928114a167d0dc906e51b1b95",
+      "public_sha256": "bf90cb5fc30f2f54e242e2105193046dc580dc5928114a167d0dc906e51b1b95"
+    },
+    {
+      "path": "btsl/pipeline.py",
+      "original_sha256": "f2e9ef3a15ae32bd4d366aeb2009dc12c1771ceb38bc51c2ea5d8e3729087a17",
+      "public_sha256": "f2e9ef3a15ae32bd4d366aeb2009dc12c1771ceb38bc51c2ea5d8e3729087a17"
+    },
+    {
+      "path": "hybrid/native_tables/README.md",
+      "original_sha256": "331f64c563b30898d9a3c7a26cde8e75b8de42abc6a3491c97cb44335f9a34c6",
+      "public_sha256": "2350cfdc5014568a8b360ca79d9643d1f7e0372f4efb74c9151a31a76fd9143f"
+    },
+    {
+      "path": "hybrid/native_tables/__init__.py",
+      "original_sha256": "1f88183a3ff169e34164c91d21d3aec787d40eabc403cc7b06da7cdf85ba298e",
+      "public_sha256": "1f88183a3ff169e34164c91d21d3aec787d40eabc403cc7b06da7cdf85ba298e"
+    },
+    {
+      "path": "hybrid/native_tables/architecture.json",
+      "original_sha256": "925830d4e486219b8bd53a12f488af5b984b7d1b82ba79306f38941fd3237e2c",
+      "public_sha256": "925830d4e486219b8bd53a12f488af5b984b7d1b82ba79306f38941fd3237e2c"
+    },
+    {
+      "path": "hybrid/native_tables/assemble.py",
+      "original_sha256": "15cf952a049435b9757302ba0393e3953bcba8452fbd6e40b8d76955033ceea1",
+      "public_sha256": "15cf952a049435b9757302ba0393e3953bcba8452fbd6e40b8d76955033ceea1"
+    },
+    {
+      "path": "hybrid/native_tables/assembly.py",
+      "original_sha256": "7811125222239c0dae131b763bf9dfc2116c343294670e1574d3158de52981f7",
+      "public_sha256": "7811125222239c0dae131b763bf9dfc2116c343294670e1574d3158de52981f7"
+    },
+    {
+      "path": "hybrid/native_tables/consumer.py",
+      "original_sha256": "ef4200d289ab4c1b5b7fbabd1a65d9c3984367681095cda6f66fbc0241f78fa3",
+      "public_sha256": "ef4200d289ab4c1b5b7fbabd1a65d9c3984367681095cda6f66fbc0241f78fa3"
+    },
+    {
+      "path": "hybrid/native_tables/example.py",
+      "original_sha256": "748c003f1649e71149b92222c00565607a01f403f569e91a03676e7fec4cc115",
+      "public_sha256": "748c003f1649e71149b92222c00565607a01f403f569e91a03676e7fec4cc115"
+    },
+    {
+      "path": "hybrid/native_tables/formats.py",
+      "original_sha256": "40fed19f79ed3e82a8176712ca2224aa88571bf783c457d19d30a5ad87bfcc78",
+      "public_sha256": "40fed19f79ed3e82a8176712ca2224aa88571bf783c457d19d30a5ad87bfcc78"
+    },
+    {
+      "path": "hybrid/native_tables/model_manifest.json",
+      "original_sha256": "52d9ddc3d31f9066c84155d8db9e5364d8ef2190f520a88a4f136c4684504c5a",
+      "public_sha256": "52d9ddc3d31f9066c84155d8db9e5364d8ef2190f520a88a4f136c4684504c5a"
+    },
+    {
+      "path": "hybrid/native_tables/provenance.json",
+      "original_sha256": "d80efe2426f8c9ce4bee0d65e0646611102326588394155ca6f4c5934a95ed9a",
+      "public_sha256": "d80efe2426f8c9ce4bee0d65e0646611102326588394155ca6f4c5934a95ed9a"
+    },
+    {
+      "path": "hybrid/native_tables/runtime/EXTRACTION.json",
+      "original_sha256": "a72fbe2e7d68a0be734d8d83f5d520875555dbb583d2b7c83c19a63ec2b22449",
+      "public_sha256": "a72fbe2e7d68a0be734d8d83f5d520875555dbb583d2b7c83c19a63ec2b22449"
+    },
+    {
+      "path": "hybrid/native_tables/runtime/__init__.py",
+      "original_sha256": "21e7cc382c4ff8b3894e75302fc671813cc7f387bc9361a7efb6ed082e00311d",
+      "public_sha256": "21e7cc382c4ff8b3894e75302fc671813cc7f387bc9361a7efb6ed082e00311d"
+    },
+    {
+      "path": "hybrid/native_tables/runtime/generation.py",
+      "original_sha256": "d06d9f48717c5195adc8ead5a579adc41e00f9db07b6e033795a0bb1482d146a",
+      "public_sha256": "d06d9f48717c5195adc8ead5a579adc41e00f9db07b6e033795a0bb1482d146a"
+    },
+    {
+      "path": "hybrid/native_tables/runtime/native_ops.py",
+      "original_sha256": "5b45f47486e2ecdccf3bfb1daf751f862e4248830151673811a9cc2d5705c427",
+      "public_sha256": "5b45f47486e2ecdccf3bfb1daf751f862e4248830151673811a9cc2d5705c427"
+    },
+    {
+      "path": "hybrid/native_tables/runtime/navidc_decoder_query_chunk_sdpa_001.py",
+      "original_sha256": "4ba5c30400282a83b428b0f3f5da2c713240411a421893753659388cc28d495d",
+      "public_sha256": "4ba5c30400282a83b428b0f3f5da2c713240411a421893753659388cc28d495d"
+    },
+    {
+      "path": "hybrid/native_tables/runtime/navidc_decoder_query_chunk_sdpa_002.py",
+      "original_sha256": "026cb33e7dfc349366c6c26d152b1e5877bf03599cdd28c6211a44023130d8df",
+      "public_sha256": "026cb33e7dfc349366c6c26d152b1e5877bf03599cdd28c6211a44023130d8df"
+    },
+    {
+      "path": "hybrid/native_tables/runtime/navidc_vision_query_chunk_sdpa_001.py",
+      "original_sha256": "dc9a75a83537c62308b7e6303d7c665719f5425c9313545aa77c3e961dbf2dcd",
+      "public_sha256": "dc9a75a83537c62308b7e6303d7c665719f5425c9313545aa77c3e961dbf2dcd"
+    },
+    {
+      "path": "hybrid/native_tables/vendor/omnidocbench/LICENSE",
+      "original_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "public_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "hybrid/native_tables/vendor/omnidocbench/NOTICE",
+      "original_sha256": "7494f49e1a9b58a298306f2e37738c2f4e67acbbd7267388659f5caa22797006",
+      "public_sha256": "7494f49e1a9b58a298306f2e37738c2f4e67acbbd7267388659f5caa22797006"
+    },
+    {
+      "path": "hybrid/native_tables/vendor/omnidocbench/data_preprocess.py",
+      "original_sha256": "d108d0726f0cc36eaf1fed2786a0405531549b3b32879e64fd4690ff88ba9dbd",
+      "public_sha256": "d108d0726f0cc36eaf1fed2786a0405531549b3b32879e64fd4690ff88ba9dbd"
+    },
+    {
+      "path": "hybrid/native_tables/vendor/omnidocbench/extract.py",
+      "original_sha256": "6c10a9a9982c3f10436e0ccde73c216688fe129588f49ba6121170bd82b421eb",
+      "public_sha256": "6c10a9a9982c3f10436e0ccde73c216688fe129588f49ba6121170bd82b421eb"
+    },
+    {
+      "path": "hybrid/native_tables/vendor/omnidocbench/table_utils.py",
+      "original_sha256": "febb662ee1be4e97343833c3844321e8ac3d4f29452fd2ceeef5f965add9b731",
+      "public_sha256": "febb662ee1be4e97343833c3844321e8ac3d4f29452fd2ceeef5f965add9b731"
+    },
+    {
+      "path": "hybrid/native_tables/verify_model.py",
+      "original_sha256": "8f31de086fe5870b4a620d988a482022526a6385e6ae9f599bb41f7157918f97",
+      "public_sha256": "8f31de086fe5870b4a620d988a482022526a6385e6ae9f599bb41f7157918f97"
+    },
+    {
+      "path": "pyproject.toml",
+      "original_sha256": "dabe32c0f9b58f719a52be9dbe138cf458861062234b5b9a0596624567f525e8",
+      "public_sha256": "dabe32c0f9b58f719a52be9dbe138cf458861062234b5b9a0596624567f525e8"
+    }
+  ],
+  "private_run_records_included": false,
+  "gpu_rerun": false
+}

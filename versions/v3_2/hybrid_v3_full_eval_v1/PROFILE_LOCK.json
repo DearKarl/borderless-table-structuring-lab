@@ -1,0 +1,8 @@
+{
+  "profile_canonical_sha256": "1d4553b209d219226d5e1db03cd541f792e7d2a0c81e6046ca1edd13982ac627",
+  "profile_file_sha256": "7b2871afa10c63c5a9240a115e7ae5a1affeae0826e182cfe62c549e65455753",
+  "schema_sha256": "b90c911ea62d6b727bbcbfa392d3373cd0b007e6d671de2d920dfd61090ad4ee",
+  "algorithm_source_sha256": "aab1716cfb6289e12848722120bb5731603d1dce3e289810eb5d34b0308cac8d",
+  "transactions_source_sha256": "a2ff127371143ffdbb67dd28c3169722a09368195c9109e01f02d49b00115185",
+  "parent_asset_lock_sha256": "7e692bc06a8c4e04344f8faeed89b5585ba998c4b95b49914a858baf9b3714de"
+}

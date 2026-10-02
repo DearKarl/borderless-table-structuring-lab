@@ -3,3 +3,6 @@ evaluation/omnidocbench/** -text -whitespace
 hybrid/native_tables/vendor/omnidocbench/** -text -whitespace
 hybrid/native_tables/formats.py -text
 hybrid/native_tables/runtime/navidc_* -text
+
+# Archived source and nested hash locks retain their exact byte representation.
+versions/** -text -whitespace

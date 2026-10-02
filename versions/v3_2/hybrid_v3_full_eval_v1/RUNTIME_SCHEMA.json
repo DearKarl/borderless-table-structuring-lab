@@ -1,0 +1,89 @@
+{
+  "runtime_schema": 2,
+  "profiles": [
+    "native",
+    "v31-layout",
+    "v31-formula",
+    "v31-both"
+  ],
+  "modes": [
+    "off",
+    "pass-through",
+    "on"
+  ],
+  "required": [
+    "native_parent_freeze_sha256",
+    "assets",
+    "native",
+    "v31",
+    "environments",
+    "parameter_ledger",
+    "gpu_uuids",
+    "lease_directory",
+    "idle_memory_mib",
+    "image",
+    "python",
+    "binding"
+  ],
+  "environment_required": [
+    "image",
+    "python",
+    "resolved_python",
+    "site_packages",
+    "image_files",
+    "packages",
+    "asset_roles"
+  ],
+  "parameter_row_required": [
+    "component",
+    "model_asset",
+    "model_files_sha256",
+    "stored_elements",
+    "unique_trainable",
+    "buffers",
+    "evidence"
+  ],
+  "asset_paths": "closed relative to runtime.json directory; no escaping links",
+  "validation": "contracts.runtime + asset_binding.validate_v31 are authoritative executable validation",
+  "profile_canonical_sha256": "1d4553b209d219226d5e1db03cd541f792e7d2a0c81e6046ca1edd13982ac627",
+  "quality_claim": false,
+  "image_reference": "schema 2: sha256:<64 lowercase hex> local image ID or repository@sha256:<64 lowercase hex>; schema 1: repository digest only",
+  "launch_image_identity": "Local docker image inspect per effective role before first create; exact actual container Image ID, original Config.Image and independent resolved IDs required; no pull",
+  "gpu_backend": {
+    "default": {
+      "kind": "nvidia"
+    },
+    "manual": {
+      "kind": "manual",
+      "host_binding": {
+        "path": "closed relative HOST_DRIVER_BINDING.json",
+        "sha256": "lowercase64"
+      }
+    },
+    "manual_minimum_runtime_schema": 2,
+    "fallback": false,
+    "driver_binding_schema": 1,
+    "driver_binding_required": [
+      "driver_version",
+      "bundle_root",
+      "files",
+      "aliases",
+      "provenance"
+    ],
+    "validation": "gpu_backend.validate_backend; host resolve_manual; worker_guard; offline validate_evidence"
+  },
+  "chardet_capacity": {
+    "schema": 2,
+    "classification_lock": "assets/chardet_capacity.json",
+    "trigger": "paddle environment OR any of the four chardet image members OR any of the four auxiliary asset members",
+    "required_members": 4,
+    "component": "chardet",
+    "asset_role": "auxiliary_models",
+    "unique_trainable": 23199744,
+    "buffers": 90721,
+    "static_elements": 6564,
+    "stored_elements": 23297029,
+    "combined_parameter_cap": 4000000000,
+    "routing_mode_independent": true
+  }
+}

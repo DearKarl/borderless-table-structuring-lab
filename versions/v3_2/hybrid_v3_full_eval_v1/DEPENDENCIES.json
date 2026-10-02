@@ -1,0 +1,28 @@
+{
+  "host": {
+    "python": "3.12",
+    "libraries": "standard library for help, inspect, preparation/binding and image inventory; CPU suites also need Pillow, NumPy, Pydantic v2 and pandas",
+    "optional_pdf_manifest": "pypdfium2==4.30.0",
+    "runtime": "Linux Docker + NVIDIA Container Toolkit, externally provisioned"
+  },
+  "native": {
+    "parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa",
+    "torch": "2.12.0+cu130",
+    "torchvision": "0.27.0+cu130",
+    "transformers": "4.57.6",
+    "Pillow": "12.2.0",
+    "pypdfium2": "4.30.0",
+    "requirement": "Exact image digest and installed-files/model/source locks required, not this partial version list."
+  },
+  "experts": {
+    "status": "Project-owned provider implementation archived; deployment requires complete external asset and environment locks. Full benchmark Pending.",
+    "paddle_candidate": "paddleocr 3.6.0, paddlex 3.6.1, paddlepaddle-gpu 3.2.1",
+    "ovis_candidate": "vllm 0.22.1, torch 2.11.0, transformers 5.5.1, Pillow 12.3.0; separate runtime"
+  },
+  "evaluator": {
+    "image": "ghcr.io/zeng-weijun/omnidocbench-eval@sha256:6116ad72172e763b5c43e963d5efebf2093f2362b975f58156ce4f6c9142e617",
+    "offline": true,
+    "preprovisioned": true
+  },
+  "installation_performed": false
+}

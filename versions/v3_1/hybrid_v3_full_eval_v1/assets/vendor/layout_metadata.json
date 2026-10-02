@@ -1,0 +1,118 @@
+{
+  "schema": "V31-LAYOUT-CACHED-PARITY-v1",
+  "model_revision": "7b48a7566925fa464281f930c58eee04fe2c862a",
+  "model_files": [
+    {
+      "name": "README.md",
+      "sha256": "8483bc2af32658aae3d38ddec2b7186f94f925481b70ae9e9034daaf80e6b9e1",
+      "bytes": 12077
+    },
+    {
+      "name": "inference.json",
+      "sha256": "2b68367c5b312a03de5a6e1642c597c8f95165a7e40cd59c6700cf4a5042f4fd",
+      "bytes": 1196890
+    },
+    {
+      "name": "inference.pdiparams",
+      "sha256": "70bd316b0582769ec968829fd1feb1a6a58b7c941b938327e551b6b12b45c137",
+      "bytes": 130806572
+    },
+    {
+      "name": "inference.yml",
+      "sha256": "506fcfac13b3b546ae40d7886b44126420f392adb694e3f8bb6a6286a1f90fdc",
+      "bytes": 1482
+    }
+  ],
+  "code_files": [
+    {
+      "relative_path": "paddlex/inference/models/__init__.py",
+      "sha256": "b4b5e5cfd94de3fa5b0edd5999226c202160c926f6b5450fac574371eb470812"
+    },
+    {
+      "relative_path": "paddlex/inference/models/layout_analysis/__init__.py",
+      "sha256": "802de909bb9c5978dacd581acf0cbd59a311aa544050a08e8c8d8db1348ae5e8"
+    },
+    {
+      "relative_path": "paddlex/inference/models/layout_analysis/predictor.py",
+      "sha256": "e08b4347d79c029da1a4b592808629fb4a88f2a63e747ac15410191e4ff3ddf6"
+    },
+    {
+      "relative_path": "paddlex/inference/models/layout_analysis/processors.py",
+      "sha256": "b9e0d53738cd9147b2b665a96b4cd38bef8668f75e9c85ba4b8826cd41f02ca2"
+    },
+    {
+      "relative_path": "paddlex/inference/models/layout_analysis/utils.py",
+      "sha256": "815daf0699cdfe1bdb4087d1adc2f9e292512f233101640715390ecdb96fbba1"
+    },
+    {
+      "relative_path": "paddlex/inference/models/object_detection/predictor.py",
+      "sha256": "e7b1421d33c3f78d20e820c92df8c766ad978b8dbaeac8f0fdd1bbc3b1a9581e"
+    },
+    {
+      "relative_path": "paddlex/inference/models/object_detection/processors.py",
+      "sha256": "de2bb4f14f01619435c65df09272d978619c045c915cba465990dc4c32ac3540"
+    },
+    {
+      "relative_path": "paddlex/inference/pipelines/paddleocr_vl/pipeline.py",
+      "sha256": "32966d14aad6ac1bc043737c96352a4f0b4efcbead96f9354254dd4b9d1c6675"
+    },
+    {
+      "relative_path": "paddlex/inference/models/runners/paddle_static/runner.py",
+      "sha256": "943d590638a4fb71e8d8ec6a61b0e913e9a6bc4a6e41fd586d466c7938982aa3"
+    },
+    {
+      "relative_path": "paddlex/inference/models/runners/paddle_static/config/pp_option.py",
+      "sha256": "cde94c28440360d4f7a448ebec7106a5c188e2edb82250d41c19e9eae78b62ca"
+    },
+    {
+      "relative_path": "paddlex/inference/utils/benchmark.py",
+      "sha256": "ac9384a820159348d51365d74b2ec73ac9b0aede7a8affce0098e7511513428b"
+    },
+    {
+      "relative_path": "paddlex/utils/flags.py",
+      "sha256": "a370ad95fd624723199a41316c0fc1e56ce2109956995302a25ecbe3e49a23ac"
+    }
+  ],
+  "expected_versions": {
+    "paddleocr": "3.6.0",
+    "paddlepaddle-gpu": "3.2.1",
+    "paddlex": "3.6.1"
+  },
+  "parameters": {
+    "threshold": 0.3,
+    "layout_nms": true,
+    "layout_unclip_ratio": [
+      1.0,
+      1.0
+    ],
+    "layout_merge_bboxes_mode": {
+      "0": "union",
+      "1": "union",
+      "2": "union",
+      "3": "large",
+      "4": "union",
+      "5": "large",
+      "6": "large",
+      "7": "union",
+      "8": "union",
+      "9": "union",
+      "10": "union",
+      "11": "union",
+      "12": "union",
+      "13": "union",
+      "14": "union",
+      "15": "large",
+      "16": "union",
+      "17": "large",
+      "18": "union",
+      "19": "union",
+      "20": "union",
+      "21": "union",
+      "22": "union",
+      "23": "union",
+      "24": "union"
+    },
+    "layout_shape_mode": "rect",
+    "filter_overlap_boxes": false
+  }
+}

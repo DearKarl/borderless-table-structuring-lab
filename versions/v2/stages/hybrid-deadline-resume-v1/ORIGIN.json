@@ -1,0 +1,53 @@
+{
+  "archive": "HYBRID_DEADLINE_RESUME_v1.zip",
+  "archive_sha256": "a13b54e22197d6f8b1e9137eeadbafa29dbf7ffdce408323bb69290063f88ad6",
+  "members": [
+    {
+      "path": "external2_score_gate.py",
+      "original_sha256": "e79fa103197943fcb758d13df8cab5f40283a12f256dc6a9b644c6504475316e",
+      "public_sha256": "e79fa103197943fcb758d13df8cab5f40283a12f256dc6a9b644c6504475316e"
+    },
+    {
+      "path": "external_score_gate.py",
+      "original_sha256": "8c4add53e71c2fe4145e5bb7bacee9ad73dcdb7f87a418fb5965e06828469890",
+      "public_sha256": "8c4add53e71c2fe4145e5bb7bacee9ad73dcdb7f87a418fb5965e06828469890"
+    },
+    {
+      "path": "gpu_ownership_guard.py",
+      "original_sha256": "6a76d18b21be391f35fa17c050fb185cc2b995c6840e190203da9b4e7f846fe6",
+      "public_sha256": "6a76d18b21be391f35fa17c050fb185cc2b995c6840e190203da9b4e7f846fe6"
+    },
+    {
+      "path": "guard_score_gate.py",
+      "original_sha256": "a2c8ef46e44e229db25379ba8a6e2e99a60d0f9762ea94ac39d69f8cde081544",
+      "public_sha256": "a2c8ef46e44e229db25379ba8a6e2e99a60d0f9762ea94ac39d69f8cde081544"
+    },
+    {
+      "path": "guarded_monitor.py",
+      "original_sha256": "cf4d7e73d9a9ce70f197dd0749ebdc3112af5ed0c3e4b265a508eeb2a26d9ed7",
+      "public_sha256": "cf4d7e73d9a9ce70f197dd0749ebdc3112af5ed0c3e4b265a508eeb2a26d9ed7"
+    },
+    {
+      "path": "hybrid_deadline_evidence.py",
+      "original_sha256": "c694741cc80e66140b38a1c7a58f8e6f62d9bd646fde415b8a5f1007727d7452",
+      "public_sha256": "c694741cc80e66140b38a1c7a58f8e6f62d9bd646fde415b8a5f1007727d7452"
+    },
+    {
+      "path": "hybrid_deadline_history.py",
+      "original_sha256": "4a8798a939c55823f5a22fc812999e4071c9a8b53933d7f979fdd0ebef6ff1b5",
+      "public_sha256": "4a8798a939c55823f5a22fc812999e4071c9a8b53933d7f979fdd0ebef6ff1b5"
+    },
+    {
+      "path": "launcher.py",
+      "original_sha256": "bdbac83ee16b25e938a3d35154ae1faafd1079cac9ebe853de716300d10c9b3e",
+      "public_sha256": "1bfd0a03ccd2971db44e0779481349c918e00198cb7f6a2e009477affa3e5f98"
+    },
+    {
+      "path": "test_hybrid_deadline.py",
+      "original_sha256": "abfc82ef1783c9df68bca26ba6f4d8c1a6b0886dce0936a367aad55770770f12",
+      "public_sha256": "abfc82ef1783c9df68bca26ba6f4d8c1a6b0886dce0936a367aad55770770f12"
+    }
+  ],
+  "private_run_records_included": false,
+  "gpu_rerun": false
+}

@@ -1,0 +1,17 @@
+# Version archive
+
+Each directory preserves its original Python package names. Run a version from its own directory to avoid importing a different archived implementation. These are research source snapshots, not preconfigured runtime environments.
+
+| Version | Route | Entry and scope |
+|---|---|---|
+| [V0](v0/README.md) | Frozen MinerU 2605 raw page + fresh NaviDC tables | Existing repository `btsl` / `hybrid.native_tables`; CUDA reproduction templates |
+| [V1](v1/README.md) | MinerU backbone + Paddle formula expert | Original-image entry, fresh controller and historical verified-cache mode |
+| [V2](v2/README.md) | TeleOCR backbone + Paddle formula expert | Native/full-run controller, strict assembly and recovery gates |
+| [V3.1](v3_1/README.md) | TeleOCR + conservative layout/formula experts | Portable asset binding and bounded page integration; benchmark Pending |
+| [V3.2](v3_2/README.md) | TeleOCR + OvisOCR2 text expert | Text-slot integration with explicit environment and completion checks; benchmark Pending |
+
+The `formula_v0` package name inside V1 is an internal assembly prototype, **not** the measured V0 CUDA table route. The stopped Paddle-plus-NaviDC prototype is not the reported V2 route.
+
+The original repository's Training route and earlier native-table MPS results remain available separately. Their historical Table TEDS is not an Overall score for the later series.
+
+Publication excludes third-party TeleOCR source, weights, page data, ground truth, cached predictions, private deployment records and machine-specific bindings. Required external sources retain their upstream pins and hash checks. New archive locks identify the public bytes; historical results were not rerun for this publication.

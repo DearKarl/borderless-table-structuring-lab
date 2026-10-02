@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "image": "REPLACE-WITH-REVIEWED-IMAGE@sha256:REPLACE_WITH_64_HEX",
+  "python": "/assets/environment/bin/python",
+  "lease_directory": "/srv/hybrid-runtime-leases",
+  "idle_memory_mib": "SET_APPROVED_IDLE_MEMORY_CEILING",
+  "gpu_uuids": [
+    "GPU-REPLACE-WITH-OWNED-UUID"
+  ],
+  "native_parent_freeze_sha256": "399839e9f8a713bdab8d700d92865f72cccabc96d530773e8dc7b9b98e51acaa",
+  "assets": {
+    "native_code": {
+      "role": "native_code",
+      "path": "assets/native_code",
+      "files": {
+        "REPLACE_WITH_COMPLETE_FILE_LOCK": "REPLACE_WITH_64_HEX"
+      }
+    },
+    "tele_source": {
+      "role": "tele_source",
+      "path": "assets/tele_source",
+      "files": {
+        "REPLACE_WITH_COMPLETE_FILE_LOCK": "REPLACE_WITH_64_HEX"
+      }
+    },
+    "tele_model": {
+      "role": "tele_model",
+      "path": "assets/tele_model",
+      "files": {
+        "REPLACE_WITH_COMPLETE_FILE_LOCK": "REPLACE_WITH_64_HEX"
+      }
+    },
+    "environment": {
+      "role": "environment",
+      "path": "assets/environment",
+      "files": {
+        "REPLACE_WITH_COMPLETE_FILE_LOCK": "REPLACE_WITH_64_HEX"
+      }
+    }
+  },
+  "native": {
+    "tele_packages": {
+      "torch": "2.12.0+cu130",
+      "torchvision": "0.27.0+cu130",
+      "transformers": "4.57.6",
+      "Pillow": "12.2.0",
+      "pypdfium2": "4.30.0"
+    },
+    "identity_files": [
+      {
+        "asset": "tele_model",
+        "path": "REPLACE_WITH_MODEL_FILE",
+        "sha256": "REPLACE_WITH_64_HEX"
+      }
+    ],
+    "capacity": {
+      "passed": false,
+      "conservative_upper_bound": null
+    },
+    "expected_load_metadata": {
+      "PROCESSOR.json": {},
+      "TELE_LOAD.json": {}
+    }
+  }
+}

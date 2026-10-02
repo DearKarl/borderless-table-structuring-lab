@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "profile": "v31-both",
+  "mode": "on",
+  "asset_roots": {
+    "tele_model": "/explicit/offline/tele",
+    "formula_model": "/explicit/offline/paddle",
+    "layout_model": "/explicit/offline/PP-DocLayoutV3",
+    "environment": "/explicit/offline/environment-evidence",
+    "parameter_evidence": "/explicit/offline/parameter-evidence",
+    "auxiliary_models": "/explicit/offline/auxiliary-models",
+    "tele_source": "/explicit/offline/TeleOCR"
+  },
+  "environment_lock": "/explicit/offline/environment-lock.json",
+  "parameter_ledger": "/explicit/offline/parameter-ledger.json",
+  "gpu_uuids": [
+    "GPU-EXPLICIT-NATIVE-UUID",
+    "GPU-EXPLICIT-PADDLE-UUID"
+  ],
+  "lease_directory": "/srv/hybrid-runtime-leases",
+  "idle_memory_mib": 0,
+  "validation_budget": {
+    "pages": 2,
+    "native_calls_per_page": 256,
+    "expert_calls_per_page": 32,
+    "model_loads": 8,
+    "load_seconds": 600,
+    "page_seconds": 900,
+    "request_seconds": 900,
+    "total_seconds": 7200,
+    "cleanup_seconds": 240,
+    "page_audit_seconds": 15,
+    "cpus": 8,
+    "ram_gib": 48,
+    "swap_gib": 0,
+    "shm_gib": 8,
+    "gpu_allowlist": [
+      "GPU-EXPLICIT-NATIVE-UUID",
+      "GPU-EXPLICIT-PADDLE-UUID"
+    ],
+    "customer_gpu_uuids": []
+  }
+}

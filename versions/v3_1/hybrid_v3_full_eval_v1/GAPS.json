@@ -1,0 +1,11 @@
+{
+  "release": "public-source-archive-v3.1",
+  "benchmark": "Pending",
+  "public_snapshot_gpu_rerun": false,
+  "external_requirements": [
+    "Pinned TeleOCR source and model weights",
+    "Exact immutable runtime environments and parameter evidence",
+    "Deployment-specific GPU and host bindings"
+  ],
+  "quality_improvement_claim": false
+}
