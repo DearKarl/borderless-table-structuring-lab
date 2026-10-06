@@ -40,6 +40,7 @@ runs/
 artifacts/results/**
 !artifacts/results/**/
 !artifacts/results/README.md
+!artifacts/results/v3-reported-20261007.json
 !artifacts/results/**/PAIRED_TABLE_SUMMARY.json
 !artifacts/results/**/READY.json
 !artifacts/results/**/FAILURE.json

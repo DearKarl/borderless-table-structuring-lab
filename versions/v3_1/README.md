@@ -2,7 +2,9 @@
 
 TeleOCR backbone with conservative PP-DocLayoutV3 layout proposals and PaddleOCR-VL1.6 formula recognition. Accepted geometry changes require fresh native recognition; ambiguous proposals fall back to the original result.
 
-**Full benchmark: Pending.** The final historical V3.1 package completed bounded page/PDF and official-entry checks. Formula model loading was observed, but formula generation was not exercised in those checks. These checks do not establish a full-benchmark improvement. The public snapshot has publication-specific documentation and external-source changes and has not been rerun on GPU.
+**Reported result: 97.6973 Overall.** On 2026-10-07, the researcher identified this project's scored method as the original formula-replacement pipeline with original-image input, bypassing PDF transcoding and resampling. No component metrics or page count were supplied. See the [experiment record](../../research/RESULTS.md#v31-original-image-formula-replacement). The exact scored revision remains to be linked to this source snapshot.
+
+The archived implementation previously completed bounded page/PDF and official-entry checks. Those implementation checks are separate from the newly supplied evaluation result.
 
 ## Inspect the source
 

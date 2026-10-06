@@ -3,6 +3,14 @@
 This log records repository-level changes. Exact scientific results and older
 history remain in their linked source records and Git history.
 
+## 2026-10-07 — Research presentation and V3 results
+
+- Reorganized the homepage around research questions, methods and grouped results.
+- Added researcher-reported V3.1 Overall 97.6973 and V3.2 full-set OFF/ON results;
+  missing metrics remain unknown and successful-page subsets remain separate.
+- Added a V4 method description and V5 research proposal; no new experiment ran.
+- Preserved historical code, model files and original metric archives.
+
 ## Research repository organization
 
 - Clarified the sole objective: exceed the OmniDocBench leaderboard leader with
@@ -16,7 +24,7 @@ history remain in their linked source records and Git history.
 
 This documentation update introduces no new experiment, score or model release.
 
-## 2026-10-06 — V4 public experimental delivery
+## 2026-10-06 — V4 input selection experiment
 
 Published the [V4 archive](releases/v4-gbdt-evaluation-20261006/README.md): source,
 the original project-trained GBDT, dependency identities and aggregate results.

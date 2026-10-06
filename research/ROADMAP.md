@@ -11,9 +11,13 @@ no particular model, training method, fusion design or input policy is mandatory
 - Earlier Training and native-table routes have preserved source and table metrics.
 - V0–V2 have full historical whole-page results, including strong raw controls
   and the negative paired V2 result.
-- V3.1/V3.2 have source and bounded engineering checks, without full-benchmark scores.
+- V3.1 has a researcher-supplied Overall result; V3.2 has a researcher-supplied
+  full-set OFF/ON comparison. Missing metrics and run identities remain explicit.
 - V4 has a completed 1,651-page local evaluation and a public source/model/result
   archive. Causal selector benefit and an official leaderboard win remain unproven.
+
+The [V5 research proposal](V5_PROPOSAL.md) adds novelty assessment, strong controls,
+residual-error analysis and independent validation toward a CCF A publication.
 
 See [current state](CURRENT_STATE.md) for exact evidence and limitations.
 

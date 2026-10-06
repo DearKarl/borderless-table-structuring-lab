@@ -4,7 +4,12 @@ The project objective is to exceed the OmniDocBench leaderboard leader with an
 officially recognized Overall score. TeleOCR is the current target; V0–V4 are
 attempts, not commitments to a particular method.
 
-Start with [CURRENT_STATE.md](CURRENT_STATE.md) for completed evidence and limits,
+The [V5 research proposal](V5_PROPOSAL.md) records the additional CCF A publication
+aspiration and the proposed evidence gates. It is a plan, not a completed method
+or experiment.
+
+Start with [RESULTS.md](RESULTS.md) for the experimental results and
+[CURRENT_STATE.md](CURRENT_STATE.md) for completed evidence and limits,
 [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for what can be checked or reproduced,
 and [ROADMAP.md](ROADMAP.md) for the remaining milestones. Use the
 [experiment record template](EXPERIMENT_TEMPLATE.md) for future work. The current
@@ -13,7 +18,8 @@ attributed evidence records before they enter the result summary.
 
 | Location | Purpose and entry point |
 |---|---|
-| [V4 release](../releases/v4-gbdt-evaluation-20261006/README.md) | GBDT + TeleOCR experimental delivery, original model, frozen source, results and provenance |
+| [V4 study](V4.md) | Learned input selection: method, experiment, limitations, source and model |
+| [Experimental results](RESULTS.md) | V0–V4 measurements, controls, component scores and supplied V3 results |
 | [Version archive](../versions/README.md) | V0-V3.2 implementations and version-specific runtime contracts |
 | [Hybrid](../hybrid/README.md) | Historical OCR sidecar and [native-table route](../hybrid/native_tables/README.md); route guides retain their dated scope |
 | [Training](../training/README.md) | Separate Explicit-v2 checkpoint and tensor interface; not the V4 GBDT model |

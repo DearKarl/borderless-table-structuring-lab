@@ -2,7 +2,9 @@
 
 TeleOCR backbone with an OvisOCR2 text-region expert. Only text slots are eligible; native formula and table paths remain intact. Strict completion, EOS and process-exit evidence control adoption and fallback.
 
-**Full benchmark: Pending.** The historical V3.2 checks covered one crop and bounded off/on/pass-through cases. The final mount-order normalization was validated offline after GPU inference; the final delivery bytes were not rerun on GPU. Ovis deployment is restricted by `v32_cluster.py` to an explicitly locked Linux environment. This archive does not claim a general-purpose installer. The public snapshot has publication-specific documentation and external-source changes and has not been rerun on GPU.
+**Reported full benchmark: OFF 93.4951, ON 93.7208 Overall (+0.2257 points).** The researcher reports 1,651 pages per arm using the same official evaluator and GT, with all failures retained. Table TEDS changes from 86.9556 to 87.3918 and formula CDM from 98.2000 to 98.4454; text quality reportedly regresses slightly, with no numeric text metric supplied. See the [full-set and supplementary results](../../research/RESULTS.md#v32-full-set-off-and-on-comparison). Raw scoring files and the exact scored revision remain to be added.
+
+The archived implementation previously completed bounded crop and off/on/pass-through checks. Those checks are separate from the newly supplied full evaluation. Inference requires the Linux environment described below.
 
 ## Inspect the source
 

@@ -6,7 +6,7 @@
 |---|---|---|
 | Inspect reported scores | [Historical aggregate](../artifacts/whole-page-results.json), [V4 report](../releases/v4-gbdt-evaluation-20261006/results/REPORT.json) | Saved measurements and declared provenance |
 | Check root implementation | `python -m pytest -q tests` after root test installation | Data-free implementation behavior |
-| Verify V4 delivery bytes | Command below | Files match the public delivery manifest |
+| Verify V4 source and model files | Command below | Files match the frozen experiment manifest |
 | Reproduce an archived route | [Version guides](../versions/README.md), [native-table guide](../LEGACY_NATIVE_TABLES.md), [Training guide](../training/README.md) | Requires each route's pinned environment, assets and protocol |
 | Reproduce V4 inference and scoring | [V4 archive guide](../releases/v4-gbdt-evaluation-20261006/README.md) and its dependency manifests | Requires external assets and new validated deployment bindings |
 | Establish an official rank | [OmniDocBench](https://github.com/opendatalab/OmniDocBench) | Requires official comparison conditions and acceptance; not established here |
@@ -24,8 +24,8 @@ python -B verify_delivery.py
 ```
 
 The verifier reads files without loading the model pickle, running inference or
-accessing the network. Passing proves delivery integrity only. The public export
-was not separately benchmarked after deployment metadata was redacted.
+accessing the network. Passing checks file integrity; it does not reproduce
+model predictions or accuracy.
 
 ## V4 environment and evidence
 
@@ -67,3 +67,10 @@ ground truth for evaluation only. Retain failed pages under the declared rule.
 Use the [experiment template](EXPERIMENT_TEMPLATE.md) to record a future run.
 The source archive is useful evidence, but complete fresh-clone benchmark
 reproduction and official leaderboard acceptance remain separate milestones.
+
+## V3 reported results
+
+The [current results](RESULTS.md) include V3.1 and V3.2 measurements supplied by
+the researcher on 2026-10-07. Their source-code entry points are available, but
+raw scoring files, exact scored revisions and some metrics remain unspecified.
+Those values are recorded as supplied results, not as reproduced experiments.

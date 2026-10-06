@@ -1,31 +1,88 @@
 # Borderless Table Structuring Lab
 
-Research code and evidence for improving end-to-end document parsing on OmniDocBench.
+Research on reliable document parsing: input resolution, specialist models, and
+selective correction of text, formulas, and table structure.
 
-**Objective:** achieve an officially recognized OmniDocBench Overall score above the leaderboard leader, with TeleOCR as the current target. V0–V4 are research attempts toward that objective. No backbone, fusion method, training recipe, or input-selection policy is a permanent project constraint.
+Our goal is to improve end-to-end parsing on OmniDocBench and develop methods
+whose gains hold beyond a single benchmark. We study when an existing parser
+benefits from a different input view or specialist, and when an intervention
+damages a correct prediction. The project includes successful and unsuccessful
+experiments from V0 through V4. V5 is currently at the research-design stage.
 
-**Status:** full local evaluations and source archives are available; an official leaderboard win is not established. Historical raw TeleOCR scored **97.435109** locally; V4 scored **97.171890**. Neither number alone establishes improvement over the official TeleOCR reference of **96.91**, or a controlled comparison between these local runs.
+[Results](research/RESULTS.md) · [Methods](#methods) ·
+[Reproduction](research/REPRODUCIBILITY.md) · [V5 research plan](research/V5_PROPOSAL.md) ·
+[Research status](research/CURRENT_STATE.md) · [Contributing](CONTRIBUTING.md)
 
-[Research guide](research/README.md) · [Current evidence](research/CURRENT_STATE.md) · [Reproduction](research/REPRODUCIBILITY.md) · [Roadmap](research/ROADMAP.md) · [Contributing](CONTRIBUTING.md) · [Changes](CHANGELOG.md)
+## Research questions
 
-## Repository map
+- **Input resolution:** when does changing the input scale improve recognition,
+  and can an adaptive policy outperform a strong fixed policy at comparable cost?
+- **Specialist integration:** when does replacing a region with an expert
+  prediction improve the complete document rather than only an isolated crop?
+- **Selective correction:** how can a system recover errors while preserving
+  correct content and controlling additional computation?
 
-| Location | Contents |
-|---|---|
-| `research/` | Objective, evidence index, reproduction guidance and experiment record template |
-| `versions/` | Preserved V0–V3.2 source and route-specific environments |
-| `releases/` | Dated deliveries, including V4 source, model, metrics and provenance |
-| `artifacts/` | Aggregate results and machine-readable evidence; no benchmark page payloads |
-| `btsl/`, `hybrid/`, `training/` | Earlier packages and independent research routes |
-| `evaluation/` | Frozen evaluator source and historical adapter |
-| `tests/`, `examples/`, `scripts/` | Data-free checks, examples and download utilities |
-| `notices/` | Third-party attribution and retained license texts |
+OmniDocBench is the primary benchmark. The performance target is an officially
+recognized Overall score above the leaderboard leader. The accompanying research
+goal is a generalizable contribution suitable for a CCF A venue; no paper or
+official leaderboard result is claimed at this stage.
 
-Scientific source and frozen releases retain their existing paths. Start with the route-specific guide before executing an archived version.
+## Results
 
-## Getting started
+Selected local results are shown below. Scores use a 0–100 scale. Rows belong to
+different experimental groups and are not a single controlled ranking. The
+[results record](research/RESULTS.md) includes controls, available component
+metrics, sources, and evaluation conditions. A dash means the metric was not supplied.
 
-To inspect the root package and run its data-free checks with Python 3.10 or later:
+| Experimental group | Method | Overall ↑ | Table TEDS ↑ | Formula CDM ↑ |
+|---|---|---:|---:|---:|
+| V0 / V1 | MinerU control | 93.1680 | 90.4345 | 95.5532 |
+| V0 / V1 | V0: MinerU + NaviDC tables | 94.5993 | 94.7279 | 95.5532 |
+| V0 / V1 | V1: MinerU + Paddle formulas | 93.2175 | 90.4345 | 95.7276 |
+| V2 | TeleOCR control | 97.4351 | 96.6919 | 98.5996 |
+| V2 | V2: TeleOCR + Paddle formulas | 97.0600 | 96.6919 | 97.4793 |
+| V3.1 | Original formula-replacement pipeline + original image | 97.6973 | — | — |
+| V3.2 OFF / ON | V3.2 OFF | 93.4951 | 86.9556 | 98.2000 |
+| V3.2 OFF / ON | V3.2 ON | 93.7208 | 87.3918 | 98.4454 |
+| V4 | GBDT input selection + TeleOCR | 97.1719 | 96.0459 | 98.4993 |
+
+V3.1 and V3.2 values were supplied by the researcher on 2026-10-07; raw scoring
+files and run revisions have not yet been added. V3.2 includes all 1,651 pages,
+with failures retained, and improves Overall by **0.2257 points** over OFF.
+V4 also includes all 1,651 pages, including seven timeout predictions kept empty.
+V3.1's evaluation denominator was not supplied.
+
+The paired V2 experiment decreased Overall by **0.3751 points**, showing that
+specialist replacement can harm a strong parser. V3.2's scores on each arm's own
+successful pages are reported separately, since those subsets may differ.
+These findings motivate measuring both repairs and regressions in V5.
+
+An earlier native-table experiment reached **98.7507 Table TEDS** under a
+different protocol. This is a component result, not a whole-page Overall score;
+see the [table experiments](artifacts/results/README.md).
+
+## Methods
+
+| Version | Method studied | Source |
+|---|---|---|
+| V0 | Native table-region replacement with a specialist parser | [V0](versions/v0/README.md) |
+| V1 | Geometry- and syntax-checked formula replacement on MinerU | [V1](versions/v1/README.md) |
+| V2 | Formula expert integration on a TeleOCR backbone | [V2](versions/v2/README.md) |
+| V3.1 | Layout/formula integration and original-image input comparisons | [V3.1](versions/v3_1/README.md) |
+| V3.2 | OvisOCR2 text-region integration with adoption and fallback rules | [V3.2](versions/v3_2/README.md) |
+| V4 | Learned selection between input actions before TeleOCR recognition | [V4 study](research/V4.md) |
+| V5 | Proposed study of intervention benefit, regression risk, and cost | [Research plan](research/V5_PROPOSAL.md) |
+
+The [earlier table method](LEGACY_NATIVE_TABLES.md) and
+[table-structuring training experiments](training/README.md) remain available.
+Method descriptions and measured results are linked separately so new evidence
+can be added without rewriting earlier experiments.
+
+## Reproducing the research
+
+Start with the [reproduction guide](research/REPRODUCIBILITY.md) to select a
+method and its corresponding model, input, and evaluation configuration.
+The root package contains the earlier table implementation. Its local checks are:
 
 ```bash
 git clone https://github.com/DearKarl/borderless-table-structuring-lab.git
@@ -36,60 +93,26 @@ python -m pip install -e ".[test]"
 python -m pytest -q tests
 ```
 
-The root package is the earlier native-table implementation, not an installer for every archived system. These checks do not download model weights or reproduce benchmark scores. For V4, begin with the [reproduction guide](research/REPRODUCIBILITY.md) and its data-free archive verification command.
+These checks exercise implementation behavior; model inference requires the
+method-specific dependencies and separately obtained weights and data.
 
-## V4 GBDT experimental delivery (2026-10-06)
+## Repository structure
 
-The [V4 public export](releases/v4-gbdt-evaluation-20261006/README.md) includes the original project-trained 30-PDF GBDT model, source, dependency hashes and [full evaluation report](releases/v4-gbdt-evaluation-20261006/测评.md). The completed local official-protocol run scored **97.17188999355706 Overall** across all 1,651 pages (1,644 completed; 7 timeout predictions retained empty). The +0.2619-point difference from the frozen TeleOCR public reference is context only, not a verified rank, paired comparison or causal GBDT gain.
+| Location | Research content |
+|---|---|
+| `research/` | Research questions, experiment summaries, protocols, and future work |
+| `versions/` | V0–V3.2 implementations and method-specific instructions |
+| `releases/` | Frozen source, models, and results for reproducible experiments |
+| `artifacts/` | Machine-readable results, including negative outcomes |
+| `btsl/`, `hybrid/`, `training/` | Table structuring, expert integration, and training code |
+| `evaluation/` | Evaluation code and metric adapters |
+| `tests/`, `examples/`, `scripts/` | Implementation checks and usage examples |
 
-[Download the public ZIP](releases/v4-gbdt-evaluation-20261006/V4-GBDT-evaluation-20261006-public.zip). Publication redacts deployment identifiers and preserves original/public hash provenance; this export was not separately benchmarked and requires independently validated external runtime assets. See its [publication and attribution boundary](releases/v4-gbdt-evaluation-20261006/PUBLICATION.md). The historical table below remains unchanged.
+## Attribution
 
-## Measured whole-page results
-
-These are **our historical local measurements on 1,651 OmniDocBench pages**, not a claim of a verified public leaderboard position. Higher Overall is better. All measured rows below use the later official evaluation protocol; model versions and output handling matter. See the [result record](artifacts/whole-page-results.json) for exact scores, component metrics, source hashes and protocol details.
-
-| Model / system | Overall ↑ | Text ED ↓ | Formula CDM ↑ | Table TEDS ↑ | Table TEDS-S ↑ | Reading-order ED ↓ |
-|---|---:|---:|---:|---:|---:|---:|
-| MinerU2.5-Pro-2605-1.2B (V1 control) | 93.167994 | 0.064838 | 95.553206 | 90.434549 | 93.101331 | 0.152900 |
-| PaddleOCR-VL-1.6 (V1 control) | 95.211472 | 0.052914 | 96.780383 | 94.145464 | 96.513127 | 0.140712 |
-| TeleOCR (V2 control) | 97.435109 | 0.029862 | 98.599622 | 96.691890 | 98.036939 | 0.119176 |
-| Hybrid V0 (MinerU + NaviDC tables) | 94.599252 | 0.064833 | 95.553206 | 94.727857 | 96.599701 | 0.154207 |
-| Hybrid V1 (MinerU + Paddle formulas) | 93.217499 | 0.065097 | 95.727598 | 90.434549 | 93.101331 | 0.154055 |
-| Hybrid V2 (TeleOCR + Paddle formulas) | 97.060019 | 0.029912 | 97.479332 | 96.691890 | 98.036939 | 0.119262 |
-| Hybrid V3.1 | Not measured | — | — | — | — | — |
-| Hybrid V3.2 | Not measured | — | — | — | — | — |
-
-Overall, CDM, TEDS and TEDS-S use a 0–100 scale; edit distances use 0–1. Overall = (100 × (1 − Text ED) + Formula CDM + Table TEDS) / 3. Reading order and TEDS-S do not enter Overall. Values are calculated at full precision, then displayed to six decimal places. These archived runs are contextual comparisons, not one unified paired experiment.
-
-The paired V2 hybrid is **0.3751 Overall points below** its TeleOCR raw control. Expert integration did not improve that measured run. V3.1/V3.2 have bounded engineering checks, but no completed full-benchmark result is reported here.
-
-MinerU/Paddle and V1 use empty primary output for truncated generations; the V2 pair retains TeleOCR native truncated output. Cross-group scores provide context and are not a controlled single-variable comparison. The earlier Paddle development result, 95.14238890128128, is distinct from the fresh control above. CPU fixtures and small smoke checks are not accuracy results.
-
-## Versions and source
-
-| Version | Implementation | What it adds |
-|---|---|---|
-| [V0](versions/v0/README.md) | Root `btsl/`, `hybrid/native_tables/`, CUDA reproduction templates | Replaces native table regions using NaviDC while preserving page content |
-| [V1](versions/v1/README.md) | MinerU/Paddle page assembly and native controllers | Geometry- and syntax-checked formula replacement |
-| [V2](versions/v2/README.md) | Tele-base full-run and specialist controllers | Formula expert integration, fallback and strict run evidence |
-| [V3.1](versions/v3_1/README.md) | Conservative layout/formula integration | Fresh recognition after accepted geometry changes; explicit asset binding |
-| [V3.2](versions/v3_2/README.md) | OvisOCR2 text-slot integration | Text expert dispatch with strict completion and fallback checks |
-| [V4](releases/v4-gbdt-evaluation-20261006/README.md) | GBDT input-action selector and TeleOCR | Completed experimental delivery; same-condition fixed-policy gain remains unproven |
-
-See the [version archive](versions/README.md) for entry points and scope. Run each archived version from its own directory; package names are deliberately preserved. These are research source snapshots with explicit external runtime prerequisites, not bundled model environments. TeleOCR source is obtained separately from its pinned upstream and checked against fixed member hashes. Models, datasets, predictions and private deployment records are not included.
-
-## Earlier native-table and Training routes
-
-The earlier MinerU 2604/MLX + NaviDC/MPS route achieved **98.75068667701048 full Table TEDS** and **99.2913812392524 structure TEDS** under the older evaluation protocol. These are table metrics, **not Overall**, and do not belong in the whole-page table above. The raw table baseline was 93.0862668980718, a gain of 5.664419778938679 Table TEDS points.
-
-The [preserved native-table guide](LEGACY_NATIVE_TABLES.md) contains installation, model pins, CLI usage, historical aggregates and reproduction limits. The separate [Training route](training/README.md) remains available with its original checkpoint and loading contract. Neither route is relabeled as a new V3 result.
-
-## Reproduction and attribution
-
-Published source/package locks identify the public archive bytes. Publication changed documentation, example paths, container label names and external-source preparation; it did not rerun historical model inference or scoring. Historical measurements therefore do not certify a new clone, hardware platform or prepared environment.
-
-Ground truth is evaluator-only. Inference uses original page inputs and declared model assets. Failed or incomplete runs cannot be silently promoted to measured results. The [contribution rules](CONTRIBUTING.md), [third-party notices](notices/THIRD_PARTY.md) and version-specific environment contracts describe the boundaries. Necessary original third-party license text, frozen evaluator text and Chinese recognition/filename test strings are retained.
-
-## Referencing this work
-
-Reference this repository URL together with the exact commit or dated release, the named route and its report. Cite OmniDocBench and each upstream model separately using their own attribution guidance. No project paper, DOI or repository-wide license is declared here; third-party license texts apply to their identified components. See [contribution guidance](CONTRIBUTING.md#attribution-and-publication).
+This project builds on OmniDocBench and the upstream parsers named in each
+experiment. Cite their original work alongside any result from this repository.
+Until a project paper is available, reference the repository commit, method, and
+experiment record. See [third-party notices](notices/THIRD_PARTY.md) and
+[contribution guidance](CONTRIBUTING.md#attribution-and-publication) for attribution
+and licensing information.

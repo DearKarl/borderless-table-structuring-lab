@@ -1,0 +1,54 @@
+{
+  "schema": "researcher-reported-results/v1",
+  "received_date": "2026-10-07",
+  "source": "Researcher-supplied V3.1 screenshot row and explicit ownership correction; written V3.2 evaluation summary",
+  "verification": "Transcribed and arithmetic-checked; not independently rescored",
+  "raw_evaluator_outputs_supplied": false,
+  "metric_scales": {"Overall": "0-100", "table_TEDS": "0-100", "formula_CDM": "0-100", "text_Edit_dist": "0-1"},
+  "v3_1": {
+    "method": "Original formula-replacement pipeline with original-image input",
+    "workflow": "Original pipeline, bypassing PDF transcoding and resampling",
+    "dataset": "OmniDocBench",
+    "pages": null,
+    "dataset_revision": null,
+    "ground_truth_sha256": null,
+    "evaluator_revision": null,
+    "code_revision": null,
+    "Overall": 97.6973,
+    "text_Edit_dist": null,
+    "formula_CDM": null,
+    "table_TEDS": null,
+    "table_TEDS_structure": null,
+    "reading_order_Edit_dist": null,
+    "baseline": null,
+    "comparison_limit": "Only this screenshot row belongs to this project. Other screenshot entries are excluded and are not project controls. The denominator, failure handling and binding to archived code remain unspecified."
+  },
+  "v3_2": {
+    "dataset": "OmniDocBench",
+    "pages_per_arm": 1651,
+    "same_official_evaluator_and_gt": "Researcher reported",
+    "dataset_revision": null,
+    "ground_truth_sha256": null,
+    "evaluator_revision": null,
+    "code_revision": null,
+    "all_failed_pages_retained_in_denominator": true,
+    "rows": [
+      {"arm": "OFF", "Overall": 93.4951, "text_Edit_dist": null, "formula_CDM": 98.2000, "table_TEDS": 86.9556, "table_TEDS_structure": null, "reading_order_Edit_dist": null, "failed_pages": null},
+      {"arm": "ON", "Overall": 93.7208, "text_Edit_dist": null, "formula_CDM": 98.4454, "table_TEDS": 87.3918, "table_TEDS_structure": null, "reading_order_Edit_dist": null, "failed_pages": null}
+    ],
+    "reported_delta_on_minus_off_pp": {"Overall": 0.2257, "formula_CDM": 0.2454, "table_TEDS": 0.4362},
+    "text_direction": "Slight regression reported; numeric value not supplied",
+    "successful_pages_only": {
+      "OFF_Overall": 97.6657,
+      "ON_Overall": 97.5607,
+      "OFF_page_count": null,
+      "ON_page_count": null,
+      "same_page_set_confirmed": false,
+      "role": "Supplementary descriptive statistics only; not a matched comparison or replacement for the full-set scores"
+    },
+    "interpretation_limit": "Component changes cannot be attributed to specific expert edits or failure recovery without aligned predictions and completion records."
+  },
+  "missing_values": "Unknown metrics remain null; none were reconstructed from Overall",
+  "new_inference": false,
+  "new_scoring": false
+}

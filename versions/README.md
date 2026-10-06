@@ -7,8 +7,8 @@ Each directory preserves its original Python package names. Run a version from i
 | [V0](v0/README.md) | Frozen MinerU 2605 raw page + fresh NaviDC tables | Existing repository `btsl` / `hybrid.native_tables`; CUDA reproduction templates |
 | [V1](v1/README.md) | MinerU backbone + Paddle formula expert | Original-image entry, fresh controller and historical verified-cache mode |
 | [V2](v2/README.md) | TeleOCR backbone + Paddle formula expert | Native/full-run controller, strict assembly and recovery gates |
-| [V3.1](v3_1/README.md) | TeleOCR + conservative layout/formula experts | Portable asset binding and bounded page integration; benchmark Pending |
-| [V3.2](v3_2/README.md) | TeleOCR + OvisOCR2 text expert | Text-slot integration with explicit environment and completion checks; benchmark Pending |
+| [V3.1](v3_1/README.md) | TeleOCR + layout/formula integration | Researcher-reported original-image variant: Overall 97.6973; exact scored revision pending |
+| [V3.2](v3_2/README.md) | TeleOCR + OvisOCR2 text expert | Researcher-reported 1,651-page OFF/ON: 93.4951 / 93.7208; exact scored revision pending |
 
 The `formula_v0` package name inside V1 is an internal assembly prototype, **not** the measured V0 CUDA table route. The stopped Paddle-plus-NaviDC prototype is not the reported V2 route.
 
