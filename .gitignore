@@ -61,7 +61,11 @@ artifacts/results/**
 credentials.json
 token.json
 
-# Internal coordination records stay in the parent workspace, not this lab repo.
+# Legacy internal coordination records are not public repository content.
 governance/
 evidence/
 Handoff.md
+
+# Local research workflow and role onboarding are never public repository content.
+/codex/
+/AGENTS.md

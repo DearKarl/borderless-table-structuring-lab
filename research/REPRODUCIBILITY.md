@@ -1,0 +1,69 @@
+# Reproduction guide
+
+## Choose the claim you want to check
+
+| Task | Entry point | What it establishes |
+|---|---|---|
+| Inspect reported scores | [Historical aggregate](../artifacts/whole-page-results.json), [V4 report](../releases/v4-gbdt-evaluation-20261006/results/REPORT.json) | Saved measurements and declared provenance |
+| Check root implementation | `python -m pytest -q tests` after root test installation | Data-free implementation behavior |
+| Verify V4 delivery bytes | Command below | Files match the public delivery manifest |
+| Reproduce an archived route | [Version guides](../versions/README.md), [native-table guide](../LEGACY_NATIVE_TABLES.md), [Training guide](../training/README.md) | Requires each route's pinned environment, assets and protocol |
+| Reproduce V4 inference and scoring | [V4 archive guide](../releases/v4-gbdt-evaluation-20261006/README.md) and its dependency manifests | Requires external assets and new validated deployment bindings |
+| Establish an official rank | [OmniDocBench](https://github.com/opendatalab/OmniDocBench) | Requires official comparison conditions and acceptance; not established here |
+
+The root package does not install all archived versions. Identically named Python
+packages in different snapshots must be run from their documented directories.
+
+## Data-free V4 archive check
+
+From the repository root, with Python available:
+
+```bash
+cd releases/v4-gbdt-evaluation-20261006
+python -B verify_delivery.py
+```
+
+The verifier reads files without loading the model pickle, running inference or
+accessing the network. Passing proves delivery integrity only. The public export
+was not separately benchmarked after deployment metadata was redacted.
+
+## V4 environment and evidence
+
+The archive includes the project-trained GBDT, source, dependency records and
+aggregate metrics. External TeleOCR weights/source, auxiliary assets, the native
+environment, benchmark images and ground-truth bodies are not bundled. Inspect
+[external asset identities](../releases/v4-gbdt-evaluation-20261006/dependencies/EXTERNAL_ASSETS.json)
+and the [publication boundary](../releases/v4-gbdt-evaluation-20261006/PUBLICATION.md).
+Public deployment placeholders are not runnable machine bindings.
+
+The model's disk configuration keeps `learned_enabled=false`. The measured
+experimental entry enabled the same model in memory with margin 0.0, fallback B
+and candidate actions A/B. Loading the default disk configuration does not
+reproduce that policy. Do not remove validation gates to make a new deployment
+start; give it explicit bindings, fresh output paths and a new provenance record.
+
+The recorded full run contains 1,651 pages: 1,644 completed and seven timeout
+predictions retained empty. Overall is 97.17188999355706. The exact evaluator
+commit and configuration hash are in the report; a matching evaluator source
+alone does not establish matching runtime settings or predictions.
+
+## Comparing results
+
+Overall = (100 × (1 − Text ED) + Formula CDM + Table TEDS) / 3, when CDM and
+TEDS are expressed on a 0–100 scale. The V4 JSON stores those component values on
+a 0–1 scale. Reading-order ED and structure TEDS do not enter Overall.
+
+Historical TeleOCR V2 raw 97.435109, Hybrid V2 97.060019, V4 97.171890 and the
+frozen public TeleOCR reference 96.91 must remain distinct. The V2 pair supports
+a negative hybrid result. The cross-version and public-reference comparisons do
+not establish causal GBDT benefit. Truncation and fallback policies differ across
+some historical groups; consult the original result records.
+
+Before reporting a new improvement, freeze dataset revision and hashes, input
+rendering, model revision, prompts/decoding, preprocessing, failure handling,
+evaluator configuration, denominator, baseline and cost accounting. Preserve
+ground truth for evaluation only. Retain failed pages under the declared rule.
+
+Use the [experiment template](EXPERIMENT_TEMPLATE.md) to record a future run.
+The source archive is useful evidence, but complete fresh-clone benchmark
+reproduction and official leaderboard acceptance remain separate milestones.

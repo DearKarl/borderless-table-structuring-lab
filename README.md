@@ -1,6 +1,42 @@
 # Borderless Table Structuring Lab
 
-Research code for document parsing that combines a page backbone with specialist table, formula, layout and text models. This repository archives the V0–V3.2 series, measured whole-page results through V2, and the earlier independent Training and native-table routes.
+Research code and evidence for improving end-to-end document parsing on OmniDocBench.
+
+**Objective:** achieve an officially recognized OmniDocBench Overall score above the leaderboard leader, with TeleOCR as the current target. V0–V4 are research attempts toward that objective. No backbone, fusion method, training recipe, or input-selection policy is a permanent project constraint.
+
+**Status:** full local evaluations and source archives are available; an official leaderboard win is not established. Historical raw TeleOCR scored **97.435109** locally; V4 scored **97.171890**. Neither number alone establishes improvement over the official TeleOCR reference of **96.91**, or a controlled comparison between these local runs.
+
+[Research guide](research/README.md) · [Current evidence](research/CURRENT_STATE.md) · [Reproduction](research/REPRODUCIBILITY.md) · [Roadmap](research/ROADMAP.md) · [Contributing](CONTRIBUTING.md) · [Changes](CHANGELOG.md)
+
+## Repository map
+
+| Location | Contents |
+|---|---|
+| `research/` | Objective, evidence index, reproduction guidance and experiment record template |
+| `versions/` | Preserved V0–V3.2 source and route-specific environments |
+| `releases/` | Dated deliveries, including V4 source, model, metrics and provenance |
+| `artifacts/` | Aggregate results and machine-readable evidence; no benchmark page payloads |
+| `btsl/`, `hybrid/`, `training/` | Earlier packages and independent research routes |
+| `evaluation/` | Frozen evaluator source and historical adapter |
+| `tests/`, `examples/`, `scripts/` | Data-free checks, examples and download utilities |
+| `notices/` | Third-party attribution and retained license texts |
+
+Scientific source and frozen releases retain their existing paths. Start with the route-specific guide before executing an archived version.
+
+## Getting started
+
+To inspect the root package and run its data-free checks with Python 3.10 or later:
+
+```bash
+git clone https://github.com/DearKarl/borderless-table-structuring-lab.git
+cd borderless-table-structuring-lab
+python -m venv .venv
+# Activate .venv using your shell's activation command.
+python -m pip install -e ".[test]"
+python -m pytest -q tests
+```
+
+The root package is the earlier native-table implementation, not an installer for every archived system. These checks do not download model weights or reproduce benchmark scores. For V4, begin with the [reproduction guide](research/REPRODUCIBILITY.md) and its data-free archive verification command.
 
 ## V4 GBDT experimental delivery (2026-10-06)
 
@@ -20,8 +56,8 @@ These are **our historical local measurements on 1,651 OmniDocBench pages**, not
 | Hybrid V0 (MinerU + NaviDC tables) | 94.599252 | 0.064833 | 95.553206 | 94.727857 | 96.599701 | 0.154207 |
 | Hybrid V1 (MinerU + Paddle formulas) | 93.217499 | 0.065097 | 95.727598 | 90.434549 | 93.101331 | 0.154055 |
 | Hybrid V2 (TeleOCR + Paddle formulas) | 97.060019 | 0.029912 | 97.479332 | 96.691890 | 98.036939 | 0.119262 |
-| Hybrid V3.1 | Pending | Pending | Pending | Pending | Pending | Pending |
-| Hybrid V3.2 | Pending | Pending | Pending | Pending | Pending | Pending |
+| Hybrid V3.1 | Not measured | — | — | — | — | — |
+| Hybrid V3.2 | Not measured | — | — | — | — | — |
 
 Overall, CDM, TEDS and TEDS-S use a 0–100 scale; edit distances use 0–1. Overall = (100 × (1 − Text ED) + Formula CDM + Table TEDS) / 3. Reading order and TEDS-S do not enter Overall. Values are calculated at full precision, then displayed to six decimal places. These archived runs are contextual comparisons, not one unified paired experiment.
 
@@ -38,6 +74,7 @@ MinerU/Paddle and V1 use empty primary output for truncated generations; the V2 
 | [V2](versions/v2/README.md) | Tele-base full-run and specialist controllers | Formula expert integration, fallback and strict run evidence |
 | [V3.1](versions/v3_1/README.md) | Conservative layout/formula integration | Fresh recognition after accepted geometry changes; explicit asset binding |
 | [V3.2](versions/v3_2/README.md) | OvisOCR2 text-slot integration | Text expert dispatch with strict completion and fallback checks |
+| [V4](releases/v4-gbdt-evaluation-20261006/README.md) | GBDT input-action selector and TeleOCR | Completed experimental delivery; same-condition fixed-policy gain remains unproven |
 
 See the [version archive](versions/README.md) for entry points and scope. Run each archived version from its own directory; package names are deliberately preserved. These are research source snapshots with explicit external runtime prerequisites, not bundled model environments. TeleOCR source is obtained separately from its pinned upstream and checked against fixed member hashes. Models, datasets, predictions and private deployment records are not included.
 
@@ -52,3 +89,7 @@ The [preserved native-table guide](LEGACY_NATIVE_TABLES.md) contains installatio
 Published source/package locks identify the public archive bytes. Publication changed documentation, example paths, container label names and external-source preparation; it did not rerun historical model inference or scoring. Historical measurements therefore do not certify a new clone, hardware platform or prepared environment.
 
 Ground truth is evaluator-only. Inference uses original page inputs and declared model assets. Failed or incomplete runs cannot be silently promoted to measured results. The [contribution rules](CONTRIBUTING.md), [third-party notices](notices/THIRD_PARTY.md) and version-specific environment contracts describe the boundaries. Necessary original third-party license text, frozen evaluator text and Chinese recognition/filename test strings are retained.
+
+## Referencing this work
+
+Reference this repository URL together with the exact commit or dated release, the named route and its report. Cite OmniDocBench and each upstream model separately using their own attribution guidance. No project paper, DOI or repository-wide license is declared here; third-party license texts apply to their identified components. See [contribution guidance](CONTRIBUTING.md#attribution-and-publication).
