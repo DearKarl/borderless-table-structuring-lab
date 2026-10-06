@@ -1,0 +1,16 @@
+{
+  "execution_performed": false,
+  "literal_substitutions_only_verified": true,
+  "model_three_files_unchanged": true,
+  "python_syntax_files": 112,
+  "redacted_source_copies": 10,
+  "relative_links_passed": true,
+  "scope": "Public export static/package checks; not a new benchmark",
+  "score_json_and_main_report_unchanged": true,
+  "secret_and_private_identifier_patterns_passed": true,
+  "static_pickle_string_scan_passed": true,
+  "status": "passed",
+  "unchanged_cpu_source_files": 43,
+  "unchanged_gpu_source_files": 41,
+  "unchanged_legacy_source_files": 7
+}

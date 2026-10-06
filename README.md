@@ -2,6 +2,12 @@
 
 Research code for document parsing that combines a page backbone with specialist table, formula, layout and text models. This repository archives the V0–V3.2 series, measured whole-page results through V2, and the earlier independent Training and native-table routes.
 
+## V4 GBDT experimental delivery (2026-10-06)
+
+The [V4 public export](releases/v4-gbdt-evaluation-20261006/README.md) includes the original project-trained 30-PDF GBDT model, source, dependency hashes and [full evaluation report](releases/v4-gbdt-evaluation-20261006/测评.md). The completed local official-protocol run scored **97.17188999355706 Overall** across all 1,651 pages (1,644 completed; 7 timeout predictions retained empty). The +0.2619-point difference from the frozen TeleOCR public reference is context only, not a verified rank, paired comparison or causal GBDT gain.
+
+[Download the public ZIP](releases/v4-gbdt-evaluation-20261006/V4-GBDT-evaluation-20261006-public.zip). Publication redacts deployment identifiers and preserves original/public hash provenance; this export was not separately benchmarked and requires independently validated external runtime assets. See its [publication and attribution boundary](releases/v4-gbdt-evaluation-20261006/PUBLICATION.md). The historical table below remains unchanged.
+
 ## Measured whole-page results
 
 These are **our historical local measurements on 1,651 OmniDocBench pages**, not a claim of a verified public leaderboard position. Higher Overall is better. All measured rows below use the later official evaluation protocol; model versions and output handling matter. See the [result record](artifacts/whole-page-results.json) for exact scores, component metrics, source hashes and protocol details.

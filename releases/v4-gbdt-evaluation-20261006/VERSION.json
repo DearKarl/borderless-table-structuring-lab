@@ -1,0 +1,27 @@
+{
+  "actual_action_counts": {
+    "A": 241,
+    "B": 1410
+  },
+  "candidate_actions": [
+    "A",
+    "B"
+  ],
+  "distribution_date": "2026-10-06",
+  "effective_learned_enabled": true,
+  "estimator_predict_calls": 1476,
+  "experimental_runtime_entry": "hybrid.v4_selected_eval.experimental_host",
+  "fallback": "B",
+  "inference_counts": {
+    "completed": 1644,
+    "timeout": 7
+  },
+  "margin": 0.0,
+  "max_native_calls_per_page": 1,
+  "model_sha256": "78a8454b8d763f622e5d0ea9caa43695207a20c07461ef36e905753054a42518",
+  "note": "Original model bytes and science logic retained; deployment metadata strings redacted. Public snapshot not separately executed.",
+  "original_model_config_unchanged": true,
+  "production_eligibility_claimed": false,
+  "publication": "public-export-001",
+  "version": "GBDT+Tele experimental-001"
+}

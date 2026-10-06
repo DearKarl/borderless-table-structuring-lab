@@ -1,0 +1,72 @@
+{
+  "configuration": {
+    "candidate_actions": [
+      "A",
+      "B"
+    ],
+    "fallback": "B",
+    "margin": 0.0,
+    "max_native_calls_per_page": 1,
+    "model_sha256": "78a8454b8d763f622e5d0ea9caa43695207a20c07461ef36e905753054a42518"
+  },
+  "leaderboard_comparison": {
+    "published_protocol": "v1.6_full",
+    "rows": [
+      {
+        "local_minus_published": 0.26188999355706244,
+        "model": "TeleOCR",
+        "published_overall": 96.91
+      },
+      {
+        "local_minus_published": 0.7018899935570602,
+        "model": "OvisOCR2",
+        "published_overall": 96.47
+      },
+      {
+        "local_minus_published": 0.8318899935570556,
+        "model": "PaddleOCR-VL-1.6",
+        "published_overall": 96.34
+      },
+      {
+        "local_minus_published": 1.421889993557059,
+        "model": "MinerU2.5-Pro",
+        "published_overall": 95.75
+      },
+      {
+        "local_minus_published": 1.9518899935570602,
+        "model": "GLM-OCR",
+        "published_overall": 95.22
+      }
+    ],
+    "scope_note": "Published reference values provide context only. This local run uses the frozen 1651-page input/GT set and pinned evaluator/config; identity with the published full dataset and settings is not established, so the differences are not an official rank or a paired improvement estimate.",
+    "snapshot_date": "2026-10-05",
+    "source": "https://github.com/opendatalab/OmniDocBench#end-to-end-evaluation"
+  },
+  "leaderboard_submitted": false,
+  "local_protocol": {
+    "commit": "147cd5ac9472002f5751221d390bf00abdbc0d2f",
+    "config_sha256": "56db52659910273376223a5646eabfaff21b25dc30f434e1c90aab1a233d335a",
+    "evaluator": "OmniDocBench v1.6",
+    "failed_timeout_predictions": "empty Markdown retained in1651 denominator",
+    "full_inference": true,
+    "gt_sha256": "a45cd84b04ad8b793e775089640e6b681209abea33ead54c1828ddca35fae496",
+    "image": "sha256:6116ad72172e763b5c43e963d5efebf2093f2362b975f58156ce4f6c9142e617",
+    "page_count": 1651,
+    "page_status_counts": {
+      "completed": 1644,
+      "timeout": 7
+    },
+    "unstarted_budget_pages": 0
+  },
+  "official_components": {
+    "cdm": 0.9849933527825513,
+    "overall": 97.17188999355706,
+    "reading_order": 0.12103739355037403,
+    "structure_teds": 0.9738249860361294,
+    "teds": 0.9604586313558573,
+    "text_edit": 0.03029528433169655
+  },
+  "run_id": "v4-gbdt-experimental1651-20261005-001",
+  "schema": "v4_experimental_main_report_v1",
+  "version": "GBDT+Tele experimental-001"
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "v4_official_leaderboard_reference_v1",
+  "source": "https://github.com/opendatalab/OmniDocBench#end-to-end-evaluation",
+  "snapshot_date": "2026-10-05",
+  "published_protocol": "v1.6_full",
+  "provenance": "Read official repository table using web on 2026-10-05; five published reference rows, not local or prior A/B results.",
+  "scope_note": "Published reference values provide context only. This local run uses the frozen 1651-page input/GT set and pinned evaluator/config; identity with the published full dataset and settings is not established, so the differences are not an official rank or a paired improvement estimate.",
+  "rows": [
+    {"model": "TeleOCR", "overall": 96.91},
+    {"model": "OvisOCR2", "overall": 96.47},
+    {"model": "PaddleOCR-VL-1.6", "overall": 96.34},
+    {"model": "MinerU2.5-Pro", "overall": 95.75},
+    {"model": "GLM-OCR", "overall": 95.22}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "authorization_source": "REPLACE_WITH_ACTUAL_NEW_RUN_AUTHORIZATION",
+  "calibration_report": {
+    "path": "/absolute/private-required-prerequisite.json",
+    "sha256": "317a2267187bcdab354b8e877925dee66f270fa8ea8c772f8c684e10de1ae922"
+  },
+  "code_root": "/absolute/delivery/runtime/gpu/code",
+  "evaluation_binding": {
+    "path": "/absolute/locked-evaluation-binding.json",
+    "sha256": "e9bc724521d67d07f1ffe546f9af62d17a44f7e6537ef86cc9635cd5c24218fc"
+  },
+  "gbdt_root": "/absolute/delivery/model",
+  "native_binding": {
+    "path": "/absolute/authorized-native-binding.json",
+    "sha256": "00bcb2a26a489304c8c34577753cac7bff4e5bf511b4a0b68dad1e3edd660df1"
+  },
+  "root": "/absolute/new-empty-run-root",
+  "run_id": "REPLACE_WITH_NEW_RUN_ID",
+  "schema": "v4_experimental_bind_request_v1",
+  "source_input_root": "/absolute/input-only-1651-rasters",
+  "source_roster": {
+    "path": "/absolute/delivery/dependencies/INPUT_ROSTER.json",
+    "sha256": "COMPUTE_FROM_ACTUAL_FILE"
+  },
+  "user_authorized_full1651_despite_failed_calibration": false
+}

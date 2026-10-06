@@ -1,0 +1,23 @@
+{
+  "config_sha256": "e67f20276b71b076a968946afbbf66803c39c3bcfe982dd91bd1f194739975d9",
+  "fit_groups": 30,
+  "fit_pages": 30,
+  "fit_rows": 90,
+  "manifest_sha256": "7b4d0487724c7f1f1f37b33c39528862442cf9e498e4fac51e60d4db68f5aa61",
+  "model_name": "NJU-Scale-GBDT v0.1",
+  "model_sha256": "78a8454b8d763f622e5d0ea9caa43695207a20c07461ef36e905753054a42518",
+  "parameters": {
+    "early_stopping": false,
+    "l2_regularization": 1,
+    "learning_rate": 0.05,
+    "loss": "squared_error",
+    "max_iter": 100,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 10,
+    "random_state": 20261003,
+    "warm_start": false
+  },
+  "refitted_for_evaluation": false,
+  "sklearn_version": "1.9.1",
+  "source_fit_receipt_sha256": "a7373f3e441829ed6ca8cd3735143212c0d3d69d17b884145f82d7ab46cc8a1b"
+}

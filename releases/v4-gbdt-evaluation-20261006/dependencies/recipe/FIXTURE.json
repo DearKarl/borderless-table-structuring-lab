@@ -1,0 +1,102 @@
+{
+  "action_features": [
+    {
+      "A": [
+        100,
+        200,
+        0.5,
+        12,
+        1,
+        0.3,
+        0.2,
+        0.5,
+        0.3,
+        0,
+        1,
+        8,
+        4,
+        0
+      ],
+      "B": [
+        150,
+        300,
+        0.5,
+        12,
+        1,
+        0.3,
+        0.2,
+        0.5,
+        0.3,
+        1,
+        1,
+        8,
+        4,
+        0
+      ]
+    },
+    {
+      "A": null,
+      "B": null
+    }
+  ],
+  "margins": [
+    0.0,
+    0.0009133843864069113,
+    0.0018267687728138226
+  ],
+  "model_sha256": "78a8454b8d763f622e5d0ea9caa43695207a20c07461ef36e905753054a42518",
+  "predictions": [
+    [
+      {
+        "action": "B",
+        "policy_identity": "7b4d0487724c7f1f1f37b33c39528862442cf9e498e4fac51e60d4db68f5aa61",
+        "predicted_gains": {
+          "A": -0.002531137874856544,
+          "B": -0.0026257946065820436
+        },
+        "reason": "below_margin"
+      },
+      {
+        "action": "B",
+        "policy_identity": "7b4d0487724c7f1f1f37b33c39528862442cf9e498e4fac51e60d4db68f5aa61",
+        "predicted_gains": {},
+        "reason": "missing_or_invalid_features"
+      }
+    ],
+    [
+      {
+        "action": "B",
+        "policy_identity": "7b4d0487724c7f1f1f37b33c39528862442cf9e498e4fac51e60d4db68f5aa61",
+        "predicted_gains": {
+          "A": -0.002531137874856544,
+          "B": -0.0026257946065820436
+        },
+        "reason": "below_margin"
+      },
+      {
+        "action": "B",
+        "policy_identity": "7b4d0487724c7f1f1f37b33c39528862442cf9e498e4fac51e60d4db68f5aa61",
+        "predicted_gains": {},
+        "reason": "missing_or_invalid_features"
+      }
+    ],
+    [
+      {
+        "action": "B",
+        "policy_identity": "7b4d0487724c7f1f1f37b33c39528862442cf9e498e4fac51e60d4db68f5aa61",
+        "predicted_gains": {
+          "A": -0.002531137874856544,
+          "B": -0.0026257946065820436
+        },
+        "reason": "below_margin"
+      },
+      {
+        "action": "B",
+        "policy_identity": "7b4d0487724c7f1f1f37b33c39528862442cf9e498e4fac51e60d4db68f5aa61",
+        "predicted_gains": {},
+        "reason": "missing_or_invalid_features"
+      }
+    ]
+  ],
+  "schema": "v4_numeric_dependency_fixture_v1"
+}

@@ -1,0 +1,45 @@
+{
+  "all_allocations_reconciled": true,
+  "allocation_count": 30,
+  "files": {
+    "MANIFEST.json": {
+      "bytes": 3022718,
+      "sha256": "4f434ea8ad1dba26cfce67d5bff62336567bd5272d7963c40b6521a25d1e5234"
+    },
+    "STATE.json": {
+      "bytes": 4145158,
+      "sha256": "6f72d025edcf609b57d75fd5a43e2adb7ff67d81372029c3f54a8caad612baf9"
+    },
+    "official/PREDICTIONS_FROZEN.json": {
+      "bytes": 185918242,
+      "sha256": "b8a5e5e52752a4151e09c88fd863319b7a4f45e49c44a1f36a4d5ffd7c1b9be6"
+    },
+    "official/PROTOCOL_VERIFIED.json": {
+      "bytes": 25100,
+      "sha256": "523d7f544b69ccfb3a8666b773770b91a8e739eed5eb15939d007de88494b532"
+    },
+    "official/REPORT.json": {
+      "bytes": 2498,
+      "sha256": "43cd5dc6e8d9587faf5f6e1f799db35ab3c579df00af46baae67f2a938b66ac4"
+    },
+    "official/score/METRICS.json": {
+      "bytes": 210,
+      "sha256": "2505f852a647a7e5268ad32699d17b2e454268058ddae067c0be1cfe7d084082"
+    },
+    "official/score/RELEASE.json": {
+      "bytes": 367,
+      "sha256": "95dd2298556ad12b34524d6fbd0b481543c0c4db48468b0b48905fd414772b0b"
+    },
+    "official/score/SCORER_TERMINAL.json": {
+      "bytes": 139,
+      "sha256": "281a4491677176ec9a425964d029c6b43ec79c6eb6f63099abad298274fbe29f"
+    }
+  },
+  "gpu_seconds": 99977.85670439806,
+  "local_verification_scope": "Archive/index hashes and record cross-bindings verified. Raw result tree, predictions and native images remain external; no rerun was performed.",
+  "original_files_retained_privately": true,
+  "score_completed_before_deadline": true,
+  "score_container_absent": true,
+  "score_exit_code": 0,
+  "source_archive_sha256": "eda443bbb752efa7a6c08ce21a04f5fe7b5da4fbe23c363f9c2bea70c6c69998"
+}
