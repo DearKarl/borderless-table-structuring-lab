@@ -7,10 +7,12 @@ Our goal is to improve end-to-end parsing on OmniDocBench and develop methods
 whose gains hold beyond a single benchmark. We study when an existing parser
 benefits from a different input view or specialist, and when an intervention
 damages a correct prediction. The project includes successful and unsuccessful
-experiments from V0 through V7. V6 is complete; V7 is paused before independent confirmation.
+historical experiments and the completed V6 study. The current V7 direction is
+generator fine-tuning preparation; no V7 fine-tuning result is claimed.
 
 [Results](research/RESULTS.md) · [Methods](#methods) ·
 [Reproduction](research/REPRODUCIBILITY.md) · [V5 study](versions/v5/README.md) ·
+[V6 complete report](V6/README.md) · [V6 all statistics](V6/STATISTICS.md) ·
 [Research status](research/CURRENT_STATE.md) · [Contributing](CONTRIBUTING.md)
 
 ## Research questions
@@ -27,17 +29,37 @@ recognized Overall score above the leaderboard leader. The accompanying research
 goal is a generalizable contribution suitable for a CCF A venue; no paper or
 official leaderboard result is claimed at this stage.
 
-## Current pause and V6 to V7 evidence
+## V6: complete results and statistics
 
-All engineering is paused at the researcher's request on2026-10-07 while the next
-study is discussed. [V6](versions/v5_native/README.md) completed six adaptive
-configurations plus D0 on1651pages each: table/combined arms regressed, while
-formula-only differences were small. [V7](versions/v7/README.md) trained one CPU
-model and packaged four configurations; its learned policy keeps all native
-outputs. Independent confirmation and full V7 scoring have no results.
+**[Open V6](V6/README.md)** for the full report or
+**[all requested V6 statistics](V6/STATISTICS.md)** for scores, category details,
+failures, timing, shared/incremental costs, controller calls and page/region counts.
+The root `V6/` directory is the canonical study entry. The historical executable
+module name `versions.v5_native` remains unchanged for reproducibility.
 
-The [public archive](releases/v6-v7-progress-20261007/README.md) preserves source,
-first-party controller weights and aggregate evidence. The
+Each output includes 1651 pages with zero inference failures. Six named
+configurations share four CPU controllers and one D0 baseline. Overall is 0-100.
+
+| V6 output | Overall | Difference from D0 |
+|---|---:|---:|
+| D0 | 97.574874 | 0.000000 |
+| GBDT_V6.1.1 | 97.475604 | -0.099270 |
+| GBDT_V6.1.2 | 97.582948 | +0.008074 |
+| GBDT_V6.1.3 | 97.483678 | -0.091196 |
+| MLP_V6.2.1 | 97.307734 | -0.267140 |
+| MLP_V6.2.2 | 97.592369 | +0.017495 |
+| MLP_V6.2.3 | 97.325229 | -0.249645 |
+
+[Eight official metrics CSV](V6/statistics/OFFICIAL_METRICS.csv) ·
+[All aggregate fields CSV](V6/statistics/ALL_AGGREGATE_FIELDS.csv) ·
+[Activation counts CSV](V6/statistics/ACTIVATION_COUNTS.csv).
+Table-only and combined arms regress; formula-only differences are small.
+These are local paired results, not an official ranking.
+
+The [historical archive](releases/v6-v7-progress-20261007/README.md) preserves source,
+first-party controller weights and prior keep/replace evidence. That archived
+controller study was formerly labeled V7; it is not the current fine-tuning model.
+The
 [baseline audit](artifacts/results/v7/BASELINE_COMPARABILITY.md) does not establish
 comparability to the published TeleOCR row. [Current state](research/CURRENT_STATE.md)
 separates completed evidence from paused work and unexecuted research proposals.

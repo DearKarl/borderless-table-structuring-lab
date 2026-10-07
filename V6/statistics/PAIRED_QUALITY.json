@@ -1,0 +1,1863 @@
+{
+  "at": "2026-10-07T18:30:46.994132+00:00",
+  "manifest_sha256": "16b69e6d10658d8716355869f492dd683f31d071af997850c032e3384c13bec4",
+  "page_denominator": 1651,
+  "comparison": "Each version minus its shared D0",
+  "ground_truth_use": "Offline scoring only",
+  "native_region_correspondence": "Unique exact canonical native-prediction text to D0 official scored sample, same GT identity in version, and final prediction text must match expected retained region. Ambiguous/mixed/split cases remain unmatchable.",
+  "canonicalization": "Line endings and outer whitespace; formula outer display delimiters; table outer html/body wrappers and whitespace between tags only",
+  "page_metric_note": "Saved official per-page edit metrics; TEDS/CDM page values are diagnostic means of emitted sample metrics. No page-level Overall is constructed.",
+  "versions": {
+    "GBDT_V6.1.1": {
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 56,
+              "worsened": 112,
+              "tied": 497,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": -0.004674656111080834,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 14,
+              "worsened": 35,
+              "tied": 616,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": -0.0040276880932367245,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 61,
+              "worsened": 107,
+              "tied": 497,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.003005919860161253,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "equation": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1557,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 49,
+            "worsened": 81,
+            "tied": 328,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1638,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 47,
+            "worsened": 84,
+            "tied": 327,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 13,
+            "worsened": 31,
+            "tied": 414,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "equation_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        }
+      },
+      "eligible_native_region_outcomes": {
+        "table": {
+          "TEDS": {
+            "regions": {
+              "improved": 56,
+              "worsened": 112,
+              "tied": 491,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 51,
+              "worsened": 87,
+              "tied": 357,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "TEDS_structure_only": {
+            "regions": {
+              "improved": 14,
+              "worsened": 35,
+              "tied": 610,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 14,
+              "worsened": 31,
+              "tied": 424,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 61,
+              "worsened": 107,
+              "tied": 491,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 53,
+              "worsened": 83,
+              "tied": 357,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          }
+        }
+      },
+      "combined_primary_component_outcomes": {
+        "regions": {
+          "improved": 56,
+          "worsened": 112,
+          "tied": 491,
+          "unmatchable": 11
+        },
+        "unique_pages_by_outcome": {
+          "improved": 51,
+          "worsened": 87,
+          "tied": 357,
+          "unmatchable": 8
+        },
+        "region_denominator": 670,
+        "page_denominator": 1651,
+        "definition": "Union across tables by TEDS and formulas by CDM; diagnostic outcome counts, not a composite quality score. Page outcome sets can overlap."
+      },
+      "applied_canonical_region_outcomes": {
+        "table": {
+          "TEDS": {
+            "regions": {
+              "improved": 56,
+              "worsened": 112,
+              "tied": 20,
+              "unmatchable": 3
+            },
+            "unique_pages_by_outcome": {
+              "improved": 51,
+              "worsened": 87,
+              "tied": 20,
+              "unmatchable": 3
+            },
+            "region_denominator": 191,
+            "page_denominator": 1651
+          },
+          "TEDS_structure_only": {
+            "regions": {
+              "improved": 14,
+              "worsened": 35,
+              "tied": 139,
+              "unmatchable": 3
+            },
+            "unique_pages_by_outcome": {
+              "improved": 14,
+              "worsened": 31,
+              "tied": 109,
+              "unmatchable": 3
+            },
+            "region_denominator": 191,
+            "page_denominator": 1651
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 61,
+              "worsened": 107,
+              "tied": 20,
+              "unmatchable": 3
+            },
+            "unique_pages_by_outcome": {
+              "improved": 53,
+              "worsened": 83,
+              "tied": 20,
+              "unmatchable": 3
+            },
+            "region_denominator": 191,
+            "page_denominator": 1651
+          }
+        }
+      },
+      "applied_canonical_combined_primary_outcomes": {
+        "regions": {
+          "improved": 56,
+          "worsened": 112,
+          "tied": 20,
+          "unmatchable": 3
+        },
+        "unique_pages_by_outcome": {
+          "improved": 51,
+          "worsened": 87,
+          "tied": 20,
+          "unmatchable": 3
+        },
+        "region_denominator": 191,
+        "page_denominator": 1651,
+        "definition": "Applied canonical output edits only; table TEDS/formula CDM labels. Diagnostic counts, not a composite score. Page sets can overlap."
+      }
+    },
+    "GBDT_V6.1.2": {
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 665,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 665,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 665,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "equation": {
+          "CDM": {
+            "outcomes": {
+              "improved": 28,
+              "worsened": 48,
+              "tied": 2264,
+              "unmatchable": 24
+            },
+            "unit_denominator": 2364,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": -0.00013931623931623957,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 76,
+              "worsened": 82,
+              "tied": 2182,
+              "unmatchable": 24
+            },
+            "unit_denominator": 2364,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.00025438892655594165,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 4,
+            "worsened": 2,
+            "tied": 1551,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 44,
+            "worsened": 49,
+            "tied": 220,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 458,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 1,
+            "worsened": 3,
+            "tied": 1634,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 458,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 458,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "equation_CDM": {
+          "outcomes": {
+            "improved": 19,
+            "worsened": 33,
+            "tied": 261,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        }
+      },
+      "eligible_native_region_outcomes": {
+        "equation": {
+          "CDM": {
+            "regions": {
+              "improved": 22,
+              "worsened": 45,
+              "tied": 1948,
+              "unmatchable": 356
+            },
+            "unique_pages_by_outcome": {
+              "improved": 20,
+              "worsened": 34,
+              "tied": 298,
+              "unmatchable": 116
+            },
+            "region_denominator": 2371,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 73,
+              "worsened": 74,
+              "tied": 1868,
+              "unmatchable": 356
+            },
+            "unique_pages_by_outcome": {
+              "improved": 57,
+              "worsened": 56,
+              "tied": 299,
+              "unmatchable": 116
+            },
+            "region_denominator": 2371,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          }
+        }
+      },
+      "combined_primary_component_outcomes": {
+        "regions": {
+          "improved": 22,
+          "worsened": 45,
+          "tied": 1948,
+          "unmatchable": 356
+        },
+        "unique_pages_by_outcome": {
+          "improved": 20,
+          "worsened": 34,
+          "tied": 298,
+          "unmatchable": 116
+        },
+        "region_denominator": 2371,
+        "page_denominator": 1651,
+        "definition": "Union across tables by TEDS and formulas by CDM; diagnostic outcome counts, not a composite quality score. Page outcome sets can overlap."
+      },
+      "applied_canonical_region_outcomes": {
+        "equation": {
+          "CDM": {
+            "regions": {
+              "improved": 22,
+              "worsened": 45,
+              "tied": 208,
+              "unmatchable": 64
+            },
+            "unique_pages_by_outcome": {
+              "improved": 20,
+              "worsened": 34,
+              "tied": 121,
+              "unmatchable": 40
+            },
+            "region_denominator": 339,
+            "page_denominator": 1651
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 73,
+              "worsened": 74,
+              "tied": 128,
+              "unmatchable": 64
+            },
+            "unique_pages_by_outcome": {
+              "improved": 57,
+              "worsened": 56,
+              "tied": 88,
+              "unmatchable": 40
+            },
+            "region_denominator": 339,
+            "page_denominator": 1651
+          }
+        }
+      },
+      "applied_canonical_combined_primary_outcomes": {
+        "regions": {
+          "improved": 22,
+          "worsened": 45,
+          "tied": 208,
+          "unmatchable": 64
+        },
+        "unique_pages_by_outcome": {
+          "improved": 20,
+          "worsened": 34,
+          "tied": 121,
+          "unmatchable": 40
+        },
+        "region_denominator": 339,
+        "page_denominator": 1651,
+        "definition": "Applied canonical output edits only; table TEDS/formula CDM labels. Diagnostic counts, not a composite score. Page sets can overlap."
+      }
+    },
+    "GBDT_V6.1.3": {
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 56,
+              "worsened": 112,
+              "tied": 497,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": -0.004674656111080834,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 14,
+              "worsened": 35,
+              "tied": 616,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": -0.0040276880932367245,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 61,
+              "worsened": 107,
+              "tied": 497,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.003005919860161253,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "equation": {
+          "CDM": {
+            "outcomes": {
+              "improved": 28,
+              "worsened": 48,
+              "tied": 2264,
+              "unmatchable": 24
+            },
+            "unit_denominator": 2364,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": -0.00013931623931623957,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 76,
+              "worsened": 81,
+              "tied": 2183,
+              "unmatchable": 24
+            },
+            "unit_denominator": 2364,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.00022589889806591315,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 4,
+            "worsened": 2,
+            "tied": 1551,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 44,
+            "worsened": 48,
+            "tied": 221,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 49,
+            "worsened": 81,
+            "tied": 328,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 1,
+            "worsened": 3,
+            "tied": 1634,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 47,
+            "worsened": 84,
+            "tied": 327,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 13,
+            "worsened": 31,
+            "tied": 414,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "equation_CDM": {
+          "outcomes": {
+            "improved": 19,
+            "worsened": 33,
+            "tied": 261,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        }
+      },
+      "eligible_native_region_outcomes": {
+        "table": {
+          "TEDS": {
+            "regions": {
+              "improved": 56,
+              "worsened": 112,
+              "tied": 491,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 51,
+              "worsened": 87,
+              "tied": 357,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "TEDS_structure_only": {
+            "regions": {
+              "improved": 14,
+              "worsened": 35,
+              "tied": 610,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 14,
+              "worsened": 31,
+              "tied": 424,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 61,
+              "worsened": 107,
+              "tied": 491,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 53,
+              "worsened": 83,
+              "tied": 357,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          }
+        },
+        "equation": {
+          "CDM": {
+            "regions": {
+              "improved": 22,
+              "worsened": 45,
+              "tied": 1948,
+              "unmatchable": 356
+            },
+            "unique_pages_by_outcome": {
+              "improved": 20,
+              "worsened": 34,
+              "tied": 298,
+              "unmatchable": 116
+            },
+            "region_denominator": 2371,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 73,
+              "worsened": 73,
+              "tied": 1869,
+              "unmatchable": 356
+            },
+            "unique_pages_by_outcome": {
+              "improved": 57,
+              "worsened": 55,
+              "tied": 299,
+              "unmatchable": 116
+            },
+            "region_denominator": 2371,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          }
+        }
+      },
+      "combined_primary_component_outcomes": {
+        "regions": {
+          "improved": 78,
+          "worsened": 157,
+          "tied": 2439,
+          "unmatchable": 367
+        },
+        "unique_pages_by_outcome": {
+          "improved": 70,
+          "worsened": 121,
+          "tied": 637,
+          "unmatchable": 124
+        },
+        "region_denominator": 3041,
+        "page_denominator": 1651,
+        "definition": "Union across tables by TEDS and formulas by CDM; diagnostic outcome counts, not a composite quality score. Page outcome sets can overlap."
+      },
+      "applied_canonical_region_outcomes": {
+        "table": {
+          "TEDS": {
+            "regions": {
+              "improved": 56,
+              "worsened": 112,
+              "tied": 20,
+              "unmatchable": 3
+            },
+            "unique_pages_by_outcome": {
+              "improved": 51,
+              "worsened": 87,
+              "tied": 20,
+              "unmatchable": 3
+            },
+            "region_denominator": 191,
+            "page_denominator": 1651
+          },
+          "TEDS_structure_only": {
+            "regions": {
+              "improved": 14,
+              "worsened": 35,
+              "tied": 139,
+              "unmatchable": 3
+            },
+            "unique_pages_by_outcome": {
+              "improved": 14,
+              "worsened": 31,
+              "tied": 109,
+              "unmatchable": 3
+            },
+            "region_denominator": 191,
+            "page_denominator": 1651
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 61,
+              "worsened": 107,
+              "tied": 20,
+              "unmatchable": 3
+            },
+            "unique_pages_by_outcome": {
+              "improved": 53,
+              "worsened": 83,
+              "tied": 20,
+              "unmatchable": 3
+            },
+            "region_denominator": 191,
+            "page_denominator": 1651
+          }
+        },
+        "equation": {
+          "CDM": {
+            "regions": {
+              "improved": 22,
+              "worsened": 45,
+              "tied": 207,
+              "unmatchable": 64
+            },
+            "unique_pages_by_outcome": {
+              "improved": 20,
+              "worsened": 34,
+              "tied": 120,
+              "unmatchable": 40
+            },
+            "region_denominator": 338,
+            "page_denominator": 1651
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 73,
+              "worsened": 73,
+              "tied": 128,
+              "unmatchable": 64
+            },
+            "unique_pages_by_outcome": {
+              "improved": 57,
+              "worsened": 55,
+              "tied": 88,
+              "unmatchable": 40
+            },
+            "region_denominator": 338,
+            "page_denominator": 1651
+          }
+        }
+      },
+      "applied_canonical_combined_primary_outcomes": {
+        "regions": {
+          "improved": 78,
+          "worsened": 157,
+          "tied": 227,
+          "unmatchable": 67
+        },
+        "unique_pages_by_outcome": {
+          "improved": 70,
+          "worsened": 121,
+          "tied": 140,
+          "unmatchable": 43
+        },
+        "region_denominator": 529,
+        "page_denominator": 1651,
+        "definition": "Applied canonical output edits only; table TEDS/formula CDM labels. Diagnostic counts, not a composite score. Page sets can overlap."
+      }
+    },
+    "MLP_V6.2.1": {
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 55,
+              "worsened": 105,
+              "tied": 505,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": -0.012352966945972084,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 15,
+              "worsened": 41,
+              "tied": 609,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": -0.0070970625696409086,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 56,
+              "worsened": 103,
+              "tied": 506,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.006263898375265546,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "equation": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1557,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 50,
+            "worsened": 71,
+            "tied": 337,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1638,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 48,
+            "worsened": 75,
+            "tied": 335,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 14,
+            "worsened": 35,
+            "tied": 409,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "equation_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        }
+      },
+      "eligible_native_region_outcomes": {
+        "table": {
+          "TEDS": {
+            "regions": {
+              "improved": 55,
+              "worsened": 105,
+              "tied": 499,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 50,
+              "worsened": 77,
+              "tied": 362,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "TEDS_structure_only": {
+            "regions": {
+              "improved": 15,
+              "worsened": 41,
+              "tied": 603,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 14,
+              "worsened": 37,
+              "tied": 417,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 56,
+              "worsened": 103,
+              "tied": 500,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 51,
+              "worsened": 74,
+              "tied": 363,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          }
+        }
+      },
+      "combined_primary_component_outcomes": {
+        "regions": {
+          "improved": 55,
+          "worsened": 105,
+          "tied": 499,
+          "unmatchable": 11
+        },
+        "unique_pages_by_outcome": {
+          "improved": 50,
+          "worsened": 77,
+          "tied": 362,
+          "unmatchable": 8
+        },
+        "region_denominator": 670,
+        "page_denominator": 1651,
+        "definition": "Union across tables by TEDS and formulas by CDM; diagnostic outcome counts, not a composite quality score. Page outcome sets can overlap."
+      },
+      "applied_canonical_region_outcomes": {
+        "table": {
+          "TEDS": {
+            "regions": {
+              "improved": 55,
+              "worsened": 105,
+              "tied": 23,
+              "unmatchable": 2
+            },
+            "unique_pages_by_outcome": {
+              "improved": 50,
+              "worsened": 77,
+              "tied": 22,
+              "unmatchable": 2
+            },
+            "region_denominator": 185,
+            "page_denominator": 1651
+          },
+          "TEDS_structure_only": {
+            "regions": {
+              "improved": 15,
+              "worsened": 41,
+              "tied": 127,
+              "unmatchable": 2
+            },
+            "unique_pages_by_outcome": {
+              "improved": 14,
+              "worsened": 37,
+              "tied": 100,
+              "unmatchable": 2
+            },
+            "region_denominator": 185,
+            "page_denominator": 1651
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 56,
+              "worsened": 103,
+              "tied": 24,
+              "unmatchable": 2
+            },
+            "unique_pages_by_outcome": {
+              "improved": 51,
+              "worsened": 74,
+              "tied": 23,
+              "unmatchable": 2
+            },
+            "region_denominator": 185,
+            "page_denominator": 1651
+          }
+        }
+      },
+      "applied_canonical_combined_primary_outcomes": {
+        "regions": {
+          "improved": 55,
+          "worsened": 105,
+          "tied": 23,
+          "unmatchable": 2
+        },
+        "unique_pages_by_outcome": {
+          "improved": 50,
+          "worsened": 77,
+          "tied": 22,
+          "unmatchable": 2
+        },
+        "region_denominator": 185,
+        "page_denominator": 1651,
+        "definition": "Applied canonical output edits only; table TEDS/formula CDM labels. Diagnostic counts, not a composite score. Page sets can overlap."
+      }
+    },
+    "MLP_V6.2.2": {
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 665,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 665,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 665,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.0,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "equation": {
+          "CDM": {
+            "outcomes": {
+              "improved": 37,
+              "worsened": 51,
+              "tied": 2245,
+              "unmatchable": 38
+            },
+            "unit_denominator": 2371,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.0003339048435490782,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 85,
+              "worsened": 97,
+              "tied": 2151,
+              "unmatchable": 38
+            },
+            "unit_denominator": 2371,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.0001732598693651884,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 4,
+            "worsened": 4,
+            "tied": 1549,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 53,
+            "worsened": 53,
+            "tied": 207,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 458,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 4,
+            "worsened": 4,
+            "tied": 1630,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 458,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 458,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "equation_CDM": {
+          "outcomes": {
+            "improved": 26,
+            "worsened": 34,
+            "tied": 253,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        }
+      },
+      "eligible_native_region_outcomes": {
+        "equation": {
+          "CDM": {
+            "regions": {
+              "improved": 28,
+              "worsened": 42,
+              "tied": 1938,
+              "unmatchable": 363
+            },
+            "unique_pages_by_outcome": {
+              "improved": 24,
+              "worsened": 34,
+              "tied": 297,
+              "unmatchable": 117
+            },
+            "region_denominator": 2371,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 74,
+              "worsened": 84,
+              "tied": 1850,
+              "unmatchable": 363
+            },
+            "unique_pages_by_outcome": {
+              "improved": 62,
+              "worsened": 60,
+              "tied": 295,
+              "unmatchable": 117
+            },
+            "region_denominator": 2371,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          }
+        }
+      },
+      "combined_primary_component_outcomes": {
+        "regions": {
+          "improved": 28,
+          "worsened": 42,
+          "tied": 1938,
+          "unmatchable": 363
+        },
+        "unique_pages_by_outcome": {
+          "improved": 24,
+          "worsened": 34,
+          "tied": 297,
+          "unmatchable": 117
+        },
+        "region_denominator": 2371,
+        "page_denominator": 1651,
+        "definition": "Union across tables by TEDS and formulas by CDM; diagnostic outcome counts, not a composite quality score. Page outcome sets can overlap."
+      },
+      "applied_canonical_region_outcomes": {
+        "equation": {
+          "CDM": {
+            "regions": {
+              "improved": 28,
+              "worsened": 42,
+              "tied": 206,
+              "unmatchable": 92
+            },
+            "unique_pages_by_outcome": {
+              "improved": 24,
+              "worsened": 34,
+              "tied": 125,
+              "unmatchable": 55
+            },
+            "region_denominator": 368,
+            "page_denominator": 1651
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 74,
+              "worsened": 84,
+              "tied": 118,
+              "unmatchable": 92
+            },
+            "unique_pages_by_outcome": {
+              "improved": 62,
+              "worsened": 60,
+              "tied": 91,
+              "unmatchable": 55
+            },
+            "region_denominator": 368,
+            "page_denominator": 1651
+          }
+        }
+      },
+      "applied_canonical_combined_primary_outcomes": {
+        "regions": {
+          "improved": 28,
+          "worsened": 42,
+          "tied": 206,
+          "unmatchable": 92
+        },
+        "unique_pages_by_outcome": {
+          "improved": 24,
+          "worsened": 34,
+          "tied": 125,
+          "unmatchable": 55
+        },
+        "region_denominator": 368,
+        "page_denominator": 1651,
+        "definition": "Applied canonical output edits only; table TEDS/formula CDM labels. Diagnostic counts, not a composite score. Page sets can overlap."
+      }
+    },
+    "MLP_V6.2.3": {
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 55,
+              "worsened": 105,
+              "tied": 505,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": -0.012352966945972084,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 15,
+              "worsened": 41,
+              "tied": 609,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": -0.0070970625696409086,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 56,
+              "worsened": 103,
+              "tied": 506,
+              "unmatchable": 0
+            },
+            "unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "version_scored_rows": 665,
+            "mean_raw_delta_on_paired_units": 0.006263898375265546,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "equation": {
+          "CDM": {
+            "outcomes": {
+              "improved": 37,
+              "worsened": 51,
+              "tied": 2245,
+              "unmatchable": 38
+            },
+            "unit_denominator": 2371,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.0003339048435490782,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 85,
+              "worsened": 97,
+              "tied": 2151,
+              "unmatchable": 38
+            },
+            "unit_denominator": 2371,
+            "baseline_scored_rows": 2352,
+            "version_scored_rows": 2352,
+            "mean_raw_delta_on_paired_units": 0.0001732598693651884,
+            "correspondence": "Same page, exact GT-index group and GT-text hash; unique in both outputs",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 4,
+            "worsened": 4,
+            "tied": 1549,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 53,
+            "worsened": 53,
+            "tied": 207,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 50,
+            "worsened": 71,
+            "tied": 337,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 4,
+            "worsened": 4,
+            "tied": 1630,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 48,
+            "worsened": 75,
+            "tied": 335,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 14,
+            "worsened": 35,
+            "tied": 409,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        },
+        "equation_CDM": {
+          "outcomes": {
+            "improved": 26,
+            "worsened": 34,
+            "tied": 253,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06
+        }
+      },
+      "eligible_native_region_outcomes": {
+        "table": {
+          "TEDS": {
+            "regions": {
+              "improved": 55,
+              "worsened": 105,
+              "tied": 499,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 50,
+              "worsened": 77,
+              "tied": 362,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "TEDS_structure_only": {
+            "regions": {
+              "improved": 15,
+              "worsened": 41,
+              "tied": 603,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 14,
+              "worsened": 37,
+              "tied": 417,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 56,
+              "worsened": 103,
+              "tied": 500,
+              "unmatchable": 11
+            },
+            "unique_pages_by_outcome": {
+              "improved": 51,
+              "worsened": 74,
+              "tied": 363,
+              "unmatchable": 8
+            },
+            "region_denominator": 670,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          }
+        },
+        "equation": {
+          "CDM": {
+            "regions": {
+              "improved": 28,
+              "worsened": 42,
+              "tied": 1938,
+              "unmatchable": 363
+            },
+            "unique_pages_by_outcome": {
+              "improved": 24,
+              "worsened": 34,
+              "tied": 297,
+              "unmatchable": 117
+            },
+            "region_denominator": 2371,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 74,
+              "worsened": 84,
+              "tied": 1850,
+              "unmatchable": 363
+            },
+            "unique_pages_by_outcome": {
+              "improved": 62,
+              "worsened": 60,
+              "tied": 295,
+              "unmatchable": 117
+            },
+            "region_denominator": 2371,
+            "page_denominator": 1651,
+            "page_note": "A page can contain both improved and worsened regions; outcome page sets are not mutually exclusive."
+          }
+        }
+      },
+      "combined_primary_component_outcomes": {
+        "regions": {
+          "improved": 83,
+          "worsened": 147,
+          "tied": 2437,
+          "unmatchable": 374
+        },
+        "unique_pages_by_outcome": {
+          "improved": 74,
+          "worsened": 111,
+          "tied": 637,
+          "unmatchable": 125
+        },
+        "region_denominator": 3041,
+        "page_denominator": 1651,
+        "definition": "Union across tables by TEDS and formulas by CDM; diagnostic outcome counts, not a composite quality score. Page outcome sets can overlap."
+      },
+      "applied_canonical_region_outcomes": {
+        "table": {
+          "TEDS": {
+            "regions": {
+              "improved": 55,
+              "worsened": 105,
+              "tied": 23,
+              "unmatchable": 2
+            },
+            "unique_pages_by_outcome": {
+              "improved": 50,
+              "worsened": 77,
+              "tied": 22,
+              "unmatchable": 2
+            },
+            "region_denominator": 185,
+            "page_denominator": 1651
+          },
+          "TEDS_structure_only": {
+            "regions": {
+              "improved": 15,
+              "worsened": 41,
+              "tied": 127,
+              "unmatchable": 2
+            },
+            "unique_pages_by_outcome": {
+              "improved": 14,
+              "worsened": 37,
+              "tied": 100,
+              "unmatchable": 2
+            },
+            "region_denominator": 185,
+            "page_denominator": 1651
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 56,
+              "worsened": 103,
+              "tied": 24,
+              "unmatchable": 2
+            },
+            "unique_pages_by_outcome": {
+              "improved": 51,
+              "worsened": 74,
+              "tied": 23,
+              "unmatchable": 2
+            },
+            "region_denominator": 185,
+            "page_denominator": 1651
+          }
+        },
+        "equation": {
+          "CDM": {
+            "regions": {
+              "improved": 28,
+              "worsened": 42,
+              "tied": 206,
+              "unmatchable": 92
+            },
+            "unique_pages_by_outcome": {
+              "improved": 24,
+              "worsened": 34,
+              "tied": 125,
+              "unmatchable": 55
+            },
+            "region_denominator": 368,
+            "page_denominator": 1651
+          },
+          "Edit_dist": {
+            "regions": {
+              "improved": 74,
+              "worsened": 84,
+              "tied": 118,
+              "unmatchable": 92
+            },
+            "unique_pages_by_outcome": {
+              "improved": 62,
+              "worsened": 60,
+              "tied": 91,
+              "unmatchable": 55
+            },
+            "region_denominator": 368,
+            "page_denominator": 1651
+          }
+        }
+      },
+      "applied_canonical_combined_primary_outcomes": {
+        "regions": {
+          "improved": 83,
+          "worsened": 147,
+          "tied": 229,
+          "unmatchable": 94
+        },
+        "unique_pages_by_outcome": {
+          "improved": 74,
+          "worsened": 111,
+          "tied": 147,
+          "unmatchable": 57
+        },
+        "region_denominator": 553,
+        "page_denominator": 1651,
+        "definition": "Applied canonical output edits only; table TEDS/formula CDM labels. Diagnostic counts, not a composite score. Page sets can overlap."
+      }
+    }
+  },
+  "edited_subset_note": "Descriptive requested funnel conditioned on applied canonical output changes, not quality; all-eligible and complete official outcomes are also retained."
+}

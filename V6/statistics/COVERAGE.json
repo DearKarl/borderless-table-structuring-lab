@@ -1,0 +1,176 @@
+{
+  "study": "V6",
+  "scope": "All seven published aggregate reports; no new measurements",
+  "source_bindings": {
+    "AGGREGATE.json": {
+      "source": "artifacts/results/v6/AGGREGATE.json",
+      "sha256": "d3af3f7f27316cbfd29219b2f792a28e806a26fc47086d0846fa2ae74b5063bb",
+      "byte_identical": true
+    },
+    "ACTIVATION.json": {
+      "source": "artifacts/results/v6/ACTIVATION.json",
+      "sha256": "cf2b08f34f41036da432c66f792dee5c29c78c46e7678f7e65f6308141b8cd07",
+      "byte_identical": true
+    },
+    "PAIRED_QUALITY.json": {
+      "source": "artifacts/results/v6/PAIRED_QUALITY.json",
+      "sha256": "fe17ad23c7df7fba333900c76ad5c07a2531c1524791d73d92a3f4b0fa1efeb4",
+      "byte_identical": true
+    },
+    "COSTS.json": {
+      "source": "artifacts/results/v6/COSTS.json",
+      "sha256": "653b184994e6d1dd6d9b875b5972c409e076eb4019115893daf1afa03a120c44",
+      "byte_identical": true
+    },
+    "EXTERNAL_ACTOR_QUALITY.json": {
+      "source": "artifacts/results/v6/EXTERNAL_ACTOR_QUALITY.json",
+      "sha256": "5ed14d506c2b74e030b53ecb7deb054f7e2ffaad926ff78bad53d0fa65ae2733",
+      "byte_identical": true
+    },
+    "SCALE_REGRESSION.json": {
+      "source": "artifacts/results/v6/SCALE_REGRESSION.json",
+      "sha256": "c6c819660f42a81923bf9c262e6d10c93c46649c1ef8a375aad79c40bdcd6425",
+      "byte_identical": true
+    },
+    "RUNTIME_PROVENANCE.json": {
+      "source": "artifacts/results/v6/RUNTIME_PROVENANCE.json",
+      "sha256": "2fbfe480f59fb4ebbddf24bff76e4c2e6f0250a81f13a4e914e696a9cb48ca51",
+      "byte_identical": true
+    }
+  },
+  "requirements": {
+    "official_fields_and_categories": [
+      "AGGREGATE.json"
+    ],
+    "failures_timeouts_and_missingness": [
+      "AGGREGATE.json",
+      "ACTIVATION.json",
+      "COSTS.json"
+    ],
+    "shared_incremental_and_estimated_costs": [
+      "COSTS.json",
+      "ACTIVATION.json"
+    ],
+    "controller_calls_batches_regions": [
+      "ACTIVATION.json"
+    ],
+    "nominal_scale_requested_pixels_actual_input_and_output_page_region_counts": [
+      "ACTIVATION.json"
+    ],
+    "improved_worsened_tied_unmatchable_regions_and_unique_pages": [
+      "PAIRED_QUALITY.json"
+    ],
+    "external_validation_and_test_negative_results": [
+      "EXTERNAL_ACTOR_QUALITY.json",
+      "SCALE_REGRESSION.json"
+    ],
+    "cpu_training_packaging_and_runtime_provenance": [
+      "COSTS.json",
+      "RUNTIME_PROVENANCE.json"
+    ]
+  },
+  "render_dpi": 200,
+  "render_dpi_changed_pages": 0,
+  "output_count": 7,
+  "adaptive_configurations": 6,
+  "trained_controllers": 4,
+  "distinct_benchmark_pages": 1651,
+  "adaptive_arm_pages": 9906,
+  "arm_pages_including_D0": 11557,
+  "null_fields_retained": [
+    {
+      "report": "AGGREGATE.json",
+      "json_pointer": "/uncertainty/benchmark_document_cluster_intervals",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "COSTS.json",
+      "json_pointer": "/benchmark_shared/failed_page_latency_seconds/p50",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "COSTS.json",
+      "json_pointer": "/benchmark_shared/failed_page_latency_seconds/p90",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "COSTS.json",
+      "json_pointer": "/benchmark_shared/failed_page_latency_seconds/p95",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "COSTS.json",
+      "json_pointer": "/source_retrieval/elapsed_seconds",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "COSTS.json",
+      "json_pointer": "/packaging/elapsed_seconds",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/packages/flash-attn",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/text/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/table/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/equation/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/code/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/char/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/layout/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/seal/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/default/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/table_structure/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/sampling/formula_structure/max_new_tokens",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    },
+    {
+      "report": "RUNTIME_PROVENANCE.json",
+      "json_pointer": "/compilation_config/local_cache_dir",
+      "note": "Unknown/not recorded; consult neighboring reason and scope fields. Never interpreted as zero."
+    }
+  ],
+  "nonpublic_payloads": "Raw GT/predictions and per-page identity ledger remain local; aggregate counts and original ledger hash are public.",
+  "legacy_identity_ledger_hash_source": "../../releases/v6-v7-progress-20261007/PUBLICATION_MANIFEST.json",
+  "csv_scope": "ALL_AGGREGATE_FIELDS.csv losslessly represents every leaf including strings, nulls and empty collections in the seven source reports.",
+  "source_archive_unchanged": true
+}

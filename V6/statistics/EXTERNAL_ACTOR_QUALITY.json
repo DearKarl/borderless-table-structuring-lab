@@ -1,0 +1,741 @@
+{
+  "at": "2026-10-07T16:06:56.791851+00:00",
+  "scope": "external_source_page_native_regions",
+  "score_sha256": "7f501e34eeec9cece498feb4ee1db6e9c0af04a88abb7ce0e8d459d6d7ad65a0",
+  "quality_units": "0-1",
+  "policy_refitted": false,
+  "benchmark_used": false,
+  "splits": {
+    "validation": {
+      "table": {
+        "metric": "TEDS",
+        "region_denominator": 29,
+        "source_groups": 29,
+        "metrics": {
+          "native": {
+            "mean_quality": 0.8919772189164744,
+            "valid_regions": 29,
+            "denominator": 29,
+            "unmatchable_regions": 0
+          },
+          "gbdt": {
+            "mean_quality": 0.8994843796246009,
+            "valid_regions": 29,
+            "denominator": 29,
+            "unmatchable_regions": 0,
+            "completed_actions": 29,
+            "accepted_actions": 29,
+            "outcomes": {
+              "tied": 16,
+              "worsened": 5,
+              "improved": 8
+            }
+          },
+          "mlp": {
+            "mean_quality": 0.8928597761541461,
+            "valid_regions": 29,
+            "denominator": 29,
+            "unmatchable_regions": 0,
+            "completed_actions": 29,
+            "accepted_actions": 29,
+            "outcomes": {
+              "tied": 16,
+              "improved": 8,
+              "worsened": 5
+            }
+          },
+          "fixed": {
+            "mean_quality": 0.8995302509872595,
+            "valid_regions": 29,
+            "denominator": 29,
+            "unmatchable_regions": 0,
+            "completed_actions": 29,
+            "accepted_actions": 29,
+            "outcomes": {
+              "worsened": 9,
+              "improved": 14,
+              "tied": 6
+            }
+          }
+        },
+        "paired_comparisons": [
+          {
+            "comparison": "gbdt minus native",
+            "region_denominator": 29,
+            "paired_regions": 29,
+            "unmatchable_regions": 0,
+            "positive_favors": "gbdt",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.007507160708126499,
+            "source_groups": 29,
+            "improved": 8,
+            "worsened": 5,
+            "tied": 16,
+            "source_cluster_bootstrap_95ci": [
+              -0.015126840854266297,
+              0.028948849317064162
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus native",
+            "region_denominator": 29,
+            "paired_regions": 29,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.0008825572376717255,
+            "source_groups": 29,
+            "improved": 8,
+            "worsened": 5,
+            "tied": 16,
+            "source_cluster_bootstrap_95ci": [
+              -0.017166844547445152,
+              0.014396421586353368
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "fixed minus native",
+            "region_denominator": 29,
+            "paired_regions": 29,
+            "unmatchable_regions": 0,
+            "positive_favors": "fixed",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.007553032070784956,
+            "source_groups": 29,
+            "improved": 14,
+            "worsened": 9,
+            "tied": 6,
+            "source_cluster_bootstrap_95ci": [
+              -0.017155079125325254,
+              0.029429290601133504
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "gbdt minus fixed",
+            "region_denominator": 29,
+            "paired_regions": 29,
+            "unmatchable_regions": 0,
+            "positive_favors": "gbdt",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -4.587136265845692e-05,
+            "source_groups": 29,
+            "improved": 12,
+            "worsened": 10,
+            "tied": 7,
+            "source_cluster_bootstrap_95ci": [
+              -0.01547495164087696,
+              0.01487965296140216
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus fixed",
+            "region_denominator": 29,
+            "paired_regions": 29,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.00667047483311323,
+            "source_groups": 29,
+            "improved": 9,
+            "worsened": 12,
+            "tied": 8,
+            "source_cluster_bootstrap_95ci": [
+              -0.021936327020075638,
+              0.006772918562989612
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus gbdt",
+            "region_denominator": 29,
+            "paired_regions": 29,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.006624603470454774,
+            "source_groups": 29,
+            "improved": 5,
+            "worsened": 6,
+            "tied": 18,
+            "source_cluster_bootstrap_95ci": [
+              -0.020780507048410002,
+              0.006540753203962008
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          }
+        ],
+        "inference_status": {
+          "success": 29
+        }
+      },
+      "equation": {
+        "metric": "CDM",
+        "region_denominator": 19,
+        "source_groups": 13,
+        "metrics": {
+          "native": {
+            "mean_quality": 0.999421052631579,
+            "valid_regions": 19,
+            "denominator": 19,
+            "unmatchable_regions": 0
+          },
+          "gbdt": {
+            "mean_quality": 0.999421052631579,
+            "valid_regions": 19,
+            "denominator": 19,
+            "unmatchable_regions": 0,
+            "completed_actions": 19,
+            "accepted_actions": 19,
+            "outcomes": {
+              "tied": 19
+            }
+          },
+          "mlp": {
+            "mean_quality": 0.9973157894736842,
+            "valid_regions": 19,
+            "denominator": 19,
+            "unmatchable_regions": 0,
+            "completed_actions": 19,
+            "accepted_actions": 19,
+            "outcomes": {
+              "tied": 18,
+              "worsened": 1
+            }
+          },
+          "fixed": {
+            "mean_quality": 0.999421052631579,
+            "valid_regions": 19,
+            "denominator": 19,
+            "unmatchable_regions": 0,
+            "completed_actions": 19,
+            "accepted_actions": 19,
+            "outcomes": {
+              "tied": 19
+            }
+          }
+        },
+        "paired_comparisons": [
+          {
+            "comparison": "gbdt minus native",
+            "region_denominator": 19,
+            "paired_regions": 19,
+            "unmatchable_regions": 0,
+            "positive_favors": "gbdt",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.0,
+            "source_groups": 13,
+            "improved": 0,
+            "worsened": 0,
+            "tied": 19,
+            "source_cluster_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus native",
+            "region_denominator": 19,
+            "paired_regions": 19,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.0021052631578947385,
+            "source_groups": 13,
+            "improved": 0,
+            "worsened": 1,
+            "tied": 18,
+            "source_cluster_bootstrap_95ci": [
+              -0.007500000000000007,
+              0.0
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "fixed minus native",
+            "region_denominator": 19,
+            "paired_regions": 19,
+            "unmatchable_regions": 0,
+            "positive_favors": "fixed",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.0,
+            "source_groups": 13,
+            "improved": 0,
+            "worsened": 0,
+            "tied": 19,
+            "source_cluster_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "gbdt minus fixed",
+            "region_denominator": 19,
+            "paired_regions": 19,
+            "unmatchable_regions": 0,
+            "positive_favors": "gbdt",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.0,
+            "source_groups": 13,
+            "improved": 0,
+            "worsened": 0,
+            "tied": 19,
+            "source_cluster_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus fixed",
+            "region_denominator": 19,
+            "paired_regions": 19,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.0021052631578947385,
+            "source_groups": 13,
+            "improved": 0,
+            "worsened": 1,
+            "tied": 18,
+            "source_cluster_bootstrap_95ci": [
+              -0.007500000000000007,
+              0.0
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus gbdt",
+            "region_denominator": 19,
+            "paired_regions": 19,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.0021052631578947385,
+            "source_groups": 13,
+            "improved": 0,
+            "worsened": 1,
+            "tied": 18,
+            "source_cluster_bootstrap_95ci": [
+              -0.007500000000000007,
+              0.0
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          }
+        ],
+        "inference_status": {
+          "success": 19
+        }
+      }
+    },
+    "test": {
+      "table": {
+        "metric": "TEDS",
+        "region_denominator": 25,
+        "source_groups": 25,
+        "metrics": {
+          "native": {
+            "mean_quality": 0.8886376622982151,
+            "valid_regions": 25,
+            "denominator": 25,
+            "unmatchable_regions": 0
+          },
+          "gbdt": {
+            "mean_quality": 0.8835519802494852,
+            "valid_regions": 25,
+            "denominator": 25,
+            "unmatchable_regions": 0,
+            "completed_actions": 25,
+            "accepted_actions": 25,
+            "outcomes": {
+              "tied": 13,
+              "worsened": 8,
+              "improved": 4
+            }
+          },
+          "mlp": {
+            "mean_quality": 0.8924182356586037,
+            "valid_regions": 25,
+            "denominator": 25,
+            "unmatchable_regions": 0,
+            "completed_actions": 25,
+            "accepted_actions": 25,
+            "outcomes": {
+              "tied": 17,
+              "improved": 3,
+              "worsened": 5
+            }
+          },
+          "fixed": {
+            "mean_quality": 0.9095527751879948,
+            "valid_regions": 25,
+            "denominator": 25,
+            "unmatchable_regions": 0,
+            "completed_actions": 25,
+            "accepted_actions": 25,
+            "outcomes": {
+              "improved": 9,
+              "worsened": 9,
+              "tied": 7
+            }
+          }
+        },
+        "paired_comparisons": [
+          {
+            "comparison": "gbdt minus native",
+            "region_denominator": 25,
+            "paired_regions": 25,
+            "unmatchable_regions": 0,
+            "positive_favors": "gbdt",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.005085682048729878,
+            "source_groups": 25,
+            "improved": 4,
+            "worsened": 8,
+            "tied": 13,
+            "source_cluster_bootstrap_95ci": [
+              -0.021198901934806814,
+              0.008837379111491309
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus native",
+            "region_denominator": 25,
+            "paired_regions": 25,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.003780573360388573,
+            "source_groups": 25,
+            "improved": 3,
+            "worsened": 5,
+            "tied": 17,
+            "source_cluster_bootstrap_95ci": [
+              -0.001590250654823118,
+              0.012736440872513952
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "fixed minus native",
+            "region_denominator": 25,
+            "paired_regions": 25,
+            "unmatchable_regions": 0,
+            "positive_favors": "fixed",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.020915112889779642,
+            "source_groups": 25,
+            "improved": 9,
+            "worsened": 9,
+            "tied": 7,
+            "source_cluster_bootstrap_95ci": [
+              -0.020917331278276618,
+              0.07691593132082396
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "gbdt minus fixed",
+            "region_denominator": 25,
+            "paired_regions": 25,
+            "unmatchable_regions": 0,
+            "positive_favors": "gbdt",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.02600079493850952,
+            "source_groups": 25,
+            "improved": 5,
+            "worsened": 10,
+            "tied": 10,
+            "source_cluster_bootstrap_95ci": [
+              -0.08129767240612351,
+              0.0177275008442462
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus fixed",
+            "region_denominator": 25,
+            "paired_regions": 25,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.01713453952939107,
+            "source_groups": 25,
+            "improved": 8,
+            "worsened": 9,
+            "tied": 8,
+            "source_cluster_bootstrap_95ci": [
+              -0.07327274560879019,
+              0.02276154667723999
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus gbdt",
+            "region_denominator": 25,
+            "paired_regions": 25,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.008866255409118451,
+            "source_groups": 25,
+            "improved": 4,
+            "worsened": 3,
+            "tied": 18,
+            "source_cluster_bootstrap_95ci": [
+              -0.0002557388845193625,
+              0.02284556153378888
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          }
+        ],
+        "inference_status": {
+          "success": 25
+        }
+      },
+      "equation": {
+        "metric": "CDM",
+        "region_denominator": 23,
+        "source_groups": 16,
+        "metrics": {
+          "native": {
+            "mean_quality": 0.9876086956521738,
+            "valid_regions": 23,
+            "denominator": 23,
+            "unmatchable_regions": 0
+          },
+          "gbdt": {
+            "mean_quality": 0.9881304347826084,
+            "valid_regions": 23,
+            "denominator": 23,
+            "unmatchable_regions": 0,
+            "completed_actions": 23,
+            "accepted_actions": 23,
+            "outcomes": {
+              "tied": 18,
+              "worsened": 2,
+              "improved": 3
+            }
+          },
+          "mlp": {
+            "mean_quality": 0.9829999999999998,
+            "valid_regions": 23,
+            "denominator": 23,
+            "unmatchable_regions": 0,
+            "completed_actions": 23,
+            "accepted_actions": 23,
+            "outcomes": {
+              "tied": 19,
+              "worsened": 3,
+              "improved": 1
+            }
+          },
+          "fixed": {
+            "mean_quality": 0.9909565217391302,
+            "valid_regions": 23,
+            "denominator": 23,
+            "unmatchable_regions": 0,
+            "completed_actions": 23,
+            "accepted_actions": 23,
+            "outcomes": {
+              "tied": 19,
+              "improved": 3,
+              "worsened": 1
+            }
+          }
+        },
+        "paired_comparisons": [
+          {
+            "comparison": "gbdt minus native",
+            "region_denominator": 23,
+            "paired_regions": 23,
+            "unmatchable_regions": 0,
+            "positive_favors": "gbdt",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.0005217391304347879,
+            "source_groups": 16,
+            "improved": 3,
+            "worsened": 2,
+            "tied": 18,
+            "source_cluster_bootstrap_95ci": [
+              -0.008850340909090901,
+              0.007684605263157899
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus native",
+            "region_denominator": 23,
+            "paired_regions": 23,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.004608695652173907,
+            "source_groups": 16,
+            "improved": 1,
+            "worsened": 3,
+            "tied": 19,
+            "source_cluster_bootstrap_95ci": [
+              -0.014530065359477118,
+              0.0038278485757121425
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "fixed minus native",
+            "region_denominator": 23,
+            "paired_regions": 23,
+            "unmatchable_regions": 0,
+            "positive_favors": "fixed",
+            "tie_tolerance": 1e-06,
+            "mean_delta": 0.003347826086956525,
+            "source_groups": 16,
+            "improved": 3,
+            "worsened": 1,
+            "tied": 19,
+            "source_cluster_bootstrap_95ci": [
+              -0.001692307692307694,
+              0.00925104166666667
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "gbdt minus fixed",
+            "region_denominator": 23,
+            "paired_regions": 23,
+            "unmatchable_regions": 0,
+            "positive_favors": "gbdt",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.0028260869565217366,
+            "source_groups": 16,
+            "improved": 1,
+            "worsened": 2,
+            "tied": 20,
+            "source_cluster_bootstrap_95ci": [
+              -0.011555555555555553,
+              0.002080000000000002
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus fixed",
+            "region_denominator": 23,
+            "paired_regions": 23,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.007956521739130432,
+            "source_groups": 16,
+            "improved": 1,
+            "worsened": 5,
+            "tied": 17,
+            "source_cluster_bootstrap_95ci": [
+              -0.01766749999999999,
+              -0.0003474637681159443
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          },
+          {
+            "comparison": "mlp minus gbdt",
+            "region_denominator": 23,
+            "paired_regions": 23,
+            "unmatchable_regions": 0,
+            "positive_favors": "mlp",
+            "tie_tolerance": 1e-06,
+            "mean_delta": -0.005130434782608695,
+            "source_groups": 16,
+            "improved": 0,
+            "worsened": 3,
+            "tied": 20,
+            "source_cluster_bootstrap_95ci": [
+              -0.011616304347826085,
+              0.0
+            ],
+            "bootstrap_repetitions": 2000,
+            "bootstrap_seed": 0,
+            "bootstrap_unit": "Source document; all paired regions within resampled documents retained",
+            "estimand": "Equal-region macro quality delta on common metric coverage; no significance or multiple-comparison correction claim"
+          }
+        ],
+        "inference_status": {
+          "success": 23
+        }
+      }
+    }
+  }
+}

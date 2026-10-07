@@ -1,9 +1,11 @@
 # Experimental results
 
-Current update2026-10-07: all engineering is paused for research discussion.
-See [current state](CURRENT_STATE.md), [V6 full results](../versions/v5_native/README.md),
-[V7 training and development](../versions/v7/README.md), and the
-[progress archive](../releases/v6-v7-progress-20261007/README.md).
+Current update 2026-10-07: [V6 complete results](../V6/README.md) and
+[all requested V6 statistics](../V6/STATISTICS.md) have dedicated public entries.
+See [current state](CURRENT_STATE.md) and the
+[historical progress archive](../releases/v6-v7-progress-20261007/README.md).
+The archived keep/replace controller was formerly labeled V7. Current V7 denotes
+the generator fine-tuning direction, which has no new measured result here.
 The sections below retain historical evidence or earlier milestones; they do not
 authorize resuming experiments. No official ranking or new generator model is claimed.
 
