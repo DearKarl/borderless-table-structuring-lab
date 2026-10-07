@@ -15,6 +15,9 @@ no particular model, training method, fusion design or input policy is mandatory
   full-set OFF/ON comparison. Missing metrics and run identities remain explicit.
 - V4 has a completed 1,651-page local evaluation and a public source/model/result
   archive. Causal selector benefit and an official leaderboard win remain unproven.
+- V5.1-V5.5 each completed all 1,651 pages with zero inference failures. The
+  original-image baseline scored 98.173146; the combined pipeline scored
+  98.347514. Independent native outputs varied, limiting causal attribution.
 
 The [V5 research proposal](V5_PROPOSAL.md) adds novelty assessment, strong controls,
 residual-error analysis and independent validation toward a CCF A publication.
@@ -25,11 +28,11 @@ See [current state](CURRENT_STATE.md) for exact evidence and limitations.
 
 | Milestone | Completion evidence |
 |---|---|
-| Reconcile existing scores | Explain local raw TeleOCR 97.435109, V4 97.171890 and public TeleOCR 96.91 using their exact inputs, inference settings and scoring protocols |
-| Establish a comparable baseline | A frozen strong control with explicit configuration, denominator, failure policy and resource accounting |
-| Select and evaluate an improvement | A bounded design, paired evidence and preserved failures; no route is selected by this roadmap |
-| Prepare a reproducible candidate | Versioned code, accessible permitted assets, environment instructions, manifests and a checked reproduction record |
-| Complete official submission | Confirm the current submission process and obtain an accepted leaderboard entry above the leader |
+| Isolate intervention effects from existing evidence | Score saved native/intermediate stages on aligned pages; separate within-run changes from independent native variation before interpreting the five-arm differences |
+| Identify the next method from residual errors | Quantified failure types, repair/regression tradeoffs and cost; a specific mechanism distinct from the attributed reference pipeline |
+| Validate generalization | Frozen development/evaluation boundary and independent documents or dataset; avoid treating this development benchmark as blind evidence |
+| Prepare the V5.5 submission candidate | Resolve upstream model identity, provide permitted assets and portable instructions, then verify a fresh-environment reproduction |
+| Complete official submission | Confirm official comparison conditions and obtain an accepted leaderboard result; local scores do not establish rank |
 
 These are evidence milestones, not claims of scheduled or running experiments.
 Whether existing results already support a valid candidate should be resolved

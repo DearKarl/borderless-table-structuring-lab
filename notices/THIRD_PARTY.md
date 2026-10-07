@@ -2,8 +2,18 @@
 
 This release keeps original pretrained weights unchanged. They are not models
 trained by this project. The project Training route is documented separately.
-The native-table Hybrid is now the highest completed local Official-protocol
-system. Its result is not a verified public leaderboard submission.
+Current whole-page measurements are indexed in [research results](../research/RESULTS.md).
+Local measurements are not verified public leaderboard submissions.
+
+## V5 method references
+
+V5 uses unchanged TeleOCR weights and source identities recorded in the
+[V5 report](../versions/v5/README.md). Regional rereading and guard mechanisms
+were adapted from [ki-OCR-v1](https://github.com/yushuosun/ki-OCR-v1/tree/ac1ab4f5ded8b025f47a7683f58e65db4ac43a2b).
+The report identifies the reviewed scripts and intentional differences. These
+mechanisms are attributed reference methods, not claimed as novel algorithms
+introduced by this project. External models and software retain their upstream
+terms; this notice does not grant additional rights to upstream artifacts.
 
 ## Mirrored pretrained artifacts
 

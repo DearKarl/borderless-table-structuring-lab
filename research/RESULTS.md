@@ -6,6 +6,32 @@ does not by itself identify a method improvement. Overall, CDM, TEDS and TEDS-S
 are expressed on a 0–100 scale, and edit distances on 0–1. Missing values are
 shown as dashes and remain null in the supplied-result record.
 
+## V5: completed five-arm comparison, 2026-10-07
+
+All arms completed 1,651 pages using the same pinned evaluator and GT, with zero
+inference failures and zero empty predictions. Full-precision values are in the
+[V5 aggregate](../artifacts/results/v5/AGGREGATE.json). Unlike the table below,
+the JSON stores CDM, TEDS and TEDS-S on a 0-1 scale.
+
+| Arm | Overall ↑ | Text ED ↓ | Formula CDM ↑ | Table TEDS ↑ | TEDS-S ↑ | Reading-order ED ↓ |
+|---|---:|---:|---:|---:|---:|---:|
+| V5.1 | 97.568231 | 0.027272 | 98.588639 | 96.843229 | 98.167331 | 0.118312 |
+| V5.2 | 98.173146 | 0.025230 | 98.381257 | 98.661134 | 99.189715 | 0.118443 |
+| V5.3 | 98.222117 | 0.025302 | 98.378168 | 98.818403 | 99.366227 | 0.118505 |
+| V5.4 | 98.250602 | 0.025612 | 98.651424 | 98.661591 | 99.189715 | 0.118569 |
+| V5.5 | 98.347514 | 0.025182 | 98.651273 | 98.909492 | 99.373837 | 0.118669 |
+
+V5.1 uses the native image-to-PDF route. V5.2 uses original RGB input; V5.3 adds
+table 1x rereading; V5.4 adds formula 1.25x rereading; V5.5 combines formula,
+bounded anomaly guard and table rereading. V5.2 exceeds V5.1 by 0.604916 points;
+V5.5 exceeds V5.2 by 0.174368 points.
+
+These are independent system runs. Native-stage outputs differed across arms,
+so these differences alone do not isolate the causal effect of a regional patch.
+No official rank, blind-test result or statistical significance is claimed.
+See the [full report](../versions/v5/README.md) for paired component coverage,
+intervention counts, costs, model identity and comparison limitations.
+
 ## V0 through V2
 
 These historical experiments evaluate all 1,651 pages. See the

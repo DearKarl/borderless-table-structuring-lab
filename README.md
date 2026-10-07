@@ -7,10 +7,10 @@ Our goal is to improve end-to-end parsing on OmniDocBench and develop methods
 whose gains hold beyond a single benchmark. We study when an existing parser
 benefits from a different input view or specialist, and when an intervention
 damages a correct prediction. The project includes successful and unsuccessful
-experiments from V0 through V4. V5 is currently at the research-design stage.
+experiments from V0 through V5. The latest five-arm study is complete.
 
 [Results](research/RESULTS.md) · [Methods](#methods) ·
-[Reproduction](research/REPRODUCIBILITY.md) · [V5 research plan](research/V5_PROPOSAL.md) ·
+[Reproduction](research/REPRODUCIBILITY.md) · [V5 study](versions/v5/README.md) ·
 [Research status](research/CURRENT_STATE.md) · [Contributing](CONTRIBUTING.md)
 
 ## Research questions
@@ -27,7 +27,35 @@ recognized Overall score above the leaderboard leader. The accompanying research
 goal is a generalizable contribution suitable for a CCF A venue; no paper or
 official leaderboard result is claimed at this stage.
 
-## Results
+## Latest study: V5 input paths and regional rereading
+
+All five arms completed **1,651 pages each**, with zero inference failures or
+empty predictions, using the same pinned official evaluator and ground truth.
+Overall, TEDS and CDM below use a 0-100 scale.
+
+| Arm | Method | Overall ↑ | Table TEDS ↑ | Formula CDM ↑ |
+|---|---|---:|---:|---:|
+| V5.1 | Native image-to-PDF input | 97.5682 | 96.8432 | 98.5886 |
+| V5.2 | Original RGB input | 98.1731 | 98.6611 | 98.3813 |
+| V5.3 | Original RGB + table 1x | 98.2221 | 98.8184 | 98.3782 |
+| V5.4 | Original RGB + formula 1.25x | 98.2506 | 98.6616 | 98.6514 |
+| V5.5 | Original RGB + formula + guard + table | 98.3475 | 98.9095 | 98.6513 |
+
+The original-image baseline V5.2 scores **98.1731**, +0.6049 points above V5.1.
+The combined V5.5 pipeline reaches **98.3475**, +0.1744 above V5.2. This round
+uses unchanged TeleOCR weights; regional rules build on the attributed
+ki-OCR-v1 reference. It is a system comparison, not a newly trained model.
+
+Independent native outputs differed across arms despite matched first-request
+inputs and settings. The observed gains therefore do not isolate the causal
+benefit of each intervention. These are local measurements, not an official
+leaderboard result or a claim of statistical significance.
+
+See the [complete study](versions/v5/README.md) for component scores, repair and
+regression counts, cost, provenance and limitations, and
+[AGGREGATE.json](artifacts/results/v5/AGGREGATE.json) for full-precision values.
+
+## Historical results
 
 Selected local results are shown below. Scores use a 0–100 scale. Rows belong to
 different experimental groups and are not a single controlled ranking. The
@@ -55,7 +83,7 @@ V3.1's evaluation denominator was not supplied.
 The paired V2 experiment decreased Overall by **0.3751 points**, showing that
 specialist replacement can harm a strong parser. V3.2's scores on each arm's own
 successful pages are reported separately, since those subsets may differ.
-These findings motivate measuring both repairs and regressions in V5.
+V5 records both repairs and regressions alongside intervention coverage.
 
 An earlier native-table experiment reached **98.7507 Table TEDS** under a
 different protocol. This is a component result, not a whole-page Overall score;
@@ -71,7 +99,7 @@ see the [table experiments](artifacts/results/README.md).
 | V3.1 | Layout/formula integration and original-image input comparisons | [V3.1](versions/v3_1/README.md) |
 | V3.2 | OvisOCR2 text-region integration with adoption and fallback rules | [V3.2](versions/v3_2/README.md) |
 | V4 | Learned selection between input actions before TeleOCR recognition | [V4 study](research/V4.md) |
-| V5 | Proposed study of intervention benefit, regression risk, and cost | [Research plan](research/V5_PROPOSAL.md) |
+| V5 | Original-image input, regional rereading and bounded anomaly recovery | [Completed study](versions/v5/README.md) |
 
 The [earlier table method](LEGACY_NATIVE_TABLES.md) and
 [table-structuring training experiments](training/README.md) remain available.
@@ -101,7 +129,7 @@ method-specific dependencies and separately obtained weights and data.
 | Location | Research content |
 |---|---|
 | `research/` | Research questions, experiment summaries, protocols, and future work |
-| `versions/` | V0–V3.2 implementations and method-specific instructions |
+| `versions/` | V0–V3.2 and V5 implementations and method-specific instructions |
 | `releases/` | Frozen source, models, and results for reproducible experiments |
 | `artifacts/` | Machine-readable results, including negative outcomes |
 | `btsl/`, `hybrid/`, `training/` | Table structuring, expert integration, and training code |

@@ -1,0 +1,799 @@
+{
+  "schema_version": 1,
+  "run_id": "v5-full-20261007-002",
+  "created_at": "2026-10-07T03:14:56.906599+00:00",
+  "arms": {
+    "V5.3": {
+      "metrics": {
+        "text_edit": 0.02530220877509048,
+        "cdm": 0.9837816817838584,
+        "teds": 0.9881840268373192,
+        "structure_teds": 0.9936622744709963,
+        "reading_order": 0.11850475065939393,
+        "overall": 98.22211666153623
+      },
+      "denominator": 1651,
+      "raw_metric_result_sha256": "fbdfe8ce55e2d8af7c2f2e7d7fb49f56d7961a8fbdd0db62bbacd978b546fb71",
+      "prediction_binding_sha256": "e6ea607b7b8128e0bf32f5cb9b6de12985ee990d16bd3d6b08dd51a42a50651c",
+      "status_counts": {
+        "success": 1651
+      },
+      "empty_predictions": 0,
+      "retained_stage_counts": {
+        "table1x": 1651
+      },
+      "sum_page_seconds": 7204.882290395675,
+      "median_page_seconds": 3.1782459327951074,
+      "max_page_seconds": 44.12899635313079,
+      "allocated_gpu_seconds": 7362.832898616791,
+      "inference_wall_seconds": 3790.155129671097,
+      "concurrent_gpus": 2,
+      "peak_gpu_memory_mib": 46775,
+      "resource_note": "Allocation timing includes engine startup and up to one observation interval after exit; memory is the sampled device peak.",
+      "infrastructure_restarts": 0,
+      "stage_coverage": {
+        "native": {
+          "counts": {
+            "request_batch": 3300,
+            "request_batch_complete": 3300,
+            "completed_model_requests": 36813,
+            "stage_complete": 1651
+          },
+          "pages_with_regional_attempts": 0,
+          "completed_request_seconds": 5642.196685027098,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        },
+        "table1x": {
+          "counts": {
+            "stage_coverage": 1188,
+            "stage_complete": 1651,
+            "request_batch": 463,
+            "request_batch_complete": 463,
+            "completed_model_requests": 671,
+            "region": 671,
+            "accepted_attempts": 670,
+            "changed_attempts": 17,
+            "rejected_attempts": 1,
+            "invalid_to_valid_attempts": 0,
+            "observed_completed_regions": 671
+          },
+          "pages_with_regional_attempts": 463,
+          "completed_request_seconds": 1055.1055526824202,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        }
+      }
+    },
+    "V5.2": {
+      "metrics": {
+        "text_edit": 0.025229533143036727,
+        "cdm": 0.9838125745776106,
+        "teds": 0.9866113410633278,
+        "structure_teds": 0.9918971505087419,
+        "reading_order": 0.11844285073755002,
+        "overall": 98.17314608326338
+      },
+      "denominator": 1651,
+      "raw_metric_result_sha256": "ae76797bc880642848550bfe43dc608566c8f7d2e2cfccefcbbe2444066f1245",
+      "prediction_binding_sha256": "e97466394b6790cd81569be2026a6fa67b18eab740bf9114e2308e75b42bd696",
+      "status_counts": {
+        "success": 1651
+      },
+      "empty_predictions": 0,
+      "retained_stage_counts": {
+        "native": 1651
+      },
+      "sum_page_seconds": 6137.832109292503,
+      "median_page_seconds": 2.889449556125328,
+      "max_page_seconds": 22.740797425154597,
+      "allocated_gpu_seconds": 6217.596246004105,
+      "inference_wall_seconds": 6217.596246004105,
+      "concurrent_gpus": 1,
+      "peak_gpu_memory_mib": 45393,
+      "resource_note": "Allocation timing includes engine startup and up to one observation interval after exit; memory is the sampled device peak.",
+      "infrastructure_restarts": 0,
+      "stage_coverage": {
+        "native": {
+          "counts": {
+            "request_batch": 3300,
+            "request_batch_complete": 3300,
+            "completed_model_requests": 36813,
+            "stage_complete": 1651
+          },
+          "pages_with_regional_attempts": 0,
+          "completed_request_seconds": 5636.992282014806,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        }
+      }
+    },
+    "V5.4": {
+      "metrics": {
+        "text_edit": 0.025612101642071956,
+        "cdm": 0.9865142441334176,
+        "teds": 0.9866159079091705,
+        "structure_teds": 0.9918971505087419,
+        "reading_order": 0.1185686445292768,
+        "overall": 98.25060168001721
+      },
+      "denominator": 1651,
+      "raw_metric_result_sha256": "b5b0ac9a82ad65eadf07440c6a8f81c0aec2fbd5bd0e71b696374d3d486dac39",
+      "prediction_binding_sha256": "32259b0e3bca816a8f925869e83444e4fa435ea62dfa06f619832a8943357fc0",
+      "status_counts": {
+        "success": 1651
+      },
+      "empty_predictions": 0,
+      "retained_stage_counts": {
+        "formula125": 1651
+      },
+      "sum_page_seconds": 6274.820724554127,
+      "median_page_seconds": 2.9846103040035814,
+      "max_page_seconds": 22.412111161043867,
+      "allocated_gpu_seconds": 6361.680717229843,
+      "inference_wall_seconds": 6361.680717229843,
+      "concurrent_gpus": 1,
+      "peak_gpu_memory_mib": 45393,
+      "resource_note": "Allocation timing includes engine startup and up to one observation interval after exit; memory is the sampled device peak.",
+      "infrastructure_restarts": 0,
+      "stage_coverage": {
+        "native": {
+          "counts": {
+            "request_batch": 3300,
+            "request_batch_complete": 3300,
+            "completed_model_requests": 36813,
+            "stage_complete": 1651
+          },
+          "pages_with_regional_attempts": 0,
+          "completed_request_seconds": 5622.427986701019,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        },
+        "formula125": {
+          "counts": {
+            "stage_coverage": 1327,
+            "stage_complete": 1651,
+            "request_batch": 324,
+            "request_batch_complete": 324,
+            "completed_model_requests": 2376,
+            "region": 2376,
+            "accepted_attempts": 2376,
+            "changed_attempts": 793,
+            "rejected_attempts": 0,
+            "invalid_to_valid_attempts": 0,
+            "observed_completed_regions": 2376
+          },
+          "pages_with_regional_attempts": 324,
+          "completed_request_seconds": 167.21438780683093,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        }
+      }
+    },
+    "V5.5": {
+      "metrics": {
+        "text_edit": 0.025182223234382857,
+        "cdm": 0.9865127327055484,
+        "teds": 0.9890949153197894,
+        "structure_teds": 0.993738371189153,
+        "reading_order": 0.1186686931243087,
+        "overall": 98.3475141596985
+      },
+      "denominator": 1651,
+      "raw_metric_result_sha256": "6ebc69e31def22caa3fa1623c3fce86d7cee70a59cd89481b870780d07a7ac86",
+      "prediction_binding_sha256": "c24cbeab6ba433a3d258bc136b1827fa9e5a5b2192d04e0eb2638d4d31b5f365",
+      "status_counts": {
+        "success": 1651
+      },
+      "empty_predictions": 0,
+      "retained_stage_counts": {
+        "table1x": 1651
+      },
+      "sum_page_seconds": 7427.297550673364,
+      "median_page_seconds": 3.4070639989804476,
+      "max_page_seconds": 43.9451967519708,
+      "allocated_gpu_seconds": 7589.133905887604,
+      "inference_wall_seconds": 3934.1528358459473,
+      "concurrent_gpus": 2,
+      "peak_gpu_memory_mib": 47011,
+      "resource_note": "Allocation timing includes engine startup and up to one observation interval after exit; memory is the sampled device peak.",
+      "infrastructure_restarts": 0,
+      "stage_coverage": {
+        "native": {
+          "counts": {
+            "request_batch": 3300,
+            "request_batch_complete": 3300,
+            "completed_model_requests": 36813,
+            "stage_complete": 1651
+          },
+          "pages_with_regional_attempts": 0,
+          "completed_request_seconds": 5643.418034663191,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        },
+        "formula125": {
+          "counts": {
+            "stage_coverage": 1327,
+            "stage_complete": 1651,
+            "request_batch": 324,
+            "request_batch_complete": 324,
+            "completed_model_requests": 2376,
+            "region": 2376,
+            "accepted_attempts": 2376,
+            "changed_attempts": 793,
+            "rejected_attempts": 0,
+            "invalid_to_valid_attempts": 0,
+            "observed_completed_regions": 2376
+          },
+          "pages_with_regional_attempts": 324,
+          "completed_request_seconds": 167.9125817436725,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        },
+        "guard": {
+          "counts": {
+            "stage_coverage": 1651,
+            "guard_eligible_regions": 7,
+            "stage_complete": 1651,
+            "request_batch": 14,
+            "request_batch_complete": 14,
+            "completed_model_requests": 14,
+            "guard_attempt": 14,
+            "accepted_attempts": 6,
+            "changed_attempts": 6,
+            "rejected_attempts": 8,
+            "invalid_to_valid_attempts": 6
+          },
+          "pages_with_regional_attempts": 7,
+          "completed_request_seconds": 33.61258791689761,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        },
+        "table1x": {
+          "counts": {
+            "stage_coverage": 1188,
+            "stage_complete": 1651,
+            "request_batch": 463,
+            "request_batch_complete": 463,
+            "completed_model_requests": 671,
+            "region": 671,
+            "accepted_attempts": 670,
+            "changed_attempts": 14,
+            "rejected_attempts": 1,
+            "invalid_to_valid_attempts": 0,
+            "observed_completed_regions": 671
+          },
+          "pages_with_regional_attempts": 463,
+          "completed_request_seconds": 1052.9895373543259,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        }
+      }
+    },
+    "V5.1": {
+      "metrics": {
+        "text_edit": 0.027271760238799715,
+        "cdm": 0.9858863865739876,
+        "teds": 0.9684322910314895,
+        "structure_teds": 0.9816733092812712,
+        "reading_order": 0.1183119506473881,
+        "overall": 97.56823057888926
+      },
+      "denominator": 1651,
+      "raw_metric_result_sha256": "516fd9d946a7a9fcaa0408059f895ed884db0e3cc903ef7a558450f946f93067",
+      "prediction_binding_sha256": "e8b8445ee213181a12982b4934866295999fe9116c53e6613b121e63448543d0",
+      "status_counts": {
+        "success": 1651
+      },
+      "empty_predictions": 0,
+      "retained_stage_counts": {
+        "native": 1651
+      },
+      "sum_page_seconds": 7519.4361605851445,
+      "median_page_seconds": 3.835432938998565,
+      "max_page_seconds": 25.743172120070085,
+      "allocated_gpu_seconds": 7599.731898784637,
+      "inference_wall_seconds": 7599.731898784637,
+      "concurrent_gpus": 1,
+      "peak_gpu_memory_mib": 42285,
+      "resource_note": "Allocation timing includes engine startup and up to one observation interval after exit; memory is the sampled device peak.",
+      "infrastructure_restarts": 0,
+      "stage_coverage": {
+        "native": {
+          "counts": {
+            "request_batch": 3300,
+            "request_batch_complete": 3300,
+            "completed_model_requests": 36793,
+            "stage_complete": 1651
+          },
+          "pages_with_regional_attempts": 0,
+          "completed_request_seconds": 5870.794511029031,
+          "validity_note": "Invalid-to-valid counts use syntax/runaway checks and do not establish accuracy gains."
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "V5.2_minus_V5.1": {
+      "overall_delta_points": 0.6049155043741195,
+      "components": {
+        "text_edit": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 94,
+          "reason": "No successful-only subset is substituted."
+        },
+        "cdm": {
+          "status": "complete",
+          "eligible_pages": 313,
+          "improved_pages": 32,
+          "regressed_pages": 68,
+          "tied_pages": 213,
+          "mean_raw_delta": -0.002073811996377006,
+          "mean_quality_delta": -0.002073811996377006,
+          "before_mean": 0.9858863865739876,
+          "after_mean": 0.9838125745776106,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 170,
+          "regressed_pages": 24,
+          "tied_pages": 264,
+          "mean_raw_delta": 0.01817905003183823,
+          "mean_quality_delta": 0.01817905003183823,
+          "before_mean": 0.9684322910314895,
+          "after_mean": 0.9866113410633277,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "structure_teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 41,
+          "regressed_pages": 6,
+          "tied_pages": 411,
+          "mean_raw_delta": 0.010223841227470764,
+          "mean_quality_delta": 0.010223841227470764,
+          "before_mean": 0.9816733092812712,
+          "after_mean": 0.9918971505087419,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "reading_order": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 13,
+          "reason": "No successful-only subset is substituted."
+        }
+      }
+    },
+    "V5.3_minus_V5.2": {
+      "overall_delta_points": 0.04897057827285778,
+      "components": {
+        "text_edit": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 94,
+          "reason": "No successful-only subset is substituted."
+        },
+        "cdm": {
+          "status": "complete",
+          "eligible_pages": 313,
+          "improved_pages": 0,
+          "regressed_pages": 3,
+          "tied_pages": 310,
+          "mean_raw_delta": -3.0892793752218875e-05,
+          "mean_quality_delta": -3.0892793752218875e-05,
+          "before_mean": 0.9838125745776106,
+          "after_mean": 0.9837816817838584,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 12,
+          "regressed_pages": 5,
+          "tied_pages": 441,
+          "mean_raw_delta": 0.0015726857739913971,
+          "mean_quality_delta": 0.0015726857739913971,
+          "before_mean": 0.9866113410633277,
+          "after_mean": 0.9881840268373191,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "structure_teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 5,
+          "regressed_pages": 2,
+          "tied_pages": 451,
+          "mean_raw_delta": 0.0017651239622544636,
+          "mean_quality_delta": 0.0017651239622544636,
+          "before_mean": 0.9918971505087419,
+          "after_mean": 0.9936622744709964,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "reading_order": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 13,
+          "reason": "No successful-only subset is substituted."
+        }
+      }
+    },
+    "V5.4_minus_V5.2": {
+      "overall_delta_points": 0.07745559675383618,
+      "components": {
+        "text_edit": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 94,
+          "reason": "No successful-only subset is substituted."
+        },
+        "cdm": {
+          "status": "complete",
+          "eligible_pages": 313,
+          "improved_pages": 50,
+          "regressed_pages": 36,
+          "tied_pages": 227,
+          "mean_raw_delta": 0.002701669555807084,
+          "mean_quality_delta": 0.002701669555807084,
+          "before_mean": 0.9838125745776106,
+          "after_mean": 0.9865142441334177,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 4,
+          "regressed_pages": 1,
+          "tied_pages": 453,
+          "mean_raw_delta": 4.566845842776583e-06,
+          "mean_quality_delta": 4.566845842776583e-06,
+          "before_mean": 0.9866113410633277,
+          "after_mean": 0.9866159079091705,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "structure_teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 0,
+          "regressed_pages": 0,
+          "tied_pages": 458,
+          "mean_raw_delta": 0.0,
+          "mean_quality_delta": 0.0,
+          "before_mean": 0.9918971505087419,
+          "after_mean": 0.9918971505087419,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "reading_order": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 13,
+          "reason": "No successful-only subset is substituted."
+        }
+      }
+    },
+    "V5.5_minus_V5.2": {
+      "overall_delta_points": 0.17436807643512964,
+      "components": {
+        "text_edit": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 94,
+          "reason": "No successful-only subset is substituted."
+        },
+        "cdm": {
+          "status": "complete",
+          "eligible_pages": 313,
+          "improved_pages": 49,
+          "regressed_pages": 34,
+          "tied_pages": 230,
+          "mean_raw_delta": 0.002700158127937828,
+          "mean_quality_delta": 0.002700158127937828,
+          "before_mean": 0.9838125745776106,
+          "after_mean": 0.9865127327055484,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 11,
+          "regressed_pages": 6,
+          "tied_pages": 441,
+          "mean_raw_delta": 0.0024835742564616745,
+          "mean_quality_delta": 0.0024835742564616745,
+          "before_mean": 0.9866113410633277,
+          "after_mean": 0.9890949153197894,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "structure_teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 5,
+          "regressed_pages": 3,
+          "tied_pages": 450,
+          "mean_raw_delta": 0.001841220680411117,
+          "mean_quality_delta": 0.001841220680411117,
+          "before_mean": 0.9918971505087419,
+          "after_mean": 0.9937383711891531,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "reading_order": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 13,
+          "reason": "No successful-only subset is substituted."
+        }
+      }
+    },
+    "V5.5_minus_V5.4": {
+      "overall_delta_points": 0.09691247968129346,
+      "components": {
+        "text_edit": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 94,
+          "reason": "No successful-only subset is substituted."
+        },
+        "cdm": {
+          "status": "complete",
+          "eligible_pages": 313,
+          "improved_pages": 2,
+          "regressed_pages": 1,
+          "tied_pages": 310,
+          "mean_raw_delta": -1.511427869255479e-06,
+          "mean_quality_delta": -1.511427869255479e-06,
+          "before_mean": 0.9865142441334177,
+          "after_mean": 0.9865127327055484,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 9,
+          "regressed_pages": 7,
+          "tied_pages": 442,
+          "mean_raw_delta": 0.002479007410618898,
+          "mean_quality_delta": 0.002479007410618898,
+          "before_mean": 0.9866159079091705,
+          "after_mean": 0.9890949153197894,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "structure_teds": {
+          "status": "complete",
+          "eligible_pages": 458,
+          "improved_pages": 5,
+          "regressed_pages": 3,
+          "tied_pages": 450,
+          "mean_raw_delta": 0.001841220680411117,
+          "mean_quality_delta": 0.001841220680411117,
+          "before_mean": 0.9918971505087419,
+          "after_mean": 0.9937383711891531,
+          "interpretation": "Descriptive paired page comparison on the frozen eligible set; no significance claim."
+        },
+        "reading_order": {
+          "status": "incomplete_numeric_coverage",
+          "eligible_pages": 1651,
+          "missing_pages": 13,
+          "reason": "No successful-only subset is substituted."
+        }
+      }
+    }
+  },
+  "native_agreement_with_V5_2": {
+    "V5.3": {
+      "paired_valid_native_pages": 1651,
+      "all_pages": 1651,
+      "byte_identical_native_pages": 1338,
+      "missing_native_in_either_arm": 0
+    },
+    "V5.4": {
+      "paired_valid_native_pages": 1651,
+      "all_pages": 1651,
+      "byte_identical_native_pages": 1354,
+      "missing_native_in_either_arm": 0
+    },
+    "V5.5": {
+      "paired_valid_native_pages": 1651,
+      "all_pages": 1651,
+      "byte_identical_native_pages": 1371,
+      "missing_native_in_either_arm": 0
+    }
+  },
+  "native_first_layout_request_audit": {
+    "V5.3": {
+      "all_pages": 1651,
+      "identical_first_layout_request_inputs": 1651,
+      "byte_identical_native_markdown": 1338
+    },
+    "V5.4": {
+      "all_pages": 1651,
+      "identical_first_layout_request_inputs": 1651,
+      "byte_identical_native_markdown": 1354
+    },
+    "V5.5": {
+      "all_pages": 1651,
+      "identical_first_layout_request_inputs": 1651,
+      "byte_identical_native_markdown": 1371
+    }
+  },
+  "preparation_allocated_gpu_seconds": 1701.9501357078552,
+  "full_inference_allocated_gpu_seconds": 35130.97566652298,
+  "all_recorded_allocated_gpu_seconds": 36832.925802230835,
+  "evaluation_commit": "147cd5ac9472002f5751221d390bf00abdbc0d2f",
+  "evaluation_config_sha256": "56db52659910273376223a5646eabfaff21b25dc30f434e1c90aab1a233d335a",
+  "ground_truth_sha256": "a45cd84b04ad8b793e775089640e6b681209abea33ead54c1828ddca35fae496",
+  "input_manifest_sha256": "1f22754696db003b85eff7cf03c9504bdbaa98498e8d2b8e99080f61fbb239f3",
+  "shared_runtime": {
+    "engine": {
+      "dtype": "torch.bfloat16",
+      "seed": 0,
+      "max_model_len": 16384,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.5,
+      "enable_prefix_caching": false,
+      "max_num_seqs": 64,
+      "max_num_batched_tokens": 16384
+    },
+    "packages": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "vllm": "0.11.0",
+      "transformers": "4.57.6",
+      "tokenizers": "0.22.2",
+      "TeleOCR": "0.1.0",
+      "Pillow": "11.3.0",
+      "numpy": "2.2.6",
+      "pypdfium2": "4.30.0",
+      "pymupdf": "1.28.2",
+      "lxml": "6.0.2",
+      "fast-langdetect": "0.2.5",
+      "fasttext-predict": "0.9.2.4",
+      "magika": "1.0.3",
+      "onnxruntime": "1.23.2",
+      "triton": "3.4.0",
+      "flash-attn": null,
+      "xformers": "0.0.32.post1",
+      "safetensors": "0.7.0",
+      "opencv-python-headless": "4.14.0.94"
+    },
+    "prompts": {
+      "text": "\nPlease output the text content from the image.",
+      "table": "\nThis is the image of a table. Please output the table in OTSL format.",
+      "equation": "\nPlease write out the expression of the formula in the image using LaTeX format.",
+      "code": "\nThe image contains a code snippet, please output the parsing result.",
+      "layout": "\nAnalyze the image layout.",
+      "seal": "\nSeal Recognition:",
+      "char": "\nThis is a scientific figure. Please extract the table implied by this figure.",
+      "default": "\nPlease output the text content from the image.",
+      "table_structure": "\nTable Recognition:",
+      "formula_structure": "\nFormula Recognition:"
+    },
+    "sampling": {
+      "text": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 1.0,
+        "frequency_penalty": 0.05,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      },
+      "table": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 1.0,
+        "frequency_penalty": 0.005,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      },
+      "equation": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 1.0,
+        "frequency_penalty": 0.05,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      },
+      "code": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 1.0,
+        "frequency_penalty": 0.05,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      },
+      "char": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 1.0,
+        "frequency_penalty": 0.005,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      },
+      "layout": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      },
+      "seal": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 1.0,
+        "frequency_penalty": 0.005,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      },
+      "default": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 1.0,
+        "frequency_penalty": 0.05,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      },
+      "table_structure": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 1.0,
+        "frequency_penalty": 0.005,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      },
+      "formula_structure": {
+        "temperature": 0.0,
+        "top_p": 0.01,
+        "top_k": 1,
+        "presence_penalty": 1.0,
+        "frequency_penalty": 0.05,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 100,
+        "max_new_tokens": null
+      }
+    },
+    "helper": {
+      "layout_image_size": [
+        1036,
+        1036
+      ],
+      "min_image_edge": 28,
+      "max_image_edge_ratio": 50,
+      "simple_post_process": false,
+      "handle_equation_block": true,
+      "abandon_list": false,
+      "abandon_paratext": false
+    },
+    "system_prompt": "You are a helpful assistant."
+  },
+  "inference_image_sha256": "sha256:f7c6d8c94f41df4c4d7ee7d78a24fd86f956b11f084ffa6f47921594ee445c44",
+  "evaluation_image_sha256": "sha256:6116ad72172e763b5c43e963d5efebf2093f2362b975f58156ce4f6c9142e617",
+  "frozen_source_hashes": {
+    "versions/v5/README.md": "da4d3710f7ff63b16a86bc1af0ef57b6c80b009d99194521b442c91c98bcedd5",
+    "versions/v5/io_utils.py": "7b93d8327040625a3c0c204b4c3683e3e4331f15b1fcf8478d4054f495b97be5",
+    "versions/v5/evaluate.py": "e9830e57fbf2e7d97d58580990ef88637cee631d0218289775729cfc44c1fdff",
+    "versions/v5/supervisor.py": "e432790fd93962ebef7d169fdd77dee56fccadf2d4ad5e62e82f50f2b4dd1775",
+    "versions/v5/worker.py": "75c00766c047d422c9044f3d2cb0e7a9edf5c3124b5c69d939b6d9fdbf9cdf32",
+    "versions/v5/guardian.py": "d656aa129a8eda7efb50f05198ed951a8ad219f18e72553f3799fd42316832f6",
+    "versions/v5/regions.py": "2135649f6b20c5166676a7ca7c40fe24d20d5da2b679ec4c16da3eb11f8fed2a",
+    "versions/v5/test_regions.py": "ede4d51fab5c1150a2e9654a83fa84f98109c55701867f42a86adf91276661ad",
+    "versions/v5/protocol.json": "399e2a05ee1c68b351cbc7d9d2ee47b07a411c181a5c98320ace6265155685bc",
+    "versions/v5/__init__.py": "bfd7ac619e85ed84446ff11b5a1645349896fd85226dda2466620eaba6f1f9a7"
+  },
+  "limits": [
+    "Local frozen protocol; no leaderboard submission or official rank claim.",
+    "Independent native predictions can differ numerically; native agreement is reported.",
+    "Validity repairs are distinct from paired metric improvements.",
+    "V5.5 versus V5.4 combines guard and table changes and cannot isolate guard causality."
+  ]
+}

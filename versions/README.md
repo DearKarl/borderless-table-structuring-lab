@@ -9,6 +9,8 @@ Each directory preserves its original Python package names. Run a version from i
 | [V2](v2/README.md) | TeleOCR backbone + Paddle formula expert | Native/full-run controller, strict assembly and recovery gates |
 | [V3.1](v3_1/README.md) | TeleOCR + layout/formula integration | Researcher-reported original-image variant: Overall 97.6973; exact scored revision pending |
 | [V3.2](v3_2/README.md) | TeleOCR + OvisOCR2 text expert | Researcher-reported 1,651-page OFF/ON: 93.4951 / 93.7208; exact scored revision pending |
+| [V4](../research/V4.md) | Learned input selection + TeleOCR | Frozen source/model/result archive under `releases/` |
+| [V5](v5/README.md) | Input paths, regional rereading and bounded recovery | Five completed 1,651-page arms; best local Overall 98.347514 |
 
 The `formula_v0` package name inside V1 is an internal assembly prototype, **not** the measured V0 CUDA table route. The stopped Paddle-plus-NaviDC prototype is not the reported V2 route.
 

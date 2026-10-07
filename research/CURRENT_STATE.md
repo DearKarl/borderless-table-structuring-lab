@@ -1,12 +1,12 @@
 # Current research state
 
-Evidence and research intent updated 2026-10-07. This document indexes saved project evidence;
-it does not report a new experiment or certify a fresh runtime.
+Evidence updated 2026-10-07 after completion of V5.1-V5.5. This document indexes
+completed local experiments and separates observations from future proposals.
 
 ## Project objective
 
 Achieve an officially recognized OmniDocBench Overall score above the leaderboard
-leader, currently TeleOCR. This is the primary performance objective clarified by the
+leader, with TeleOCR as the benchmarked reference backbone. This is the primary performance objective clarified by the
 researcher. V0–V4 are historical attempts. Input-scale selection, a frozen TeleOCR
 backbone, one recognition call per page, and GBDT are V4 design choices rather
 than permanent requirements for subsequent research. No official leaderboard win
@@ -16,9 +16,45 @@ On 2026-10-07, the researcher additionally requested a research contribution
 aimed at a CCF A venue. The leaderboard objective remains primary; a high score
 alone does not establish a publishable contribution. The [V5 proposal](V5_PROPOSAL.md)
 sets out baseline reconciliation, novelty assessment and staged validation.
-Eight A100 80GB PCIe GPUs are available for the proposed study. The V5 method,
-per-experiment budgets and evaluation protocol remain to be finalized; no V5
-result exists.
+Eight A100 80GB PCIe GPUs are available. On 2026-10-07 the researcher approved
+all five comparisons as V5.1-V5.5, requested parallel full-set execution, and
+authorized execution. All five arms and their scoring are now complete. The
+[V5 proposal](V5_PROPOSAL.md) retains the original design rationale; completed
+measurements and deviations are recorded in the V5 report below.
+
+## Completed V5 evidence
+
+All five independent arms completed inference and official-protocol local scoring
+on 2026-10-07. Each contains 1,651 pages, with zero inference failures and zero
+empty predictions: 8,255 arm-page predictions in total. The same pinned evaluator
+and ground truth were used throughout this round.
+
+| Arm | Method | Overall ↑ |
+|---|---|---:|
+| V5.1 | Native image-to-PDF input | 97.568231 |
+| V5.2 | Original RGB input | 98.173146 |
+| V5.3 | Original RGB + table 1x | 98.222117 |
+| V5.4 | Original RGB + formula 1.25x | 98.250602 |
+| V5.5 | Original RGB + formula + guard + table | 98.347514 |
+
+V5.2 minus V5.1 is +0.604916 points; V5.5 minus V5.2 is +0.174368 points.
+The highest observed system score is V5.5, 98.347514. No official rank or
+statistical significance is established. Five-arm inference used 9.758604
+allocated GPU-hours; including preparation and stopped startup attempts, the
+total was 10.231368 GPU-hours. Two-GPU arms cannot be compared by wall time alone.
+
+Sources: [V5 methods and full report](../versions/v5/README.md),
+[aggregate values](../artifacts/results/v5/AGGREGATE.json), and
+[frozen protocol](../versions/v5/protocol.json).
+
+Independent original-image native outputs were not identical across arms.
+Compared with V5.2, 313 V5.3 pages, 297 V5.4 pages and 280 V5.5 pages had different
+native Markdown. Matching first-request pixel/prompt/settings records does not
+explain the cause. End-to-end differences therefore do not isolate regional
+intervention effects. Accepted syntax-valid crops are not automatically correct.
+The requested upstream model revision was not verified; actual inference file
+hashes were recorded and matched the existing reference pins. See the full report
+for the precise revision limitation and component-specific coverage.
 
 ## Completed V4 evidence
 
@@ -65,7 +101,8 @@ The reference is a saved 2026-10-05 snapshot, not a newly checked live leaderboa
 The current package also does not establish continuous optimal DPI. A bounded
 candidate selector and one completed system score do not identify such an
 optimum. Multiscale learned selection remains a proposed direction requiring a
-separately agreed question, controls and protocol; no new experiment is approved.
+separately agreed question, controls and protocol. The newly approved V5.1-V5.5
+comparison does not establish a new learned-selector experiment.
 No publication venue is selected by this state document.
 
 The [V4 study](V4.md) describes the method and measured policy. The frozen source,
@@ -110,10 +147,14 @@ aggregate and dated root result records when determining current result status.
 
 ## Next scientific discussion
 
-The immediate evidence gap is the relationship between historical local raw
-TeleOCR 97.435109, V4 97.171890, and the public reference 96.91. Reconcile run
-settings and baseline comparability before claiming an improvement or choosing
-a subsequent method. Then determine what is needed for an official submission.
-The [roadmap](ROADMAP.md) records these milestones without selecting a new
-experiment. Preserve released source, model bytes, scores, failure handling and
-existing paths. Use the [research map](README.md) to locate evidence.
+V5.5 is the current local submission candidate; V5.2 is its strong same-round
+baseline. First reuse saved native and intermediate predictions to determine
+which stages repair or damage the same pages. Independent native variation must
+be separated from patch effects before claiming a causal mechanism. This is a
+proposed analysis, not a completed counterfactual experiment.
+
+A research contribution should address measured residual errors and demonstrate
+benefit beyond the benchmark used for development. Portable fresh-environment
+reproduction and the unresolved model-revision identity remain submission
+preparation tasks. No new architecture, training run, sweep or official submission
+is implied by publishing these results. See the [roadmap](ROADMAP.md).

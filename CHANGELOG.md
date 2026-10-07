@@ -3,6 +3,16 @@
 This log records repository-level changes. Exact scientific results and older
 history remain in their linked source records and Git history.
 
+## 2026-10-07 — Completed V5 five-arm study
+
+- Published V5 source, frozen protocol and full-precision aggregate metrics.
+- All five arms completed 1,651 pages with no inference failures or empty outputs.
+  Best observed Overall: V5.5 at 98.347514; original-image V5.2: 98.173146.
+- Recorded component repair/regression counts, intervention coverage, GPU costs
+  and the independent-native-output variation limiting causal interpretation.
+- Updated research navigation, current state and next evidence milestones.
+- Preserved historical source, model bytes and original results.
+
 ## 2026-10-07 — Research presentation and V3 results
 
 - Reorganized the homepage around research questions, methods and grouped results.

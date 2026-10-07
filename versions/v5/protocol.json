@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "source_commit": "9921cffe380efe4e2fa010258b3d0c3cb70bab2d",
+  "reference_commit": "ac1ab4f5ded8b025f47a7683f58e65db4ac43a2b",
+  "backend": "vllm-engine",
+  "attention_backend": "Pinned TeleOCR/vLLM native capability selection; no forced VLLM_ATTENTION_BACKEND. The vision head dimension is 80, unsupported by the installed vLLM FlashAttention kernel.",
+  "engine": {
+    "dtype": "bfloat16",
+    "seed": 0,
+    "max_model_len": 16384,
+    "gpu_memory_utilization": 0.5,
+    "enforce_eager": false,
+    "max_num_seqs": 64,
+    "max_num_batched_tokens": 16384,
+    "enable_prefix_caching": false,
+    "trust_remote_code": true
+  },
+  "arms": {
+    "V5.1": ["default_pdf"],
+    "V5.2": ["original_rgb"],
+    "V5.3": ["original_rgb", "table1x"],
+    "V5.4": ["original_rgb", "formula125"],
+    "V5.5": ["original_rgb", "formula125", "guard", "table1x"]
+  },
+  "native": {
+    "layout_mode": "Detection",
+    "layout_image_size": [1036, 1036],
+    "max_pixels": 64000000,
+    "min_image_edge": 28,
+    "max_image_edge_ratio": 50,
+    "batching_mode": "stepping",
+    "page_batch_size": 1,
+    "content_batch_size": 0,
+    "pdf_tools": "pypdfium2",
+    "pdf_dpi": 200,
+    "pdf_max_long_edge": 3500,
+    "pdf_workers": 4,
+    "prompts_and_sampling": "Unmodified pinned TeleOCR defaults, verified in every worker receipt."
+  },
+  "regions": {
+    "table_scale": 1.0,
+    "formula_scale": 1.25,
+    "guard_scales": [1.0, 0.75, 1.5],
+    "guard_equation_multiplier": 2.7777777777777777,
+    "padding": 0,
+    "rotation": "No additional rotation for regional rereads.",
+    "crop": "Scale bbox by original/page dimensions; truncate each coordinate with int; clamp left/top to zero; right/bottom at least left/top+1; PIL pads outside right/bottom.",
+    "resize": "Python round, minimum one pixel, Pillow LANCZOS.",
+    "validation": "Reference runaway rules; lxml is mandatory. Empty text blocks are not guard eligible.",
+    "rejection": "Keep original region. First valid guard candidate wins, at most three attempts.",
+    "history": "Separate audit events, never nested into inference geometry."
+  },
+  "limits": {
+    "total_pages_per_arm": 1651,
+    "smoke_pages": 16,
+    "page_work_seconds": 590,
+    "page_hard_seconds": 600,
+    "wall_hours": 72,
+    "allocated_gpu_hours": 576,
+    "maximum_gpus": 8,
+    "infrastructure_restarts_per_arm": 1
+  },
+  "failure_policy": {
+    "page_timeout": "Abort this page's vLLM request IDs. Keep the last atomically completed stage; empty when native output was not completed. Never rerun a completed or failed page.",
+    "regional_exception": "Record the exception; retain the last completed stage and stop this page's remaining interventions.",
+    "hard_timeout": "Supervisor kills only the owned container at 600 seconds; recover the last completed stage. An engine/container replacement consumes the arm's sole infrastructure restart.",
+    "systemic_defect": "Stop affected owned jobs and distinguish a repaired run; never edit an active frozen run."
+  }
+}

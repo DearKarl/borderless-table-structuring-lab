@@ -14,6 +14,28 @@
 The root package does not install all archived versions. Identically named Python
 packages in different snapshots must be run from their documented directories.
 
+## V5 source and completed evidence
+
+The [V5 report](../versions/v5/README.md), [protocol](../versions/v5/protocol.json)
+and [aggregate](../artifacts/results/v5/AGGREGATE.json) identify the completed
+five-arm experiment. With the test dependencies available, run from the root:
+
+```bash
+python -m unittest versions.v5.test_regions versions.v5.test_analysis -v
+```
+
+These 13 synthetic checks do not rerun inference. Full reproduction additionally
+requires the pinned TeleOCR source, all model/processor files, native runtime,
+benchmark inputs, evaluator dependencies and a newly bound execution manifest.
+Private runtime manifests and benchmark payloads are not distributed. A fresh
+clone alone is not a complete one-command benchmark installation. The requested
+model repository revision was not verified; the completed report records the
+actual file identities and the unresolved revision distinction.
+
+All five runs retain the 1,651-page denominator. Separate native runs produced
+some different outputs, so reproducing a system comparison is distinct from
+isolating a patch's causal contribution on a shared native prediction.
+
 ## Data-free V4 archive check
 
 From the repository root, with Python available:
