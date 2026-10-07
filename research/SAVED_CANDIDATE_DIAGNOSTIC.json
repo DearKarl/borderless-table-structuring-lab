@@ -1,0 +1,350 @@
+{
+  "created_at": "2026-10-07T18:55:37.149714+00:00",
+  "scope": "External train/validation development diagnosis; test and benchmark excluded",
+  "method": "Equal-region macro TEDS for tables and CDM for formulas; never pool the two metrics",
+  "oracle_warning": "GT-assisted finite saved-candidate envelope is diagnostic only; optimistic, not deployable, not a global scale optimum",
+  "gate_warning": "Perfect rejection retains every beneficial candidate and rejects every harmful candidate using saved GT scores; no learned gate has been trained or validated",
+  "validation_warning": "Fixed scales were selected on this same validation split; these figures are development evidence, not unbiased generalization estimates",
+  "physical_ocr_requests": 0,
+  "gpu_hours": 0,
+  "refits": 0,
+  "subsets": {
+    "train": {
+      "table": {
+        "regions": 112,
+        "documents": 112,
+        "metric": "TEDS",
+        "native_mean": 0.9053070394022446,
+        "frozen_fixed_scale": 0.535299427146522,
+        "fixed_replay_mean": 0.9069929654288995,
+        "best_saved_reread_mean": 0.935789083011195,
+        "keep_or_best_saved_mean": 0.9362746985860964,
+        "saved_headroom_over_native": 0.030967659183851755,
+        "best_saved_reread_vs_native": {
+          "n": 112,
+          "mean_delta": 0.030482043608950467,
+          "gross_gain_per_region": 0.030967659183851755,
+          "gross_harm_per_region": 0.00048561557490129004,
+          "improved": 53,
+          "worsened": 2,
+          "tied": 57
+        },
+        "fixed_replay_vs_native": {
+          "n": 112,
+          "mean_delta": 0.0016859260266549078,
+          "gross_gain_per_region": 0.017524490222637003,
+          "gross_harm_per_region": 0.015838564195982098,
+          "improved": 37,
+          "worsened": 37,
+          "tied": 38
+        },
+        "strictly_all_saved_rereads_worse": 2,
+        "native_already_perfect": 0,
+        "multiple_tied_input_regions": 78,
+        "planned_views": 896,
+        "missing_view_dispositions": 1,
+        "view_dispositions": {
+          "measured_views": 895,
+          "accepted_views": 895,
+          "invalid_metric_views": 0,
+          "rejected_views": 0
+        }
+      },
+      "equation": {
+        "regions": 68,
+        "documents": 47,
+        "metric": "CDM",
+        "native_mean": 0.9939264705882352,
+        "frozen_fixed_scale": 1.25,
+        "fixed_replay_mean": 0.9930882352941176,
+        "best_saved_reread_mean": 0.9958676470588236,
+        "keep_or_best_saved_mean": 0.9958676470588236,
+        "saved_headroom_over_native": 0.001941176470588237,
+        "best_saved_reread_vs_native": {
+          "n": 68,
+          "mean_delta": 0.001941176470588237,
+          "gross_gain_per_region": 0.001941176470588237,
+          "gross_harm_per_region": 0.0,
+          "improved": 4,
+          "worsened": 0,
+          "tied": 64
+        },
+        "fixed_replay_vs_native": {
+          "n": 68,
+          "mean_delta": -0.0008382352941176461,
+          "gross_gain_per_region": 0.0002500000000000002,
+          "gross_harm_per_region": 0.0010882352941176464,
+          "improved": 1,
+          "worsened": 1,
+          "tied": 66
+        },
+        "strictly_all_saved_rereads_worse": 0,
+        "native_already_perfect": 57,
+        "multiple_tied_input_regions": 67,
+        "planned_views": 544,
+        "missing_view_dispositions": 0,
+        "view_dispositions": {
+          "measured_views": 544,
+          "accepted_views": 544,
+          "invalid_metric_views": 0,
+          "rejected_views": 0
+        }
+      }
+    },
+    "validation": {
+      "table": {
+        "regions": 29,
+        "documents": 29,
+        "metric": "TEDS",
+        "native_mean": 0.8919772189164744,
+        "frozen_fixed_scale": 0.535299427146522,
+        "fixed_replay_mean": 0.8995302509872594,
+        "best_saved_reread_mean": 0.9273481178303264,
+        "keep_or_best_saved_mean": 0.9273481178303264,
+        "saved_headroom_over_native": 0.03537089891385194,
+        "best_saved_reread_vs_native": {
+          "n": 29,
+          "mean_delta": 0.03537089891385194,
+          "gross_gain_per_region": 0.03537089891385194,
+          "gross_harm_per_region": 0.0,
+          "improved": 18,
+          "worsened": 0,
+          "tied": 11
+        },
+        "fixed_replay_vs_native": {
+          "n": 29,
+          "mean_delta": 0.007553032070784956,
+          "gross_gain_per_region": 0.021915967938892656,
+          "gross_harm_per_region": 0.0143629358681077,
+          "improved": 14,
+          "worsened": 9,
+          "tied": 6
+        },
+        "strictly_all_saved_rereads_worse": 0,
+        "native_already_perfect": 0,
+        "multiple_tied_input_regions": 21,
+        "planned_views": 232,
+        "missing_view_dispositions": 0,
+        "view_dispositions": {
+          "measured_views": 232,
+          "accepted_views": 232,
+          "invalid_metric_views": 0,
+          "rejected_views": 0
+        }
+      },
+      "equation": {
+        "regions": 19,
+        "documents": 13,
+        "metric": "CDM",
+        "native_mean": 0.999421052631579,
+        "frozen_fixed_scale": 1.25,
+        "fixed_replay_mean": 0.999421052631579,
+        "best_saved_reread_mean": 0.999421052631579,
+        "keep_or_best_saved_mean": 0.999421052631579,
+        "saved_headroom_over_native": 0.0,
+        "best_saved_reread_vs_native": {
+          "n": 19,
+          "mean_delta": 0.0,
+          "gross_gain_per_region": 0.0,
+          "gross_harm_per_region": 0.0,
+          "improved": 0,
+          "worsened": 0,
+          "tied": 19
+        },
+        "fixed_replay_vs_native": {
+          "n": 19,
+          "mean_delta": 0.0,
+          "gross_gain_per_region": 0.0,
+          "gross_harm_per_region": 0.0,
+          "improved": 0,
+          "worsened": 0,
+          "tied": 19
+        },
+        "strictly_all_saved_rereads_worse": 0,
+        "native_already_perfect": 18,
+        "multiple_tied_input_regions": 19,
+        "planned_views": 152,
+        "missing_view_dispositions": 0,
+        "view_dispositions": {
+          "measured_views": 152,
+          "accepted_views": 152,
+          "invalid_metric_views": 0,
+          "rejected_views": 0
+        }
+      }
+    }
+  },
+  "validation_actions": {
+    "table": {
+      "regions": 29,
+      "native_mean": 0.8919772189164744,
+      "common_saved_envelope_mean": 0.9296745408257252,
+      "envelope_members": "native + accepted eight-view candidates + all three actual actors",
+      "families": {
+        "gbdt": {
+          "actual_mean": 0.8994843796246009,
+          "native_comparison": {
+            "n": 29,
+            "mean_delta": 0.007507160708126499,
+            "gross_gain_per_region": 0.018605004937267057,
+            "gross_harm_per_region": 0.011097844229140558,
+            "improved": 8,
+            "worsened": 5,
+            "tied": 16
+          },
+          "perfect_keep_replace_mean": 0.9105822238537415,
+          "avoidable_harm_mean": 0.011097844229140558,
+          "remaining_saved_candidate_gap_after_perfect_gate": 0.019092316971983738,
+          "completed_actions": 29,
+          "accepted_actions": 29
+        },
+        "mlp": {
+          "actual_mean": 0.8928597761541461,
+          "native_comparison": {
+            "n": 29,
+            "mean_delta": 0.0008825572376717255,
+            "gross_gain_per_region": 0.009337236142533085,
+            "gross_harm_per_region": 0.00845467890486136,
+            "improved": 8,
+            "worsened": 5,
+            "tied": 16
+          },
+          "perfect_keep_replace_mean": 0.9013144550590075,
+          "avoidable_harm_mean": 0.00845467890486136,
+          "remaining_saved_candidate_gap_after_perfect_gate": 0.02836008576671771,
+          "completed_actions": 29,
+          "accepted_actions": 29
+        },
+        "fixed": {
+          "actual_mean": 0.8995302509872594,
+          "native_comparison": {
+            "n": 29,
+            "mean_delta": 0.007553032070784956,
+            "gross_gain_per_region": 0.021915967938892656,
+            "gross_harm_per_region": 0.0143629358681077,
+            "improved": 14,
+            "worsened": 9,
+            "tied": 6
+          },
+          "perfect_keep_replace_mean": 0.9138931868553671,
+          "avoidable_harm_mean": 0.0143629358681077,
+          "remaining_saved_candidate_gap_after_perfect_gate": 0.01578135397035814,
+          "completed_actions": 29,
+          "accepted_actions": 29
+        }
+      }
+    },
+    "equation": {
+      "regions": 19,
+      "native_mean": 0.999421052631579,
+      "common_saved_envelope_mean": 0.999421052631579,
+      "envelope_members": "native + accepted eight-view candidates + all three actual actors",
+      "families": {
+        "gbdt": {
+          "actual_mean": 0.999421052631579,
+          "native_comparison": {
+            "n": 19,
+            "mean_delta": 0.0,
+            "gross_gain_per_region": 0.0,
+            "gross_harm_per_region": 0.0,
+            "improved": 0,
+            "worsened": 0,
+            "tied": 19
+          },
+          "perfect_keep_replace_mean": 0.999421052631579,
+          "avoidable_harm_mean": 0.0,
+          "remaining_saved_candidate_gap_after_perfect_gate": 0.0,
+          "completed_actions": 19,
+          "accepted_actions": 19
+        },
+        "mlp": {
+          "actual_mean": 0.9973157894736842,
+          "native_comparison": {
+            "n": 19,
+            "mean_delta": -0.0021052631578947385,
+            "gross_gain_per_region": 0.0,
+            "gross_harm_per_region": 0.0021052631578947385,
+            "improved": 0,
+            "worsened": 1,
+            "tied": 18
+          },
+          "perfect_keep_replace_mean": 0.999421052631579,
+          "avoidable_harm_mean": 0.0021052631578947385,
+          "remaining_saved_candidate_gap_after_perfect_gate": 0.0,
+          "completed_actions": 19,
+          "accepted_actions": 19
+        },
+        "fixed": {
+          "actual_mean": 0.999421052631579,
+          "native_comparison": {
+            "n": 19,
+            "mean_delta": 0.0,
+            "gross_gain_per_region": 0.0,
+            "gross_harm_per_region": 0.0,
+            "improved": 0,
+            "worsened": 0,
+            "tied": 19
+          },
+          "perfect_keep_replace_mean": 0.999421052631579,
+          "avoidable_harm_mean": 0.0,
+          "remaining_saved_candidate_gap_after_perfect_gate": 0.0,
+          "completed_actions": 19,
+          "accepted_actions": 19
+        }
+      }
+    }
+  },
+  "integrity": {
+    "input_hashes": {
+      "preserved_local_input_1": "5413c3151a352d885e91a3a206ec755f2950ecf18e3d2d23ede8c8bddaa49384",
+      "preserved_local_input_2": "0563d5977594d7baa817e382b92d93d6db558c9287515fe6777e32c25189820a",
+      "preserved_local_input_3": "c57ec53e07777647a074fcf5f2c68695c0b96b232fa217128dc3f2198ac8788f",
+      "preserved_local_input_4": "c433e1f3d97872a44186d65930d3daaf9582cc7d53163881a4b32f00d886d2d9",
+      "preserved_local_input_5": "f881fa3075c8ae19d1b1f9351aef5a9d8c85fce7fca51a9baf780e22f3050eb9",
+      "preserved_local_input_6": "34812a53eb0a370fbc057924d00c66eba22e72792bdc2401cd433d2315f33268",
+      "preserved_local_input_7": "7f501e34eeec9cece498feb4ee1db6e9c0af04a88abb7ce0e8d459d6d7ad65a0"
+    },
+    "inputs_unchanged": true,
+    "development_regions": 228,
+    "validation_actor_regions": 48,
+    "test_rows_analyzed": 0,
+    "benchmark_files_read": 0,
+    "decomposition_identity_verified": true,
+    "script_sha256": "947af2b8e9ec5311fc8b64bbd69827d2d9bdf2b905a4d01158462121e3bc8094"
+  },
+  "next_pilot_proposal": {
+    "status": "Proposal only; no training, dispatch, or new experiment launched",
+    "question": "Can a deployable keep/replace rule improve net table TEDS over the frozen fixed reread at the same OCR cost?",
+    "phase_one": "Diagnose saved table candidate outcomes on training documents; fit and compare only after a separate frozen execution contract",
+    "candidate_generation": "Start with the already frozen table fixed scale as a strong simple candidate generator, retaining default native pixels and 200 DPI",
+    "actions": [
+      "keep native",
+      "replace with one candidate"
+    ],
+    "labels": "Candidate TEDS minus native TEDS from external training-only saved scores; preserve ties and harmful examples",
+    "potential_features": [
+      "native and candidate structural validity",
+      "row/column/cell-count changes",
+      "empty-cell and repetition changes",
+      "native image geometry and content density",
+      "candidate/native disagreement"
+    ],
+    "feature_limit": "No GT, source identifiers, offline quality scores, or unobserved candidates at inference; features are hypotheses, not proven quality indicators",
+    "grouping": "All views of each source document stay together; 895 observed training table views are 112 regions/documents, not 895 independent examples",
+    "comparators": [
+      "native keep-all",
+      "frozen fixed reread accept-all",
+      "fixed reread with preregistered simple structural rule",
+      "same fixed reread with learned keep/replace rule"
+    ],
+    "development": "Grouped training cross-validation; current validation is development evidence, including fixed-scale selection",
+    "confirmation": "New source-separated external holdout with matched baseline, candidate generator and request budget; existing test and OmniDocBench excluded from fitting/threshold choice",
+    "primary": "Paired net TEDS gain versus strongest frozen deployable control; report gain, harm, ties, coverage and source-document uncertainty",
+    "secondary": "No OCR savings claim from a post-OCR acceptance gate; it changes replacement, not request count",
+    "stop": "If a frozen gate cannot show a practically worthwhile gain on new sources, stop scaling this selector rather than launch another full benchmark",
+    "formula": "Hold formula-controller expansion; prospectively construct representative source-separated data with sufficient error cases, while retaining easy cases and natural-prevalence evaluation",
+    "ceiling_limit": "Finite saved-candidate maxima and perfect GT acceptance are optimistic diagnostics, not attainable predictions or a certified global upper bound"
+  },
+  "original_diagnostic_sha256": "64cac6bea7e20741cf539853433d6bb77429ed06e748c51ce24ecdda78dab33a",
+  "publication_status": "Historical pre-V7 diagnostic; all later work paused by user. GT-assisted maxima are not deployable results."
+}

@@ -1,0 +1,133 @@
+{
+  "version": "MLP_V6.2.3",
+  "internal_alias": "N-TF",
+  "family": "mlp",
+  "kinds": [
+    "table",
+    "equation"
+  ],
+  "contract": "direct_log_scale_v1",
+  "controllers": {
+    "table": {
+      "file": "mlp_table.json",
+      "sha256": "03eaff848403509577b210ae7ca24e82cb97ebd7598af5439044dc63058432d4",
+      "family": "mlp",
+      "kind": "table"
+    },
+    "equation": {
+      "file": "mlp_equation.json",
+      "sha256": "91f4900cafdaa9dd5cdcd3d51386aace375cc7b6937dc715a92b5f51e49dd038",
+      "family": "mlp",
+      "kind": "equation"
+    }
+  },
+  "features": [
+    "log_width",
+    "log_height",
+    "log_area",
+    "aspect_ratio",
+    "gray_mean",
+    "gray_std",
+    "ink_fraction",
+    "gradient_mean",
+    "horizontal_ink_runs",
+    "vertical_ink_runs",
+    "native_log_length",
+    "native_repeat_fraction",
+    "native_empty",
+    "native_brace_imbalance",
+    "native_table_rows",
+    "native_table_cells",
+    "native_invalid"
+  ],
+  "dataset_manifest_sha256": "5413c3151a352d885e91a3a206ec755f2950ecf18e3d2d23ede8c8bddaa49384",
+  "split_sha256": {
+    "train": "0563d5977594d7baa817e382b92d93d6db558c9287515fe6777e32c25189820a",
+    "validation": "c57ec53e07777647a074fcf5f2c68695c0b96b232fa217128dc3f2198ac8788f",
+    "test": "ea110a18247c02998ec96fa030fef46354b0e0b73a72bda07e499165f99e53bc"
+  },
+  "source_code_sha256": {
+    "actor.py": "1771f9b3b56361fb9a3d50fbc29b2c00987a7bf71818f72b20e0fea2dbc1aadc",
+    "analyze_external.py": "8bd808d0091c31667ecadcf8f0420a7e45eebcf0f3aaa2a0f6853aced4eb74b7",
+    "analyze_shared.py": "eca29b63cc8ca15f457fa04dafaf805e46109b3ba269b56c47d53121616c796d",
+    "assembly.py": "3aa2d7ceeec5260bfcf9b220a8d6940aab64ed798a01d1a6cbe4d05a946f6417",
+    "check_native.py": "de73366664f819be6dd2f0c9cd213257a393c084782468c3f499d89e9edfd7f1",
+    "controller.py": "47e7dfbaac1a08419888ec46c31cf74ce6004f47dfa0f4986e0013b07453aa60",
+    "direct_controller.py": "827a1b90ca37886b2b9edbdf80fad88182d2de8bcaf61a50f76ffe499c6cd8f8",
+    "direct_train.py": "a5bba5c1ccc45a718befdbb75068d16afbe6c0825f4392d1477df99e7e415f22",
+    "evaluate.py": "136b2c73505258f3a337c854a401b477056c1c0bcb4919bb4487f91c79817b64",
+    "external_actor_worker.py": "81c2d103bf4f03dff206e50b4b002914e0641ef816cc50432e55662c95a18a7c",
+    "external_metrics.py": "901f466d1d73d52404eb05846dbec473624e93ddd086ccd387a4a95a05ccfa8b",
+    "features.py": "1c5867b6b18951ff0f8e0a7e66cc4cefd94f020d26bc5fc50f969c5d66816f5b",
+    "freeze_dataset.py": "a8b06c7a52d93044cf02611b72b91e5dcac331aa8ff728b4eb4e90bef55dfa54",
+    "guardian.py": "38a765280ffc6182bbafa157134eaaec3de0ad338c1b967be54d89ccca98203d",
+    "io_utils.py": "922b8c8115fecbbde440e5c9368ffaa8c5f4b5f465f52deee2f227f9aa1be84c",
+    "matched_train.py": "289cb1c1eb5a29364ccc62f2843adb5c1a03efa41903ecff57e9d7199521a12d",
+    "native.py": "59a3a8fbb671dd3d72108b7a00883f5b40542a875606c4b0d044b08b6dcefdcc",
+    "package.py": "033d811209cc74d43da7201c7466e5e73be138e175424db25216351633bf2895",
+    "predict.py": "abd59a3eeaf757db4a792e0dfe12b0b2fd69e865d7de7fc99bea5f3d1c93b90b",
+    "protocol.json": "18f8f9d90c7c7245cdacadd42697551802d76a900fc34f98b9a2036ecc3770c8",
+    "regions.py": "2135649f6b20c5166676a7ca7c40fe24d20d5da2b679ec4c16da3eb11f8fed2a",
+    "runtime.py": "ab8f5e5a488779d36d5f56986b3c94436eea68117f5255887220d3df491a26dd",
+    "score_actors.py": "19f01e9702e5fa80f6be684bb51a68dcf0ca2e01b578cb5dd1a01beccda06fe9",
+    "score_measurements.py": "cd2a3ca6960807f3587910a5610893561b09f763ef54b60e2aadbe3b516a7671",
+    "shared_worker.py": "386d1fcd63f96904343944bfe96f6055ce283242b4fc626e128ca49f64d9e3f1",
+    "supervisor.py": "68e96a1226b05b64c5a7df122c605d40e343ac49b425e8108b9d930feee4ba3e",
+    "test_actor.py": "f238b19318db41a5aa50c2be2a6bddde4aeba0f2eca9e46fa4b3deb6f2aaa90c",
+    "test_core.py": "b8175f177e64e2d8955d632425708be3b0dd0d4907fc941e7c78e9772e8d01f6",
+    "test_direct.py": "d6acc16d1b60f7b374383db1db4d0987976bcc67ae3d4e85a6b8b1163d6fa19a",
+    "test_evaluate.py": "b3e240ffffd94a71400930659c0eb33b756e00f1995ef5517f3fd4408e595012",
+    "test_freeze_dataset.py": "071b35263b3451b6433144c2609ca2dc643d8bc9984b3b8a55a691082cf4f6e2",
+    "test_matched_train.py": "179bab3cea381c4c2952180f7db900ab56a42316d3a8e7e3c90fd935172188fc",
+    "train.py": "0758b76cfbc2e557b2a8787a5a8d55bc82c6ae862747d8f0c70d53329d7b9476",
+    "validate_external_labels.py": "8a60b532cd5fb1ef3799d0ffbb71b9289432974630fe8d74cca766a4512d2601",
+    "worker.py": "91f04707bf11b2432b7492c9d8f53e19d4c2bb7c27dd5e4025fc31d9823224bf",
+    "__init__.py": "bfd7ac619e85ed84446ff11b5a1645349896fd85226dda2466620eaba6f1f9a7"
+  },
+  "source_revision_note": "Working-tree V6 implementation identified by exact per-file hashes; not a claimed published revision.",
+  "native_input": {
+    "render_dpi": 200,
+    "native_long_edge_cap": 3500,
+    "source": "Actual default TeleOCR read_fn/do_parse rendered image",
+    "original_rgb_bypass": false,
+    "formula_200_over_72": false
+  },
+  "controller": {
+    "scale_interval": [
+      0.5,
+      3.0
+    ],
+    "regresses": "log(scale)",
+    "runtime_search": false,
+    "gain_head": false,
+    "rereads_per_region": 1,
+    "failure": "Retain native on infeasible or invalid reread"
+  },
+  "dependencies": {
+    "python_for_controller": ">=3.10",
+    "numpy": ">=2.2",
+    "fit_numpy": "2.5.3",
+    "fit_scikit_learn": "1.7.2",
+    "fit_python": "3.12.14",
+    "ocr": "Separately supplied pinned TeleOCR/vLLM assets; see repository protocol"
+  },
+  "invocation": "python -m versions.v5_native.predict --package artifacts/models/v6/MLP_V6.2.3.json --kind table --features native_features.json --width 100 --height 40",
+  "loaded_validation": {
+    "table": {
+      "checkpoint_sha256": "03eaff848403509577b210ae7ca24e82cb97ebd7598af5439044dc63058432d4",
+      "validation_rows_checked": 29,
+      "prediction_max_abs_difference": 0.0,
+      "loaded_through": "versions.v5_native.direct_controller.DirectScaleModel",
+      "device": "cpu"
+    },
+    "equation": {
+      "checkpoint_sha256": "91f4900cafdaa9dd5cdcd3d51386aace375cc7b6937dc715a92b5f51e49dd038",
+      "validation_rows_checked": 19,
+      "prediction_max_abs_difference": 0.0,
+      "loaded_through": "versions.v5_native.direct_controller.DirectScaleModel",
+      "device": "cpu"
+    }
+  },
+  "benchmark_results": "Pending; packaging is a technical load check, not efficacy evidence",
+  "instrumentation_note": "Durable controller evaluation and OCR submission events preserve failed-action accounting; scientific predictions and fitted checkpoint bytes unchanged."
+}

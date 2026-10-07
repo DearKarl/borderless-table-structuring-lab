@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-07",
+  "status": "static_publication_during_user_requested_pause",
+  "files": [
+    {
+      "source_path": "artifacts/models/v6/EVALUATION_RECEIPT.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/EVALUATION_RECEIPT.json",
+      "original_sha256": "85a547249c5a56ad85b9a761c9aa11ce33f5c08783ebfca0fa28195ba9773093",
+      "published_sha256": "85a547249c5a56ad85b9a761c9aa11ce33f5c08783ebfca0fa28195ba9773093",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/FROZEN_RUNTIME_SOURCE.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/FROZEN_RUNTIME_SOURCE.json",
+      "original_sha256": "34089aca99ef81411fa986b4eccbc335cb58badf0efb591c4b2c9989ed8053df",
+      "published_sha256": "34089aca99ef81411fa986b4eccbc335cb58badf0efb591c4b2c9989ed8053df",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/FROZEN_RUNTIME_SOURCE.tar.gz",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/FROZEN_RUNTIME_SOURCE.tar.gz",
+      "original_sha256": "d5758b3faa73eba643cec16c7e00ec4d8ad112e476b90bf0d2a14d08b69a463c",
+      "published_sha256": "d5758b3faa73eba643cec16c7e00ec4d8ad112e476b90bf0d2a14d08b69a463c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/gbdt_equation.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/gbdt_equation.json",
+      "original_sha256": "780a6c62f8663bd0bd364f784f3339d884cf64beb6240ff385c8536d25098a3e",
+      "published_sha256": "780a6c62f8663bd0bd364f784f3339d884cf64beb6240ff385c8536d25098a3e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/gbdt_table.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/gbdt_table.json",
+      "original_sha256": "28ac372fa2449680d4c4e110c0acd2abc3e280538497ea7af69753eedbe437e7",
+      "published_sha256": "28ac372fa2449680d4c4e110c0acd2abc3e280538497ea7af69753eedbe437e7",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/GBDT_V6.1.1.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/GBDT_V6.1.1.json",
+      "original_sha256": "78c31307549ed0a4a84c93339ac468ef8bf9925a5ebbcbd8903348de5cae7a3c",
+      "published_sha256": "78c31307549ed0a4a84c93339ac468ef8bf9925a5ebbcbd8903348de5cae7a3c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/GBDT_V6.1.2.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/GBDT_V6.1.2.json",
+      "original_sha256": "2dcc8a18fd1ca83282e6c62b6799fcfdfa15d7ee25a85bbb1984d45372b504b5",
+      "published_sha256": "2dcc8a18fd1ca83282e6c62b6799fcfdfa15d7ee25a85bbb1984d45372b504b5",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/GBDT_V6.1.3.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/GBDT_V6.1.3.json",
+      "original_sha256": "0b186eb4ddb1820a1cf9ff09f39256053220ec0b3a1f1a5fffbb11f17cdc70fb",
+      "published_sha256": "0b186eb4ddb1820a1cf9ff09f39256053220ec0b3a1f1a5fffbb11f17cdc70fb",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/mlp_equation.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/mlp_equation.json",
+      "original_sha256": "91f4900cafdaa9dd5cdcd3d51386aace375cc7b6937dc715a92b5f51e49dd038",
+      "published_sha256": "91f4900cafdaa9dd5cdcd3d51386aace375cc7b6937dc715a92b5f51e49dd038",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/mlp_table.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/mlp_table.json",
+      "original_sha256": "03eaff848403509577b210ae7ca24e82cb97ebd7598af5439044dc63058432d4",
+      "published_sha256": "03eaff848403509577b210ae7ca24e82cb97ebd7598af5439044dc63058432d4",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/MLP_V6.2.1.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/MLP_V6.2.1.json",
+      "original_sha256": "6301577334e3a5d6b8221775a98dc343959780457dc8cffe7b5eb45a994fe88e",
+      "published_sha256": "6301577334e3a5d6b8221775a98dc343959780457dc8cffe7b5eb45a994fe88e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/MLP_V6.2.2.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/MLP_V6.2.2.json",
+      "original_sha256": "263cbbabdf207bd2fb981e9ffbbab8d3e0fd1329ad86f6ddae9bf99bcdb277c8",
+      "published_sha256": "263cbbabdf207bd2fb981e9ffbbab8d3e0fd1329ad86f6ddae9bf99bcdb277c8",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/MLP_V6.2.3.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/MLP_V6.2.3.json",
+      "original_sha256": "832fc876a4b527d143029de514749b4af39179af0a2bd67d4035420a6eb3544e",
+      "published_sha256": "832fc876a4b527d143029de514749b4af39179af0a2bd67d4035420a6eb3544e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v6/PACKAGE_MANIFEST.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v6/PACKAGE_MANIFEST.json",
+      "original_sha256": "14852d619566f84f43c9f3909103c2b99bd5aff3790c7b3c51bc590354232d97",
+      "published_sha256": "14852d619566f84f43c9f3909103c2b99bd5aff3790c7b3c51bc590354232d97",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v7/IMPLEMENTATION_RECEIPT.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v7/IMPLEMENTATION_RECEIPT.json",
+      "original_sha256": "95deaa87d436a6cb70fa37d2fd0d38eaaef7f92954854df591e13c1e4d329c77",
+      "published_sha256": "95deaa87d436a6cb70fa37d2fd0d38eaaef7f92954854df591e13c1e4d329c77",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v7/net_gain_gbdt.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v7/net_gain_gbdt.json",
+      "original_sha256": "f28f21a14535129e0feddc69bc6e8d4d73495b923f4d9be7564b10bb0d7b7f9d",
+      "published_sha256": "f28f21a14535129e0feddc69bc6e8d4d73495b923f4d9be7564b10bb0d7b7f9d",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v7/PACKAGE_MANIFEST.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v7/PACKAGE_MANIFEST.json",
+      "original_sha256": "a79c8d5911958383a37644f994a42b697e06c46b540b0fe91bf7c88dc9bf7be1",
+      "published_sha256": "a79c8d5911958383a37644f994a42b697e06c46b540b0fe91bf7c88dc9bf7be1",
+      "byte_identical": true
+    },
+    {
+      "source_path": "artifacts/models/v7/PROTOCOL.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v7/PROTOCOL.json",
+      "original_sha256": "7a587699623a0343ae1627dcfa560c78fce3dcda946942e21a4fbb75481ab8c6",
+      "published_sha256": "ad0c57727a3fcd18fddebe7dc28a1954c74c0192d71daa20f0b79d7142974cf2",
+      "byte_identical": false
+    },
+    {
+      "source_path": "artifacts/models/v7/V7.1.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v7/V7.1.json",
+      "original_sha256": "3f5f25d85aae213202fa3f7b8f0d3ad2c3271ef3f57b99c34d4cb34744c558a9",
+      "published_sha256": "ae5c84443fe81efa0da07062fae603132a6c67a4b8f7337d09a167b695cae043",
+      "byte_identical": false
+    },
+    {
+      "source_path": "artifacts/models/v7/V7.2.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v7/V7.2.json",
+      "original_sha256": "980b7636993ff762b066a8e66d244c7129ed2158741f36de6d14c570b0f2aa0b",
+      "published_sha256": "0817ee142b8a4ec64b8f0da3ec24846baf554e109289c51ea5373ba39069b02d",
+      "byte_identical": false
+    },
+    {
+      "source_path": "artifacts/models/v7/V7.3.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v7/V7.3.json",
+      "original_sha256": "e44c563657d01e47c5a74c70a09f099eda2cc02673ecc94085c36b9bac49fa14",
+      "published_sha256": "249d43f6526395cc2f7b10475517791feb9a37de9801c49cf8c9eb2c250238d9",
+      "byte_identical": false
+    },
+    {
+      "source_path": "artifacts/models/v7/V7.4.json",
+      "published_path": "releases/v6-v7-progress-20261007/models/v7/V7.4.json",
+      "original_sha256": "ae42b9a5d405653188a06344c9785ddb066a549bbc5251f9c29d7c39ae598442",
+      "published_sha256": "7ca179e81771c717ad8d13821731c897e2b32a2bfbbcfe32deaed773418f9f01",
+      "byte_identical": false
+    },
+    {
+      "source_path": "versions/v7/PROTOCOL.json",
+      "published_path": "versions/v7/PROTOCOL.json",
+      "original_sha256": "7a587699623a0343ae1627dcfa560c78fce3dcda946942e21a4fbb75481ab8c6",
+      "published_sha256": "ad0c57727a3fcd18fddebe7dc28a1954c74c0192d71daa20f0b79d7142974cf2",
+      "byte_identical": false
+    }
+  ],
+  "models_retrained": false,
+  "experiments_executed": false,
+  "note": "Historical original hashes are preserved; public hashes explicitly identify privacy-redacted copies. No algorithm or weight changed.",
+  "local_only_identity_ledger": {
+    "sha256": "b21daa4e6246c321fd396442b33139b4a193952245db643dd5884bd8a8f47ca9",
+    "bytes": 26012094,
+    "reason": "Per-page identity ledger retained locally; public aggregates preserve scientific counts"
+  }
+}

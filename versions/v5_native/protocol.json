@@ -1,0 +1,169 @@
+{
+  "schema_version": 3,
+  "source_commit": "9921cffe380efe4e2fa010258b3d0c3cb70bab2d",
+  "reference_commit": "ac1ab4f5ded8b025f47a7683f58e65db4ac43a2b",
+  "backend": "vllm-engine",
+  "attention_backend": "Pinned TeleOCR/vLLM native capability selection; no forced VLLM_ATTENTION_BACKEND. The vision head dimension is 80, unsupported by the installed vLLM FlashAttention kernel.",
+  "engine": {
+    "dtype": "bfloat16",
+    "seed": 0,
+    "max_model_len": 16384,
+    "gpu_memory_utilization": 0.5,
+    "enforce_eager": false,
+    "max_num_seqs": 64,
+    "max_num_batched_tokens": 16384,
+    "enable_prefix_caching": false,
+    "trust_remote_code": true
+  },
+  "arms": {
+    "D0": [
+      "default_native"
+    ],
+    "GBDT_V6.1.1": [
+      "default_native",
+      "gbdt_table"
+    ],
+    "GBDT_V6.1.2": [
+      "default_native",
+      "gbdt_equation"
+    ],
+    "GBDT_V6.1.3": [
+      "default_native",
+      "same_gbdt_candidates_union"
+    ],
+    "MLP_V6.2.1": [
+      "default_native",
+      "mlp_table"
+    ],
+    "MLP_V6.2.2": [
+      "default_native",
+      "mlp_equation"
+    ],
+    "MLP_V6.2.3": [
+      "default_native",
+      "same_mlp_candidates_union"
+    ]
+  },
+  "native": {
+    "layout_mode": "Detection",
+    "layout_image_size": [
+      1036,
+      1036
+    ],
+    "max_pixels": 64000000,
+    "min_image_edge": 28,
+    "max_image_edge_ratio": 50,
+    "batching_mode": "stepping",
+    "page_batch_size": 1,
+    "content_batch_size": 0,
+    "pdf_tools": "pypdfium2",
+    "pdf_dpi": 200,
+    "pdf_max_long_edge": 3500,
+    "pdf_workers": 4,
+    "prompts_and_sampling": "Unmodified pinned TeleOCR defaults, verified in every worker receipt."
+  },
+  "regions": {
+    "padding": 0,
+    "rotation": "No additional rotation for regional rereads.",
+    "crop": "Captured native-rendered pixels only; map middle coordinates using captured image dimensions / integer native page_size",
+    "resize": "Python round, minimum one pixel, Pillow LANCZOS.",
+    "validation": "Reference runaway rules; lxml is mandatory. Empty text blocks are not guard eligible.",
+    "rejection": "One reread only; retain native on invalid output. No guard retries.",
+    "history": "Separate audit events, never nested into inference geometry."
+  },
+  "limits": {
+    "total_pages_per_arm": 1651,
+    "smoke_pages": 16,
+    "page_work_seconds": 590,
+    "page_hard_seconds": 600,
+    "wall_hours": 72,
+    "allocated_gpu_hours": 96,
+    "maximum_gpus": 7,
+    "infrastructure_restarts_per_arm": 1,
+    "scoring_arm_hours": 4,
+    "controller_fit_hours": 2,
+    "full_inference_reserve_gpu_hours": 24,
+    "smoke_reuse": "16 fixed SHA256-selected technical pages contribute unchanged outputs to1651; remaining1635 run once"
+  },
+  "failure_policy": {
+    "page_timeout": "Abort this page's vLLM request IDs. Keep the last atomically completed stage; empty when native output was not completed. Never rerun a completed or failed page.",
+    "regional_exception": "Record the exception; retain the last completed stage and stop this page's remaining interventions.",
+    "hard_timeout": "Supervisor kills only the owned container at 600 seconds; recover the last completed stage. An engine/container replacement consumes the arm's sole infrastructure restart.",
+    "systemic_defect": "Stop affected owned jobs and distinguish a repaired run; never edit an active frozen run."
+  },
+  "status": "Four direct-scale controllers fitted; external actors and shared benchmark protocol frozen before evaluation",
+  "comparison_scope": "Diagnostic paired outputs sharing one native parse and identical per-region actions; not independent fresh runs",
+  "adaptive": {
+    "scale_interval": [
+      0.5,
+      3.0
+    ],
+    "max_rereads_per_region": 1,
+    "guard_retries": false,
+    "formula_200_over_72": false,
+    "baseline_features_only": true,
+    "no_change": true,
+    "checkpoint_status": "four_fitted_cpu_direct_log_scale_models",
+    "policy_status": "frozen_before_external_test_and_benchmark",
+    "controller": "direct_log_scale_regression",
+    "input_features": "17 native-region features; no candidate log-scale input",
+    "runtime_search": false,
+    "gate": {
+      "learned_auxiliary_gain_head": false,
+      "rule": "reread once for finite features and feasible projected dimensions; retain native on invalid reread; no quality gate or threshold tuning"
+    },
+    "target": {
+      "source": "best valid measured reread among at most 8 distinct realized offline views",
+      "tie_tolerance": 1e-06,
+      "tie_break": [
+        "closest to log-scale zero",
+        "smaller scale"
+      ],
+      "non_benefit_regions": "retained",
+      "training_weight": "one per region",
+      "empirical_optimum_only": true
+    },
+    "dataset_manifest_sha256": "5413c3151a352d885e91a3a206ec755f2950ecf18e3d2d23ede8c8bddaa49384"
+  },
+  "external": {
+    "regions": 276,
+    "train": 180,
+    "validation": 48,
+    "test": 48,
+    "max_views_per_region": 8,
+    "max_probe_requests": 24576,
+    "max_policy_test_requests": 1536,
+    "context": "source_page_native_predicted_regions",
+    "source_group_split": "Published-source documents grouped before inference; preserved128-pilot roles; later groups assigned by frozen source hash; actual159/42/41 groups",
+    "target_regions": 3072,
+    "target_train": 2048,
+    "target_validation": 512,
+    "target_test": 512,
+    "max_mapping_requests": 24576,
+    "source_groups": 242,
+    "maximum_source_contribution": 4,
+    "actual_maximum_source_contribution": 3,
+    "source_coverage": "Public scientific-paper source pages; no claim of general multilingual, scanned or financial coverage",
+    "source_size_limitation": "Audited formula release300 validation examples/159documents plus reliable source/native correspondence reduced the pool; approved smaller reliable pool",
+    "fixed_controls": {
+      "table": 0.535299427146522,
+      "equation": 1.25
+    }
+  },
+  "public_versions": {
+    "GBDT_V6.1.1": "G-T",
+    "GBDT_V6.1.2": "G-F",
+    "GBDT_V6.1.3": "G-TF",
+    "MLP_V6.2.1": "N-T",
+    "MLP_V6.2.2": "N-F",
+    "MLP_V6.2.3": "N-TF"
+  },
+  "measurement_contract": {
+    "prediction_api_calls_and_rows_separate": true,
+    "unique_page_denominator": 1651,
+    "render_dpi_changed_pages": 0,
+    "input_change_unknown_is_not_positive": true,
+    "complete_official_metrics": true,
+    "shared_costs_not_isolated_timings": true
+  }
+}

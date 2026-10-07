@@ -1,0 +1,44 @@
+{
+  "stopped_at": "2026-10-07T20:40:00.424635+00:00",
+  "status": "stopped_by_explicit_human_request_awaiting_new_authorization",
+  "stopped_work": [
+    "Implementation",
+    "VPN/connection repair",
+    "Public source retrieval and alignment",
+    "Training",
+    "Inference",
+    "Scoring"
+  ],
+  "local_experiment_processes_remaining": 0,
+  "v7_gpu_allocations": 0,
+  "remote_owned_jobs_launched": 0,
+  "remote_live_process_scan": "Unavailable; no V7 remote jobs submitted",
+  "preserved_progress": {
+    "final_trained_model": 1,
+    "fold_models": 5,
+    "packaged_configurations": 4,
+    "local_route_audit_and_plans": "Published baseline audit and archived unexecuted proposals",
+    "all_existing_files_preserved": true,
+    "partial_downloads_preserved": true,
+    "confirmation": {
+      "source_documents_attempted": 77,
+      "source_pdfs_retrieved": 76,
+      "interrupted_documents": 1,
+      "failed_other_documents": 0,
+      "alignment_attempted": 4,
+      "source_templates_matched": 1,
+      "alignment_unresolved_or_failed": 3,
+      "native_predicted_correspondences": 0,
+      "fresh_quality_results": 0,
+      "new_download_bytes": 595939903
+    }
+  },
+  "not_completed": [
+    "Fresh128 native/policy confirmation",
+    "Gate outcome",
+    "Conditional full benchmark",
+    "VPN recovery"
+  ],
+  "monitoring": "paused by user request",
+  "new_generator_training": "not started"
+}

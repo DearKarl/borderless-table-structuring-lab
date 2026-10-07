@@ -1,0 +1,114 @@
+{
+  "at": "2026-10-07T19:32:22.956078+00:00",
+  "train_regions": 112,
+  "train_source_groups": 112,
+  "features": 34,
+  "margin": "infinity",
+  "fit_seconds_sum": 0.18700000015087426,
+  "fit_logs": [
+    {
+      "device": "cpu",
+      "fit": "fold_0",
+      "started_at": "2026-10-07T19:23:24.413287+00:00",
+      "finished_at": "2026-10-07T19:23:24.445792+00:00",
+      "elapsed_seconds": 0.03100000007543713,
+      "rows": 89,
+      "source_groups": 89
+    },
+    {
+      "device": "cpu",
+      "fit": "fold_1",
+      "started_at": "2026-10-07T19:23:24.458797+00:00",
+      "finished_at": "2026-10-07T19:23:24.489507+00:00",
+      "elapsed_seconds": 0.030999999959021807,
+      "rows": 89,
+      "source_groups": 89
+    },
+    {
+      "device": "cpu",
+      "fit": "fold_2",
+      "started_at": "2026-10-07T19:23:24.504508+00:00",
+      "finished_at": "2026-10-07T19:23:24.536511+00:00",
+      "elapsed_seconds": 0.03200000000651926,
+      "rows": 90,
+      "source_groups": 90
+    },
+    {
+      "device": "cpu",
+      "fit": "fold_3",
+      "started_at": "2026-10-07T19:23:24.549019+00:00",
+      "finished_at": "2026-10-07T19:23:24.578027+00:00",
+      "elapsed_seconds": 0.03100000007543713,
+      "rows": 90,
+      "source_groups": 90
+    },
+    {
+      "device": "cpu",
+      "fit": "fold_4",
+      "started_at": "2026-10-07T19:23:24.590025+00:00",
+      "finished_at": "2026-10-07T19:23:24.621184+00:00",
+      "elapsed_seconds": 0.030999999959021807,
+      "rows": 90,
+      "source_groups": 90
+    },
+    {
+      "fit": "final",
+      "device": "cpu",
+      "started_at": "2026-10-07T19:26:56.866513+00:00",
+      "finished_at": "2026-10-07T19:26:56.897526+00:00",
+      "elapsed_seconds": 0.03100000007543713,
+      "rows": 112,
+      "source_groups": 112
+    }
+  ],
+  "oof_choices": [
+    {
+      "margin": 0.0,
+      "oof_mean_teds": 0.9042202942288285,
+      "accepted": 59,
+      "replacements": 44
+    },
+    {
+      "margin": 0.0025,
+      "oof_mean_teds": 0.9044479506892824,
+      "accepted": 54,
+      "replacements": 42
+    },
+    {
+      "margin": 0.005,
+      "oof_mean_teds": 0.9042826067739386,
+      "accepted": 52,
+      "replacements": 40
+    },
+    {
+      "margin": 0.01,
+      "oof_mean_teds": 0.9042220674886747,
+      "accepted": 42,
+      "replacements": 33
+    },
+    {
+      "margin": 0.02,
+      "oof_mean_teds": 0.903092543372359,
+      "accepted": 22,
+      "replacements": 20
+    },
+    {
+      "margin": "infinity",
+      "oof_mean_teds": 0.9053070394022446,
+      "accepted": 0,
+      "replacements": 0
+    }
+  ],
+  "oof_selection": {
+    "margin": "infinity",
+    "oof_mean_teds": 0.9053070394022446,
+    "accepted": 0,
+    "replacements": 0
+  },
+  "fold_fits": 5,
+  "final_fits": 1,
+  "export_max_abs_error": 0.0,
+  "device": "cpu",
+  "completed_fold_refits": 0,
+  "recording_error": "NumPy integer JSON serialization failed after five fold fits; OOF recovered from unchanged saved fold models; final fit occurred once after repair"
+}

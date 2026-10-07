@@ -7,7 +7,7 @@ Our goal is to improve end-to-end parsing on OmniDocBench and develop methods
 whose gains hold beyond a single benchmark. We study when an existing parser
 benefits from a different input view or specialist, and when an intervention
 damages a correct prediction. The project includes successful and unsuccessful
-experiments from V0 through V5. The latest five-arm study is complete.
+experiments from V0 through V7. V6 is complete; V7 is paused before independent confirmation.
 
 [Results](research/RESULTS.md) · [Methods](#methods) ·
 [Reproduction](research/REPRODUCIBILITY.md) · [V5 study](versions/v5/README.md) ·
@@ -27,7 +27,22 @@ recognized Overall score above the leaderboard leader. The accompanying research
 goal is a generalizable contribution suitable for a CCF A venue; no paper or
 official leaderboard result is claimed at this stage.
 
-## Latest study: V5 input paths and regional rereading
+## Current pause and V6 to V7 evidence
+
+All engineering is paused at the researcher's request on2026-10-07 while the next
+study is discussed. [V6](versions/v5_native/README.md) completed six adaptive
+configurations plus D0 on1651pages each: table/combined arms regressed, while
+formula-only differences were small. [V7](versions/v7/README.md) trained one CPU
+model and packaged four configurations; its learned policy keeps all native
+outputs. Independent confirmation and full V7 scoring have no results.
+
+The [public archive](releases/v6-v7-progress-20261007/README.md) preserves source,
+first-party controller weights and aggregate evidence. The
+[baseline audit](artifacts/results/v7/BASELINE_COMPARABILITY.md) does not establish
+comparability to the published TeleOCR row. [Current state](research/CURRENT_STATE.md)
+separates completed evidence from paused work and unexecuted research proposals.
+
+## Completed V5 study: input paths and regional rereading
 
 All five arms completed **1,651 pages each**, with zero inference failures or
 empty predictions, using the same pinned official evaluator and ground truth.

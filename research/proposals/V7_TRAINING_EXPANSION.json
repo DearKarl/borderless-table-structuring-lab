@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-07T20:32:42.443754+00:00",
+  "status": "Concrete design proposal; dependent prototype fitting/acquisition not launched or authorized by this document",
+  "reserved_version": "V7.5",
+  "current_priority": "Complete existing V7.3 confirmation first; preserve all current640 as test-exclusion groups",
+  "current_v7_budget": {
+    "gpu_hours_total": 16,
+    "pilot": 4,
+    "full_reserve": 12,
+    "new_download_bytes_cap": 5368709120,
+    "deadline_utc": "2026-10-09T19:11:39.513404+00:00",
+    "reset_or_increase": false
+  },
+  "asset_audit_sha256": "73e2fcb198696ee58ca55cbcf8fc2a3386afa8306c6f21f13a6bf65fb8b43018",
+  "training_sha256": "972878f5b0abdd6f67d01f7e1b4d713155074c97f1f3b966b8f9c25207bbb78e",
+  "confirmation_exclusion_manifest_sha256": "58c891db1b3d84cd0ca7f23dfe20325a82d5835733fbe9b4c33c8ba9c04be65f",
+  "questions": [
+    "Does independent spatial support improve fixed-candidate keep/replace over the same34 scalar features?",
+    "Does increasing independent TRAIN documents improve that difference without changing data/test roles?"
+  ],
+  "feature_design": {
+    "status": "Frozen candidate definitions for review; extractor implementation/hash must be frozen before prospective collection",
+    "base": "Unchanged34 V7 scalar features",
+    "augmented_total": 40,
+    "added": [
+      {
+        "name": "delta_row_boundary_ink_cost",
+        "definition": "Candidate minus native normalized foreground intersected by fitted row cuts"
+      },
+      {
+        "name": "delta_column_boundary_ink_cost",
+        "definition": "Candidate minus native normalized foreground intersected by fitted column cuts outside spanning cells"
+      },
+      {
+        "name": "delta_empty_cell_ink_conflict",
+        "definition": "Candidate minus native mean disagreement between parsed empty-cell flag and independently localized foreground occupancy"
+      },
+      {
+        "name": "delta_cell_content_mass_error",
+        "definition": "Candidate minus native L1 distance between normalized cell character counts and assigned foreground-component area; weak content-mass proxy, not recognized text verification"
+      },
+      {
+        "name": "delta_span_boundary_conflict",
+        "definition": "Candidate minus native fraction of independent components cut by a cell boundary, accounting for row/column spans"
+      },
+      {
+        "name": "minimum_localization_support",
+        "definition": "Minimum, across the two structures, of fraction of native foreground assigned unambiguously to valid cells"
+      }
+    ],
+    "permitted_inputs": [
+      "Captured native table pixels",
+      "Native and fixed-candidate parsed structures/text",
+      "Common structural validity"
+    ],
+    "forbidden_inputs": [
+      "GT cell boxes/content",
+      "Source PDF embedded text",
+      "Source IDs",
+      "Quality labels",
+      "Old validation/test or current confirmation outcomes"
+    ],
+    "missing_behavior": "Any failed/ambiguous required localization, parser failure, or CPU timeout retains native; preserve disposition and training row"
+  },
+  "geometry_extractor_proposal": {
+    "image_source": "Captured default-native table crop only; no rerender/original RGB/extra OCR",
+    "foreground": "Per-image Otsu threshold on native grayscale; ties choose smallest threshold; deterministic connected components",
+    "components": "8-connected components; minimum area3pixels; rules wider than80% crop width or taller than80% crop height are excluded from text components and separately retained as line evidence",
+    "fit": "Fit ordered row/column cuts for each parsed logical grid using the same dynamic-program objective: normalized cut-ink cost plus normalized character-mass discrepancy; equal unit weights; lexicographically smaller cut positions break ties",
+    "candidate_cuts": "Native component edge midpoints plus image edges, bounded to512 positions per axis by uniform deterministic index subsampling",
+    "spans": "Honor parsed occupied grid; a spanning cell removes internal cuts for its support cost",
+    "confidence": "Require at least90% foreground area assigned without cutting a component and a unique optimum separated by>1e-6; otherwise unknown/fallback",
+    "limits": "20CPU seconds/region;32MiB foreground array cap;max400rows/1000logicalcolumns as parser; infeasible grid is explicit fallback",
+    "not_claimed": "Component area is not word recognition or character identity; true lexical image grounding remains unavailable without separately scoped localization/OCR"
+  },
+  "feasibility_before_acquisition": {
+    "data": "Existing TRAIN112 only",
+    "annotation_check": "Verify fifth bbox-value semantics and reference-to-native coordinate transform before using first4 coordinates as cell annotation targets",
+    "minimum_geometric_checks": [
+      "At least90% eligible annotated nonempty cell boxes map within native crop and image bounds",
+      "At least90% of TRAIN regions have a complete unambiguous coordinate transform; failures remain in evaluation",
+      "Median matched-cell IoU>=.5 and assigned foreground recall>=.9 on independently mapped TRAIN annotations",
+      "Native image substitutions/occlusion alter spatial features when support changes; scalar-only features remain unchanged",
+      "CPU p95<=1second and hard timeout20seconds;no extraOCR"
+    ],
+    "stop": "If geometric validity or deployable localization fails, report unsupported route; do not spend acquisition budget or call global density image grounding",
+    "limits": "Training-only feasibility is exploratory, not generalization evidence; any extractor revision must precede new split/quality freeze"
+  },
+  "sample_design": {
+    "training_total_target": 300,
+    "existing_training_documents": 112,
+    "new_training_target": 188,
+    "new_development_target": 64,
+    "new_independent_confirmation_target": 128,
+    "total_new_usable_documents_target": 380,
+    "maximum_regions_per_document": 1,
+    "new_source_candidate_cap_proposed": 960,
+    "sampling": "Freeze independent source-ID hash order with seed0 before reading quality; stratify round-robin over pinned source shards; one table selected by filename hash per document",
+    "split": "Assign prospective usable sources TRAIN188/DEV64/CONFIRM128 by an immutable interleaved source-hash schedule before OCR quality. Preserve existing112 TRAIN roles. Do not transfer sources between roles to fill deficits.",
+    "source_release": "docling-project/PubTabNet_OTSL@c6b519724c09c81dc4797b742826681ebf5c7dde",
+    "acquisition": "Prefer unused source groups in already acquired shards1/18/35 after explicit acquisition approval; sources disjoint from exclusions; fetch source PDF only as needed",
+    "exclusions": [
+      "Every old validation/test group including formulas from the same document",
+      "All640 current confirmation candidate groups, regardless of eventual admission/result",
+      "Known benchmark source IDs and image duplicates",
+      "Every other previously inspected V6 source except the grandfathered112 TRAIN groups",
+      "Exact/near duplicate source/crop identities across future splits"
+    ],
+    "correspondence": "Frozen source-page alignment,coverage>=.85,precision>=.65,unique complete native predicted table; no quality-based selection or replacement",
+    "labels": "One matched native plus one fixed-scale .535299427146522 candidate; retain natural positive/negative/tied cases; target retained candidateTEDS-nativeTEDS",
+    "unavailable_labels": "Record failed reference/score as unknown; report entire attempted-source funnel; no favorable label imputation or inverse-frequency reweighting",
+    "test_rule": "Both the existing128 confirmation set and all640 candidate groups remain excluded from fitting forever for this route; new128 future confirmation stays sealed until all definitions/checkpoints are frozen"
+  },
+  "learning_curve": {
+    "sizes": [
+      56,
+      112,
+      168,
+      224,
+      300
+    ],
+    "source_order_seeds": [
+      0,
+      1,
+      2
+    ],
+    "nesting": "For each seed sort all300 TRAIN source groups by SHA256(seed:source_group); take nested prefixes. Report old/new composition per prefix.",
+    "comparisons": [
+      "V7.1 native",
+      "V7.2 fixed",
+      "Frozen V7.3 simple rule",
+      "Geometry simple rule",
+      "Retrained scalar34 GBDT",
+      "Matched augmented40 GBDT"
+    ],
+    "geometry_simple_rule": "V7.3 common rule plus known localization, all5 candidate geometry costs no greater than native+1e-12, and at least one lower by>1e-6; otherwise retain native",
+    "matched_training": "Same documents,labels,weights,folds,hyperparameters and margin grid for scalar34 and augmented40",
+    "model": {
+      "family": "HistGradientBoostingRegressor",
+      "loss": "squared_error",
+      "learning_rate": 0.05,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 10,
+      "l2_regularization": 1,
+      "early_stopping": false,
+      "random_state": 0
+    },
+    "folds": "Same five SHA256(source_group) ordered round-robin source-group folds within each subset",
+    "margin": "TrainingOOF only;{0,.0025,.005,.01,.02,infinity};max region-macroTEDS,ties1e-6:fewer actual edits then larger margin",
+    "weights": 1,
+    "full300_duplicates": "Deduplicate full300 across membership seeds;same inputs/folds/model seed means one scalar and one augmented pipeline",
+    "maximum_pipelines": 26,
+    "maximum_cpu_fits": 156,
+    "fit_hard_timeout_seconds": 1800,
+    "development": "Same64 independent sources for curve reporting; no retuning/choosing subset size or model seed from DEV",
+    "future_nominee": "One augmented40 model trained on all300; native fallback and all-keep outcomes remain valid; V7.5 name only after separate authorization and training",
+    "reporting": [
+      "All attempted/usable/disposition counts",
+      "TEDS,change rate,improved/worsened/tied/unmatchable",
+      "Paired source-bootstrap intervals,2000 draws,seed0",
+      "Feature availability,latency and OCR costs",
+      "No claim that300 is powered or optimal"
+    ]
+  },
+  "proposed_future_confirmation": {
+    "status": "For review; not the current V7.3 gate",
+    "complete_documents": 128,
+    "candidate": "Frozen augmented300 model",
+    "controls": [
+      "native",
+      "fixed",
+      "V7.3",
+      "scalar300"
+    ],
+    "practical_condition": "Mean gain>=.005 over the highest control mean",
+    "uncertainty_condition": "All candidate-control paired-source95% percentile lower bounds>0 using common2000 draws,seed0; report all intervals without claiming simultaneous95% coverage",
+    "failure": "No post-test refit; complete negative/inconclusive delivery; any later benchmark requires a separately authorized gate/budget"
+  },
+  "incremental_budget_proposal": {
+    "status": "Not allocated; cannot borrow current V7 pilot/full reserve",
+    "gpu_hours_hard_cap": 4,
+    "max_concurrent_allowed_gpus": 2,
+    "cpu_core_hours_hard_cap": 8,
+    "new_download_bytes_hard_cap": 3221225472,
+    "source_pdf_bytes_per_document_cap": 83886080,
+    "new_parquet_downloads_expected": 0,
+    "max_native_page_parses": 960,
+    "max_fixed_regional_rereads": 380,
+    "max_native_parse_seconds": 590,
+    "hard_process_seconds": 600,
+    "historical_proxy": {
+      "native_gpu_seconds_per_page": 5.696888071238795,
+      "native_pages": 299,
+      "regional_actor_gpu_seconds_per_physical_request": 1.7376592267643323,
+      "regional_requests": 286,
+      "caution": "Mixed table/formula historical jobs including startup; planning proxy,not a V7 measured throughput or ETA"
+    },
+    "gpu_hours_proxy_at_caps": 1.7025897373776917,
+    "gpu_hours_proxy_with_2x_allowance": 3.4051794747553834,
+    "historical_training_pdf_mean_bytes": 1363979.607142857,
+    "historical_training_pdf_p90_bytes": 2418961,
+    "download_proxy960_at_mean_bytes": 1309420422.8571427,
+    "download_proxy960_at_p90_bytes": 2322202560,
+    "stop_rules": [
+      "Admission stops before any cap; no automatic increase to1000 TRAIN documents",
+      "Incomplete planned splits or curve points reported,not silently replenished from other splits",
+      "All starts/failed/stopped allocations charged;verify physical index and UUID exclusion ofGPU0",
+      "No new fitting/source retrieval until the concrete protocol and incremental resources are approved"
+    ]
+  },
+  "design_step_actual_cost": {
+    "gpu_hours": 0,
+    "new_ocr_requests": 0,
+    "new_source_download_bytes": 0,
+    "new_models_fitted": 0
+  },
+  "publication_status": "Archived design only; all engineering paused; not a generator fine-tuning protocol or an allocation of resources."
+}

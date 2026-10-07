@@ -1,0 +1,28 @@
+{
+  "frozen_at": "2026-10-07T20:32:42.443754+00:00",
+  "status": "Frozen before fresh OCR or quality evaluation",
+  "amendment_sha256": "54a8ad74babd57d516ac41137dc22968a49220199f27f47836971ac619e4481d",
+  "candidate_manifest_sha256": "58c891db1b3d84cd0ca7f23dfe20325a82d5835733fbe9b4c33c8ba9c04be65f",
+  "implementation": "versions/v7/confirmation_gate.py",
+  "implementation_sha256": "bae56062d809b29d799d65ad37718c82caf69a3a58f2b09d9f1a7d73628a8729",
+  "test_sha256": "4bad8d8907ff0063a6464547bcffb066fe6fde3760790c9fbfbbbf3fa295e0a9",
+  "synthetic_tests_passed": 4,
+  "effective_gate": {
+    "candidate": "V7.3",
+    "primary_controls": [
+      "V7.1",
+      "V7.2"
+    ],
+    "negative_comparator": "V7.4",
+    "complete_source_documents_required": 128,
+    "minimum_gain_over_best_control": 0.005,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 0,
+    "interval": "95% paired source-document percentile",
+    "strictly_positive_lower_bound_required_against_both_controls": true,
+    "incomplete_or_unscoreable": "inconclusive; no full benchmark"
+  },
+  "bootstrap": "Python random.Random(0) MT19937; common2000 resamples of128 source documents; SHA256(source_group UTF8) order; linear percentile intervals",
+  "failure": "Missing/invalid/unknown metrics or integrity/resource checks mean inconclusive; no success-only mean or full admission",
+  "observed_quality_inputs": 0
+}

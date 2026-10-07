@@ -1,0 +1,281 @@
+{
+  "at": "2026-10-07T18:30:50.322177+00:00",
+  "definition": "Actual Docker start/finish residency times multiplied by bound physical GPU count; includes startup, failures, idle residency and previously stopped allocations. CPU limits are allocations, not measured CPU usage.",
+  "all_owned_compute_exited": true,
+  "total_task_allocated_gpu_hours": 5.792213210331069,
+  "phase_costs": {
+    "initial_external_metric_validation": {
+      "gpu_seconds": 0.0,
+      "containers": 1,
+      "started_at": "2026-10-07T11:31:44.134409506Z",
+      "finished_at": "2026-10-07T11:34:35.629727524Z",
+      "wall_span_seconds": 171.4953179359436
+    },
+    "cpu_runtime_preparation": {
+      "gpu_seconds": 0.0,
+      "containers": 2,
+      "started_at": "2026-10-07T09:30:24.159948457Z",
+      "finished_at": "2026-10-07T09:33:22.614003141Z",
+      "wall_span_seconds": 178.4540548324585
+    },
+    "source_native_expansion": {
+      "gpu_seconds": 1230.3137302398682,
+      "containers": 3,
+      "started_at": "2026-10-07T12:18:25.662948238Z",
+      "finished_at": "2026-10-07T12:25:31.179142337Z",
+      "wall_span_seconds": 425.5161941051483
+    },
+    "source_native_initial": {
+      "gpu_seconds": 473.0558030605316,
+      "containers": 2,
+      "started_at": "2026-10-07T11:30:16.758029235Z",
+      "finished_at": "2026-10-07T11:34:15.265395376Z",
+      "wall_span_seconds": 238.50736594200134
+    },
+    "offline_scale_expansion": {
+      "gpu_seconds": 2642.7832210063934,
+      "containers": 4,
+      "started_at": "2026-10-07T12:36:36.426244623Z",
+      "finished_at": "2026-10-07T12:49:24.815268107Z",
+      "wall_span_seconds": 768.3890240192413
+    },
+    "benchmark_retained_technical_smoke": {
+      "gpu_seconds": 285.4218909740448,
+      "containers": 2,
+      "started_at": "2026-10-07T15:55:19.969327294Z",
+      "finished_at": "2026-10-07T15:57:48.070890462Z",
+      "wall_span_seconds": 148.10156297683716
+    },
+    "external_learned_and_fixed_actions": {
+      "gpu_seconds": 496.970538854599,
+      "containers": 2,
+      "started_at": "2026-10-07T15:47:43.238408081Z",
+      "finished_at": "2026-10-07T15:52:23.397465201Z",
+      "wall_span_seconds": 280.15905690193176
+    },
+    "official_scoring": {
+      "gpu_seconds": 0.0,
+      "containers": 7,
+      "started_at": "2026-10-07T16:47:44.475553518Z",
+      "finished_at": "2026-10-07T18:30:03.542704923Z",
+      "wall_span_seconds": 6139.067151069641
+    },
+    "benchmark_remaining_pages": {
+      "gpu_seconds": 14722.188485860825,
+      "containers": 6,
+      "started_at": "2026-10-07T16:02:22.332560174Z",
+      "finished_at": "2026-10-07T16:45:27.635534422Z",
+      "wall_span_seconds": 2585.302973985672
+    },
+    "offline_scale_initial": {
+      "gpu_seconds": 878.2934610843658,
+      "containers": 1,
+      "started_at": "2026-10-07T11:52:06.635699861Z",
+      "finished_at": "2026-10-07T12:06:44.929160021Z",
+      "wall_span_seconds": 878.2934610843658
+    },
+    "expanded_external_metric_validation": {
+      "gpu_seconds": 0.0,
+      "containers": 1,
+      "started_at": "2026-10-07T12:00:47.064499193Z",
+      "finished_at": "2026-10-07T12:11:03.437787594Z",
+      "wall_span_seconds": 616.373288154602
+    },
+    "external_action_quality_scoring": {
+      "gpu_seconds": 0.0,
+      "containers": 1,
+      "started_at": "2026-10-07T15:54:13.159492963Z",
+      "finished_at": "2026-10-07T15:55:07.442872912Z",
+      "wall_span_seconds": 54.28338003158569
+    },
+    "expanded_offline_scale_scoring": {
+      "gpu_seconds": 0.0,
+      "containers": 1,
+      "started_at": "2026-10-07T12:54:54.158279568Z",
+      "finished_at": "2026-10-07T13:04:35.344885085Z",
+      "wall_span_seconds": 581.186606168747
+    },
+    "initial_offline_scale_scoring": {
+      "gpu_seconds": 0.0,
+      "containers": 1,
+      "started_at": "2026-10-07T12:06:49.694165305Z",
+      "finished_at": "2026-10-07T12:11:43.848198763Z",
+      "wall_span_seconds": 294.15403294563293
+    },
+    "external_compatibility": {
+      "gpu_seconds": 122.94042611122131,
+      "containers": 1,
+      "started_at": "2026-10-07T10:03:37.931906314Z",
+      "finished_at": "2026-10-07T10:05:40.872332255Z",
+      "wall_span_seconds": 122.94042611122131
+    }
+  },
+  "official_scoring_by_version": {
+    "D0": {
+      "device": "cpu",
+      "started_at": "2026-10-07T16:47:44.475553518Z",
+      "finished_at": "2026-10-07T17:23:07.20988316Z",
+      "container_wall_seconds": 2122.7343299388885,
+      "scorer_process_seconds": 2122.5628476142883,
+      "exit_code": 0,
+      "cpu_limit": 8,
+      "memory_limit_gib": 32,
+      "allocated_gpu_hours": 0,
+      "resource_note": "CPU/memory limits are allocations, not measured consumption; at most three scorers ran concurrently."
+    },
+    "GBDT_V6.1.1": {
+      "device": "cpu",
+      "started_at": "2026-10-07T16:47:45.179889333Z",
+      "finished_at": "2026-10-07T17:21:11.927760119Z",
+      "container_wall_seconds": 2006.7478709220886,
+      "scorer_process_seconds": 2006.6113331317902,
+      "exit_code": 0,
+      "cpu_limit": 8,
+      "memory_limit_gib": 32,
+      "allocated_gpu_hours": 0,
+      "resource_note": "CPU/memory limits are allocations, not measured consumption; at most three scorers ran concurrently."
+    },
+    "GBDT_V6.1.2": {
+      "device": "cpu",
+      "started_at": "2026-10-07T16:47:45.946265748Z",
+      "finished_at": "2026-10-07T17:22:55.204279989Z",
+      "container_wall_seconds": 2109.2580139636993,
+      "scorer_process_seconds": 2109.106514453888,
+      "exit_code": 0,
+      "cpu_limit": 8,
+      "memory_limit_gib": 32,
+      "allocated_gpu_hours": 0,
+      "resource_note": "CPU/memory limits are allocations, not measured consumption; at most three scorers ran concurrently."
+    },
+    "GBDT_V6.1.3": {
+      "device": "cpu",
+      "started_at": "2026-10-07T17:21:30.340215876Z",
+      "finished_at": "2026-10-07T17:56:07.633731724Z",
+      "container_wall_seconds": 2077.293515920639,
+      "scorer_process_seconds": 2077.1589782238007,
+      "exit_code": 0,
+      "cpu_limit": 8,
+      "memory_limit_gib": 32,
+      "allocated_gpu_hours": 0,
+      "resource_note": "CPU/memory limits are allocations, not measured consumption; at most three scorers ran concurrently."
+    },
+    "MLP_V6.2.1": {
+      "device": "cpu",
+      "started_at": "2026-10-07T17:23:11.751548298Z",
+      "finished_at": "2026-10-07T17:57:14.349793142Z",
+      "container_wall_seconds": 2042.5982449054718,
+      "scorer_process_seconds": 2042.43870139122,
+      "exit_code": 0,
+      "cpu_limit": 8,
+      "memory_limit_gib": 32,
+      "allocated_gpu_hours": 0,
+      "resource_note": "CPU/memory limits are allocations, not measured consumption; at most three scorers ran concurrently."
+    },
+    "MLP_V6.2.2": {
+      "device": "cpu",
+      "started_at": "2026-10-07T17:23:22.536140875Z",
+      "finished_at": "2026-10-07T17:58:33.544559985Z",
+      "container_wall_seconds": 2111.0084190368652,
+      "scorer_process_seconds": 2110.851464033127,
+      "exit_code": 0,
+      "cpu_limit": 8,
+      "memory_limit_gib": 32,
+      "allocated_gpu_hours": 0,
+      "resource_note": "CPU/memory limits are allocations, not measured consumption; at most three scorers ran concurrently."
+    },
+    "MLP_V6.2.3": {
+      "device": "cpu",
+      "started_at": "2026-10-07T17:56:27.328028164Z",
+      "finished_at": "2026-10-07T18:30:03.542704923Z",
+      "container_wall_seconds": 2016.214676141739,
+      "scorer_process_seconds": 2016.0644137859344,
+      "exit_code": 0,
+      "cpu_limit": 8,
+      "memory_limit_gib": 32,
+      "allocated_gpu_hours": 0,
+      "resource_note": "CPU/memory limits are allocations, not measured consumption; at most three scorers ran concurrently."
+    }
+  },
+  "benchmark_shared": {
+    "allocated_gpu_hours": 4.168780660231908,
+    "started_at": "2026-10-07T15:55:19.969327294Z",
+    "finished_at": "2026-10-07T16:45:27.635534422Z",
+    "wall_span_seconds_including_gap": 3007.666207075119,
+    "page_denominator": 1651,
+    "output_count": 7,
+    "model": "NVIDIA A100 80GB PCIe",
+    "peak_concurrent_gpus": 6,
+    "precision": "bfloat16",
+    "warmup": "Allocation costs include engine startup; page latency starts after engine readiness",
+    "page_latency_seconds": {
+      "n": 1651,
+      "min": 1.5759937139227986,
+      "p50": 6.3102012041490525,
+      "p90": 15.329478790983558,
+      "p95": 20.71723154897336,
+      "max": 77.48090363200754,
+      "sum": 14126.199222808937
+    },
+    "failed_page_latency_seconds": {
+      "n": 0,
+      "p50": null,
+      "p90": null,
+      "p95": null,
+      "reason": "No failed benchmark pages"
+    },
+    "failed_pages": 0,
+    "timeout_pages": 0
+  },
+  "controller_fits": {
+    "gbdt_table": {
+      "device": "cpu",
+      "elapsed_seconds": 0.045999999972991645,
+      "rows": 112,
+      "source_groups": 112
+    },
+    "mlp_table": {
+      "device": "cpu",
+      "elapsed_seconds": 0.03200000000651926,
+      "rows": 112,
+      "source_groups": 112
+    },
+    "gbdt_equation": {
+      "device": "cpu",
+      "elapsed_seconds": 0.03200000000651926,
+      "rows": 68,
+      "source_groups": 47
+    },
+    "mlp_equation": {
+      "device": "cpu",
+      "elapsed_seconds": 0.030999999959021807,
+      "rows": 68,
+      "source_groups": 47
+    }
+  },
+  "controller_fit_seconds_sum": 0.14099999994505197,
+  "controller_training_process_seconds": 0.1869999999180436,
+  "fit_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scikit_learn": "1.7.2",
+    "threads": 1
+  },
+  "source_retrieval": {
+    "retained_bytes": 1526576173,
+    "elapsed_seconds": null,
+    "reason": "Retrieval, inspection and correspondence overlapped; no isolated retrieval wall timer was recorded"
+  },
+  "offline_measurement_failure": {
+    "views": 1,
+    "reason": "Requested context 16395 exceeded the frozen 16384 limit; other seven views of the region retained",
+    "replayed": false,
+    "cost_accounting": "Included in the actual offline-scale allocation ledger; not removed from task cost"
+  },
+  "packaging": {
+    "first_completed_at": "2026-10-07T13:09:14.432153+00:00",
+    "elapsed_seconds": null,
+    "reason": "Completion timestamp recorded; no isolated packaging duration timer"
+  },
+  "stage_timing": "ACTIVATION.json records native, feature, controller, resize, OCR and assembly timing. Totals overlap and must not be summed as wall time.",
+  "per_version_estimate": "ACTIVATION.json labels standalone attribution estimates; there were no independent standalone reruns."
+}

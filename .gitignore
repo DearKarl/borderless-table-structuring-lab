@@ -70,3 +70,20 @@ Handoff.md
 # Local research workflow and role onboarding are never public repository content.
 /codex/
 /AGENTS.md
+
+# Explicit aggregate evidence selected for the paused V6/V7 publication.
+!artifacts/results/v6/ACTIVATION.json
+!artifacts/results/v6/COSTS.json
+!artifacts/results/v6/EXTERNAL_ACTOR_QUALITY.json
+!artifacts/results/v6/PAIRED_QUALITY.json
+!artifacts/results/v6/RUNTIME_PROVENANCE.json
+!artifacts/results/v6/SCALE_REGRESSION.json
+!artifacts/results/v7/BASELINE_COMPARABILITY.json
+!artifacts/results/v7/BASELINE_COMPARABILITY.md
+!artifacts/results/v7/CONFIRMATION_ANALYSIS_PROTOCOL.json
+!artifacts/results/v7/DEVELOPMENT.json
+!artifacts/results/v7/TRAINING.json
+!artifacts/results/v7/STOPPED_STATE.json
+!releases/v6-v7-progress-20261007/models/v6/FROZEN_RUNTIME_SOURCE.tar.gz
+!releases/v6-v7-progress-20261007/models/
+!releases/v6-v7-progress-20261007/models/**

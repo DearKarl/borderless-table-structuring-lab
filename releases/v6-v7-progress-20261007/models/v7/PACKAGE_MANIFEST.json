@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-07T19:32:22.892884+00:00",
+  "status": "four_configs_load_verified_before_fresh_confirmation",
+  "configs": {
+    "V7.1": {
+      "file": "V7.1.json",
+      "sha256": "3f5f25d85aae213202fa3f7b8f0d3ad2c3271ef3f57b99c34d4cb34744c558a9",
+      "load_verified": true,
+      "has_trained_model": false
+    },
+    "V7.2": {
+      "file": "V7.2.json",
+      "sha256": "980b7636993ff762b066a8e66d244c7129ed2158741f36de6d14c570b0f2aa0b",
+      "load_verified": true,
+      "has_trained_model": false
+    },
+    "V7.3": {
+      "file": "V7.3.json",
+      "sha256": "e44c563657d01e47c5a74c70a09f099eda2cc02673ecc94085c36b9bac49fa14",
+      "load_verified": true,
+      "has_trained_model": false
+    },
+    "V7.4": {
+      "file": "V7.4.json",
+      "sha256": "ae42b9a5d405653188a06344c9785ddb066a549bbc5251f9c29d7c39ae598442",
+      "load_verified": true,
+      "has_trained_model": true
+    }
+  },
+  "final_models": 1,
+  "checkpoint_sha256": "f28f21a14535129e0feddc69bc6e8d4d73495b923f4d9be7564b10bb0d7b7f9d",
+  "margin": "infinity",
+  "protocol_sha256": "7a587699623a0343ae1627dcfa560c78fce3dcda946942e21a4fbb75481ab8c6",
+  "source_sha256": {
+    "versions/v7/__init__.py": "b98707981b942184e446d3cf5dee96500ac0f34f1af453adeaa349539165157f",
+    "versions/v7/features.py": "a5e30f84e91b377d8d71489f64e29c9b1ec093556b5227d046983175fbb85afa",
+    "versions/v7/model.py": "48fed63bb82d4ffba4bef94dcf0a1d5bd3fbc1017d469d0b0bc1095c6d50db4f",
+    "versions/v7/policy.py": "e5a565e268f5f8899a0858d92135400f1200c3004a5e639eb01fa41b948f73d0",
+    "versions/v7/test_contract.py": "cfd9bd00644cba16308866843d48406caa14caa14e3c2f98c53b70db17b0258e",
+    "versions/v7/train.py": "08549a96b6e22e15f8b35add37eff818459e7f5d5e9ff8640fbce0c360732674"
+  },
+  "feature_count": 34,
+  "fold_fits": 5,
+  "final_fits": 1,
+  "completed_fold_refits": 0,
+  "export_validation_max_abs_error": 0.0,
+  "load_decision_checks": 448,
+  "inference_dependencies": "Python standard library for gate/parser; frozen V6 OCR/native/assembly dependencies for candidate generation",
+  "training_dependencies": {
+    "numpy": "2.5.3",
+    "scikit_learn": "1.7.2",
+    "device": "cpu",
+    "threads": 1
+  },
+  "implementation_repair": "Serialization-only recording fix and OOF recovery from immutable saved fold models; protocol/features/hyperparameters unchanged"
+}

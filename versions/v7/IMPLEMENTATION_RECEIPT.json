@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-07T19:26:54.411627+00:00",
+  "change": "Convert NumPy acceptance counts to JSON integers and resume OOF prediction from five immutable saved fold models",
+  "feature_or_scientific_protocol_change": false,
+  "protocol_sha256": "7a587699623a0343ae1627dcfa560c78fce3dcda946942e21a4fbb75481ab8c6",
+  "original_train_source_sha256": "0a252223d7acd73db271084f4c5988df568e8ad94061baa6a4822f1e802b7cf5",
+  "repaired_train_source_sha256": "08549a96b6e22e15f8b35add37eff818459e7f5d5e9ff8640fbce0c360732674",
+  "completed_fold_refits": 0,
+  "contract_tests_passed": 6,
+  "note": "PROTOCOL.json retains its initial training-source hash; final packages bind the repaired source and this receipt."
+}

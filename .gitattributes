@@ -6,3 +6,6 @@ hybrid/native_tables/runtime/navidc_* -text
 
 # Archived source and nested hash locks retain their exact byte representation.
 versions/** -text -whitespace
+releases/v6-v7-progress-20261007/** -text -whitespace
+artifacts/results/v6/** -text -whitespace
+artifacts/results/v7/** -text -whitespace

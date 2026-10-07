@@ -1,0 +1,19 @@
+{
+  "staged_files": 105,
+  "json_files_parsed": 40,
+  "python_files_parsed": 47,
+  "issues": [],
+  "unpublished_relative_links": [],
+  "research_workloads_started": false,
+  "tests": {
+    "gate_and_direct_contracts": {
+      "passed": 6
+    },
+    "v7_contract_module": "Blocked in publication Python: scikit-learn unavailable; earlier engineering evidence retains six passes. No dependency installed or fitting run."
+  },
+  "scope": "Static prepublication check of staged source, model and aggregate files; no benchmark rerun",
+  "checkpoints_unchanged": 5,
+  "archive_source_members_reviewed": 37,
+  "engineer_stop_confirmed": true,
+  "scheduled_monitor_paused": true
+}

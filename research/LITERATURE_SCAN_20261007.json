@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "created_date": "2026-10-07",
+  "timezone": "Europe/London",
+  "type": "targeted_narrative_literature_scan",
+  "scope": "Alternatives to fixed-scale selection and post-hoc table correction for improving a frozen TeleOCR comparator",
+  "workflow": "Targeted primary-source literature search and synthesis; no independent review or model reproduction.",
+  "limitations": [
+    "Targeted search, not systematic or exhaustive review",
+    "No experiments or model reproductions performed",
+    "No located source establishes improvement over this project's pinned TeleOCR under its full-page matched protocol",
+    "Architecture novelty, training compatibility and resource feasibility remain unverified"
+  ],
+  "search": {
+    "date": "2026-10-07",
+    "include": "Primary papers and author repositories; 2023-2026; table generation, document post-training, verifiable supervision, long-table decomposition",
+    "exclude": "Secondary summaries as evidence; table QA-only work as direct OCR evidence; incomparable scores as rankings",
+    "queries": [
+      "TeleOCR technical report arxiv document parsing 2026",
+      "document parsing OCR reinforcement learning table recognition 2025 2026 arxiv",
+      "table recognition divide conquer long table 2025 2026",
+      "table recognition synthetic data rendering fine tuning reward 2025",
+      "olmOCR 2 unit test rewards",
+      "CVPR2026 TDATR Improving End-to-End Table Recognition"
+    ]
+  },
+  "historical_correction": {
+    "sources": [
+      "training/README.md",
+      "hybrid/README.md",
+      "artifacts/results/README.md"
+    ],
+    "finding": "Explicit-v2 already combined image, cell boxes, OCR tokens and cross-modal grounding; best released checkpoint adopted zero edits. OCR consensus sidecar had tiny gain and known crop defect; complete-cell follow-up regressed. Generic image-grounded correction is not a new project direction.",
+    "causality_limit": "These aggregate failures do not isolate causes among labels, architecture, decoding and action admission."
+  },
+  "sources": [
+    {
+      "id": "teleocr",
+      "title": "TeleOCR: Navigating Document Parsing Across Digital and Camera-Captured Documents",
+      "year": 2026,
+      "url": "https://arxiv.org/html/2608.12898v3",
+      "repository": "https://github.com/caipeng328/TeleOCR",
+      "coverage": "Abstract and targeted methods sections 3.3,4.3,4.4; author README",
+      "finding": "Already trains geometric perception, content/structure decoupling and GRPO with TEDS/CDM rewards. Merely adding geometry or RL is not a substantiated new capability.",
+      "comparability": "Paper 96.87 differs from official leaderboard row96.91 and local D0; do not merge."
+    },
+    {
+      "id": "structab",
+      "title": "StrucTab: A Structured Optimization Framework for Table Parsing",
+      "year": 2026,
+      "url": "https://arxiv.org/html/2606.29905v2",
+      "repository": "https://github.com/VirtualLUOUCAS/StrucTab",
+      "coverage": "Abstract,methods,training appendix,evaluation appendix,author repository",
+      "finding": "Intermediate row/column and merged-cell tasks plus decomposed validity/structure/content rewards train the generator. Full setup uses millions of pretraining examples and16H20 GPUs; not a small pilot recipe.",
+      "comparability": "OmniDocBench v1.5 table subset512; no TeleOCR comparison located; not our full1651-page end-to-end protocol.",
+      "availability": "Data construction/rewards/benchmark code verified in README; deployable model checkpoint not verified."
+    },
+    {
+      "id": "trivia",
+      "title": "TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition",
+      "year": 2025,
+      "url": "https://arxiv.org/html/2512.01248v1",
+      "repository": "https://github.com/opendatalab/TRivia",
+      "coverage": "Methods,training stages,ablation,appendix and repository",
+      "finding": "QA-derived rewards train a table generator beyond supervised fine-tuning. Direct teacher pseudo-label alternatives regressed in its ablation. Large teacher/validator and substantial prior training are required in the published recipe.",
+      "comparability": "Uses GT-cropped512-table OmniDocBench v1.5 subset, not matched end-to-end TeleOCR.",
+      "availability": "README marks model and training code released; data-generation pipeline TODO incomplete."
+    },
+    {
+      "id": "olmocr2",
+      "title": "olmOCR 2: Unit Test Rewards for Document OCR",
+      "year": 2025,
+      "url": "https://arxiv.org/html/2510.19817v1",
+      "repository": "https://github.com/allenai/olmocr",
+      "coverage": "Synthetic data,training,results and author blog",
+      "finding": "Known rendered HTML supplies verifiable tests;2186synthetic pages contain30381tests. This follows substantial SFT; RL uses8H100,28completions per document and six-run weight averaging. Small page count does not imply cheap end-to-end replication.",
+      "comparability": "English olmOCR-Bench; not evidence of superiority over TeleOCR on OmniDocBench."
+    },
+    {
+      "id": "tdatr",
+      "title": "TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment",
+      "year": 2026,
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Qin_TDATR_Improving_End-to-End_Table_Recognition_via_Table_Detail-Aware_Learning_and_CVPR_2026_paper.html",
+      "coverage": "Official CVPR abstract and bibliographic record; full experimental details not verified",
+      "finding": "Perceive-then-fuse intermediate tasks and integrated cell localization improve a generating model. Generic grounding has prior art; this source does not establish small-data TeleOCR gains."
+    },
+    {
+      "id": "drcc",
+      "title": "Divide Rows and Conquer Cells: Towards Structure Recognition for Large Tables",
+      "year": 2023,
+      "url": "https://www.ijcai.org/proceedings/2023/152",
+      "coverage": "Official IJCAI abstract and bibliographic record",
+      "finding": "Non-autoregressive row decoding followed by semi-autoregressive cell decoding addresses long-sequence error accumulation.",
+      "comparability": "Structure recognition evidence; inference-only cropping of TeleOCR would be an unvalidated adaptation, not reproduction."
+    },
+    {
+      "id": "crop_diagnosis",
+      "title": "What Does Vision Tool-Use Reinforcement Learning Really Learn? Disentangling Tool-Induced and Intrinsic Effects for Crop-and-Zoom",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2602.01334",
+      "coverage": "Primary abstract",
+      "finding": "Analyzed tool-use gains mostly reflect intrinsic learning and reduced tool-induced harm, with limited correction of intrinsic failures.",
+      "comparability": "General VLM analysis; cautionary mechanism evidence, not a diagnosis of this project's failures."
+    }
+  ],
+  "synthesis": {
+    "recommended_hypothesis": "Targeted post-training of a pretrained table-generating VLM using controlled synthetic table pairs and verifiable content-to-cell relationships, with real training-only hard cases and easy-case retention.",
+    "difference_from_old": "Change pretrained generator weights to improve image-to-table output; do not rely on native candidate cells, fixed reread choices or a post-hoc edit gate.",
+    "novelty": "Unproven. LoRA, synthesis, visual grounding and RL individually are established; test the contribution of targeted paired data/objectives against equal-size ordinary synthesis.",
+    "second_hypothesis": "Learned long-table decomposition and context-preserving generation/reassembly, conditional on training-only evidence of truncation/repetition/long-range failures.",
+    "third_hypothesis": "QA/verifiable-reward post-training after a supervised pilot; defer expensive RL until reward fidelity and incremental value are established.",
+    "rejected_now": [
+      "Unchanged34-feature expansion as primary route",
+      "Renaming generic image-grounded correction as new",
+      "Sweeping more scales without demonstrated missing capability",
+      "Copying full large-scale RL recipes into existing V7 budget"
+    ]
+  },
+  "proposed_small_study": {
+    "status": "Proposal only; not an execution amendment",
+    "first_audit": "Frozen recognizer training/adapter compatibility and source-group training-only error taxonomy",
+    "controls": [
+      "Frozen pretrained generator",
+      "Same generator plus ordinary training data",
+      "Same generator plus targeted paired synthetic data at equal sample/compute budget",
+      "Existing V7.3 comparison on unchanged native/candidate evidence"
+    ],
+    "training_data": "Known rendered source; identical strings with changed cell relationships plus style changes preserving relationships; real training examples and untouched easy-case retention; source/template grouping",
+    "isolation": "No benchmark, old test or any current640confirmationcandidate used for design/training/tuning; independently frozen final confirmation required",
+    "metrics": "Full TEDS,structure TEDS,relation correctness,gain/harm/tie/unmatchable counts,coverage,all failures,cost; final full-page evaluation only after prospective admission",
+    "stopping": "No robust real held-out gain or easy-case regression implies stop; do not add repeated test-driven modifications",
+    "resources": "Current16GPUh V7 budget and existing gates unchanged; new generator training feasibility and incremental budget not established"
+  },
+  "publication_status": "Research discussion only; all engineering paused by user on 2026-10-07. No generator training authorized by this publication."
+}

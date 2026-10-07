@@ -1,0 +1,239 @@
+{
+  "at": "2026-10-07T13:18:29.090401+00:00",
+  "scope": "Offline scale regression diagnostics only; not deployed OCR calls or evidence of recognition gain",
+  "selection_or_refit": false,
+  "models": {
+    "gbdt_table": {
+      "checkpoint_sha256": "28ac372fa2449680d4c4e110c0acd2abc3e280538497ea7af69753eedbe437e7",
+      "kind": "table",
+      "family": "gbdt",
+      "splits": {
+        "train": {
+          "rows": 112,
+          "source_groups": 112,
+          "raw_log_scale_mse": 0.04734306536025084,
+          "raw_log_scale_mae": 0.1530498824674462,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.7177798659117502,
+            0.8982069190329973,
+            0.9934558503245806,
+            1.0670092703261445,
+            1.5469997166251979
+          ],
+          "distinct_raw_predictions": 111,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 112
+        },
+        "validation": {
+          "rows": 29,
+          "source_groups": 29,
+          "raw_log_scale_mse": 0.18608566007833072,
+          "raw_log_scale_mae": 0.3195632103742042,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.7984948969384678,
+            0.9624953307062759,
+            1.0099614979277853,
+            1.09698853173723,
+            1.377802976579369
+          ],
+          "distinct_raw_predictions": 29,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 29
+        },
+        "test": {
+          "rows": 25,
+          "source_groups": 25,
+          "raw_log_scale_mse": 0.1572035795491407,
+          "raw_log_scale_mae": 0.2524587723708944,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.7853326551428045,
+            0.9099452148977951,
+            1.0192922605624406,
+            1.0915812477272098,
+            1.2628018686376004
+          ],
+          "distinct_raw_predictions": 24,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 25
+        }
+      }
+    },
+    "mlp_table": {
+      "checkpoint_sha256": "03eaff848403509577b210ae7ca24e82cb97ebd7598af5439044dc63058432d4",
+      "kind": "table",
+      "family": "mlp",
+      "splits": {
+        "train": {
+          "rows": 112,
+          "source_groups": 112,
+          "raw_log_scale_mse": 0.09361397121180584,
+          "raw_log_scale_mae": 0.1883540693457683,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.8632678140863006,
+            0.9592011533021287,
+            1.0029677573199494,
+            1.0344027418066921,
+            1.2680629154603753
+          ],
+          "distinct_raw_predictions": 112,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 112
+        },
+        "validation": {
+          "rows": 29,
+          "source_groups": 29,
+          "raw_log_scale_mse": 0.18828512054281718,
+          "raw_log_scale_mae": 0.3147904256948829,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.8790576840332889,
+            0.9713772808584445,
+            0.9942995562275266,
+            1.0650517168243425,
+            1.1704976594971428
+          ],
+          "distinct_raw_predictions": 29,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 29
+        },
+        "test": {
+          "rows": 25,
+          "source_groups": 25,
+          "raw_log_scale_mse": 0.14742425335508721,
+          "raw_log_scale_mae": 0.23507813822970702,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.8950296300963164,
+            0.987887713690774,
+            1.0186745566467146,
+            1.051487626424643,
+            1.2128808801712363
+          ],
+          "distinct_raw_predictions": 25,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 25
+        }
+      }
+    },
+    "gbdt_equation": {
+      "checkpoint_sha256": "780a6c62f8663bd0bd364f784f3339d884cf64beb6240ff385c8536d25098a3e",
+      "kind": "equation",
+      "family": "gbdt",
+      "splits": {
+        "train": {
+          "rows": 68,
+          "source_groups": 47,
+          "raw_log_scale_mse": 0.01073996824699835,
+          "raw_log_scale_mae": 0.03198856000210363,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.9302842134954088,
+            0.9865886692628344,
+            1.0013469914020483,
+            1.015186428595699,
+            1.0864308585086841
+          ],
+          "distinct_raw_predictions": 52,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 68
+        },
+        "validation": {
+          "rows": 19,
+          "source_groups": 13,
+          "raw_log_scale_mse": 0.0030483325565191137,
+          "raw_log_scale_mae": 0.03118879103355578,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.9354337104325652,
+            0.9889540441634823,
+            0.9945694734613312,
+            1.014885448120408,
+            1.0411967649041138
+          ],
+          "distinct_raw_predictions": 14,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 19
+        },
+        "test": {
+          "rows": 23,
+          "source_groups": 16,
+          "raw_log_scale_mse": 0.04557578744334551,
+          "raw_log_scale_mae": 0.09133105262158332,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.9302842134954088,
+            0.9710874991088804,
+            1.0000748151441003,
+            1.0227687649796517,
+            1.0312080761247144
+          ],
+          "distinct_raw_predictions": 17,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 23
+        }
+      }
+    },
+    "mlp_equation": {
+      "checkpoint_sha256": "91f4900cafdaa9dd5cdcd3d51386aace375cc7b6937dc715a92b5f51e49dd038",
+      "kind": "equation",
+      "family": "mlp",
+      "splits": {
+        "train": {
+          "rows": 68,
+          "source_groups": 47,
+          "raw_log_scale_mse": 0.012619024442490509,
+          "raw_log_scale_mae": 0.036353578143743154,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.9466549517774085,
+            0.9814742435159184,
+            0.990553570224691,
+            1.0073885324411105,
+            1.051144544233796
+          ],
+          "distinct_raw_predictions": 68,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 68
+        },
+        "validation": {
+          "rows": 19,
+          "source_groups": 13,
+          "raw_log_scale_mse": 0.0021768715932093453,
+          "raw_log_scale_mae": 0.026843940458639564,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.9588844324916695,
+            0.9944674039587329,
+            1.006682551987476,
+            1.015140294804187,
+            1.0473454164766594
+          ],
+          "distinct_raw_predictions": 19,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 19
+        },
+        "test": {
+          "rows": 23,
+          "source_groups": 16,
+          "raw_log_scale_mse": 0.042816952354384805,
+          "raw_log_scale_mae": 0.09165350400301867,
+          "boundary_clipped": 0,
+          "bounded_scale_quantiles_0_25_50_75_100": [
+            0.9635590510252606,
+            0.99425177756151,
+            1.00503876481256,
+            1.0218248076695253,
+            1.0437817000245313
+          ],
+          "distinct_raw_predictions": 23,
+          "analysis_predict_api_calls": 1,
+          "analysis_predicted_rows": 23
+        }
+      }
+    }
+  }
+}

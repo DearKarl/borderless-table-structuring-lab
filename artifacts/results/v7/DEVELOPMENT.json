@@ -1,0 +1,92 @@
+{
+  "at": "2026-10-07T19:32:22.953570+00:00",
+  "scope": "29 existing external validation tables; development evidence only; fixed scale previously selected on this split",
+  "regions": 29,
+  "source_groups": 29,
+  "checkpoint_sha256": "f28f21a14535129e0feddc69bc6e8d4d73495b923f4d9be7564b10bb0d7b7f9d",
+  "package_frozen_before_development_comparison": true,
+  "refit_or_tuning": false,
+  "fresh_confirmatory": false,
+  "new_ocr_calls": 0,
+  "versions": {
+    "V7.1": {
+      "mean_teds": 0.8919772189164744,
+      "accepted_regions": 0,
+      "changed_output_regions": 0,
+      "paired_vs_native": {
+        "improved": 0,
+        "worsened": 0,
+        "tied": 29,
+        "unmatchable": 0
+      }
+    },
+    "V7.2": {
+      "mean_teds": 0.8995302509872594,
+      "accepted_regions": 29,
+      "changed_output_regions": 23,
+      "paired_vs_native": {
+        "improved": 14,
+        "worsened": 9,
+        "tied": 6,
+        "unmatchable": 0
+      }
+    },
+    "V7.3": {
+      "mean_teds": 0.9075300949945085,
+      "accepted_regions": 23,
+      "changed_output_regions": 17,
+      "paired_vs_native": {
+        "improved": 12,
+        "worsened": 5,
+        "tied": 12,
+        "unmatchable": 0
+      }
+    },
+    "V7.4": {
+      "mean_teds": 0.8919772189164744,
+      "accepted_regions": 0,
+      "changed_output_regions": 0,
+      "paired_vs_native": {
+        "improved": 0,
+        "worsened": 0,
+        "tied": 29,
+        "unmatchable": 0
+      }
+    }
+  },
+  "model_predict_api_calls": 29,
+  "model_predicted_rows": 29,
+  "model_batch_sizes": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "elapsed_seconds": 0.06300000008195639,
+  "all_keep_note": "The training-selected infinite margin guarantees V7.4 keeps native. The model is still evaluated; no forced activation or refit."
+}

@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-10-07T20:25:25.452533+00:00",
+  "scope": "Saved aggregate/provenance only; no benchmark example inspection, inference, rescoring, or tuning",
+  "conclusion": "Exact comparability to the published TeleOCR row is not established. Local difference is not a V7 effect or official rank.",
+  "official_reference": {
+    "url": "https://github.com/opendatalab/OmniDocBench/blob/f133a71e9e91c3621c7ce8994200a7b394a06eb3/README.md",
+    "readme_revision": "f133a71e9e91c3621c7ce8994200a7b394a06eb3",
+    "readme_sha256": "a799f3dabee0d8e2be9f990fc325c3fefadb8d7f8d0cf56148406547d495a3ad",
+    "row_label": "OmniDocBench v1.6_full / TeleOCR /1.2B",
+    "row_added_date_in_changelog": "2026-09-11",
+    "row_execution_date": null,
+    "values_in_local_0_1_units": {
+      "overall": 96.91,
+      "text_edit": 0.0267,
+      "formula_cdm": 0.965895,
+      "table_teds": 0.968183,
+      "table_teds_structure": 0.981806,
+      "reading_order_edit": 0.1184,
+      "formula_edit": null,
+      "table_edit": null
+    },
+    "published_formula_and_table_units": "0-100",
+    "published_edit_units": "0-1",
+    "unknown_fields": [
+      "row-specific dataset/input hashes",
+      "raw prediction hashes",
+      "model snapshot hashes",
+      "input rendering/cap",
+      "prompt/decoding/backend",
+      "evaluation commit/config",
+      "CDM environment",
+      "per-component denominators",
+      "failures/retries"
+    ]
+  },
+  "model_author_reference": {
+    "url": "https://github.com/caipeng328/TeleOCR/blob/1e71f4fe792d12bbb86d2671c5ed6f3a1499b27d/README.md",
+    "readme_revision": "1e71f4fe792d12bbb86d2671c5ed6f3a1499b27d",
+    "overall": 96.87,
+    "formula_cdm_percent": 96.36,
+    "table_teds_percent": 97.05,
+    "note": "Different published row; never substituted for the official96.91 reference"
+  },
+  "local_D0": {
+    "values": {
+      "text_edit": 0.027098342677106747,
+      "formula_cdm": 0.9860259144405122,
+      "formula_edit": 0.04900545083353571,
+      "table_teds": 0.9683186499386146,
+      "table_teds_structure": 0.9816733092812712,
+      "table_edit": 0.035843263333296106,
+      "reading_order_edit": 0.11829726809302299,
+      "overall": 97.574874056734
+    },
+    "evaluator": {
+      "commit": "147cd5ac9472002f5751221d390bf00abdbc0d2f",
+      "config_sha256": "56db52659910273376223a5646eabfaff21b25dc30f434e1c90aab1a233d335a",
+      "ground_truth_sha256": "a45cd84b04ad8b793e775089640e6b681209abea33ead54c1828ddca35fae496"
+    },
+    "page_count": 1651,
+    "page_identity_and_input_hashes_sha256": "f4b5df871d56090911a2c3c4a7f2693db047863987b96306fec6373bbe05442d",
+    "input_manifest_sha256": "1f22754696db003b85eff7cf03c9504bdbaa98498e8d2b8e99080f61fbb239f3",
+    "prediction_binding_sha256": "165b2e80f94466c5ea29128e42fbf06aca6340d1c9db072871006338c5b717ce",
+    "component_page_denominators": {
+      "text_block": {
+        "Edit_dist": {
+          "ALL": 1557
+        }
+      },
+      "display_formula": {
+        "Edit_dist": {
+          "ALL": 313
+        },
+        "CDM": {
+          "ALL": 313
+        }
+      },
+      "table": {
+        "TEDS": {
+          "ALL": 458
+        },
+        "Edit_dist": {
+          "ALL": 458
+        },
+        "TEDS_structure_only": {
+          "ALL": 458
+        }
+      },
+      "reading_order": {
+        "Edit_dist": {
+          "ALL": 1638
+        }
+      }
+    },
+    "scorer_stage_execution": {
+      "page_match": {
+        "workers": 8,
+        "page_count": 1651,
+        "quick_match_truncated_timeout_sec": 300,
+        "match_timeout_sec": 420,
+        "fallbacks": {
+          "quick_match_timeout": {
+            "count": 0,
+            "cases": []
+          },
+          "page_timeout": {
+            "count": 0,
+            "cases": []
+          }
+        }
+      },
+      "metrics": {
+        "display_formula": {
+          "CDM": {
+            "workers": 8,
+            "timeout_sec": null,
+            "sample_count": 2352,
+            "timeout_case_count": 0,
+            "timeout_cases": [],
+            "error_case_count": 0,
+            "error_cases": [],
+            "exception_case_count": 0,
+            "exception_cases": []
+          }
+        },
+        "table": {
+          "TEDS": {
+            "workers": 8,
+            "timeout_sec": 120.0,
+            "sample_count": 665,
+            "timeout_case_count": 0,
+            "timeout_cases": [],
+            "error_case_count": 0,
+            "error_cases": [],
+            "exception_case_count": 0,
+            "exception_cases": []
+          }
+        }
+      }
+    },
+    "tele_source_commit": "9921cffe380efe4e2fa010258b3d0c3cb70bab2d",
+    "model_asset_hashes": {
+      "README.md": "648a65dd241522d59ae2bd19a4909fcf6c01eb3f57acfa6917d3d814643537cc",
+      "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "chat_template.jinja": "a0bc6f6fc7a29a80017a433e8f03a1cc1236e838a944a2d034295a60c4f2fddb",
+      "config.json": "92c5e15f1768dcb54bceae170043fbfefd248508159700b2179824b88c33ae75",
+      "generation_config.json": "50867494bddf9ddc8e289e6214be5a2263e68f16c127a3652c6eb9f17990e5d9",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "model.safetensors": "9817b18041bd96403f75e38a33b28ed0cd5fb2641f67eead673afabd3c408109",
+      "modeling_naviocr.py": "7adac1cc17009f9f1b8e0c58284d7c0b9989a590f017b9e5964cc42270207922",
+      "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+      "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "tokenizer_config.json": "e04be4dd17e9f661bc487ba848a37f66a8f1adf2eef412f5d4ecb40cab4d39e7",
+      "video_preprocessor_config.json": "15bb7c2f2bc95fe9cc3749a4b287872b4886a15e9fcf550a4122a46ae26150bd",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "model_revision_requested": "8706730e41382f4a8f2562616d47225fee8e2f7a",
+    "model_revision_requested_verified": false,
+    "model_revision_resolution": "Requested revision endpoint unavailable. Reused and rehashed all 14 pinned V4 files; 13 inference-file hashes match ki-OCR MODEL_PINS.json, whose metadata points to e92585356c0d0b7b7a65938f3da035c6593cc9a6. Do not claim full upstream snapshot equivalence.",
+    "native_input": {
+      "dpi": 200,
+      "cap": 3500,
+      "renderer_rounding_can_reach": 3501,
+      "original_rgb_bypass": false
+    },
+    "inference_runtime": {
+      "engine": {
+        "dtype": "torch.bfloat16",
+        "seed": 0,
+        "max_model_len": 16384,
+        "enforce_eager": false,
+        "gpu_memory_utilization": 0.5,
+        "enable_prefix_caching": false,
+        "max_num_seqs": 64,
+        "max_num_batched_tokens": 16384
+      },
+      "packages": {
+        "torch": "2.8.0",
+        "torchvision": "0.23.0",
+        "vllm": "0.11.0",
+        "transformers": "4.57.6",
+        "tokenizers": "0.22.2",
+        "TeleOCR": "0.1.0",
+        "Pillow": "11.3.0",
+        "numpy": "2.2.6",
+        "pypdfium2": "4.30.0",
+        "pymupdf": "1.28.2",
+        "lxml": "6.0.2",
+        "fast-langdetect": "0.2.5",
+        "fasttext-predict": "0.9.2.4",
+        "magika": "1.0.3",
+        "onnxruntime": "1.23.2",
+        "triton": "3.4.0",
+        "flash-attn": null,
+        "xformers": "0.0.32.post1",
+        "safetensors": "0.7.0",
+        "opencv-python-headless": "4.14.0.94"
+      },
+      "prompts": {
+        "text": "\nPlease output the text content from the image.",
+        "table": "\nThis is the image of a table. Please output the table in OTSL format.",
+        "equation": "\nPlease write out the expression of the formula in the image using LaTeX format.",
+        "code": "\nThe image contains a code snippet, please output the parsing result.",
+        "layout": "\nAnalyze the image layout.",
+        "seal": "\nSeal Recognition:",
+        "char": "\nThis is a scientific figure. Please extract the table implied by this figure.",
+        "default": "\nPlease output the text content from the image.",
+        "table_structure": "\nTable Recognition:",
+        "formula_structure": "\nFormula Recognition:"
+      },
+      "sampling": {
+        "text": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 1.0,
+          "frequency_penalty": 0.05,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        },
+        "table": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 1.0,
+          "frequency_penalty": 0.005,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        },
+        "equation": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 1.0,
+          "frequency_penalty": 0.05,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        },
+        "code": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 1.0,
+          "frequency_penalty": 0.05,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        },
+        "char": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 1.0,
+          "frequency_penalty": 0.005,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        },
+        "layout": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 0.0,
+          "frequency_penalty": 0.0,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        },
+        "seal": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 1.0,
+          "frequency_penalty": 0.005,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        },
+        "default": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 1.0,
+          "frequency_penalty": 0.05,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        },
+        "table_structure": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 1.0,
+          "frequency_penalty": 0.005,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        },
+        "formula_structure": {
+          "temperature": 0.0,
+          "top_p": 0.01,
+          "top_k": 1,
+          "presence_penalty": 1.0,
+          "frequency_penalty": 0.05,
+          "repetition_penalty": 1.0,
+          "no_repeat_ngram_size": 100,
+          "max_new_tokens": null
+        }
+      },
+      "helper": {
+        "layout_image_size": [
+          1036,
+          1036
+        ],
+        "min_image_edge": 28,
+        "max_image_edge_ratio": 50,
+        "simple_post_process": false,
+        "handle_equation_block": true,
+        "abandon_list": false,
+        "abandon_paratext": false
+      },
+      "system_prompt": "You are a helpful assistant."
+    },
+    "scorer_runtime": {
+      "python": "3.10.16 (main, Dec 11 2024, 16:24:50) [GCC 11.2.0]",
+      "os": "Ubuntu 22.04.5 LTS",
+      "python_packages": {
+        "apted": "1.0.3",
+        "beautifulsoup4": "4.11.1",
+        "evaluate": "0.4.3",
+        "func-timeout": "4.3.5",
+        "Levenshtein": "0.25.1",
+        "loguru": "0.7.2",
+        "lxml": "4.9.1",
+        "matplotlib": "3.7.5",
+        "nltk": "3.9.1",
+        "numpy": "1.24.4",
+        "pandas": "2.0.3",
+        "Pillow": "10.4.0",
+        "pylatexenc": "2.10",
+        "PyYAML": "6.0.2",
+        "scipy": "1.10.1",
+        "tabulate": "0.9.0",
+        "tqdm": "4.67.1",
+        "pip": "25.0",
+        "setuptools": "75.8.0",
+        "wheel": "0.45.1"
+      },
+      "tools": {
+        "pdflatex": {
+          "returncode": 0,
+          "version_output": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025) | kpathsea version 6.4.1 | Copyright 2025 Han The Thanh (pdfTeX) et al. | There is NO warranty.  Redistribution of this software is | covered by the terms of both the pdfTeX copyright and"
+        },
+        "kpsewhich": {
+          "returncode": 0,
+          "version_output": "kpathsea version 6.4.1 | Copyright 2023 Karl Berry & Olaf Weber. | License LGPLv2.1+: GNU Lesser GPL version 2.1 or later <https://gnu.org/licenses/lgpl.html> | This is free software: you are free to change and redistribute it. | There is NO WARRANTY, to the extent permitted by law."
+        },
+        "tlmgr": {
+          "returncode": 0,
+          "version_output": "tlmgr revision 76773 (2025-11-06 20:43:29 +0100) | tlmgr using installation: /usr/local/texlive/2025 | TeX Live (https://tug.org/texlive) version 2025"
+        },
+        "ghostscript": {
+          "returncode": 0,
+          "version_output": "9.55.0"
+        },
+        "magick": {
+          "returncode": 0,
+          "version_output": "Version: ImageMagick 7.1.1-47 Q16-HDRI x86_64 c8f4e8cb7:20250329 https://imagemagick.org | Copyright: (C) 1999 ImageMagick Studio LLC | License: https://imagemagick.org/script/license.php | Features: Cipher DPC HDRI OpenMP(4.5) | Delegates (built-in): fontconfig freetype jbig jng jpeg lzma pangocairo png tiff x zlib"
+        },
+        "convert": {
+          "returncode": 0,
+          "version_output": "WARNING: The convert command is deprecated in IMv7, use \"magick\" instead of \"convert\" or \"magick convert\" | Version: ImageMagick 7.1.1-47 Q16-HDRI x86_64 c8f4e8cb7:20250329 https://imagemagick.org | Copyright: (C) 1999 ImageMagick Studio LLC | License: https://imagemagick.org/script/license.php | Features: Cipher DPC HDRI OpenMP(4.5)"
+        },
+        "identify": {
+          "returncode": 0,
+          "version_output": "Version: ImageMagick 7.1.1-47 Q16-HDRI x86_64 c8f4e8cb7:20250329 https://imagemagick.org | Copyright: (C) 1999 ImageMagick Studio LLC | License: https://imagemagick.org/script/license.php | Features: Cipher DPC HDRI OpenMP(4.5) | Delegates (built-in): fontconfig freetype jbig jng jpeg lzma pangocairo png tiff x zlib"
+        },
+        "latexmlc": {
+          "returncode": null,
+          "version_output": "unavailable (FileNotFoundError: [Errno 2] No such file or directory: 'latexmlc')"
+        }
+      },
+      "cjk_font_family": "gkai"
+    },
+    "full_config_bytes_locally_available": false,
+    "full_config_note": "Exact executed config hash is pinned; retrieve and verify its bytes before V7 scoring; no guessed replacement config",
+    "inference_failures": 0,
+    "empty_predictions": 0
+  },
+  "comparability": [
+    {
+      "field": "Dataset",
+      "local": "1651 inputs; exact GT and input hashes frozen",
+      "published": "v1.6_full label and1651 pages; row-specific GT/input hashes unavailable",
+      "assessment": "Label/count agree; byte identity unknown"
+    },
+    {
+      "field": "Aggregation",
+      "local": "Official notebook page-macro fields; eight values retained",
+      "published": "Published metric columns and Overall formula; raw report unavailable",
+      "assessment": "Formula/units agree; per-component coverage unverified"
+    },
+    {
+      "field": "Model",
+      "local": "Fourteen asset hashes; inference weights pinned; requested snapshot unverified",
+      "published": "TeleOCR1.2B name; row-specific snapshot hashes unavailable",
+      "assessment": "Asset equivalence unknown"
+    },
+    {
+      "field": "Input",
+      "local": "Default read_fn/do_parse;200DPI;native3500 cap; no original-RGB bypass",
+      "published": "Exact row-producing input path/cap/rendering unavailable",
+      "assessment": "Input equivalence unknown"
+    },
+    {
+      "field": "Decoding",
+      "local": "Prompts, helper options, bfloat16, seed0, vLLM0.11.0 and sampling pinned",
+      "published": "Row-specific backend, prompts, sampling and concurrency unavailable",
+      "assessment": "Runtime equivalence unknown"
+    },
+    {
+      "field": "Matching",
+      "local": "Pinned evaluator commit; quick_match;300s truncated/420s page timeout;8workers",
+      "published": "Published row does not bind a scorer commit/config",
+      "assessment": "Local implementation known; upstream-row equivalence unknown"
+    },
+    {
+      "field": "Formula CDM",
+      "local": "Python CDM;TeXLive2025/ImageMagick7.1.1-47/Ghostscript9.55.0;313pages/2352units;zero recorded stage errors",
+      "published": "Current documentation recommends same major tools; actual row environment/coverage unavailable",
+      "assessment": "Environment recommendation is not execution provenance"
+    },
+    {
+      "field": "Failures",
+      "local": "1651/1651 successful predictions;zeroempty;zero page/TEDS/CDM timeout/error records",
+      "published": "Row-specific failure/retry/empty-prediction disposition unavailable",
+      "assessment": "Failure-policy equivalence unknown"
+    }
+  ],
+  "difference_decomposition": {
+    "local_minus_displayed_official_overall": 0.664874056734007,
+    "official_overall_recomputed_from_rounded_component_row": 96.9126,
+    "local_minus_recomputed_official": 0.662274056734006,
+    "overall_point_contributions": {
+      "text_accuracy": -0.013278089236891505,
+      "formula_cdm": 0.6710304813504098,
+      "table_teds": 0.004521664620486347
+    },
+    "published_overall_rounding_residual": 0.002600000000001046,
+    "formula_cdm_percentage_point_difference": 2.0130914440512293,
+    "causal_attribution": "Unknown. Arithmetic contribution is not evidence of better model or a CDM bug."
+  },
+  "formula_scoring_audit": {
+    "local_page_macro_CDM": 0.9860259144405122,
+    "local_sample_macro_CDM": 0.9788745748299318,
+    "reported_key": "display_formula.page.CDM.ALL",
+    "sample_mean_is_not_leaderboard_key": true,
+    "source_checks": [
+      {
+        "file": "README.md",
+        "retrieved_sha256": "19d9d78cbde9da6dd056f154952a4374bc3ebe5e7be587688df759b11c2fee5e",
+        "saved_runtime_sha256": "a799f3dabee0d8e2be9f990fc325c3fefadb8d7f8d0cf56148406547d495a3ad",
+        "matches": false
+      },
+      {
+        "file": "configs/end2end.yaml",
+        "retrieved_sha256": "e61db7cbf29f220d7b01d31470ae2869405df9d49f0d9af02a735ce810f7214b",
+        "saved_runtime_sha256": "e61db7cbf29f220d7b01d31470ae2869405df9d49f0d9af02a735ce810f7214b",
+        "matches": true
+      },
+      {
+        "file": "src/metrics/cal_metric.py",
+        "retrieved_sha256": "8cad72aa277581f7c2b63e7fc22ca4992992f407be2933353e66268b1b79246b",
+        "saved_runtime_sha256": "8cad72aa277581f7c2b63e7fc22ca4992992f407be2933353e66268b1b79246b",
+        "matches": true
+      },
+      {
+        "file": "src/metrics/cdm/cdm.py",
+        "retrieved_sha256": "6e07d3e8271740295d8f4e874f7a55942379327e12d74c56db5f1cb41fd2bbf7",
+        "saved_runtime_sha256": "6e07d3e8271740295d8f4e874f7a55942379327e12d74c56db5f1cb41fd2bbf7",
+        "matches": true
+      },
+      {
+        "file": "src/metrics/cdm/modules/latex2bbox_color.py",
+        "retrieved_sha256": "df6f61f2d89f7fe12d317b3987fea9cfb3484472522852a0c5f6a56953b42daf",
+        "saved_runtime_sha256": "df6f61f2d89f7fe12d317b3987fea9cfb3484472522852a0c5f6a56953b42daf",
+        "matches": true
+      },
+      {
+        "file": "src/runtime/eval_report.py",
+        "retrieved_sha256": "dd2dd74965220783399ba840bc7dae8937c2794b40a6ff75e3fba7538f9069ad",
+        "saved_runtime_sha256": "dd2dd74965220783399ba840bc7dae8937c2794b40a6ff75e3fba7538f9069ad",
+        "matches": true
+      },
+      {
+        "file": "src/dataset/end2end_dataset.py",
+        "retrieved_sha256": "1f6c0fadf3ddc48d0f5e5a7f54a884f7604cadb6c69b1360ef6c729f036f1d0c",
+        "saved_runtime_sha256": "1f6c0fadf3ddc48d0f5e5a7f54a884f7604cadb6c69b1360ef6c729f036f1d0c",
+        "matches": true
+      }
+    ],
+    "implementation": "Pinned scorer strips math wrappers, normalizes matched formula strings, computes rendered glyph-match F1, and can compare a generated alternate CDM representation when present; same upstream code is used locally.",
+    "unknown": "Published-row normalization/matching revision, per-unit pairs, alternate-representation usage and rendering traces unavailable; no causal diagnosis from aggregates",
+    "local_runtime_reference_readme_mismatch": "Saved runtime README hash differs from upstream README at declared commit; all six downloaded executable/config files match. Full-tree upstream identity is not claimed.",
+    "zero_errors_limit": "Recorded stage error/timeout counts are zero; this does not establish equivalence of all internal render/fallback paths"
+  },
+  "local_comparator": {
+    "status": "Frozen from saved executed hashes; fresh remote revalidation pending",
+    "lock_sha256": "1c1b64d330428b1757d9be9226dec1bb4cba7316da3ef8f8c24693e2e28f4331",
+    "v7_full_admission_requires_revalidation": true,
+    "primary_comparison": "V7.3 minus shared-nativeV7.1 on identical1651 pages and evaluator",
+    "allowed_claim": "Matched local comparison only; no official equivalence or rank claim"
+  },
+  "cost": {
+    "new_ocr": 0,
+    "new_gpu_hours": 0,
+    "provenance_download_bytes": 424984
+  }
+}
