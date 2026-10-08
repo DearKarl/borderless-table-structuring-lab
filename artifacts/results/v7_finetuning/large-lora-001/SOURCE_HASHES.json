@@ -1,0 +1,18 @@
+{
+  "snapshot_utc": "2026-10-08T18:30:00Z",
+  "scope": "Reviewed runtime working-tree bytes and exact Git staged blobs; differences may be line-ending normalization. Private preparation transports/data are excluded.",
+  "files": {
+    "versions/generator_pilot/__init__.py": "8309cac7fb0a8b762218eea03ac86470325c70db0a2a912eeb3821c0730358b2",
+    "versions/generator_pilot/large_adapters.py": "7fb722d5ca94fbfd1731e4d7e90da0355c813c99be82bcddff49d17f38eb4589",
+    "versions/generator_pilot/large_inputs.py": "bae64ef23ebae55b1bd1cafc0e960b7950cab9248acde7ff7228480609ee9263",
+    "versions/generator_pilot/supervision.py": "7b54bbed0e418c09466e39dca0e78f7bd1db7796bb63d012131fd585c90d79ab",
+    "versions/generator_pilot/validate_smoke_inputs.py": "8e56616a1e4da5ddeec5b7f1b4567e21214f20ca2145411a92026bc5aa7c39f2"
+  },
+  "git_staged_blob_sha256": {
+    "versions/generator_pilot/__init__.py": "8309cac7fb0a8b762218eea03ac86470325c70db0a2a912eeb3821c0730358b2",
+    "versions/generator_pilot/large_adapters.py": "7fb722d5ca94fbfd1731e4d7e90da0355c813c99be82bcddff49d17f38eb4589",
+    "versions/generator_pilot/large_inputs.py": "bae64ef23ebae55b1bd1cafc0e960b7950cab9248acde7ff7228480609ee9263",
+    "versions/generator_pilot/supervision.py": "7b54bbed0e418c09466e39dca0e78f7bd1db7796bb63d012131fd585c90d79ab",
+    "versions/generator_pilot/validate_smoke_inputs.py": "8e56616a1e4da5ddeec5b7f1b4567e21214f20ca2145411a92026bc5aa7c39f2"
+  }
+}

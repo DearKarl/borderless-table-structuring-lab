@@ -29,6 +29,15 @@ recognized Overall score above the leaderboard leader. The accompanying research
 goal is a generalizable contribution suitable for a CCF A venue; no paper or
 official leaderboard result is claimed at this stage.
 
+## V7: large table-specialist LoRA campaign
+
+The [large LoRA preparation report](artifacts/results/v7_finetuning/large-lora-001/REPORT.md)
+records the active source-backed dataset construction and actual-model interface
+checks. The design targets 20,000 real training tables and compares three recipes
+with two seeds each. Read the [dataset card](artifacts/results/v7_finetuning/large-lora-001/DATASET_CARD.md)
+and [methods](artifacts/results/v7_finetuning/large-lora-001/METHODS.md).
+Formal training and evaluation results for this campaign are not yet available.
+
 ## V6: complete results and statistics
 
 **[Open V6](V6/README.md)** for the full report or
