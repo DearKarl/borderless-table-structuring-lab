@@ -31,8 +31,8 @@ official leaderboard result is claimed at this stage.
 
 ## V8: large table-specialist LoRA campaign
 
-The [large LoRA preparation report](artifacts/results/v7_finetuning/large-lora-001/REPORT.md)
-records the frozen source-backed dataset and actual-model interface checks.
+The [large LoRA progress report](artifacts/results/v7_finetuning/large-lora-001/REPORT.md)
+records the frozen source-backed dataset and six active training runs.
 TRAIN contains 20,000 real tables from 11,217 documents. The study compares V8.1 ordinary
 LoRA, V8.2 LoRA-GA and V8.3 LoRA-GA with cell-location supervision, each with seeds
 0 and 1. The former V7.3.0/V7.3.1/V7.3.2 labels are aliases for these same six fits;
@@ -42,7 +42,9 @@ existing paths and immutable evidence retain their original names. Read the
 and [methods](artifacts/results/v7_finetuning/large-lora-001/METHODS.md).
 The [dataset figures](artifacts/results/v7_finetuning/large-lora-001/DATASET_FIGURES.md)
 show measured composition, token lengths, image sizes and input exclusions.
-Formal training and evaluation results for this campaign are not yet available.
+All six DEV-selected models will receive the full 1,651-page benchmark, with the
+three seed0 models evaluated before the three seed1 models and matched controls
+shared across them. Final training and evaluation results are pending.
 
 ## V6: complete results and statistics
 

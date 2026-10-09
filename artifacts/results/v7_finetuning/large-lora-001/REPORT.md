@@ -1,4 +1,20 @@
-# V8 large LoRA campaign: dataset freeze milestone
+# V8 large LoRA campaign: training in progress
+
+Snapshot: **2026-10-09 20:27 UTC**. All six formal fits are running, with
+2,522–2,880 of 3,750 updates completed per fit. The full-corpus CPU validation,
+technical GPU preflight and shared 256-TRAIN gradient calibration passed before
+formal training. This is execution progress, not an accuracy improvement claim.
+The [progress snapshot](TRAINING_PROGRESS_20261009.json) retains the six measured
+counts. Training curves and final quality results remain pending.
+
+The full-benchmark scope now includes **all six models**, with DEV-only checkpoint
+selection unchanged. Each receives the full 1,651 pages. The three seed0 models
+run first; the three seed1 models follow only after the first wave's inference and
+scoring have all reached terminal states. Matched native and legacy controls and
+their native preprocessing are shared with hash verification. All confirmation
+analyses remain required. See the amended [methods](METHODS.md).
+
+## Historical dataset freeze milestone
 
 October 9, 2026: the common dataset is frozen at **20,000 TRAIN tables from
 11,217 documents**, with 256 DEV and 512 confirmation sources. All 21,535 source
@@ -67,7 +83,7 @@ implementation checks do not establish recognition improvement or generalization
 - Financial-domain source reconstruction remains unverified. No financial, language
   or corpus-size coverage is inferred from a dataset name or a target count.
 
-The next deliverables are the complete 20,000-table common dataset freeze, six matched
-fits with scalar telemetry, DEV-only model nomination, confirmation diagnostics and
-the unconditional full benchmark of the nominated seed 0 model and matched controls.
-Training curves and accuracy claims will be published only when measured.
+At that historical snapshot, dataset construction and formal training were still
+pending. The current remaining deliverables are completion of the same six fits,
+their scalar telemetry, DEV-only checkpoint selection, confirmation diagnostics,
+all six full benchmarks with shared controls, and measured analysis and figures.

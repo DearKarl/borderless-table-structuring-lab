@@ -106,12 +106,31 @@ paired source bootstrap draws, seed 0, and 97.5% two-sided marginal intervals. T
 prespecified gain 0.005 and positive lower bounds are retained as diagnostics.
 They no longer gate full benchmark execution.
 
-After valid DEV nomination and packaging, the nominee, matched base and legacy rule
-are evaluated on all 1,651 benchmark pages regardless of confirmation gains. No model
-is reselected using confirmation or benchmark quality. All official components,
-failure counts and matching effects are reported. Inference uses a common default
-Transformers path; historical vLLM scores are not asserted to be equivalent.
-There is no external leaderboard submission in this campaign.
+The October 9, 2026 scope amendment extends the full benchmark to **all six
+DEV-selected models**, each on the same 1,651 pages (9,906 model-page outputs over
+1,651 distinct pages). All six checkpoint hashes and DEV selection evidence are
+frozen before any full-benchmark quality is read. The original seed0 deployment
+nominee remains a prespecified analysis; it does not exclude the other five fits.
+Confirmation gains do not gate any of the six full evaluations.
+
+Wave A evaluates V8.1, V8.2 and V8.3 seed0. Wave B evaluates their seed1 counterparts
+only after all three Wave A inference and scoring tasks have recorded terminal
+states. Evaluation uses at most three GPU workers across DEV, confirmation and
+benchmark work. Existing training runs retain their original 3,750-update protocol.
+
+The matched base and fixed legacy rule are evaluated once. Their default native
+preprocessing is cached with hashes and reused by all six models. Candidate table
+pixels, processor tensors, prompts and generation parameters must match the base
+inputs exactly; layout, geometry and non-table content remain shared. Full-page
+composition also checks non-table identity. This is a table-specialist comparison
+inside the same native document pipeline.
+
+No model is reselected using confirmation or benchmark quality. All eight official
+metric fields, category breakdowns, failures, empty predictions, per-seed results,
+paired control comparisons and shared/incremental costs are retained. A technical
+failure receives an explicit disposition; it does not silently trigger a retry or
+remove pages. Inference uses the common default Transformers path; historical vLLM
+scores are not asserted to be equivalent. There is no external leaderboard submission.
 
 Secondary outcomes include structural TEDS, text errors, exact grids, malformed,
 missing and truncated outputs, repair/harm/tie counts, strata and individual seed
