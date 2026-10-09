@@ -1,10 +1,19 @@
-# Large LoRA campaign: frozen experimental design
+# V8 large LoRA campaign: frozen experimental design
 
-The study compares ordinary attention LoRA (V7.3.0), gradient-initialized LoRA-GA
-(V7.3.1), and LoRA-GA with training-only cell geometry supervision (V7.3.2). Each
+The study compares ordinary attention LoRA (V8.1), gradient-initialized LoRA-GA
+(V8.2), and LoRA-GA with training-only cell geometry supervision (V8.3). Each
 recipe has seeds 0 and 1. All six fits use the same original TeleOCR checkpoint,
 paired accepted data, per-seed example order and generation loss. These are planned
 comparisons, not demonstrated improvements or a claim of a new LoRA algorithm.
+
+Effective October 9, 2026, V8.1/V8.2/V8.3 are the canonical names for the former
+V7.3.0/V7.3.1/V7.3.2 recipes. Public fit identifiers use `V8.1/seed0`, for example.
+The [version mapping](VERSION_MAPPING.json) binds all six public identifiers to
+the unchanged internal run IDs. Naming changes do not add fits or change data,
+methods, seeds, budgets, selection or evaluation. Existing runtime paths and
+immutable receipts retain their historical names. Future model packages contain
+both canonical identities and historical aliases; reconstruction resolves and
+checks both before choosing ordinary, GA or grounded-GA behavior.
 
 The [dataset card](DATASET_CARD.md) specifies source isolation and default native
 inputs. The first formal fit waits for the common full dataset and input freeze.

@@ -1,4 +1,11 @@
-# Large LoRA campaign: preparation milestone
+# V8 large LoRA campaign: preparation milestone
+
+Naming amendment, October 9, 2026: V8.1 is ordinary LoRA (formerly V7.3.0), V8.2
+is LoRA-GA (formerly V7.3.1), and V8.3 is LoRA-GA with cell-location supervision
+(formerly V7.3.2). Each retains seeds 0 and 1. These are the same six fits, with
+unchanged scientific protocol and original evidence paths. See the explicit
+[version mapping](VERSION_MAPPING.json). This amendment does not update the
+measured preparation snapshot below or claim new training results.
 
 Snapshot: 2026-10-08 18:30 UTC. Data preparation is running. **No formal training
 fit, confirmation score or full-benchmark result exists for this campaign yet.**

@@ -7,8 +7,8 @@ Our goal is to improve end-to-end parsing on OmniDocBench and develop methods
 whose gains hold beyond a single benchmark. We study when an existing parser
 benefits from a different input view or specialist, and when an intervention
 damages a correct prediction. The project includes successful and unsuccessful
-historical experiments and the completed V6 study. The current V7 direction is
-generator fine-tuning preparation; no V7 fine-tuning result is claimed.
+historical experiments and the completed V6 study. The current V8 campaign studies
+generator fine-tuning at a larger data scale; V8 training results are pending.
 
 [Results](research/RESULTS.md) · [Methods](#methods) ·
 [Reproduction](research/REPRODUCIBILITY.md) · [V5 study](versions/v5/README.md) ·
@@ -29,12 +29,16 @@ recognized Overall score above the leaderboard leader. The accompanying research
 goal is a generalizable contribution suitable for a CCF A venue; no paper or
 official leaderboard result is claimed at this stage.
 
-## V7: large table-specialist LoRA campaign
+## V8: large table-specialist LoRA campaign
 
 The [large LoRA preparation report](artifacts/results/v7_finetuning/large-lora-001/REPORT.md)
 records the active source-backed dataset construction and actual-model interface
-checks. The design targets 20,000 real training tables and compares three recipes
-with two seeds each. Read the [dataset card](artifacts/results/v7_finetuning/large-lora-001/DATASET_CARD.md)
+checks. The design targets 20,000 real training tables and compares V8.1 ordinary
+LoRA, V8.2 LoRA-GA and V8.3 LoRA-GA with cell-location supervision, each with seeds
+0 and 1. The former V7.3.0/V7.3.1/V7.3.2 labels are aliases for these same six fits;
+existing paths and immutable evidence retain their original names. Read the
+[version mapping](artifacts/results/v7_finetuning/large-lora-001/VERSION_MAPPING.json),
+[dataset card](artifacts/results/v7_finetuning/large-lora-001/DATASET_CARD.md)
 and [methods](artifacts/results/v7_finetuning/large-lora-001/METHODS.md).
 Formal training and evaluation results for this campaign are not yet available.
 
