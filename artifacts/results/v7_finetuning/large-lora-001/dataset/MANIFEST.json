@@ -1,0 +1,25 @@
+{
+  "snapshot_utc": "2026-10-09T10:09:50.058653+00:00",
+  "scope": "Dataset composition only; no training trajectories or accuracy measurements",
+  "visual_inspection": "All four PNGs inspected; calibration legend overlap repaired and re-inspected",
+  "input_summary": "../../DATASET_FROZEN_SUMMARY.json",
+  "renderer": "Matplotlib3.10.7",
+  "generation_source": "versions/generator_pilot/large_plots.py",
+  "generation_source_sha256": "40fc236610e0ce290e38712912d8b7d2a67c4e79baa2e30a8c530bb62a7ad183",
+  "files": {
+    "figures/dataset_partitions.png": "3713af2b4b5c1e6481efd514bc6ac83f8776b951e8f454ad4c98fae117c89029",
+    "figures/dataset_partitions.svg": "cba76bd74b31638c52ee4fab2967713a4b34f1dcc56b8993ff0b227b80647141",
+    "figures/calibration_coverage.png": "309cfcdd203379a476d25ec6fc9463525d5ee33dd572a6703bda1db636714a5a",
+    "figures/calibration_coverage.svg": "13f4ee1efa8ecd33b2e9f22d1128bc1693c5e64d18ec2d667f872a1a76cbb0ed",
+    "figures/training_distributions.png": "3cfc0f760b0258da4ba4f7e1800fa1a9a862e3f149e15b37dabebe66aae8c111",
+    "figures/training_distributions.svg": "cdde7b427edf728347f29df65190bf9e1a3a0f2ad06083f87b06ddcb1067e943",
+    "figures/input_flow.png": "4bb4f2da7ff9f07c219cb39d5061d9607a89f8a0cd96cd9fb9ef884a013c4f40",
+    "figures/input_flow.svg": "abb4929f11ff3aa463f64ed9b1d840a8143392f1dde9d808ce7347859cd9c34e",
+    "metrics/split_composition.csv": "9b5a0075f624fb5a5085166c12e61fe2469ffbda6671104fbe38aa85ee942428",
+    "metrics/structure_calibration_coverage.csv": "9c9b326f6cdfcd1de16ecc6612f689f131e9e5401e4df1e36ccd0c50d8637dfc",
+    "metrics/training_distributions.csv": "ac1c2c610707d17c4319baddf0348af020e7b1feff2231d946df87d3cbb3de58",
+    "metrics/input_flow.json": "46de4746d2f2d13997e22156dad1f2e689c0f7cd694a05b558dd28a21a8ee9d5",
+    "metrics/VERSION_MAPPING.json": "84e5e97ead067c7f666921ef16b3cf94ab0db58532e7e25de33a5b0630f6dff4"
+  },
+  "svg_formatting": "Trailing line whitespace removed; normalized XML tree checked unchanged"
+}

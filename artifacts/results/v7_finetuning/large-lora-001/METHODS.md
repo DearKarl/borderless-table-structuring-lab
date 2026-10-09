@@ -49,10 +49,11 @@ at commit `c4cd5372c75b290924214b348008891f744512ef` and the
 scaling with gamma 16, rank 8, and randomized SVD with q=min(4r,min(matrix dimensions))
 and four iterations. There is no method, rank or loss-weight sweep.
 
-The formal mean generation gradients will use a fixed stratified 256-example
+The formal mean generation gradients use a fixed stratified 256-example
 accepted-TRAIN subset, the same IDs/order/masks for both GA recipes and both seeds,
-with separately recorded gradient-estimation seed 0. This subset has not yet been
-constructed. The 256-example count is our design choice, not a paper requirement.
+with separately recorded gradient-estimation seed 0. This subset was frozen with
+the full corpus on October 9, 2026. The 256-example count is our design choice,
+not a paper requirement.
 
 The implementation keeps the original checkpoint unchanged and evaluates
 `W_original x + 2 [B A dropout(x) - B_initial A_initial x]`. This is the algebraic

@@ -1,11 +1,21 @@
-# V8 large LoRA campaign: preparation milestone
+# V8 large LoRA campaign: dataset freeze milestone
+
+October 9, 2026: the common dataset is frozen at **20,000 TRAIN tables from
+11,217 documents**, with 256 DEV and 512 confirmation sources. All 21,535 source
+pages completed native processing. All 23,619 static-eligible targets have input
+QA dispositions; 22,973 have usable native inputs before final TRAIN selection.
+The 200 visually reviewed examples all remain in TRAIN. Full-corpus runtime
+validation is in progress; no formal training or accuracy result is claimed by
+this snapshot. See the [dataset card](DATASET_CARD.md),
+[aggregate counts](DATASET_FROZEN_SUMMARY.json) and [measured dataset figures](DATASET_FIGURES.md).
 
 Naming amendment, October 9, 2026: V8.1 is ordinary LoRA (formerly V7.3.0), V8.2
 is LoRA-GA (formerly V7.3.1), and V8.3 is LoRA-GA with cell-location supervision
 (formerly V7.3.2). Each retains seeds 0 and 1. These are the same six fits, with
 unchanged scientific protocol and original evidence paths. See the explicit
-[version mapping](VERSION_MAPPING.json). This amendment does not update the
-measured preparation snapshot below or claim new training results.
+[version mapping](VERSION_MAPPING.json).
+
+## Historical preparation snapshot
 
 Snapshot: 2026-10-08 18:30 UTC. Data preparation is running. **No formal training
 fit, confirmation score or full-benchmark result exists for this campaign yet.**
