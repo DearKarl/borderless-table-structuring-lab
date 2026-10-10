@@ -2,11 +2,27 @@
   "snapshot_utc": "2026-10-09T10:09:50.058653+00:00",
   "scope": "Dataset composition only; no training trajectories or accuracy measurements",
   "visual_inspection": "All four PNGs inspected; calibration legend overlap repaired and re-inspected",
-  "input_summary": "../../DATASET_FROZEN_SUMMARY.json",
+  "input_summary": "../DATASET_FROZEN_SUMMARY.json",
   "renderer": "Matplotlib3.10.7",
   "generation_source": "versions/generator_pilot/large_plots.py",
   "generation_source_sha256": "40fc236610e0ce290e38712912d8b7d2a67c4e79baa2e30a8c530bb62a7ad183",
   "files": {
+    "figures/dataset_partitions.png": "3713af2b4b5c1e6481efd514bc6ac83f8776b951e8f454ad4c98fae117c89029",
+    "figures/dataset_partitions.svg": "f1c314bc865c90ea882cf3417dc7b31cf4dd502506d1579d966b7c832ca171b8",
+    "figures/calibration_coverage.png": "309cfcdd203379a476d25ec6fc9463525d5ee33dd572a6703bda1db636714a5a",
+    "figures/calibration_coverage.svg": "155fb4829229cbae773890ba918851ae50a14f4323b37924185789f3f2378b05",
+    "figures/training_distributions.png": "3cfc0f760b0258da4ba4f7e1800fa1a9a862e3f149e15b37dabebe66aae8c111",
+    "figures/training_distributions.svg": "85a3586ab6d02850518902021bcdc816b77ffbf7abb7f8bc978cbccdbfe0b28c",
+    "figures/input_flow.png": "4bb4f2da7ff9f07c219cb39d5061d9607a89f8a0cd96cd9fb9ef884a013c4f40",
+    "figures/input_flow.svg": "27337ccbfff42959af1d8bbad90d438ba69bce2fb3f5f772fec975c865e49bc2",
+    "metrics/split_composition.csv": "628b19229e8b1b0504be46fc173ca5605d0c384ccdd857f8c8c5abef53eba2cb",
+    "metrics/structure_calibration_coverage.csv": "7ef9ad95cf1f3e8f0ad7263430c9f908d1ffd4f6852764849f99fbb6d07195f8",
+    "metrics/training_distributions.csv": "adac696ea5cdf989a838af062c67980409582a9777376970c96665133534805d",
+    "metrics/input_flow.json": "8821cf6b3f327bfbb72a1915713f1bac5419489b8e2ec8ee551dce0acbe00b83",
+    "metrics/VERSION_MAPPING.json": "1f41dfa1c0746574f38b7fdc43d7d558602120ca98a3ffe557b01e753611efd5"
+  },
+  "svg_formatting": "Trailing line whitespace removed; normalized XML tree checked unchanged",
+  "pre_Git_line_ending_hashes": {
     "figures/dataset_partitions.png": "3713af2b4b5c1e6481efd514bc6ac83f8776b951e8f454ad4c98fae117c89029",
     "figures/dataset_partitions.svg": "cba76bd74b31638c52ee4fab2967713a4b34f1dcc56b8993ff0b227b80647141",
     "figures/calibration_coverage.png": "309cfcdd203379a476d25ec6fc9463525d5ee33dd572a6703bda1db636714a5a",
@@ -21,5 +37,8 @@
     "metrics/input_flow.json": "46de4746d2f2d13997e22156dad1f2e689c0f7cd694a05b558dd28a21a8ee9d5",
     "metrics/VERSION_MAPPING.json": "84e5e97ead067c7f666921ef16b3cf94ab0db58532e7e25de33a5b0630f6dff4"
   },
-  "svg_formatting": "Trailing line whitespace removed; normalized XML tree checked unchanged"
+  "file_hash_convention": "SHA256 of exact Git blob bytes; text artifacts use their published LF representation. Original working-copy hashes are retained separately.",
+  "generation_source_git_commit": "493defea14f34012d3601f774c35647a966f3fc2",
+  "metadata_corrected_at_utc": "2026-10-10T11:31:13.547137+00:00",
+  "metadata_correction": "Corrected Git-normalized text hashes and summary relative path; no dataset, measurement, image or scientific code changed."
 }
