@@ -77,6 +77,11 @@ Failures and recovery costs remain in the experiment ledger.
 
 ## Schedule, telemetry and selection
 
+The [runtime source guide](../../../../versions/generator_pilot/LARGE_CAMPAIGN_RUNTIME.md)
+links the executed training, calibration and generation workers and package loader.
+The public [execution specification](EXECUTION_SPECIFICATION.json) records the
+scientific settings, runtime/base hashes and exact executed versus Git-source hashes.
+
 AdamW uses adapter/head LR1e-4 and merger LR1e-5, betas(0.9,0.999), eps 1e-8,
 weight decay 0.01 and global gradient clipping 1. Effective batch size is 16, with
 three complete passes, 5% warmup and cosine decay. At 20,000 examples, each fit has

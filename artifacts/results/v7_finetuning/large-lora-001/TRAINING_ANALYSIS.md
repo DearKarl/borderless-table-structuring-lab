@@ -52,7 +52,7 @@ exposures, supervised tokens and training time separately.
 For V8.3, mean cell-box L1 over the same windows falls from 0.19619 to 0.04194
 for seed0 and from 0.19742 to 0.04190 for seed1. The objective uses a coefficient
 of 0.1 on this auxiliary loss. Successful optimization of that head is not
-evidence that table generation improved, and the head is absent at inference.
+evidence that table generation improved, and generation does not call the head.
 
 ![Auxiliary geometry loss](training/figures/cell_geometry.png)
 

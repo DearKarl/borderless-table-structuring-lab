@@ -1,0 +1,179 @@
+{
+  "frozen_at_utc": "2026-10-09T10:04:34.519951+00:00",
+  "common_inputs_sha256": "b6b000cddb189334d8a6e0acc0669e01bd4f4207688081ae2bf30f6308bfa71f",
+  "calibration_inputs_sha256": "46bf1a77c7565b389983d6cfbbf5fd6b7bf3214b3ced823e4febecbdc143cf08",
+  "calibration_result_binding": "One passed256-TRAIN calibration receipt and factor hash, shared across B/C and both seeds; actual artifact hashes added only to immutable per-fit bindings",
+  "recipes": [
+    "V7.3.0",
+    "V7.3.1",
+    "V7.3.2"
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "rank": 8,
+  "alpha": 16,
+  "dropout": 0.05,
+  "adapter_parameters": 2293760,
+  "projection": "model.visual.merger",
+  "projection_parameters": 31464704,
+  "auxiliary_head_parameters": 4100,
+  "visual_encoder_frozen": true,
+  "base_hashes": {
+    "README.md": "648a65dd241522d59ae2bd19a4909fcf6c01eb3f57acfa6917d3d814643537cc",
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "chat_template.jinja": "a0bc6f6fc7a29a80017a433e8f03a1cc1236e838a944a2d034295a60c4f2fddb",
+    "config.json": "92c5e15f1768dcb54bceae170043fbfefd248508159700b2179824b88c33ae75",
+    "generation_config.json": "50867494bddf9ddc8e289e6214be5a2263e68f16c127a3652c6eb9f17990e5d9",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "model.safetensors": "9817b18041bd96403f75e38a33b28ed0cd5fb2641f67eead673afabd3c408109",
+    "modeling_naviocr.py": "7adac1cc17009f9f1b8e0c58284d7c0b9989a590f017b9e5964cc42270207922",
+    "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+    "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+    "tokenizer_config.json": "e04be4dd17e9f661bc487ba848a37f66a8f1adf2eef412f5d4ecb40cab4d39e7",
+    "video_preprocessor_config.json": "15bb7c2f2bc95fe9cc3749a4b287872b4886a15e9fcf550a4122a46ae26150bd",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "runtime_packages": {
+    "accelerate": "1.15.0",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.8.0",
+    "torchvision": "0.23.0",
+    "transformers": "4.57.6",
+    "vllm": "0.11.0"
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "adapter_head_lr": 0.0001,
+    "projection_lr": 1e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0
+  },
+  "effective_batch": 16,
+  "accumulation": 16,
+  "epochs": 3,
+  "updates": 3750,
+  "exposures": 60000,
+  "warmup_updates": 188,
+  "decay": "Cosine after ceil(5%*3750) warmup; last update LR0",
+  "generation_loss": "Per-example mean assistant+EOS causal CE, then mean over16 examples",
+  "geometry_loss": "Per-example mean L1 over four coordinates and valid origin cells, coefficient0.1 only C",
+  "precision": "BF16 base/autocast; FP32 trainable adapter/head/projection and optimizer master weights",
+  "gradient_checkpointing": true,
+  "diagnostics": {
+    "panel_train": 128,
+    "panel_dev": 128,
+    "steps": [
+      0,
+      250,
+      500,
+      750,
+      1000,
+      1250,
+      1500,
+      1750,
+      2000,
+      2250,
+      2500,
+      2750,
+      3000,
+      3250,
+      3500,
+      3750
+    ],
+    "dropout": false,
+    "restore_rng": true,
+    "checkpoint_selection_used": false
+  },
+  "telemetry": {
+    "every_update": true,
+    "norms_resources_every": 50
+  },
+  "training_example_timeout_seconds": 1200,
+  "diagnostic_example_timeout_seconds": 600,
+  "nonfinite_oom_policy": "Fail and retain evidence, no skipped updates, no silent batch/config change or completed-run retry",
+  "recovery_state": "Save optimizer and RNG state alongside epoch checkpoints; exact serialized model-state check; no automatic resume or extra checkpoint selection",
+  "selection": {
+    "epoch": "Full DEV256 mean TEDS at1/2/3; earlier epoch on ties",
+    "recipe": "Mean of two seeds; tie A then B then C",
+    "nominee": "seed0 of selected recipe"
+  },
+  "confirmation": {
+    "denominator": 512,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 0,
+    "marginal_interval": 0.975,
+    "primary_gain_threshold": 0.005,
+    "threshold_is_diagnostic_not_benchmark_gate": true
+  },
+  "scoring_source_sha256": "5694f070d87ffb0a919b326ec293abb70fd9eae00b3a1dc00983dd4e8b20216e",
+  "legacy_source_hashes": {
+    "versions/v5_native/features.py": "1c5867b6b18951ff0f8e0a7e66cc4cefd94f020d26bc5fc50f969c5d66816f5b",
+    "versions/v5_native/regions.py": "2135649f6b20c5166676a7ca7c40fe24d20d5da2b679ec4c16da3eb11f8fed2a",
+    "versions/v7/features.py": "a5e30f84e91b377d8d71489f64e29c9b1ec093556b5227d046983175fbb85afa"
+  },
+  "gold_hashes": {
+    "dev": "a3484503d2bbe7334f301a6d373a53a261239cca3c1600cb3c3bea615b47df7b",
+    "confirmation": "2a9b1ec526c0a01240303614d2438f339f6b8db6afad88efdce2506a5cfffc00"
+  },
+  "inference": "Identical default Transformers prompts/helper/greedy decoder; BF16 autocast; presence/frequency penalties ignored; not historical vLLM equivalence",
+  "schema_version": 1,
+  "artifact_type": "Public scientific projection; not the private executable protocol file",
+  "source_execution_protocol_sha256": "15f47a72e2723d1b7f387e0134a9772ed237862a39567c76031697b250226d62",
+  "recipe_aliases": {
+    "V7.3.0": "V8.1",
+    "V7.3.1": "V8.2",
+    "V7.3.2": "V8.3"
+  },
+  "published_runtime_sources": {
+    "large_calibrate.py": {
+      "executed_source_sha256": "ea5fa2899d582ba4fdc0ee7b997e49e788938f326f3635836ac93bf893988932",
+      "Git_source_sha256": "ea5fa2899d582ba4fdc0ee7b997e49e788938f326f3635836ac93bf893988932",
+      "role": "Executed frozen worker"
+    },
+    "large_train.py": {
+      "executed_source_sha256": "7dd5288b013e59e4af1d1cb20accce9cecbf27eb95a066530d7ab6ae5817bcac",
+      "Git_source_sha256": "7dd5288b013e59e4af1d1cb20accce9cecbf27eb95a066530d7ab6ae5817bcac",
+      "role": "Executed frozen worker"
+    },
+    "large_generate.py": {
+      "executed_source_sha256": "3e9e3372ae1d1404d872bc338110343e72a49eb3200e7d73b0593f38fe4f31e0",
+      "Git_source_sha256": "3e9e3372ae1d1404d872bc338110343e72a49eb3200e7d73b0593f38fe4f31e0",
+      "role": "Executed frozen worker"
+    },
+    "large_load.py": {
+      "executed_source_sha256": null,
+      "Git_source_sha256": "2a10e52ee0caf289951222455189bfc7163499deb9cdfbd6c7123627fb4b4d6b",
+      "role": "Package reconstruction implementation; final selected-package verification pending"
+    }
+  },
+  "source_hash_convention": "Original source bytes including original line endings; repository .gitattributes preserves versions/** exactly.",
+  "amended_full_benchmark": {
+    "models": 6,
+    "pages_per_model": 1651,
+    "model_page_outputs": 9906,
+    "controls": [
+      "base",
+      "legacy_simple_rule"
+    ],
+    "seed_waves": [
+      0,
+      1
+    ],
+    "seed1_barrier": "All three seed0 full inference and CPU scoring tasks terminal",
+    "maximum_concurrent_evaluation_workers": 3,
+    "confirmation_gate_required": false,
+    "benchmark_driven_reselection": false,
+    "external_leaderboard_submission": false
+  },
+  "full_benchmark_status": "Evaluation ongoing; no final scores claimed",
+  "raw_inputs_or_weights_included": false
+}
