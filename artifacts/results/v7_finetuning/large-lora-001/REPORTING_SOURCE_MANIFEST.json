@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-10-10T17:32:00.490841+00:00",
+  "recorded_at_utc": "2026-10-10T20:58:49.802987+00:00",
   "scope": "Prepared reporting implementation; final benchmark metrics are not yet available",
   "sources": {
     "large_six_summary.py": "d8ce0344a53841c3666b5d14bf0647f599ce0b15ba4eab5aaead907834667b10",
@@ -12,14 +12,17 @@
     "large_six_timing.py": "6238a7afc3d2ac50fa902536426facc05e6945de20dfa79fd10eed8f075b6080",
     "test_large_six_paired.py": "9876719fd80e2174dd04094783321d67d295396d7313b4fdecbcd04a26ec48a5",
     "test_large_six_paired_pdf_v2.py": "a74e5f52d7e962e3ec7762f1433dd5696abb0383c3d992a31f004f536b916f07",
-    "test_large_six_timing.py": "239e954a6e9b23a0bd255b599ce2222bd1781f2c7187f9bb06b51ca35e72899c"
+    "test_large_six_timing.py": "239e954a6e9b23a0bd255b599ce2222bd1781f2c7187f9bb06b51ca35e72899c",
+    "large_confirmation_reporting_v2.py": "4e7df0afe532728ab3b9dab4c4f0cd3f689a8c05d41fe8ab526e78ce1fd4a27c",
+    "test_large_confirmation_reporting_v2.py": "4cf6962c29bbaa4c01c42305c5d494446b651c1c90db0820ea7f80b1127fea14"
   },
   "entry_points": {
     "summary": "large_six_summary_pdf_v2.py",
     "figures": "large_six_plots_pdf_v2.py",
     "paired_outcomes": "large_six_paired.py",
     "qualified_paired_outcomes": "large_six_paired_pdf_v2.py",
-    "execution_timing": "large_six_timing.py"
+    "execution_timing": "large_six_timing.py",
+    "confirmation_reporting": "large_confirmation_reporting_v2.py"
   },
   "original_algorithms_retained": true,
   "metric_values_and_denominators_unchanged": true,
@@ -47,5 +50,16 @@
     "numeric_outcomes_unchanged": true,
     "qualification_checks_passed": 2
   },
-  "execution_timing": "Separately report allocated GPU seconds, elapsed execution windows and occupied time unions; retain failures, waiting costs and missing timestamp dispositions."
+  "execution_timing": "Separately report allocated GPU seconds, elapsed execution windows and occupied time unions; retain failures, waiting costs and missing timestamp dispositions.",
+  "confirmation_reporting": {
+    "interval_level": "Nominal 97.5% marginal percentile bootstrap",
+    "primary_family": "Bonferroni allocation targeting 95% coverage for two fixed primary contrasts; bootstrap coverage is approximate",
+    "raw_analysis_preserved": true,
+    "numerical_values_unchanged": true,
+    "paired_source_denominator": 512,
+    "contrasts": 16,
+    "primary_contrasts": 2,
+    "qualification_checks_passed": 2,
+    "visual_review_pending": true
+  }
 }
