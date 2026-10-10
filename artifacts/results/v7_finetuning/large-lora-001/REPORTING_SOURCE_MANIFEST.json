@@ -1,16 +1,25 @@
 {
-  "recorded_at_utc": "2026-10-10T15:19:48.872861+00:00",
+  "recorded_at_utc": "2026-10-10T17:32:00.490841+00:00",
   "scope": "Prepared reporting implementation; final benchmark metrics are not yet available",
   "sources": {
     "large_six_summary.py": "d8ce0344a53841c3666b5d14bf0647f599ce0b15ba4eab5aaead907834667b10",
     "large_six_plots.py": "3bbf44a89b0322d2675351afb24f7b0b27e49e9a67d0199942ed03fe2340a3b4",
     "large_six_summary_pdf_v2.py": "e5198bd4f6e48e88d2b461332573b4a55d8990a61031b3a820bddfb951414313",
     "large_six_plots_pdf_v2.py": "9e10f5d3473cbfcccc237edd49757a4f9a4e4a9dc97c4540d4f8855e7d66d828",
-    "test_large_six_summary_pdf_v2.py": "cb2adf89eaecd5ff762dc70f497406c1996bd47e9e5e4842382f5210200e0980"
+    "test_large_six_summary_pdf_v2.py": "cb2adf89eaecd5ff762dc70f497406c1996bd47e9e5e4842382f5210200e0980",
+    "large_six_paired.py": "442ebeb0c671ff95b85a1e4c581d470063d55b201298767dc6955a83e2ab69a8",
+    "large_six_paired_pdf_v2.py": "aa2524063619b579175f57c1b86c4314926fef5f4bb8aee4b875c083e634699f",
+    "large_six_timing.py": "6238a7afc3d2ac50fa902536426facc05e6945de20dfa79fd10eed8f075b6080",
+    "test_large_six_paired.py": "9876719fd80e2174dd04094783321d67d295396d7313b4fdecbcd04a26ec48a5",
+    "test_large_six_paired_pdf_v2.py": "a74e5f52d7e962e3ec7762f1433dd5696abb0383c3d992a31f004f536b916f07",
+    "test_large_six_timing.py": "239e954a6e9b23a0bd255b599ce2222bd1781f2c7187f9bb06b51ca35e72899c"
   },
   "entry_points": {
     "summary": "large_six_summary_pdf_v2.py",
-    "figures": "large_six_plots_pdf_v2.py"
+    "figures": "large_six_plots_pdf_v2.py",
+    "paired_outcomes": "large_six_paired.py",
+    "qualified_paired_outcomes": "large_six_paired_pdf_v2.py",
+    "execution_timing": "large_six_timing.py"
   },
   "original_algorithms_retained": true,
   "metric_values_and_denominators_unchanged": true,
@@ -28,5 +37,15 @@
     "scope": "Exact retained membership, explicit no-replay/empty outcomes, unchanged numeric values and affected comparisons"
   },
   "final_report_requires": "Terminal results for all six models and both controls; exact evidence binding; visual inspection of real measured figures",
-  "GPU_jobs_or_official_rescoring_started_by_reporting": false
+  "GPU_jobs_or_official_rescoring_started_by_reporting": false,
+  "paired_outcomes": {
+    "comparisons": 16,
+    "affected_by_PDF_failures": 6,
+    "correspondence": "Same page, exact GT-index group and GT-text hash; require uniqueness in both outputs; duplicates/missing identities remain unmatchable",
+    "tie_tolerance": 1e-06,
+    "descriptive_only": true,
+    "numeric_outcomes_unchanged": true,
+    "qualification_checks_passed": 2
+  },
+  "execution_timing": "Separately report allocated GPU seconds, elapsed execution windows and occupied time unions; retain failures, waiting costs and missing timestamp dispositions."
 }
