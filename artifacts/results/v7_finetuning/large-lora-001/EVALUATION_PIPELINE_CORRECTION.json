@@ -1,0 +1,65 @@
+{
+  "snapshot_utc": "2026-10-10T14:14:36.612989+00:00",
+  "training_and_DEV_repeated": false,
+  "affected_models": [
+    "V8.1/seed0",
+    "V8.2/seed0"
+  ],
+  "failure": {
+    "root_cause": "PyMuPDF document passed to PDFium page composition",
+    "durable_failed_pages_per_model": 160,
+    "additional_conservatively_excluded_page_directories_per_model": 1,
+    "completed_model_calls_per_model": 11,
+    "prior_GPU_seconds": [
+      708.3323219779995,
+      643.8702144489798
+    ]
+  },
+  "repair": {
+    "native_backend_constructor": true,
+    "validated_real_cached_pages": 5,
+    "table_and_non_table_cases": true,
+    "base_middle_and_markdown_exact": true,
+    "validation_model_calls": 0,
+    "local_checks_passed": 8,
+    "remaining_unattempted_pages_per_model": 1490,
+    "full_denominator_per_model": 1651,
+    "prior_failures_retained": true,
+    "prior_model_pages_replayed": false
+  },
+  "scientific_interpretation": "Scores for the two affected seed0 models retain161 empty technical failures each. These results and their two-seed averages are execution outcomes and must not be described as clean estimates of model quality or causal training gains.",
+  "scheduling": "Only dispatcher processes were consolidated; existing GPU workers continued unchanged. Same immutable shared stages, model inputs, checkpoints, decoder and wave barrier.",
+  "correction_sources": {
+    "large_pdf_native.py": "4461341d6e9338da59fce6b3f4dd4f34b117a6c26084110efd6ac9ec0569949a",
+    "large_failed_prefix.py": "044d6d176c51b670c1c0993ec78d95a09966eba3ecd8320c16358249a9ed19a1",
+    "large_benchmark_stream_pdf_v2.py": "81efd5dea9c32a77d0232e738c8b27fcef78863e6773a62929f15de4a9e66b23",
+    "large_benchmark_six_pdf_v2.py": "7c52c0a54fb190c08f8dfa2177e201c0355eb2740dd0ec09be3f3fc67337932d"
+  },
+  "additional_attempts": "A local manifest newline-encoding guard failed before any corrected GPU launch; exact remote bytes were restored and the evidence retained. A CPU validation output parser required correction; neither event ran inference.",
+  "current_quality_results_available": false,
+  "record_scope": "Historical technical-failure and correction record; not a benchmark quality result.",
+  "corrected_runtime_validation": {
+    "at_utc": "2026-10-10T14:52:57.159777+00:00",
+    "models": {
+      "V8.1/seed0": {
+        "new_completed_pages": 57,
+        "new_model_calls": 15,
+        "new_page_errors": 0,
+        "duplicate_model_pages": 0,
+        "first_valid_output_sha256": "760b4a6aec507eddc9a93bbca0eb80a76bb3000582f40f04557f41e3eeae890b",
+        "native_input_exact": true,
+        "non_table_middle_exact": true
+      },
+      "V8.2/seed0": {
+        "new_completed_pages": 57,
+        "new_model_calls": 15,
+        "new_page_errors": 0,
+        "duplicate_model_pages": 0,
+        "first_valid_output_sha256": "27bc6f6c7d4bb777990e2aaf192a6e2499c13c896ac6970a110fef3769ad6bcd",
+        "native_input_exact": true,
+        "non_table_middle_exact": true
+      }
+    },
+    "full_campaign_complete": false
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "recorded_at_utc": "2026-10-10T14:56:32.857144+00:00",
+  "status": "corrected_runtime_has_verified_valid_outputs_campaign_incomplete",
+  "sources": {
+    "versions/generator_pilot/large_benchmark.py": "8cf088ec0da6308347ec1fdcd522bdf588d626efea57e28c258b44a4a29bfb64",
+    "versions/generator_pilot/large_benchmark_six.py": "1d1df03bb1ab00f20c965f77ecc66867ae2050adc5deba7e67a3f57c0b932824",
+    "versions/generator_pilot/large_benchmark_stream.py": "6e1d96f6f1e20435941fe05745e99b1620fc82bfefc08f3d641f235d3425070c",
+    "versions/generator_pilot/large_benchmark_model.py": "136ce3d6416d5ea67eb3bbce5286cd83679bef8715bc7f89ebd1e032b179c6df",
+    "versions/generator_pilot/large_benchmark_shared.py": "3871ed4975360cf37628ba85821c449af6ff423d3ceea04a400157acc356ffdf",
+    "versions/generator_pilot/large_benchmark_stream_model.py": "15eb419a93d12cd241ca0a49dc341da242933aa54e4905afb640b985ea9b8ff4",
+    "versions/generator_pilot/large_stream_cache.py": "f39fd7bf02c49ab0abbbd6375f6ca95ac0ab6603da265f6b72afa6283bfcb337",
+    "versions/generator_pilot/large_pdf_native.py": "4461341d6e9338da59fce6b3f4dd4f34b117a6c26084110efd6ac9ec0569949a",
+    "versions/generator_pilot/large_failed_prefix.py": "044d6d176c51b670c1c0993ec78d95a09966eba3ecd8320c16358249a9ed19a1",
+    "versions/generator_pilot/large_benchmark_six_pdf_v2.py": "7c52c0a54fb190c08f8dfa2177e201c0355eb2740dd0ec09be3f3fc67337932d",
+    "versions/generator_pilot/large_benchmark_stream_pdf_v2.py": "81efd5dea9c32a77d0232e738c8b27fcef78863e6773a62929f15de4a9e66b23"
+  },
+  "deployment_module_mapping": {
+    "shared": {
+      "entry": "large_benchmark_shared.py",
+      "large_benchmark_six": "large_benchmark_six.py"
+    },
+    "model": {
+      "entry": "large_benchmark_model.py",
+      "large_benchmark_six": "large_benchmark_six_pdf_v2.py"
+    },
+    "early_stream_model": {
+      "entry": "large_benchmark_stream_model.py",
+      "large_benchmark_stream": "large_benchmark_stream_pdf_v2.py"
+    }
+  },
+  "preserved_originals": "Original six-model and stream implementations are retained byte-for-byte for audit. Their model-mode PDF opener had the disclosed incompatibility; corrected stages bind the separately named v2 source bytes to the established import module names.",
+  "shared_utility": "large_benchmark.py supplies digest, table_replacements and non_table_identity. Its historical single-nominee main is not used by the six-model runtime.",
+  "existing_dependencies": [
+    "versions/generator_pilot/large_adapters.py",
+    "versions/generator_pilot/supervision.py",
+    "versions/generator_pilot/validate_smoke_inputs.py",
+    "versions/v5_native/features.py",
+    "versions/v5_native/regions.py",
+    "versions/v7/features.py"
+  ],
+  "private_material_excluded": [
+    "Server endpoints and hardware UUIDs",
+    "Credentials and operational authorization records",
+    "Stage deployment bindings",
+    "Ground-truth and prediction bodies",
+    "Model weights"
+  ],
+  "backend": "Pinned native PDFium document constructor; default200DPI cached images and default Transformers recognition unchanged",
+  "model_page_replay": false,
+  "full_page_denominator": 1651,
+  "prior_empty_failures_per_affected_model": 161,
+  "validation": {
+    "real_cached_CPU_pages": 5,
+    "CPU_model_calls": 0,
+    "local_checks_passed": 8,
+    "subsequent_valid_model_pages_per_affected_model": 57,
+    "observed_at_utc": "2026-10-10T14:52:57.159777+00:00"
+  },
+  "source_hashes_describe": "Exact working-file bytes; Git attribute rules preserve these source bytes. This manifest does not claim final benchmark accuracy."
+}

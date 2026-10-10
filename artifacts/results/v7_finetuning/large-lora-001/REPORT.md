@@ -8,6 +8,31 @@ independent confirmation results remain pending. This is not yet an accuracy
 improvement claim. See the [completed training analysis and seven figures](TRAINING_ANALYSIS.md)
 and [exact training/selection summary](TRAINING_COMPLETED_SUMMARY.json).
 
+During subsequent full-benchmark execution, a PDF-backend mismatch caused output
+assembly to fail after successful model calls for V8.1/seed0 and V8.2/seed0. Each
+interrupted attempt retains 160 durable failed pages and one additional started
+page directory, conservatively excluded from further inference. The 11 completed
+model calls per attempt and all allocation costs remain in the evidence. A
+separately versioned correction opens cached PDF bytes with the native backend;
+five real cached pages, including table and non-table cases, reproduced the base
+middle JSON and Markdown exactly in CPU-only checks without model calls.
+
+Separate continuation stages process only the remaining 1,490 unattempted pages
+per affected model. All 1,651 pages remain in each final denominator, including
+161 retained empty failure outcomes. No training, DEV inference, or attempted
+model page is repeated. Scores for these two seed0 models and their two-seed
+averages will therefore include technical failures and must not be interpreted
+as clean model-quality or causal training-effect estimates. See the
+[aggregate correction record](EVALUATION_PIPELINE_CORRECTION.json). Final benchmark
+and confirmation quality results are still pending.
+
+At 14:52 UTC on October 10, each corrected worker had completed 57 further pages
+and 15 model calls, with no repeated model pages or new page errors. Actual output
+hashes, native-input identity and non-table preservation were verified. The
+[runtime source manifest](BENCHMARK_RUNTIME_SOURCES.json) identifies the preserved
+original implementations and the separately bound corrected modules; this
+technical validation does not establish an accuracy improvement.
+
 The controller was recovered after an interruption. All completed fits and DEV
 inference outputs were preserved; only two missing CPU score files were generated.
 No training or completed DEV inference was repeated. The historical
