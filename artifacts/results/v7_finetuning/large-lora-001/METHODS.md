@@ -120,8 +120,17 @@ Confirmation gains do not gate any of the six full evaluations.
 
 Wave A evaluates V8.1, V8.2 and V8.3 seed0. Wave B evaluates their seed1 counterparts
 only after all three Wave A inference and scoring tasks have recorded terminal
-states. Evaluation uses at most three GPU workers across DEV, confirmation and
-benchmark work. Existing training runs retain their original 3,750-update protocol.
+states. The original evaluation pool allows at most three concurrent workers
+across DEV, confirmation and benchmark work. The October 10 streaming amendment
+adds two separate consumers for V8.1/seed0 and V8.2/seed0, for at most five
+concurrent evaluation allocations. Each consumer waits for a shared shard to be
+terminal and hash verified before using its native cache. The third seed0 model
+starts after the complete shared cache is sealed; the Wave A/Wave B barrier is
+unchanged. Scheduling changes affect pending jobs; running GPU workers retain
+identity and continue. Waiting for cache dependencies remains part of measured
+allocation cost. Existing training runs retain their original 3,750-update protocol.
+All six completed fits used NVIDIA A100 80GB PCIe devices, as summarized in the
+[training hardware record](TRAINING_HARDWARE.json).
 
 The matched base and fixed legacy rule are evaluated once. Their default native
 preprocessing is cached with hashes and reused by all six models. Candidate table
@@ -129,6 +138,26 @@ pixels, processor tensors, prompts and generation parameters must match the base
 inputs exactly; layout, geometry and non-table content remain shared. Full-page
 composition also checks non-table identity. This is a table-specialist comparison
 inside the same native document pipeline.
+
+A subsequently diagnosed PDF object mismatch affected V8.1/seed0 and V8.2/seed0:
+model calls completed, but page assembly used a PyMuPDF document where the pinned
+native composition path expected PDFium. The separately versioned repair opens
+cached PDFs with the native backend. Native pixels, tensors, prompts, checkpoints and
+decoding parameters remain bound to their original hashes. Five cached-page CPU
+checks and actual corrected outputs verified native composition and non-table
+preservation. See the [correction record](EVALUATION_PIPELINE_CORRECTION.json) and
+[runtime source manifest](BENCHMARK_RUNTIME_SOURCES.json).
+
+Each affected model retains 161 previously attempted or conservatively excluded
+pages as empty technical failures. Only its 1,490 unattempted pages are processed
+by the corrected continuation; no attempted page is replayed. The logical model
+still has 1,651 outcomes, and all attempt costs are retained. Consequently, these
+two seed0 scores, their contrasts, and their two-seed means/ranges describe
+execution outcomes, not clean model-quality or training-effect estimates. The
+remaining four full-model runs use the corrected implementation from their first
+page. Confirmation does not use this full-page PDF assembly path. The
+[reporting source manifest](REPORTING_SOURCE_MANIFEST.json) binds the explicit
+failure qualifications without changing metric values or denominators.
 
 No model is reselected using confirmation or benchmark quality. All eight official
 metric fields, category breakdowns, failures, empty predictions, per-seed results,

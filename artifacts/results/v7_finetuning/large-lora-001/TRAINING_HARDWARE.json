@@ -1,0 +1,47 @@
+{
+  "recorded_at_utc": "2026-10-10T15:43:15.014719+00:00",
+  "scope": "Completed formal training allocations only",
+  "completed_fits": 6,
+  "observed_hardware_models": [
+    "NVIDIA A100 80GB PCIe"
+  ],
+  "evidence": [
+    {
+      "run_id": "V8.1/seed0",
+      "execution_receipt_sha256": "904913243a62537e5d7d9856b054f4ab80dff7b5426b92efbd5a615820eb12cd",
+      "hardware": "NVIDIA A100 80GB PCIe",
+      "execution_status": "passed"
+    },
+    {
+      "run_id": "V8.1/seed1",
+      "execution_receipt_sha256": "1263bf68d952ec6e629542b1c125fe917c1ff3d3c651e8800e13e1d29271ae23",
+      "hardware": "NVIDIA A100 80GB PCIe",
+      "execution_status": "passed"
+    },
+    {
+      "run_id": "V8.2/seed0",
+      "execution_receipt_sha256": "99a5ed3d560ccf30af6d1e1eaade0b7f8199d9a1ca7be40b6118eeb46c64d1c6",
+      "hardware": "NVIDIA A100 80GB PCIe",
+      "execution_status": "passed"
+    },
+    {
+      "run_id": "V8.2/seed1",
+      "execution_receipt_sha256": "7dee754b1d49cc717ee92fb58bd3d117a22e31cd300ec9524e5545b5d17e86a0",
+      "hardware": "NVIDIA A100 80GB PCIe",
+      "execution_status": "passed"
+    },
+    {
+      "run_id": "V8.3/seed0",
+      "execution_receipt_sha256": "2fcd3613d39b4b1faefb878b6983a7d1a721b633d6ff850d243fadedcb901d76",
+      "hardware": "NVIDIA A100 80GB PCIe",
+      "execution_status": "passed"
+    },
+    {
+      "run_id": "V8.3/seed1",
+      "execution_receipt_sha256": "c6042fdb8dd0dc50c9a4423f6bbd2c1dde606724e6406b147e99380dda50d3bb",
+      "hardware": "NVIDIA A100 80GB PCIe",
+      "execution_status": "passed"
+    }
+  ],
+  "limitation": "Observed model names in six completed training allocation receipts; no hardware-speed equivalence or inference-throughput claim."
+}
