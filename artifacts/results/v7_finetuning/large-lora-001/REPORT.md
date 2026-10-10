@@ -1,11 +1,17 @@
-# V8 large LoRA campaign: training in progress
+# V8 large LoRA campaign: training complete, evaluation running
 
-Snapshot: **2026-10-09 20:27 UTC**. All six formal fits are running, with
-2,522–2,880 of 3,750 updates completed per fit. The full-corpus CPU validation,
-technical GPU preflight and shared 256-TRAIN gradient calibration passed before
-formal training. This is execution progress, not an accuracy improvement claim.
-The [progress snapshot](TRAINING_PROGRESS_20261009.json) retains the six measured
-counts. Training curves and final quality results remain pending.
+Snapshot: **2026-10-10 11:03 UTC**. All six formal fits completed 3,750 updates
+and 60,000 exposures each. All 18 epoch checkpoints completed DEV generation and
+scoring, and the six selections are frozen. Shared native/legacy benchmark
+processing has produced actual page outputs; trained-model full evaluation and
+independent confirmation results remain pending. This is not yet an accuracy
+improvement claim. See the [completed training analysis and seven figures](TRAINING_ANALYSIS.md)
+and [exact training/selection summary](TRAINING_COMPLETED_SUMMARY.json).
+
+The controller was recovered after an interruption. All completed fits and DEV
+inference outputs were preserved; only two missing CPU score files were generated.
+No training or completed DEV inference was repeated. The historical
+[October 9 progress snapshot](TRAINING_PROGRESS_20261009.json) remains unchanged.
 
 The full-benchmark scope now includes **all six models**, with DEV-only checkpoint
 selection unchanged. Each receives the full 1,651 pages. The three seed0 models
@@ -84,6 +90,6 @@ implementation checks do not establish recognition improvement or generalization
   or corpus-size coverage is inferred from a dataset name or a target count.
 
 At that historical snapshot, dataset construction and formal training were still
-pending. The current remaining deliverables are completion of the same six fits,
-their scalar telemetry, DEV-only checkpoint selection, confirmation diagnostics,
-all six full benchmarks with shared controls, and measured analysis and figures.
+pending. Training, its scalar telemetry and DEV-only checkpoint selection are now
+complete. Remaining deliverables are independent confirmation, all six full
+benchmarks with shared controls, final quality/cost analysis and publication.

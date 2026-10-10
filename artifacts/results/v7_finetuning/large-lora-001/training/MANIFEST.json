@@ -1,0 +1,31 @@
+{
+  "files": {
+    "figures/cell_geometry.png": "cc3e70f290bc81181ebd6a343f9c8f1cd8e6347161b26df0ff13e5b02c92f65a",
+    "figures/cell_geometry.svg": "09cee25503087f127cecf536e51609fc9228e3eab95b2dbd0f7b466fa28c9e79",
+    "figures/dev_generation.png": "973de2cac62d5f340dc48df806b374f5325abcb15de6efbd6659e641fb1b7d12",
+    "figures/dev_generation.svg": "ed72eef019807284bd514a54abda65db4888fb8c72a8a37c05db45ff9d763c1f",
+    "figures/dev_generation_detail.png": "d66724516b2af19c79138fa000ccfee67a495cf25c19974eac11812652c10aca",
+    "figures/dev_generation_detail.svg": "f7f49b398d99072a29003c3b23c1a4c82b07ee595f399513f7f0847db2361be9",
+    "figures/generation_ce.png": "b7e74a4e9c7da08a26b4f1497e27b5f7e8714482306c93b4796cec3efd591e7b",
+    "figures/generation_ce.svg": "436c2912a8e88d27314b6c695fc82c80cb51bc257ea4ffd93b57ccbe7d40f9f8",
+    "figures/optimization.png": "2e65bd7366035789cabf38313c9faa3f6749319de96a9634445356c067d6eb98",
+    "figures/optimization.svg": "bfab4c1063c5c88c21a34cb47e84369481e859a46cbf73d366f18fda772a7b2f",
+    "figures/train_dev_panels.png": "23d2bad778dc4136eca302063f06826c275625ffc423a38222ed3489c7fc2eb9",
+    "figures/train_dev_panels.svg": "66249907304fb7bdfeca2cc0b3bb5677c8c3c99898793027a6df2802b736b0f7",
+    "figures/training_efficiency.png": "d97b21807eddbbb49714c57a5a34399cabaaaae6556feba0ae6c1d4e511741ea",
+    "figures/training_efficiency.svg": "6625a7b884d5a9c0f6eb1f1c811eb21266f08c40ac40cf612c9eecdfe67ad8c6",
+    "metrics/dev_epochs.csv": "ca383097cb49978404c5395e6b6d22e83022385e237fde7acf759cfbf1a14210",
+    "metrics/diagnostic_panels.csv": "c4a8bf9307707c2b5c27ece05395d6d145143803e674cc190c3abc4183343698",
+    "metrics/PLOT_MANIFEST.json": "b3fe277453dd2d2c316382c503affaddeb59bc186bb12151082c80676a742944",
+    "metrics/training_scalars.csv": "5a11f3c85b826bd3fe43e0f2ab0db10863077fe69604f30c7b9534c1f6e8f925",
+    "metrics/VERSION_MAPPING.json": "1f41dfa1c0746574f38b7fdc43d7d558602120ca98a3ffe557b01e753611efd5"
+  },
+  "figures": 7,
+  "formats": [
+    "png",
+    "svg"
+  ],
+  "raw_series": true,
+  "smoothing": false,
+  "public_numeric_allowlist": true
+}

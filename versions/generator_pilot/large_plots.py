@@ -176,6 +176,13 @@ def main():
         for ax,key,label in zip(axes,['teds','structure_teds','character_distance'],['Full TEDS (higher)','Structure TEDS (higher)','Character distance (lower)']):
             curves(ax,rows,'epoch',key);ax.set(xlabel='Training epoch',ylabel=label,xticks=[1,2,3],ylim=(0,1));ax.grid(alpha=.2)
         axes[0].legend(fontsize=8);finish(fig,'dev_generation','Free generation on all256 DEV sources',f'Full denominator includes missing/malformed outputs. Observed checkpoints:{len(rows)}/18. Only these epochs select checkpoints.')
+        fig,axes=plt.subplots(1,3,figsize=(15,5))
+        for ax,key,label in zip(axes,['teds','structure_teds','character_distance'],['Full TEDS (higher)','Structure TEDS (higher)','Character distance (lower)']):
+            curves(ax,rows,'epoch',key);values=[r[key] for r in rows];pad=max((max(values)-min(values))*.15,.0002)
+            ax.set(xlabel='Training epoch',ylabel=label,xticks=[1,2,3],ylim=(max(0,min(values)-pad),min(1,max(values)+pad)));ax.grid(alpha=.2)
+            ax.ticklabel_format(axis='y',style='plain',useOffset=False)
+        axes[0].legend(fontsize=8)
+        finish(fig,'dev_generation_detail','DEV generation with expanded axes','Same18 endpoints and256-source denominator as dev_generation; expanded vertical axes show small differences. No uncertainty intervals or matched base result are shown.')
     if manifest.get('confirmation'):
         value=read(manifest['confirmation'])
         if value['status']!='complete' or value['denominator']!=512:raise ValueError('Complete confirmation analysis required')

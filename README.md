@@ -8,7 +8,7 @@ whose gains hold beyond a single benchmark. We study when an existing parser
 benefits from a different input view or specialist, and when an intervention
 damages a correct prediction. The project includes successful and unsuccessful
 historical experiments and the completed V6 study. The current V8 campaign studies
-generator fine-tuning at a larger data scale; V8 training results are pending.
+generator fine-tuning at a larger data scale; six V8 fits are complete and evaluation is running.
 
 [Results](research/RESULTS.md) · [Methods](#methods) ·
 [Reproduction](research/REPRODUCIBILITY.md) · [V5 study](versions/v5/README.md) ·
@@ -32,7 +32,7 @@ official leaderboard result is claimed at this stage.
 ## V8: large table-specialist LoRA campaign
 
 The [large LoRA progress report](artifacts/results/v7_finetuning/large-lora-001/REPORT.md)
-records the frozen source-backed dataset and six active training runs.
+records the frozen source-backed dataset and six completed training runs.
 TRAIN contains 20,000 real tables from 11,217 documents. The study compares V8.1 ordinary
 LoRA, V8.2 LoRA-GA and V8.3 LoRA-GA with cell-location supervision, each with seeds
 0 and 1. The former V7.3.0/V7.3.1/V7.3.2 labels are aliases for these same six fits;
@@ -44,7 +44,9 @@ The [dataset figures](artifacts/results/v7_finetuning/large-lora-001/DATASET_FIG
 show measured composition, token lengths, image sizes and input exclusions.
 All six DEV-selected models will receive the full 1,651-page benchmark, with the
 three seed0 models evaluated before the three seed1 models and matched controls
-shared across them. Final training and evaluation results are pending.
+shared across them. The [training analysis](artifacts/results/v7_finetuning/large-lora-001/TRAINING_ANALYSIS.md)
+publishes all six training curves and 18 DEV endpoints. Independent confirmation
+and full-benchmark quality results are pending.
 
 ## V6: complete results and statistics
 

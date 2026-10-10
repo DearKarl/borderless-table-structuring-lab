@@ -1,0 +1,83 @@
+{
+  "measured_runs": [
+    {
+      "run_id": "V8.1/seed0",
+      "last_step": 3750,
+      "status": "passed"
+    },
+    {
+      "run_id": "V8.1/seed1",
+      "last_step": 3750,
+      "status": "passed"
+    },
+    {
+      "run_id": "V8.2/seed0",
+      "last_step": 3750,
+      "status": "passed"
+    },
+    {
+      "run_id": "V8.2/seed1",
+      "last_step": 3750,
+      "status": "passed"
+    },
+    {
+      "run_id": "V8.3/seed0",
+      "last_step": 3750,
+      "status": "passed"
+    },
+    {
+      "run_id": "V8.3/seed1",
+      "last_step": 3750,
+      "status": "passed"
+    }
+  ],
+  "missing_training_runs": 0,
+  "figures": [
+    {
+      "name": "generation_ce",
+      "title": "Full-corpus training: generation loss",
+      "footnote": "TRAIN:20,000 unique tables/fit, effective batch16. Raw points; no smoothing. Missing run logs:0/6. Wall time excludes diagnostics/initialization."
+    },
+    {
+      "name": "cell_geometry",
+      "title": "V8.3 auxiliary geometry loss",
+      "footnote": "TRAIN:20,000 unique tables/fit, effective batch16. Raw points; no smoothing. Missing run logs:0/6. Training objective coefficient0.1; this is not a generation-quality score."
+    },
+    {
+      "name": "optimization",
+      "title": "Training schedule and gradient/update diagnostics",
+      "footnote": "TRAIN:20,000 unique tables/fit, effective batch16. Raw points; no smoothing. Missing run logs:0/6. Resource/norm cadence50updates; missing measurements are omitted."
+    },
+    {
+      "name": "training_efficiency",
+      "title": "Training throughput and resources",
+      "footnote": "TRAIN:20,000 unique tables/fit, effective batch16. Raw points; no smoothing. Missing run logs:0/6. Devices shown only by recipe/seed; peak memory is cumulative within each fit."
+    },
+    {
+      "name": "train_dev_panels",
+      "title": "Teacher-forced TRAIN/DEV diagnostics",
+      "footnote": "Dropout off; RNG restored. Update0, every250, final. Diagnostic only; not checkpoint selection. Missing runs:0/6."
+    },
+    {
+      "name": "dev_generation",
+      "title": "Free generation on all256 DEV sources",
+      "footnote": "Full denominator includes missing/malformed outputs. Observed checkpoints:18/18. Only these epochs select checkpoints."
+    },
+    {
+      "name": "dev_generation_detail",
+      "title": "DEV generation with expanded axes",
+      "footnote": "Same18 endpoints and256-source denominator as dev_generation; expanded vertical axes show small differences. No uncertainty intervals or matched base result are shown."
+    }
+  ],
+  "version_mapping": "VERSION_MAPPING.json",
+  "visual_inspection": "All seven PNG exports reviewed for labels, clipping, legends and readability; SVGs exported from the same figures.",
+  "raw_prediction_or_reference_bodies_included": false,
+  "training_trajectories_are_not_dataset_size_learning_curves": true,
+  "numeric_series_row_counts": {
+    "training_scalars": 22506,
+    "diagnostic_panels": 192,
+    "dev_epochs": 18
+  },
+  "plotting_source_sha256": "beb5b5a7479c16b1bf621739e3d24b2c4e3a69e5cb9b1b681aac560e8b16559a",
+  "plotting_source_hash_convention": "UTF-8 with LF line endings, as stored in Git"
+}
