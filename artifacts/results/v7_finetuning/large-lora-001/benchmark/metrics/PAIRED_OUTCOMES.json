@@ -1,0 +1,3248 @@
+{
+  "schema_version": 2,
+  "page_denominator": 1651,
+  "comparisons": {
+    "V8.1/seed0 - base": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 52,
+              "worsened": 392,
+              "tied": 221,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.060555342406431636,
+            "reached_metric_perfect_count": 9,
+            "lost_metric_perfect_count": 207,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 21,
+              "worsened": 153,
+              "tied": 491,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.04593147673058799,
+            "reached_metric_perfect_count": 11,
+            "lost_metric_perfect_count": 124,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 52,
+              "worsened": 390,
+              "tied": 223,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.04637421269484385,
+            "reached_metric_perfect_count": 9,
+            "lost_metric_perfect_count": 206,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 122,
+              "tied": 2103,
+              "unmatchable": 254
+            },
+            "comparison_unit_denominator": 2479,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.054487191011235954,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 111,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 122,
+              "tied": 2103,
+              "unmatchable": 254
+            },
+            "comparison_unit_denominator": 2479,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.05239513261548208,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 83,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 159,
+            "tied": 1398,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 67,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 33,
+            "worsened": 310,
+            "tied": 115,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 1,
+            "worsened": 158,
+            "tied": 1479,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 31,
+            "worsened": 313,
+            "tied": 114,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 14,
+            "worsened": 132,
+            "tied": 312,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 67,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": true,
+      "execution_interpretation": "V8.1/seed0 and V8.2/seed0 each retain 161 empty technical failures from the PDF assembly defect. Their full-denominator scores, contrasts and two-seed means/ranges describe execution outcomes; they are not clean estimates of model quality or training effects."
+    },
+    "V8.1/seed0 - legacy_simple_rule": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 79,
+              "worsened": 375,
+              "tied": 211,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.05221527949755681,
+            "reached_metric_perfect_count": 18,
+            "lost_metric_perfect_count": 178,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 23,
+              "worsened": 144,
+              "tied": 498,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.04518701631298094,
+            "reached_metric_perfect_count": 13,
+            "lost_metric_perfect_count": 117,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 81,
+              "worsened": 373,
+              "tied": 211,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.04145253123025452,
+            "reached_metric_perfect_count": 18,
+            "lost_metric_perfect_count": 178,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 122,
+              "tied": 2103,
+              "unmatchable": 254
+            },
+            "comparison_unit_denominator": 2479,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.054487191011235954,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 111,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 122,
+              "tied": 2103,
+              "unmatchable": 254
+            },
+            "comparison_unit_denominator": 2479,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.05239513261548208,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 83,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 159,
+            "tied": 1398,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 67,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 47,
+            "worsened": 297,
+            "tied": 114,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 1,
+            "worsened": 158,
+            "tied": 1479,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 43,
+            "worsened": 302,
+            "tied": 113,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 15,
+            "worsened": 124,
+            "tied": 319,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 67,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": true,
+      "execution_interpretation": "V8.1/seed0 and V8.2/seed0 each retain 161 empty technical failures from the PDF assembly defect. Their full-denominator scores, contrasts and two-seed means/ranges describe execution outcomes; they are not clean estimates of model quality or training effects."
+    },
+    "V8.1/seed1 - base": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 45,
+              "worsened": 365,
+              "tied": 255,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.03491779154225027,
+            "reached_metric_perfect_count": 5,
+            "lost_metric_perfect_count": 185,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 21,
+              "worsened": 121,
+              "tied": 523,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.019485169142357338,
+            "reached_metric_perfect_count": 10,
+            "lost_metric_perfect_count": 97,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 43,
+              "worsened": 362,
+              "tied": 260,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.024683528011210078,
+            "reached_metric_perfect_count": 5,
+            "lost_metric_perfect_count": 185,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1556,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 28,
+            "worsened": 288,
+            "tied": 142,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1638,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 27,
+            "worsened": 293,
+            "tied": 138,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 15,
+            "worsened": 103,
+            "tied": 340,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    },
+    "V8.1/seed1 - legacy_simple_rule": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 75,
+              "worsened": 351,
+              "tied": 239,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.02657772863337539,
+            "reached_metric_perfect_count": 17,
+            "lost_metric_perfect_count": 159,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 20,
+              "worsened": 111,
+              "tied": 534,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.018740708724750296,
+            "reached_metric_perfect_count": 10,
+            "lost_metric_perfect_count": 88,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 77,
+              "worsened": 347,
+              "tied": 241,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.01976184654662076,
+            "reached_metric_perfect_count": 16,
+            "lost_metric_perfect_count": 159,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1556,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 46,
+            "worsened": 276,
+            "tied": 136,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1638,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 43,
+            "worsened": 284,
+            "tied": 131,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 14,
+            "worsened": 94,
+            "tied": 350,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    },
+    "V8.2/seed0 - base": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 51,
+              "worsened": 368,
+              "tied": 246,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.055192707822093075,
+            "reached_metric_perfect_count": 10,
+            "lost_metric_perfect_count": 180,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 23,
+              "worsened": 142,
+              "tied": 500,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.0397687695420229,
+            "reached_metric_perfect_count": 12,
+            "lost_metric_perfect_count": 118,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 49,
+              "worsened": 364,
+              "tied": 252,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.043146768997388014,
+            "reached_metric_perfect_count": 10,
+            "lost_metric_perfect_count": 180,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 122,
+              "tied": 2103,
+              "unmatchable": 254
+            },
+            "comparison_unit_denominator": 2479,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.054487191011235954,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 111,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 122,
+              "tied": 2103,
+              "unmatchable": 254
+            },
+            "comparison_unit_denominator": 2479,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.05239513261548208,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 83,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 159,
+            "tied": 1398,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 67,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 32,
+            "worsened": 286,
+            "tied": 140,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 158,
+            "tied": 1480,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 31,
+            "worsened": 289,
+            "tied": 138,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 18,
+            "worsened": 122,
+            "tied": 318,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 67,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": true,
+      "execution_interpretation": "V8.1/seed0 and V8.2/seed0 each retain 161 empty technical failures from the PDF assembly defect. Their full-denominator scores, contrasts and two-seed means/ranges describe execution outcomes; they are not clean estimates of model quality or training effects."
+    },
+    "V8.2/seed0 - legacy_simple_rule": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 82,
+              "worsened": 349,
+              "tied": 234,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.046852644913218215,
+            "reached_metric_perfect_count": 20,
+            "lost_metric_perfect_count": 152,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 23,
+              "worsened": 131,
+              "tied": 511,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.03902430912441586,
+            "reached_metric_perfect_count": 12,
+            "lost_metric_perfect_count": 109,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 82,
+              "worsened": 344,
+              "tied": 239,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.038225087532798685,
+            "reached_metric_perfect_count": 19,
+            "lost_metric_perfect_count": 152,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 122,
+              "tied": 2103,
+              "unmatchable": 254
+            },
+            "comparison_unit_denominator": 2479,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.054487191011235954,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 111,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 122,
+              "tied": 2103,
+              "unmatchable": 254
+            },
+            "comparison_unit_denominator": 2479,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.05239513261548208,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 83,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 159,
+            "tied": 1398,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 67,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 53,
+            "worsened": 270,
+            "tied": 135,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 158,
+            "tied": 1480,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 48,
+            "worsened": 277,
+            "tied": 133,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 19,
+            "worsened": 112,
+            "tied": 327,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 67,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": true,
+      "execution_interpretation": "V8.1/seed0 and V8.2/seed0 each retain 161 empty technical failures from the PDF assembly defect. Their full-denominator scores, contrasts and two-seed means/ranges describe execution outcomes; they are not clean estimates of model quality or training effects."
+    },
+    "V8.2/seed1 - base": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 47,
+              "worsened": 371,
+              "tied": 247,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.04395795428346628,
+            "reached_metric_perfect_count": 8,
+            "lost_metric_perfect_count": 182,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 18,
+              "worsened": 130,
+              "tied": 517,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.027370275970942777,
+            "reached_metric_perfect_count": 9,
+            "lost_metric_perfect_count": 102,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 48,
+              "worsened": 366,
+              "tied": 251,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.031054568503621625,
+            "reached_metric_perfect_count": 8,
+            "lost_metric_perfect_count": 182,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1556,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 29,
+            "worsened": 292,
+            "tied": 137,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1637,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 28,
+            "worsened": 294,
+            "tied": 136,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 13,
+            "worsened": 113,
+            "tied": 332,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    },
+    "V8.2/seed1 - legacy_simple_rule": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 76,
+              "worsened": 351,
+              "tied": 238,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.035617891374591405,
+            "reached_metric_perfect_count": 18,
+            "lost_metric_perfect_count": 154,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 18,
+              "worsened": 120,
+              "tied": 527,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.026625815553335732,
+            "reached_metric_perfect_count": 10,
+            "lost_metric_perfect_count": 94,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 77,
+              "worsened": 348,
+              "tied": 240,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.026132887039032264,
+            "reached_metric_perfect_count": 17,
+            "lost_metric_perfect_count": 154,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1556,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 46,
+            "worsened": 278,
+            "tied": 134,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1637,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 43,
+            "worsened": 282,
+            "tied": 133,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 15,
+            "worsened": 103,
+            "tied": 340,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    },
+    "V8.3/seed0 - base": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 47,
+              "worsened": 378,
+              "tied": 240,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.044376212841992745,
+            "reached_metric_perfect_count": 9,
+            "lost_metric_perfect_count": 182,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 21,
+              "worsened": 139,
+              "tied": 505,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.02831263704770524,
+            "reached_metric_perfect_count": 11,
+            "lost_metric_perfect_count": 110,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 50,
+              "worsened": 368,
+              "tied": 247,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.03033941650864052,
+            "reached_metric_perfect_count": 9,
+            "lost_metric_perfect_count": 182,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1556,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 32,
+            "worsened": 287,
+            "tied": 139,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1637,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 28,
+            "worsened": 294,
+            "tied": 136,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 15,
+            "worsened": 117,
+            "tied": 326,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    },
+    "V8.3/seed0 - legacy_simple_rule": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 78,
+              "worsened": 354,
+              "tied": 233,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.03603614993311786,
+            "reached_metric_perfect_count": 20,
+            "lost_metric_perfect_count": 155,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 22,
+              "worsened": 128,
+              "tied": 515,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.027568176630098192,
+            "reached_metric_perfect_count": 12,
+            "lost_metric_perfect_count": 102,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 82,
+              "worsened": 346,
+              "tied": 237,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.025417735044051152,
+            "reached_metric_perfect_count": 19,
+            "lost_metric_perfect_count": 155,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1556,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 49,
+            "worsened": 272,
+            "tied": 137,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1637,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 44,
+            "worsened": 280,
+            "tied": 134,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 18,
+            "worsened": 106,
+            "tied": 334,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    },
+    "V8.3/seed1 - base": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 46,
+              "worsened": 363,
+              "tied": 256,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.042623485034625576,
+            "reached_metric_perfect_count": 8,
+            "lost_metric_perfect_count": 177,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 22,
+              "worsened": 128,
+              "tied": 515,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.026994413523806656,
+            "reached_metric_perfect_count": 10,
+            "lost_metric_perfect_count": 100,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 49,
+              "worsened": 353,
+              "tied": 263,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.028875053201406695,
+            "reached_metric_perfect_count": 8,
+            "lost_metric_perfect_count": 177,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1556,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 31,
+            "worsened": 279,
+            "tied": 148,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1637,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 30,
+            "worsened": 284,
+            "tied": 144,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 15,
+            "worsened": 108,
+            "tied": 335,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    },
+    "V8.3/seed1 - legacy_simple_rule": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 79,
+              "worsened": 341,
+              "tied": 245,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.034283422125750675,
+            "reached_metric_perfect_count": 18,
+            "lost_metric_perfect_count": 149,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 23,
+              "worsened": 118,
+              "tied": 524,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.026249953106199615,
+            "reached_metric_perfect_count": 11,
+            "lost_metric_perfect_count": 92,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 82,
+              "worsened": 333,
+              "tied": 250,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.02395337173681735,
+            "reached_metric_perfect_count": 17,
+            "lost_metric_perfect_count": 149,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2345,
+              "unmatchable": 14
+            },
+            "comparison_unit_denominator": 2359,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1556,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 49,
+            "worsened": 263,
+            "tied": 146,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1637,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 44,
+            "worsened": 272,
+            "tied": 142,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 16,
+            "worsened": 98,
+            "tied": 344,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    },
+    "V8.2/seed0 - V8.1/seed0": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 147,
+              "worsened": 105,
+              "tied": 413,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.005362634584338526,
+            "reached_metric_perfect_count": 39,
+            "lost_metric_perfect_count": 11,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 53,
+              "worsened": 32,
+              "tied": 580,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.00616270718856508,
+            "reached_metric_perfect_count": 22,
+            "lost_metric_perfect_count": 15,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 152,
+              "worsened": 103,
+              "tied": 410,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.003227443697455778,
+            "reached_metric_perfect_count": 38,
+            "lost_metric_perfect_count": 11,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1557,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 126,
+            "worsened": 82,
+            "tied": 250,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1637,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 124,
+            "worsened": 83,
+            "tied": 251,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 48,
+            "worsened": 25,
+            "tied": 385,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": true,
+      "execution_interpretation": "V8.1/seed0 and V8.2/seed0 each retain 161 empty technical failures from the PDF assembly defect. Their full-denominator scores, contrasts and two-seed means/ranges describe execution outcomes; they are not clean estimates of model quality or training effects."
+    },
+    "V8.2/seed1 - V8.1/seed1": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 114,
+              "worsened": 131,
+              "tied": 420,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.00904016274121602,
+            "reached_metric_perfect_count": 27,
+            "lost_metric_perfect_count": 21,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 38,
+              "worsened": 53,
+              "tied": 574,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.007885106828585451,
+            "reached_metric_perfect_count": 21,
+            "lost_metric_perfect_count": 27,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 114,
+              "worsened": 132,
+              "tied": 419,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0063710404924115175,
+            "reached_metric_perfect_count": 27,
+            "lost_metric_perfect_count": 21,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1557,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 94,
+            "worsened": 101,
+            "tied": 263,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 1,
+            "tied": 1637,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 94,
+            "worsened": 100,
+            "tied": 264,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 31,
+            "worsened": 46,
+            "tied": 381,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    },
+    "V8.3/seed0 - V8.2/seed0": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 96,
+              "worsened": 95,
+              "tied": 474,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.010816494980100358,
+            "reached_metric_perfect_count": 12,
+            "lost_metric_perfect_count": 15,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 37,
+              "worsened": 35,
+              "tied": 593,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.011456132494317664,
+            "reached_metric_perfect_count": 23,
+            "lost_metric_perfect_count": 16,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 96,
+              "worsened": 90,
+              "tied": 479,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.012807352488747516,
+            "reached_metric_perfect_count": 12,
+            "lost_metric_perfect_count": 15,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 122,
+              "worsened": 0,
+              "tied": 2110,
+              "unmatchable": 240
+            },
+            "comparison_unit_denominator": 2472,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.054316308243727594,
+            "reached_metric_perfect_count": 111,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 122,
+              "worsened": 0,
+              "tied": 2110,
+              "unmatchable": 240
+            },
+            "comparison_unit_denominator": 2472,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.05223081096301417,
+            "reached_metric_perfect_count": 83,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 158,
+            "worsened": 0,
+            "tied": 1399,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 67,
+            "worsened": 0,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 81,
+            "worsened": 74,
+            "tied": 303,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 158,
+            "worsened": 1,
+            "tied": 1479,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 83,
+            "worsened": 75,
+            "tied": 300,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 31,
+            "worsened": 31,
+            "tied": 396,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 67,
+            "worsened": 0,
+            "tied": 246,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": true,
+      "execution_interpretation": "V8.1/seed0 and V8.2/seed0 each retain 161 empty technical failures from the PDF assembly defect. Their full-denominator scores, contrasts and two-seed means/ranges describe execution outcomes; they are not clean estimates of model quality or training effects."
+    },
+    "V8.3/seed1 - V8.2/seed1": {
+      "policy_statuses": {
+        "candidate": "complete",
+        "baseline": "complete"
+      },
+      "official_sample_outcomes": {
+        "table": {
+          "TEDS": {
+            "outcomes": {
+              "improved": 111,
+              "worsened": 86,
+              "tied": 468,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.00133446924884072,
+            "reached_metric_perfect_count": 18,
+            "lost_metric_perfect_count": 13,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "TEDS_structure_only": {
+            "outcomes": {
+              "improved": 41,
+              "worsened": 37,
+              "tied": 587,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0003758624471361181,
+            "reached_metric_perfect_count": 20,
+            "lost_metric_perfect_count": 17,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 114,
+              "worsened": 78,
+              "tied": 473,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 665,
+            "baseline_scored_rows": 665,
+            "candidate_scored_rows": 665,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": -0.002179515302214926,
+            "reached_metric_perfect_count": 18,
+            "lost_metric_perfect_count": 13,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        },
+        "display_formula": {
+          "CDM": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "higher",
+            "tie_tolerance": 1e-06
+          },
+          "Edit_dist": {
+            "outcomes": {
+              "improved": 0,
+              "worsened": 0,
+              "tied": 2352,
+              "unmatchable": 0
+            },
+            "comparison_unit_denominator": 2352,
+            "baseline_scored_rows": 2352,
+            "candidate_scored_rows": 2352,
+            "mean_raw_candidate_minus_baseline_on_unique_pairs": 0.0,
+            "reached_metric_perfect_count": 0,
+            "lost_metric_perfect_count": 0,
+            "metric_perfect_note": "Metric-perfect is not necessarily exact output-text equality",
+            "direction": "lower",
+            "tie_tolerance": 1e-06
+          }
+        }
+      },
+      "page_outcomes": {
+        "text_block_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1557,
+            "unmatchable": 94
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_edit": {
+          "outcomes": {
+            "improved": 94,
+            "worsened": 59,
+            "tied": 305,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "reading_order_edit": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 1638,
+            "unmatchable": 13
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS": {
+          "outcomes": {
+            "improved": 89,
+            "worsened": 67,
+            "tied": 302,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "table_TEDS_structure_only": {
+          "outcomes": {
+            "improved": 34,
+            "worsened": 30,
+            "tied": 394,
+            "unmatchable": 1193
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        },
+        "display_formula_CDM": {
+          "outcomes": {
+            "improved": 0,
+            "worsened": 0,
+            "tied": 313,
+            "unmatchable": 1338
+          },
+          "page_denominator": 1651,
+          "tie_tolerance": 1e-06,
+          "note": "Absent component or missing score is unmatchable; no favorable value is imputed"
+        }
+      },
+      "affected_by_retained_PDF_failures": false
+    }
+  },
+  "policy_component_page_denominators": {
+    "base": {
+      "text_block": {
+        "Edit_dist": {
+          "ALL": 1557
+        }
+      },
+      "display_formula": {
+        "Edit_dist": {
+          "ALL": 313
+        },
+        "CDM": {
+          "ALL": 313
+        }
+      },
+      "table": {
+        "TEDS": {
+          "ALL": 458
+        },
+        "Edit_dist": {
+          "ALL": 458
+        },
+        "TEDS_structure_only": {
+          "ALL": 458
+        }
+      },
+      "reading_order": {
+        "Edit_dist": {
+          "ALL": 1638
+        }
+      }
+    },
+    "legacy_simple_rule": {
+      "text_block": {
+        "Edit_dist": {
+          "ALL": 1557
+        }
+      },
+      "display_formula": {
+        "Edit_dist": {
+          "ALL": 313
+        },
+        "CDM": {
+          "ALL": 313
+        }
+      },
+      "table": {
+        "TEDS": {
+          "ALL": 458
+        },
+        "Edit_dist": {
+          "ALL": 458
+        },
+        "TEDS_structure_only": {
+          "ALL": 458
+        }
+      },
+      "reading_order": {
+        "Edit_dist": {
+          "ALL": 1638
+        }
+      }
+    },
+    "V8.1/seed0": {
+      "text_block": {
+        "Edit_dist": {
+          "ALL": 1557
+        }
+      },
+      "display_formula": {
+        "Edit_dist": {
+          "ALL": 313
+        },
+        "CDM": {
+          "ALL": 313
+        }
+      },
+      "table": {
+        "TEDS": {
+          "ALL": 458
+        },
+        "Edit_dist": {
+          "ALL": 458
+        },
+        "TEDS_structure_only": {
+          "ALL": 458
+        }
+      },
+      "reading_order": {
+        "Edit_dist": {
+          "ALL": 1638
+        }
+      }
+    },
+    "V8.2/seed0": {
+      "text_block": {
+        "Edit_dist": {
+          "ALL": 1557
+        }
+      },
+      "display_formula": {
+        "Edit_dist": {
+          "ALL": 313
+        },
+        "CDM": {
+          "ALL": 313
+        }
+      },
+      "table": {
+        "TEDS": {
+          "ALL": 458
+        },
+        "Edit_dist": {
+          "ALL": 458
+        },
+        "TEDS_structure_only": {
+          "ALL": 458
+        }
+      },
+      "reading_order": {
+        "Edit_dist": {
+          "ALL": 1638
+        }
+      }
+    },
+    "V8.3/seed0": {
+      "text_block": {
+        "Edit_dist": {
+          "ALL": 1557
+        }
+      },
+      "display_formula": {
+        "Edit_dist": {
+          "ALL": 313
+        },
+        "CDM": {
+          "ALL": 313
+        }
+      },
+      "table": {
+        "TEDS": {
+          "ALL": 458
+        },
+        "Edit_dist": {
+          "ALL": 458
+        },
+        "TEDS_structure_only": {
+          "ALL": 458
+        }
+      },
+      "reading_order": {
+        "Edit_dist": {
+          "ALL": 1638
+        }
+      }
+    },
+    "V8.1/seed1": {
+      "text_block": {
+        "Edit_dist": {
+          "ALL": 1557
+        }
+      },
+      "display_formula": {
+        "Edit_dist": {
+          "ALL": 313
+        },
+        "CDM": {
+          "ALL": 313
+        }
+      },
+      "table": {
+        "TEDS": {
+          "ALL": 458
+        },
+        "Edit_dist": {
+          "ALL": 458
+        },
+        "TEDS_structure_only": {
+          "ALL": 458
+        }
+      },
+      "reading_order": {
+        "Edit_dist": {
+          "ALL": 1638
+        }
+      }
+    },
+    "V8.2/seed1": {
+      "text_block": {
+        "Edit_dist": {
+          "ALL": 1557
+        }
+      },
+      "display_formula": {
+        "Edit_dist": {
+          "ALL": 313
+        },
+        "CDM": {
+          "ALL": 313
+        }
+      },
+      "table": {
+        "TEDS": {
+          "ALL": 458
+        },
+        "Edit_dist": {
+          "ALL": 458
+        },
+        "TEDS_structure_only": {
+          "ALL": 458
+        }
+      },
+      "reading_order": {
+        "Edit_dist": {
+          "ALL": 1638
+        }
+      }
+    },
+    "V8.3/seed1": {
+      "text_block": {
+        "Edit_dist": {
+          "ALL": 1557
+        }
+      },
+      "display_formula": {
+        "Edit_dist": {
+          "ALL": 313
+        },
+        "CDM": {
+          "ALL": 313
+        }
+      },
+      "table": {
+        "TEDS": {
+          "ALL": 458
+        },
+        "Edit_dist": {
+          "ALL": 458
+        },
+        "TEDS_structure_only": {
+          "ALL": 458
+        }
+      },
+      "reading_order": {
+        "Edit_dist": {
+          "ALL": 1638
+        }
+      }
+    }
+  },
+  "source_file_hashes": {
+    "base": {
+      "pred_quick_match_metric_result.json": "839bbc388c1456ddb3e265f7c7c9645af9d2cd7fc90b9f1a0af752c8d3aa7507",
+      "pred_quick_match_run_summary.json": "3f9c8be425671967ac94c323ef09a2f921796fdb58533de02b8cc52e5ee4152a",
+      "pred_quick_match_table_result.json": "9d14984a2d0be811ed827b7833d1657174db46068a5b4dcf0ed9fb11945c3ac8",
+      "pred_quick_match_display_formula_result.json": "88b4f4ecc397a606d8290f462f04d857219292986e317e09fcbad6b7691210b7",
+      "pred_quick_match_text_block_per_page_edit.json": "a97ccb17c5c768ecf5c2cb08189fdc65ab29be85fbd1884929021b417835f8d7",
+      "pred_quick_match_display_formula_per_page_edit.json": "93d123eff6802f65f231dc860fb4e5317c256ecaeb0526676d0da6bb74252c15",
+      "pred_quick_match_table_per_page_edit.json": "9429b2f14709bc9cdf79d7f5d51ed2767bbe860959748abc8ae4b4bb16dcea2f",
+      "pred_quick_match_reading_order_per_page_edit.json": "8e9dd25e7b8fe0bfd4f139a5130bb94cb5d7bbaf65d44b8d220390b463381f7e"
+    },
+    "legacy_simple_rule": {
+      "pred_quick_match_metric_result.json": "9f502d77675a1a78d6ff6a5c9ad01decea71aa17667d70092dd77c53c7759e98",
+      "pred_quick_match_run_summary.json": "360e54e85808ad6681c5d636c0bf9a2e0ea42428892414e8c897e7cb482c9c0a",
+      "pred_quick_match_table_result.json": "bd5d452ee7b35eda57f82c24e65c4e527928ce152c1fdd5acca31839511888ac",
+      "pred_quick_match_display_formula_result.json": "ba13b57d48f2b6b44c7576ad8e6ee3b779647ef7fdd6674e78afc0166c1fa0bd",
+      "pred_quick_match_text_block_per_page_edit.json": "a97ccb17c5c768ecf5c2cb08189fdc65ab29be85fbd1884929021b417835f8d7",
+      "pred_quick_match_display_formula_per_page_edit.json": "93d123eff6802f65f231dc860fb4e5317c256ecaeb0526676d0da6bb74252c15",
+      "pred_quick_match_table_per_page_edit.json": "0d823cc2e134353154902d1dfe90b14abbcba290ee362d2dca5b5ba7b45b561e",
+      "pred_quick_match_reading_order_per_page_edit.json": "8e9dd25e7b8fe0bfd4f139a5130bb94cb5d7bbaf65d44b8d220390b463381f7e"
+    },
+    "V8.1/seed0": {
+      "pred_quick_match_metric_result.json": "e9b88ace2c1fd9e7144aee9986f4840a5c32998b673efc807f2217ff91951f1a",
+      "pred_quick_match_run_summary.json": "fce66b89d45b8391c160e27073ee40a5b82560d5e40c05fb80cf9b3f9ab8f666",
+      "pred_quick_match_table_result.json": "1c2bf1a9fed41256ec18ccba30f1e016f38d7e48907bf2c0066cf1c8a4a5d790",
+      "pred_quick_match_display_formula_result.json": "90507d81ecce41c02b3f445316c8f2cc14f2fe929d10f61d5e7c8daf2cf6f9fa",
+      "pred_quick_match_text_block_per_page_edit.json": "a2471b00da8ef13a8eb50b9cd58cccbb45f1293e10d73348d834d676df56ada0",
+      "pred_quick_match_display_formula_per_page_edit.json": "9a0b06b2c93b6caf3a48a513f43c17d6f9bca927954b354809769c9c42bf19a9",
+      "pred_quick_match_table_per_page_edit.json": "c63ee1d9cb2c4ac5a9ebbe1a4b4b1e6c09d8ca0e744faf43ee26f882dc2deeaf",
+      "pred_quick_match_reading_order_per_page_edit.json": "e73195095330d3351f7f1912ddbe8fdadde057211a954f9f63265a5dba6ca80e"
+    },
+    "V8.2/seed0": {
+      "pred_quick_match_metric_result.json": "5751fd0db6ba87d41044c0d7eef914032c57303f87d037ddd0d2f8c55d3fbc09",
+      "pred_quick_match_run_summary.json": "5bcc34501eb62b82851502f2f07f844cc2d2467d4badf7f8177b5a6981090c1c",
+      "pred_quick_match_table_result.json": "4eabad417e9ecb0a8a18eabc1c9c4d836cb6828b02a42cc952f8a6cc69b1c5a4",
+      "pred_quick_match_display_formula_result.json": "fe0b26615c7fd72aaead785630eea24cf4ba615eda77c0a781b3e02a17c0ee96",
+      "pred_quick_match_text_block_per_page_edit.json": "a2471b00da8ef13a8eb50b9cd58cccbb45f1293e10d73348d834d676df56ada0",
+      "pred_quick_match_display_formula_per_page_edit.json": "9a0b06b2c93b6caf3a48a513f43c17d6f9bca927954b354809769c9c42bf19a9",
+      "pred_quick_match_table_per_page_edit.json": "132fa46a35ac42aa5a50205bffab3dd6446f12d8bd50aaafb8fedbd2801d93e0",
+      "pred_quick_match_reading_order_per_page_edit.json": "35a68e0db04fd27bbfb3e2d6e174318f9955f40c28bde0328f921a5e6d028eac"
+    },
+    "V8.3/seed0": {
+      "pred_quick_match_metric_result.json": "442350d638cb3a8b8e85cd8caa20f5004e41586d04b61a0ea1145731029e086b",
+      "pred_quick_match_run_summary.json": "d00e7a69a5489dc02480bbc55af08c9e13f9c0f9d83af21dee9936852c5cf259",
+      "pred_quick_match_table_result.json": "83959c789ba3374f786f2af7064011f93585b3df1451821d4c8019bde080a2a8",
+      "pred_quick_match_display_formula_result.json": "b8eaddb392c2a47b5b48f87ca8cc8c4679488a81de8ce648bdf71ea32876fb90",
+      "pred_quick_match_text_block_per_page_edit.json": "4c10233f6f9cdc7fa9ef11590dc61a4bfddb66a543c1c21e6f07a35dabea7065",
+      "pred_quick_match_display_formula_per_page_edit.json": "93d123eff6802f65f231dc860fb4e5317c256ecaeb0526676d0da6bb74252c15",
+      "pred_quick_match_table_per_page_edit.json": "d6082d1b10215ca800a4099393538b039ce1480549607ba6336b03f34d884be9",
+      "pred_quick_match_reading_order_per_page_edit.json": "971135b92326c714bd4b71b74a22533b344b5ef9568479791282e65aa11de36b"
+    },
+    "V8.1/seed1": {
+      "pred_quick_match_metric_result.json": "1d6120275a573b053059d6ba5d4df045a9ad206d892cec929ef7fd0a6636dc04",
+      "pred_quick_match_run_summary.json": "bba23d24351a2dab2ea6833042c989ffa57328f52bed0c376c1dbe58072d7895",
+      "pred_quick_match_table_result.json": "0e2d8e64df79795254cdbe12d9af5f43a6b09e263a66d736578266a1426c0969",
+      "pred_quick_match_display_formula_result.json": "b06fd88bdae27c68b7bee95cf9a34c42ce574ff8df9e31b805bdcd3f53d0169f",
+      "pred_quick_match_text_block_per_page_edit.json": "4c10233f6f9cdc7fa9ef11590dc61a4bfddb66a543c1c21e6f07a35dabea7065",
+      "pred_quick_match_display_formula_per_page_edit.json": "93d123eff6802f65f231dc860fb4e5317c256ecaeb0526676d0da6bb74252c15",
+      "pred_quick_match_table_per_page_edit.json": "b615e1d8dcc43ec97c53fb05cafd768030ca3707e0bd9925266a16e2880f9108",
+      "pred_quick_match_reading_order_per_page_edit.json": "8e9dd25e7b8fe0bfd4f139a5130bb94cb5d7bbaf65d44b8d220390b463381f7e"
+    },
+    "V8.2/seed1": {
+      "pred_quick_match_metric_result.json": "13f2ea6e3fd22661ca73ea0549902bfd03746ce713140729ffbc5956b91b1760",
+      "pred_quick_match_run_summary.json": "ee3a6098b6d0e780de70887277d7d322f2be10d4f750af3a7970e0a89e73734c",
+      "pred_quick_match_table_result.json": "1060666dfa6de484a212fc22f45af1a19e364724f20d2e0decd8baa8ef070ea4",
+      "pred_quick_match_display_formula_result.json": "ecc620223a5a1c340cf88df8b6a6069324897bf1e394401f36310c21e51d71df",
+      "pred_quick_match_text_block_per_page_edit.json": "4c10233f6f9cdc7fa9ef11590dc61a4bfddb66a543c1c21e6f07a35dabea7065",
+      "pred_quick_match_display_formula_per_page_edit.json": "93d123eff6802f65f231dc860fb4e5317c256ecaeb0526676d0da6bb74252c15",
+      "pred_quick_match_table_per_page_edit.json": "ae796f14daf02461f7b34084e2a3e62e3c9e8e4c8c1f043aa1ed20cd4351dfb4",
+      "pred_quick_match_reading_order_per_page_edit.json": "971135b92326c714bd4b71b74a22533b344b5ef9568479791282e65aa11de36b"
+    },
+    "V8.3/seed1": {
+      "pred_quick_match_metric_result.json": "cd4e27cf47fb86c42637a0456fa783c0de204664c3c06852f6566329a0bd3253",
+      "pred_quick_match_run_summary.json": "4a0d6c4013a088bd0211e1f9c3862dd919c8bdbb37dd508462f048f3dd2e397d",
+      "pred_quick_match_table_result.json": "4c013a419330a4fa41c9ff47b263793c73f4623025a2edc0ed8cec59c32a7e85",
+      "pred_quick_match_display_formula_result.json": "96f8295cdd8e86dbe06ef3e4868b8cfe9bf22c63c6c68fc941830518588e1494",
+      "pred_quick_match_text_block_per_page_edit.json": "4c10233f6f9cdc7fa9ef11590dc61a4bfddb66a543c1c21e6f07a35dabea7065",
+      "pred_quick_match_display_formula_per_page_edit.json": "93d123eff6802f65f231dc860fb4e5317c256ecaeb0526676d0da6bb74252c15",
+      "pred_quick_match_table_per_page_edit.json": "ef8d50c8b2bed3856e5fa1ddbc7311f175b4a466de0b22db33e26b8e4ea4db30",
+      "pred_quick_match_reading_order_per_page_edit.json": "971135b92326c714bd4b71b74a22533b344b5ef9568479791282e65aa11de36b"
+    }
+  },
+  "correspondence": "Same page, exact GT index group and GT-text hash; unique in both outputs. Ambiguous or unidentified samples remain unmatchable.",
+  "unidentified_sample_note": "Unidentified sample count is the maximum across outputs, not an assertion that those rows correspond. Scored-row totals for both outputs are retained.",
+  "page_metric_note": "Official per-page edit values; TEDS/CDM page values are diagnostic means of emitted sample metrics. No page-level Overall is constructed.",
+  "descriptive_only": true,
+  "raw_GT_or_prediction_bodies_included": false,
+  "execution_qualification": {
+    "affected_models": [
+      "V8.1/seed0",
+      "V8.2/seed0"
+    ],
+    "inherited_PDF_failures": 322,
+    "models": {
+      "V8.1/seed0": {
+        "inference_status": "failed",
+        "inherited_PDF_failures": 161,
+        "all_incomplete_pages": 161,
+        "contains_retained_PDF_failures": true,
+        "automatic_inference_retry": false,
+        "interpretation": "V8.1/seed0 and V8.2/seed0 each retain 161 empty technical failures from the PDF assembly defect. Their full-denominator scores, contrasts and two-seed means/ranges describe execution outcomes; they are not clean estimates of model quality or training effects."
+      },
+      "V8.2/seed0": {
+        "inference_status": "failed",
+        "inherited_PDF_failures": 161,
+        "all_incomplete_pages": 161,
+        "contains_retained_PDF_failures": true,
+        "automatic_inference_retry": false,
+        "interpretation": "V8.1/seed0 and V8.2/seed0 each retain 161 empty technical failures from the PDF assembly defect. Their full-denominator scores, contrasts and two-seed means/ranges describe execution outcomes; they are not clean estimates of model quality or training effects."
+      },
+      "V8.3/seed0": {
+        "inference_status": "complete",
+        "inherited_PDF_failures": 0,
+        "all_incomplete_pages": 0,
+        "contains_retained_PDF_failures": false,
+        "automatic_inference_retry": false,
+        "interpretation": "No retained failure from the PDF assembly defect; inspect all other execution dispositions separately."
+      },
+      "V8.1/seed1": {
+        "inference_status": "complete",
+        "inherited_PDF_failures": 0,
+        "all_incomplete_pages": 0,
+        "contains_retained_PDF_failures": false,
+        "automatic_inference_retry": false,
+        "interpretation": "No retained failure from the PDF assembly defect; inspect all other execution dispositions separately."
+      },
+      "V8.2/seed1": {
+        "inference_status": "complete",
+        "inherited_PDF_failures": 0,
+        "all_incomplete_pages": 0,
+        "contains_retained_PDF_failures": false,
+        "automatic_inference_retry": false,
+        "interpretation": "No retained failure from the PDF assembly defect; inspect all other execution dispositions separately."
+      },
+      "V8.3/seed1": {
+        "inference_status": "complete",
+        "inherited_PDF_failures": 0,
+        "all_incomplete_pages": 0,
+        "contains_retained_PDF_failures": false,
+        "automatic_inference_retry": false,
+        "interpretation": "No retained failure from the PDF assembly defect; inspect all other execution dispositions separately."
+      }
+    },
+    "correction_sha256": "8bd2bdbeb7008c096dc1408fe47d32eb83a0f598b0a367d1c09d22f27860d550",
+    "prior_failure_evidence_sha256": "15f031ac382b6d3d8b9b69575e6155a205e223f5e38daa2d2d8d9e56c664612f",
+    "interpretation": "V8.1/seed0 and V8.2/seed0 each retain 161 empty technical failures from the PDF assembly defect. Their full-denominator scores, contrasts and two-seed means/ranges describe execution outcomes; they are not clean estimates of model quality or training effects.",
+    "metric_values_changed": false,
+    "page_denominators_changed": false,
+    "confirmation_results_affected_by_this_PDF_defect": false
+  },
+  "paired_outcome_values_changed": false,
+  "sample_correspondence_changed": false,
+  "unqualified_paired_source_sha256": "a18789fbc2ad5661cb971a83b3618edf457bb20309076a0c3cfb8039bc93be0f",
+  "qualification_source_aggregate_sha256": "5a42c3ea931d16cc1cde1f43bfb7bf0fa7a35be5df3e07d13906fe7a5726fb46"
+}

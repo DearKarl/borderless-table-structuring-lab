@@ -10,3 +10,9 @@ releases/v6-v7-progress-20261007/** -text -whitespace
 artifacts/results/v6/** -text -whitespace
 artifacts/results/v7/** -text -whitespace
 V6/** -text -whitespace
+
+# Final V8 result tables and historical snapshots are bound by byte hashes.
+artifacts/results/v7_finetuning/large-lora-001/benchmark/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+artifacts/results/v7_finetuning/large-lora-001/confirmation/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+artifacts/results/v7_finetuning/large-lora-001/historical/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+artifacts/results/v7_finetuning/large-lora-001/MODEL_PACKAGES.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
