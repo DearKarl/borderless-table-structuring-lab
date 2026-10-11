@@ -53,6 +53,49 @@ and [final figure index](artifacts/results/v7_finetuning/large-lora-001/FIGURES.
 All models, both controls, paired gains/harms, uncertainty, category breakdowns,
 costs, package metadata and compute closure are linked from the completed report.
 
+### Full benchmark: the three table metrics
+
+The table below keeps the matched native and legacy controls alongside all six
+models. Each policy retains the same 1,651-page universe; official component
+denominators differ, so this is not a count of 1,651 tables.
+
+| Policy | Table TEDS (higher, 0-100) | Structure TEDS (higher, 0-100) | Table Edit Distance (lower, 0-1) | Overall (0-100) | Retained technical failures |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Matched native baseline | 96.962 | 98.296 | 0.034118 | 97.539 | 0 |
+| Legacy simple rule | 96.604 | 98.165 | 0.037184 | 97.420 | 0 |
+| V8.1 / seed0 | 90.299 | 93.213 | 0.085605 | 84.879 | 161 |
+| V8.1 / seed1 | 93.295 | 96.321 | 0.060427 | 96.317 | 0 |
+| V8.2 / seed0 | 90.944 | 93.892 | 0.081719 | 85.095 | 161 |
+| V8.2 / seed1 | 92.309 | 95.435 | 0.067085 | 95.988 | 0 |
+| V8.3 / seed0 | 92.471 | 95.439 | 0.065634 | 96.042 | 0 |
+| V8.3 / seed1 | 92.669 | 95.649 | 0.064097 | 96.108 | 0 |
+
+The two seed0 rows with 161 failures each are qualified execution outcomes,
+not clean training-effect estimates. The four clean runs also trail both controls
+on Table TEDS. These are matched Transformers evaluations, not a historical vLLM
+comparison or an external leaderboard submission.
+
+Read the [Lead's table-metric summary (HTML; download to view)](research/reports/V8_BENCHMARK_RESULTS_AND_NEXT_STEPS_20261011.html)
+and its [full-precision JSON](research/reports/V8_BENCHMARK_RESULTS_AND_NEXT_STEPS_20261011.json).
+The [eight-field CSV](artifacts/results/v7_finetuning/large-lora-001/benchmark/metrics/METRICS.csv)
+and [completed report](artifacts/results/v7_finetuning/large-lora-001/REPORT.md)
+retain every metric, category breakdown, paired analysis, confirmation result,
+cost and limitation.
+
+### V8.4 and V8.5: reserved / planned
+
+| Version | Initialization | Intended supervision | Status |
+| --- | --- | --- | --- |
+| V8.4 | Ordinary LoRA | Full TDATR-style adapted training and supervision | Reserved; not implemented or started |
+| V8.5 | LoRA-GA | The same TDATR-style intervention | Reserved; not implemented or started |
+
+Both retain the same frozen TRAIN set and DEV split. First complete TRAIN/DEV
+error analysis and freeze the full component mapping, losses, training schedule,
+compute budget and evaluation protocol. This is an adaptation, not a claim of
+strict paper replication. The exposed confirmation set and benchmark cannot be
+called untouched tests for the next design. See the [version reservation](artifacts/results/v7_finetuning/large-lora-001/NEXT_VERSIONS.md).
+No new training, inference or scoring is launched by this publication.
+
 ## V6: complete results and statistics
 
 **[Open V6](V6/README.md)** for the full report or
