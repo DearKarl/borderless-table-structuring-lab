@@ -1,18 +1,18 @@
 # Experimental results index
 
-The latest completed study is [V8](versions/V8.md). Results are organized by version, with controls, complete available component scores, missing fields, failure accounting, cost and interpretation in each introduction and its evidence links. No rescoring or cross-version leaderboard is created by this index.
+The latest completed study is [V8](../Version/V8/README.md). Results are organized by version, with controls, complete available component scores, missing fields, failure accounting, cost and interpretation in each introduction and its evidence links. No rescoring or cross-version leaderboard is created by this index.
 
 | Version | Complete introduction and evidence | Metric availability |
 | --- | --- | --- |
-| V0 | [Introduction](versions/V0.md) | Available fields; missing metrics identified explicitly |
-| V1 | [Introduction](versions/V1.md) | Available fields; missing metrics identified explicitly |
-| V2 | [Introduction](versions/V2.md) | Available fields; missing metrics identified explicitly |
-| V3 | [Introduction](versions/V3.md) | Available fields; missing metrics identified explicitly |
-| V4 | [Introduction](versions/V4.md) | Available fields; missing metrics identified explicitly |
-| V5 | [Introduction](versions/V5.md) | Available fields; missing metrics identified explicitly |
-| V6 | [Introduction](versions/V6.md) | Full official eight fields |
-| V7 | [Introduction](versions/V7.md) | Table/cell and diagnostic metrics; no generator whole-page benchmark |
-| V8 | [Introduction](versions/V8.md) | Full official eight fields |
+| V0 | [Introduction](../Version/V0/README.md) | Available fields; missing metrics identified explicitly |
+| V1 | [Introduction](../Version/V1/README.md) | Available fields; missing metrics identified explicitly |
+| V2 | [Introduction](../Version/V2/README.md) | Available fields; missing metrics identified explicitly |
+| V3 | [Introduction](../Version/V3/README.md) | Available fields; missing metrics identified explicitly |
+| V4 | [Introduction](../Version/V4/README.md) | Available fields; missing metrics identified explicitly |
+| V5 | [Introduction](../Version/V5/README.md) | Available fields; missing metrics identified explicitly |
+| V6 | [Introduction](../Version/V6/README.md) | Full official eight fields |
+| V7 | [Introduction](../Version/V7/README.md) | Table/cell and diagnostic metrics; no generator whole-page benchmark |
+| V8 | [Introduction](../Version/V8/README.md) | Full official eight fields |
 
 ## Metric conventions
 
@@ -22,26 +22,26 @@ Use matched input/model/evaluator/failure rules for comparisons. A full page uni
 
 ## Current results
 
-[V8 complete report](../artifacts/results/v7_finetuning/large-lora-001/REPORT.md), [all official fields](../artifacts/results/v7_finetuning/large-lora-001/benchmark/metrics/METRICS.csv), [paired outcomes](../artifacts/results/v7_finetuning/large-lora-001/benchmark/metrics/PAIRED_OUTCOMES.json), [confirmation](../artifacts/results/v7_finetuning/large-lora-001/confirmation/metrics/CONFIRMATION_AGGREGATE.json), and [figures](../artifacts/results/v7_finetuning/large-lora-001/FIGURES.md).
+[V8 complete report](../Version/V8/results/large-lora-001/REPORT.md), [all official fields](../Version/V8/results/large-lora-001/benchmark/metrics/METRICS.csv), [paired outcomes](../Version/V8/results/large-lora-001/benchmark/metrics/PAIRED_OUTCOMES.json), [confirmation](../Version/V8/results/large-lora-001/confirmation/metrics/CONFIRMATION_AGGREGATE.json), and [figures](../Version/V8/results/large-lora-001/FIGURES.md).
 
 ## Historical entry compatibility
 
 These anchors preserve links from the original implementation guides:
 
 <a id="v0-through-v2"></a>
-[V0](versions/V0.md), [V1](versions/V1.md) and [V2](versions/V2.md): whole-page controls and expert integration.
+[V0](../Version/V0/README.md), [V1](../Version/V1/README.md) and [V2](../Version/V2/README.md): whole-page controls and expert integration.
 
 <a id="v31-original-image-formula-replacement"></a>
-[V3.1 original-image formula replacement](versions/V3.md#v31-original-image-formula-replacement).
+[V3.1 original-image formula replacement](../Version/V3/README.md#v31-original-image-formula-replacement).
 
 <a id="v32-full-set-off-and-on-comparison"></a>
-[V3.2 full-set and successful-subset results](versions/V3.md#v32-text-region-replacement-with-ovisocr2).
+[V3.2 full-set and successful-subset results](../Version/V3/README.md#v32-text-region-replacement-with-ovisocr2).
 
 <a id="v4-learned-input-selection"></a>
-[V4 learned input selection](versions/V4.md).
+[V4 learned input selection](../Version/V4/README.md).
 
 <a id="v5-completed-five-arm-comparison-2026-10-07"></a>
-[V5 complete five-arm results](versions/V5.md).
+[V5 complete five-arm results](../Version/V5/README.md).
 
 <a id="earlier-table-experiments"></a>
-[Earlier table-only experiments](versions/V0.md#earlier-table-only-studies) and their [original aggregate archive](../artifacts/results/README.md) remain separate from whole-page scores.
+[Earlier table-only experiments](../Version/V0/README.md#earlier-table-only-studies) and their [original aggregate archive](../artifacts/results/README.md) remain separate from whole-page scores.

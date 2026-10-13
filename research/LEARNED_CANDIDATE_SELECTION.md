@@ -42,7 +42,7 @@ There are 813 unique page/type/bbox regions on 256 unique pages across these
 events. Counts establish byte-level candidate diversity, not semantic differences
 or accuracy gains. They do not measure learned selections: no selector ran here.
 All other pages must remain in full evaluation. Source:
-[V5 aggregate](../artifacts/results/v5/AGGREGATE.json) and the saved event archive
+[V5 aggregate](../Version/V5/results/AGGREGATE.json) and the saved event archive
 whose SHA256 is `873fbbc0f26565ecb1f3204d07491e4b96a60815d85cf7219e9156b377bb38d8`.
 
 ## Proposed implementation contract

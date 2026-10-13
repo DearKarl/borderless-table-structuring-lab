@@ -1,0 +1,4 @@
+partition,tables,source_documents,input_eligible
+TRAIN,20000,11217,20000
+DEV,256,256,244
+Confirmation,512,512,492

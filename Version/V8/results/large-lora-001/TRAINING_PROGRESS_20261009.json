@@ -1,0 +1,76 @@
+{
+  "observed_at_utc": "2026-10-09T20:27:06.182222+00:00",
+  "status": "six_formal_fits_running",
+  "train_tables": 20000,
+  "train_source_documents": 11217,
+  "fits": [
+    {
+      "run_id": "V8.1/seed0",
+      "status": "running",
+      "optimizer_updates": 2880,
+      "exposures": 46080,
+      "planned_updates": 3750,
+      "planned_exposures": 60000
+    },
+    {
+      "run_id": "V8.1/seed1",
+      "status": "running",
+      "optimizer_updates": 2855,
+      "exposures": 45680,
+      "planned_updates": 3750,
+      "planned_exposures": 60000
+    },
+    {
+      "run_id": "V8.2/seed0",
+      "status": "running",
+      "optimizer_updates": 2750,
+      "exposures": 44000,
+      "planned_updates": 3750,
+      "planned_exposures": 60000
+    },
+    {
+      "run_id": "V8.2/seed1",
+      "status": "running",
+      "optimizer_updates": 2607,
+      "exposures": 41712,
+      "planned_updates": 3750,
+      "planned_exposures": 60000
+    },
+    {
+      "run_id": "V8.3/seed0",
+      "status": "running",
+      "optimizer_updates": 2703,
+      "exposures": 43248,
+      "planned_updates": 3750,
+      "planned_exposures": 60000
+    },
+    {
+      "run_id": "V8.3/seed1",
+      "status": "running",
+      "optimizer_updates": 2522,
+      "exposures": 40352,
+      "planned_updates": 3750,
+      "planned_exposures": 60000
+    }
+  ],
+  "optimizer_or_batch_changes": false,
+  "restarted_fits": 0,
+  "accuracy_gain_claimed": false,
+  "full_benchmark": {
+    "models": 6,
+    "pages_per_model": 1651,
+    "model_page_outputs": 9906,
+    "distinct_pages": 1651,
+    "waves": [
+      "V8.1/V8.2/V8.3 seed0",
+      "V8.1/V8.2/V8.3 seed1"
+    ],
+    "checkpoint_selection": "DEV epoch1/2/3, earlier epoch on ties",
+    "benchmark_tuning": false,
+    "matched_controls": [
+      "original native base",
+      "legacy fixed rule"
+    ],
+    "shared_native_inputs": true
+  }
+}

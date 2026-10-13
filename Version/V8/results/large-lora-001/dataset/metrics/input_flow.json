@@ -1,0 +1,16 @@
+{
+  "static_train_candidates": 22851,
+  "dispositions": {
+    "selected_train": 20000,
+    "input_excluded": 614,
+    "isolation_excluded": 16,
+    "eligible_not_selected": 2221
+  },
+  "exclusion_reasons": {
+    "No unique complete predicted native crop": 612,
+    "isolation_screen": 16,
+    "Predicted crop contains another full source table": 2
+  },
+  "acquisition_candidates_are_separate": true,
+  "final_train_tables": 20000
+}

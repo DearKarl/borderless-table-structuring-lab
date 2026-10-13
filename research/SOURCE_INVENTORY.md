@@ -6,12 +6,12 @@ not all related files elsewhere in the repository.
 
 | Version | Source root | Tracked files | Python files | Reusable scope |
 |---|---|---:|---:|---|
-| V0 | [versions/v0](../versions/v0/README.md) | 41 | 29 | MinerU plus native-table integration and reproduction templates |
-| V1 | [versions/v1](../versions/v1/README.md) | 34 | 29 | Formula integration, image input and controller logic |
-| V2 | [versions/v2](../versions/v2/README.md) | 135 | 128 | TeleOCR/Paddle integration, assembly and failure handling |
-| V3.1 | [versions/v3_1](../versions/v3_1/README.md) | 70 | 49 | Layout/formula expert profiles, coordinates, transactions and runtime contracts |
-| V3.2 | [versions/v3_2](../versions/v3_2/README.md) | 92 | 67 | Ovis text dispatch, completion checks, native fallback and parameter locks |
-| V4 | [release](../releases/v4-gbdt-evaluation-20261006/README.md) | 140 | 112 | Learned input selection, model, runtime and completed aggregate evaluation |
+| V0 | [versions/v0](../Version/V0/source/v0/README.md) | 41 | 29 | MinerU plus native-table integration and reproduction templates |
+| V1 | [versions/v1](../Version/V1/source/v1/README.md) | 34 | 29 | Formula integration, image input and controller logic |
+| V2 | [versions/v2](../Version/V2/source/v2/README.md) | 135 | 128 | TeleOCR/Paddle integration, assembly and failure handling |
+| V3.1 | [versions/v3_1](../Version/V3/source/v3_1/README.md) | 70 | 49 | Layout/formula expert profiles, coordinates, transactions and runtime contracts |
+| V3.2 | [versions/v3_2](../Version/V3/source/v3_2/README.md) | 92 | 67 | Ovis text dispatch, completion checks, native fallback and parameter locks |
+| V4 | [release](../Version/V4/release/README.md) | 140 | 112 | Learned input selection, model, runtime and completed aggregate evaluation |
 
 All 414 Python files in these roots parsed successfully with Python's AST
 parser. This is a syntax check, not an import, dependency, GPU or completeness
@@ -23,7 +23,7 @@ The package contains cli.py, native.py, v31_providers.py, v31_rules.py,
 v31_transactions.py, v31_coordinates.py, evaluation.py, preparation templates,
 SOURCE_LOCK.json and a parent asset lock. These are actual implementation files.
 
-The inspected [native.py](../versions/v3_1/hybrid_v3_full_eval_v1/native.py)
+The inspected [native.py](../Version/V3/source/v3_1/hybrid_v3_full_eval_v1/native.py)
 describes and calls the TeleOCR read_fn -> PDF -> do_parse route (lines 248-252).
 The researcher-reported 97.6973 variant bypasses PDF transcoding/resampling.
 The exact variant or input-path patch must therefore be identified before
@@ -34,7 +34,7 @@ confirmed; this run-to-source correspondence is unresolved.
 
 The package additionally contains v32_dispatch.py, v32_provider.py,
 v32_worker.py, v32_crop.py, v32_protocol.py, v32_parameters.py, model and parameter
-locks, and the CLI integration. In [v32_dispatch.py](../versions/v3_2/hybrid_v3_full_eval_v1/v32_dispatch.py),
+locks, and the CLI integration. In [v32_dispatch.py](../Version/V3/source/v3_2/hybrid_v3_full_eval_v1/v32_dispatch.py),
 ON routes eligible text slots to Ovis and uses native recognition when the expert
 response is rejected. Formula/table slots retain the native path, and geometry
 is checked for preservation. Protocol acceptance is explicitly distinct from a

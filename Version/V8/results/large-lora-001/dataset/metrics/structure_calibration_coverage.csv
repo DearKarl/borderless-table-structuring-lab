@@ -1,0 +1,9 @@
+stratum,train_tables,calibration_tables,train_fraction,calibration_fraction
+merged0_large0_blank0,2500,33,0.125,0.12890625
+merged0_large0_blank1,2500,33,0.125,0.12890625
+merged0_large1_blank0,2500,33,0.125,0.12890625
+merged0_large1_blank1,2500,33,0.125,0.12890625
+merged1_large0_blank0,2500,33,0.125,0.12890625
+merged1_large0_blank1,2500,31,0.125,0.12109375
+merged1_large1_blank0,2500,30,0.125,0.1171875
+merged1_large1_blank1,2500,30,0.125,0.1171875

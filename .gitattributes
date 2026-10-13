@@ -20,3 +20,6 @@ artifacts/results/v7_finetuning/large-lora-001/MODEL_PACKAGES.json -text whitesp
 # Lead-owned result summaries are published unchanged, including original EOLs.
 research/reports/V8_BENCHMARK_RESULTS_AND_NEXT_STEPS_20261011.html -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/reports/V8_BENCHMARK_RESULTS_AND_NEXT_STEPS_20261011.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Version consolidation preserves source, model and evidence bytes.
+Version/** -text -whitespace

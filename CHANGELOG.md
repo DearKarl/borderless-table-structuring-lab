@@ -36,14 +36,14 @@ This documentation update introduces no new experiment, score or model release.
 
 ## 2026-10-06 — V4 input selection experiment
 
-Published the [V4 archive](releases/v4-gbdt-evaluation-20261006/README.md): source,
+Published the [V4 archive](Version/V4/release/README.md): source,
 the original project-trained GBDT, dependency identities and aggregate results.
 Local Overall: 97.17188999355706 over 1,651 pages, including seven timeout predictions
 retained empty. Public-reference comparison remains contextual.
 
 ## Earlier research
 
-See the [version archive](versions/README.md), [whole-page results](artifacts/whole-page-results.json),
+See the [version archive](Version/IMPLEMENTATION.md), [whole-page results](artifacts/whole-page-results.json),
 [table-result archive](artifacts/results/README.md), [Training guide](training/README.md)
 and [native-table guide](LEGACY_NATIVE_TABLES.md). Negative and incomplete outcomes
 remain part of the research record.

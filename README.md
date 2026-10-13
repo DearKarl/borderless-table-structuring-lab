@@ -2,7 +2,7 @@
 
 Research on reliable document parsing: how input processing, specialist models and learned adaptation can improve text, formulas and table structure while preserving correct content. The repository retains methods, complete available measurements and negative results across successive studies.
 
-[Research Question](#research-question) · [Latest Version](#latest-version) · [History Version](#history-version) · [Results index](research/RESULTS.md) · [Implementation index](versions/README.md) · [Reproduction](research/REPRODUCIBILITY.md) · [Contributing](CONTRIBUTING.md)
+[Version: V0–V8](Version/README.md) · [Research Question](#research-question) · [Latest Version](#latest-version) · [History Version](#history-version) · [Results index](research/RESULTS.md) · [Reproduction](research/REPRODUCIBILITY.md) · [Contributing](CONTRIBUTING.md)
 
 ## Research Question
 
@@ -27,13 +27,13 @@ All eight policies below retain a 1,651-page evaluation universe. Table metrics 
 | V8.3/seed0 | 92.471 | 95.439 | 0.065634 | 96.042 |
 | V8.3/seed1 | 92.669 | 95.649 | 0.064097 | 96.108 |
 
-\* Execution qualifications: [see full results](research/versions/V8.md#execution-qualifications).
+\* Execution qualifications: [see full results](Version/V8/README.md#execution-qualifications).
 
 The prespecified V8.3/seed0 nominee gains 4.2541 TEDS percentage points over matched native on 512 confirmation sources, but loses 4.4912 points on full-benchmark Table TEDS. The evidence does not support general parser replacement. These are matched Transformers results, not historical vLLM comparisons or an external leaderboard submission.
 
-[V8 methods and complete results](research/versions/V8.md) · [All eight official metrics](artifacts/results/v7_finetuning/large-lora-001/benchmark/metrics/METRICS.csv) · [Confirmation analysis](artifacts/results/v7_finetuning/large-lora-001/confirmation/metrics/CONFIRMATION_AGGREGATE.json) · [Figures](artifacts/results/v7_finetuning/large-lora-001/FIGURES.md)
+[V8 methods and complete results](Version/V8/README.md) · [All eight official metrics](Version/V8/results/large-lora-001/benchmark/metrics/METRICS.csv) · [Confirmation analysis](Version/V8/results/large-lora-001/confirmation/metrics/CONFIRMATION_AGGREGATE.json) · [Figures](Version/V8/results/large-lora-001/FIGURES.md)
 
-**V8.4 / V8.5 are reserved, not implemented or started:** ordinary LoRA / LoRA-GA with the same full TDATR-style adapted supervision. The same TRAIN/DEV set is retained; diagnosis and a complete protocol freeze precede execution. [Version reservations](artifacts/results/v7_finetuning/large-lora-001/NEXT_VERSIONS.md).
+**V8.4 / V8.5 are reserved, not implemented or started:** ordinary LoRA / LoRA-GA with the same full TDATR-style adapted supervision. The same TRAIN/DEV set is retained; diagnosis and a complete protocol freeze precede execution. [Version reservations](Version/V8/results/large-lora-001/NEXT_VERSIONS.md).
 
 ## History Version
 
@@ -41,13 +41,13 @@ Each introduction explains the method, available results, interpretation, implem
 
 | Version | Methods | Source |
 | --- | --- | --- |
-| V0 | MinerU + NaviDC table replacement | [Introduction](research/versions/V0.md) |
-| V1 | MinerU + Paddle formula replacement | [Introduction](research/versions/V1.md) |
-| V2 | TeleOCR + Paddle formula replacement | [Introduction](research/versions/V2.md) |
-| V3 | Layout/formula integration (V3.1); text expert (V3.2) | [Introduction](research/versions/V3.md) |
-| V4 | GBDT selection of native input actions | [Introduction](research/versions/V4.md) |
-| V5 | Original RGB input and regional rereading | [Introduction](research/versions/V5.md) |
-| V6 | GBDT/MLP regional scale controllers | [Introduction](research/versions/V6.md) |
-| V7 | Generator LoRA pilots; separate legacy keep/replace selector | [Introduction](research/versions/V7.md) |
+| V0 | MinerU + NaviDC table replacement | [Introduction](Version/V0/README.md) |
+| V1 | MinerU + Paddle formula replacement | [Introduction](Version/V1/README.md) |
+| V2 | TeleOCR + Paddle formula replacement | [Introduction](Version/V2/README.md) |
+| V3 | Layout/formula integration (V3.1); text expert (V3.2) | [Introduction](Version/V3/README.md) |
+| V4 | GBDT selection of native input actions | [Introduction](Version/V4/README.md) |
+| V5 | Original RGB input and regional rereading | [Introduction](Version/V5/README.md) |
+| V6 | GBDT/MLP regional scale controllers | [Introduction](Version/V6/README.md) |
+| V7 | Generator LoRA pilots; separate legacy keep/replace selector | [Introduction](Version/V7/README.md) |
 
-The [version index](research/versions/README.md) keeps stable introductions as new studies become Latest Version. Original source, releases and measured artifacts remain at their existing paths. See [third-party notices](notices/THIRD_PARTY.md) for attribution and licensing.
+The [version index](Version/README.md) keeps stable introductions as new studies become Latest Version. Original source, releases and measured artifacts remain at their existing paths. See [third-party notices](notices/THIRD_PARTY.md) for attribution and licensing.

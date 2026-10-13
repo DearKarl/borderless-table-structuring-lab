@@ -1,9 +1,9 @@
 # Research roadmap
 
 Current update2026-10-07: all engineering is paused for research discussion.
-See [current state](CURRENT_STATE.md), [V6 full results](../versions/v5_native/README.md),
-[V7 training and development](../versions/v7/README.md), and the
-[progress archive](../releases/v6-v7-progress-20261007/README.md).
+See [current state](CURRENT_STATE.md), [V6 full results](../Version/V6/source/v5_native/README.md),
+[V7 training and development](../Version/V7/source/v7/README.md), and the
+[progress archive](../Version/V6/archive/v6-v7-progress-20261007/README.md).
 The sections below retain historical evidence or earlier milestones; they do not
 authorize resuming experiments. No official ranking or new generator model is claimed.
 
@@ -27,7 +27,7 @@ no particular model, training method, fusion design or input policy is mandatory
   original-image baseline scored 98.173146; the combined pipeline scored
   98.347514. Independent native outputs varied, limiting causal attribution.
 
-The [V5 research proposal](V5_PROPOSAL.md) adds novelty assessment, strong controls,
+The [V5 research proposal](../Version/V5/PROPOSAL.md) adds novelty assessment, strong controls,
 residual-error analysis and independent validation toward a CCF A publication.
 
 See [current state](CURRENT_STATE.md) for exact evidence and limitations.

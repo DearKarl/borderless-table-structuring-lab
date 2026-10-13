@@ -1,0 +1,58 @@
+{
+  "scope": "Naming only; the same six fits, not additional experiments",
+  "canonical_names": {
+    "V7.3.0": "V8.1",
+    "V7.3.1": "V8.2",
+    "V7.3.2": "V8.3"
+  },
+  "methods": {
+    "V8.1": "Ordinary LoRA",
+    "V8.2": "LoRA-GA",
+    "V8.3": "LoRA-GA with cell-location supervision"
+  },
+  "fits": [
+    {
+      "recipe": "V8.1",
+      "run_id": "V8.1/seed0",
+      "seed": 0,
+      "historical_alias": "V7.3.0",
+      "internal_run_id": "V7.3.0-seed0"
+    },
+    {
+      "recipe": "V8.1",
+      "run_id": "V8.1/seed1",
+      "seed": 1,
+      "historical_alias": "V7.3.0",
+      "internal_run_id": "V7.3.0-seed1"
+    },
+    {
+      "recipe": "V8.2",
+      "run_id": "V8.2/seed0",
+      "seed": 0,
+      "historical_alias": "V7.3.1",
+      "internal_run_id": "V7.3.1-seed0"
+    },
+    {
+      "recipe": "V8.2",
+      "run_id": "V8.2/seed1",
+      "seed": 1,
+      "historical_alias": "V7.3.1",
+      "internal_run_id": "V7.3.1-seed1"
+    },
+    {
+      "recipe": "V8.3",
+      "run_id": "V8.3/seed0",
+      "seed": 0,
+      "historical_alias": "V7.3.2",
+      "internal_run_id": "V7.3.2-seed0"
+    },
+    {
+      "recipe": "V8.3",
+      "run_id": "V8.3/seed1",
+      "seed": 1,
+      "historical_alias": "V7.3.2",
+      "internal_run_id": "V7.3.2-seed1"
+    }
+  ],
+  "immutable_runtime_paths_and_evidence_preserved": true
+}

@@ -1,0 +1,78 @@
+{
+  "snapshot_utc": "2026-10-09T10:06:26.101135+00:00",
+  "status": "Full dataset membership frozen; runtime CPU/GPU preflight still in progress",
+  "common_inputs_sha256": "b6b000cddb189334d8a6e0acc0669e01bd4f4207688081ae2bf30f6308bfa71f",
+  "protocol_sha256": "15f47a72e2723d1b7f387e0134a9772ed237862a39567c76031697b250226d62",
+  "partitions": {
+    "train": {
+      "tables": 20000,
+      "source_documents": 11217,
+      "input_eligible": 20000
+    },
+    "dev": {
+      "tables": 256,
+      "source_documents": 256,
+      "input_eligible": 244
+    },
+    "confirmation": {
+      "tables": 512,
+      "source_documents": 512,
+      "input_eligible": 492
+    }
+  },
+  "train_source_table_count_distribution": {
+    "1": 5942,
+    "2": 2764,
+    "3": 1514,
+    "4": 997
+  },
+  "train_structure_strata": {
+    "merged0_large0_blank0": 2500,
+    "merged0_large0_blank1": 2500,
+    "merged0_large1_blank0": 2500,
+    "merged0_large1_blank1": 2500,
+    "merged1_large0_blank0": 2500,
+    "merged1_large0_blank1": 2500,
+    "merged1_large1_blank0": 2500,
+    "merged1_large1_blank1": 2500
+  },
+  "candidate_dispositions": {
+    "train": {
+      "input_eligible": 22237,
+      "input_rejected": 614
+    },
+    "dev": {
+      "input_eligible": 244,
+      "heldout_missing_input": 12
+    },
+    "confirmation": {
+      "input_eligible": 492,
+      "heldout_missing_input": 20
+    }
+  },
+  "candidate_exclusion_reasons": {
+    "No unique complete predicted native crop": 644,
+    "Predicted crop contains another full source table": 2
+  },
+  "isolation": {
+    "blocked_records": 16,
+    "near_duplicate_pairs": 1,
+    "unresolved_heldout_overlap_pairs": 0,
+    "screen_is_heuristic": true
+  },
+  "source_intersection_counts": {
+    "train_dev": 0,
+    "train_confirmation": 0,
+    "dev_confirmation": 0
+  },
+  "visually_reviewed_final_train_members": 200,
+  "visual_review_sampling": "Stratified sample from first eligible tranche, reconciled with final selected membership; not a uniform sample of all final TRAIN",
+  "visual_review_independent": false,
+  "calibration_examples": 256,
+  "diagnostic_panel_examples": {
+    "train": 128,
+    "dev": 128
+  },
+  "formal_optimizer_updates_observed": 0,
+  "raw_source_or_reference_bodies_included": false
+}

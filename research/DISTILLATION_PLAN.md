@@ -24,10 +24,10 @@ be attributed to a future student. Matching it is an aspiration, not a forecast.
 
 ## Existing evidence to reuse
 
-- [V5 report](../versions/v5/README.md) and
-  [aggregate](../artifacts/results/v5/AGGREGATE.json): V5.2 Overall 98.173146,
+- [V5 report](../Version/V5/source/v5/README.md) and
+  [aggregate](../Version/V5/results/AGGREGATE.json): V5.2 Overall 98.173146,
   V5.5 Overall 98.347514, all 1651 pages retained in each arm.
-- [Protocol](../versions/v5/protocol.json): original-image input, native prompts,
+- [Protocol](../Version/V5/source/v5/protocol.json): original-image input, native prompts,
   decoding, regional operations and evaluator identities.
 - Saved native/intermediate predictions support diagnosis only. Independent
   V5 arms have different native outputs, so do not label their cross-arm
