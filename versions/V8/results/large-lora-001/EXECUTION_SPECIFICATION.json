@@ -1,17 +1,11 @@
 {
-  "frozen_at_utc": "2026-10-09T10:04:34.519951+00:00",
+  "methods": [
+    "V8.1",
+    "V8.2",
+    "V8.3"
+  ],
   "common_inputs_sha256": "b6b000cddb189334d8a6e0acc0669e01bd4f4207688081ae2bf30f6308bfa71f",
   "calibration_inputs_sha256": "46bf1a77c7565b389983d6cfbbf5fd6b7bf3214b3ced823e4febecbdc143cf08",
-  "calibration_result_binding": "One passed256-TRAIN calibration receipt and factor hash, shared across B/C and both seeds; actual artifact hashes added only to immutable per-fit bindings",
-  "recipes": [
-    "V7.3.0",
-    "V7.3.1",
-    "V7.3.2"
-  ],
-  "seeds": [
-    0,
-    1
-  ],
   "rank": 8,
   "alpha": 16,
   "dropout": 0.05,
@@ -68,71 +62,6 @@
   "geometry_loss": "Per-example mean L1 over four coordinates and valid origin cells, coefficient0.1 only C",
   "precision": "BF16 base/autocast; FP32 trainable adapter/head/projection and optimizer master weights",
   "gradient_checkpointing": true,
-  "diagnostics": {
-    "panel_train": 128,
-    "panel_dev": 128,
-    "steps": [
-      0,
-      250,
-      500,
-      750,
-      1000,
-      1250,
-      1500,
-      1750,
-      2000,
-      2250,
-      2500,
-      2750,
-      3000,
-      3250,
-      3500,
-      3750
-    ],
-    "dropout": false,
-    "restore_rng": true,
-    "checkpoint_selection_used": false
-  },
-  "telemetry": {
-    "every_update": true,
-    "norms_resources_every": 50
-  },
-  "training_example_timeout_seconds": 1200,
-  "diagnostic_example_timeout_seconds": 600,
-  "nonfinite_oom_policy": "Fail and retain evidence, no skipped updates, no silent batch/config change or completed-run retry",
-  "recovery_state": "Save optimizer and RNG state alongside epoch checkpoints; exact serialized model-state check; no automatic resume or extra checkpoint selection",
-  "selection": {
-    "epoch": "Full DEV256 mean TEDS at1/2/3; earlier epoch on ties",
-    "recipe": "Mean of two seeds; tie A then B then C",
-    "nominee": "seed0 of selected recipe"
-  },
-  "confirmation": {
-    "denominator": 512,
-    "bootstrap_resamples": 10000,
-    "bootstrap_seed": 0,
-    "marginal_interval": 0.975,
-    "primary_gain_threshold": 0.005,
-    "threshold_is_diagnostic_not_benchmark_gate": true
-  },
-  "scoring_source_sha256": "5694f070d87ffb0a919b326ec293abb70fd9eae00b3a1dc00983dd4e8b20216e",
-  "legacy_source_hashes": {
-    "versions/v5_native/features.py": "1c5867b6b18951ff0f8e0a7e66cc4cefd94f020d26bc5fc50f969c5d66816f5b",
-    "versions/v5_native/regions.py": "2135649f6b20c5166676a7ca7c40fe24d20d5da2b679ec4c16da3eb11f8fed2a",
-    "versions/v7/features.py": "a5e30f84e91b377d8d71489f64e29c9b1ec093556b5227d046983175fbb85afa"
-  },
-  "gold_hashes": {
-    "dev": "a3484503d2bbe7334f301a6d373a53a261239cca3c1600cb3c3bea615b47df7b",
-    "confirmation": "2a9b1ec526c0a01240303614d2438f339f6b8db6afad88efdce2506a5cfffc00"
-  },
-  "inference": "Identical default Transformers prompts/helper/greedy decoder; BF16 autocast; presence/frequency penalties ignored; not historical vLLM equivalence",
-  "schema_version": 1,
-  "artifact_type": "Public scientific projection; not the private executable protocol file",
-  "source_execution_protocol_sha256": "15f47a72e2723d1b7f387e0134a9772ed237862a39567c76031697b250226d62",
-  "recipe_aliases": {
-    "V7.3.0": "V8.1",
-    "V7.3.1": "V8.2",
-    "V7.3.2": "V8.3"
-  },
   "published_runtime_sources": {
     "large_calibrate.py": {
       "executed_source_sha256": "ea5fa2899d582ba4fdc0ee7b997e49e788938f326f3635836ac93bf893988932",
@@ -155,25 +84,7 @@
       "role": "Package reconstruction implementation; final selected-package verification pending"
     }
   },
-  "source_hash_convention": "Original source bytes including original line endings; repository .gitattributes preserves versions/** exactly.",
-  "amended_full_benchmark": {
-    "models": 6,
-    "pages_per_model": 1651,
-    "model_page_outputs": 9906,
-    "controls": [
-      "base",
-      "legacy_simple_rule"
-    ],
-    "seed_waves": [
-      0,
-      1
-    ],
-    "seed1_barrier": "All three seed0 full inference and CPU scoring tasks terminal",
-    "maximum_concurrent_evaluation_workers": 3,
-    "confirmation_gate_required": false,
-    "benchmark_driven_reselection": false,
-    "external_leaderboard_submission": false
-  },
-  "full_benchmark_status": "Evaluation ongoing; no final scores claimed",
-  "raw_inputs_or_weights_included": false
+  "checkpoint_selection": "Highest DEV TEDS checkpoint within each run; earlier epoch on ties.",
+  "benchmark_pages": 1651,
+  "confirmation_sources": 512
 }

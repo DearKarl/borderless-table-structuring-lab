@@ -1,69 +1,7 @@
 {
-  "at_utc": "2026-10-11T17:02:56.354260+00:00",
-  "status": "passed",
   "packages": [
     {
-      "run_id": "V8.1/seed0",
-      "selected_epoch": 2,
-      "package_sha256": "327a66bbb6ec32ae7ca27326fa1c3d2beeefd42eac0be529611e73da434394f7",
-      "manifest_sha256": "c4ed1e92cbf7c45e15e3fbd1c3dfeaa4db78d9c040595595bb257e9bb1e3aa69",
-      "package_bytes": 135061792,
-      "header": {
-        "tensor_count": 229,
-        "dtype": "F32",
-        "component_elements": {
-          "adapters": 2293760,
-          "merger": 31464704,
-          "initial_factors": 0,
-          "cell_head": 0
-        },
-        "all_data_bytes_accounted_for": true
-      },
-      "deployment_nominee": false,
-      "reconstruction_sources_exact": true
-    },
-    {
-      "run_id": "V8.2/seed0",
-      "selected_epoch": 3,
-      "package_sha256": "9f19ec7a7d575d9774d1063c75fc8e11e59960bc7d33a683ea1b3720c646bcb5",
-      "manifest_sha256": "be7d446ea2a3ddf3896d782a3dc9f11b975685899ff03f48d24a8d7274cb6bcd",
-      "package_bytes": 144265384,
-      "header": {
-        "tensor_count": 453,
-        "dtype": "F32",
-        "component_elements": {
-          "adapters": 2293760,
-          "merger": 31464704,
-          "initial_factors": 2293760,
-          "cell_head": 0
-        },
-        "all_data_bytes_accounted_for": true
-      },
-      "deployment_nominee": false,
-      "reconstruction_sources_exact": true
-    },
-    {
-      "run_id": "V8.3/seed0",
-      "selected_epoch": 3,
-      "package_sha256": "a020ba0be6b75e33173755cad0ec878c169314fa0c7e27dce1f2e2e9f257396c",
-      "manifest_sha256": "c3f065dbc2365a5ba96305317404385d1156784bdf1ab5517f213c8b5217cca4",
-      "package_bytes": 144281944,
-      "header": {
-        "tensor_count": 455,
-        "dtype": "F32",
-        "component_elements": {
-          "adapters": 2293760,
-          "merger": 31464704,
-          "initial_factors": 2293760,
-          "cell_head": 4100
-        },
-        "all_data_bytes_accounted_for": true
-      },
-      "deployment_nominee": true,
-      "reconstruction_sources_exact": true
-    },
-    {
-      "run_id": "V8.1/seed1",
+      "run_id": "V8.1",
       "selected_epoch": 1,
       "package_sha256": "365a25bb31d7f2fb0250e36e99d64a46a38eaa3eac5eb3fe39313d90995b9876",
       "manifest_sha256": "b2d00819b659417c5333ba211969258baa71005edb7f91d7de42160cde18f30f",
@@ -79,11 +17,10 @@
         },
         "all_data_bytes_accounted_for": true
       },
-      "deployment_nominee": false,
       "reconstruction_sources_exact": true
     },
     {
-      "run_id": "V8.2/seed1",
+      "run_id": "V8.2",
       "selected_epoch": 2,
       "package_sha256": "200d0e624af5b966e6fd0055331636216983164d4e72d1178eee1d9037d9bed7",
       "manifest_sha256": "1726a0bace7ac48ba67d8f110b271a4c0f3be99f9e1b5ca3b9f86e4e92d48f24",
@@ -99,11 +36,10 @@
         },
         "all_data_bytes_accounted_for": true
       },
-      "deployment_nominee": false,
       "reconstruction_sources_exact": true
     },
     {
-      "run_id": "V8.3/seed1",
+      "run_id": "V8.3",
       "selected_epoch": 1,
       "package_sha256": "0bf070fa047f260f106bb8a70c075b7d617b196335ff914e8dcece112feeca04",
       "manifest_sha256": "1c5a296dbdfb67e79e3efe460c86db5805fd167622c4e6be1aac67291ca75e40",
@@ -119,13 +55,9 @@
         },
         "all_data_bytes_accounted_for": true
       },
-      "deployment_nominee": false,
       "reconstruction_sources_exact": true
     }
   ],
-  "package_count": 6,
-  "new_model_loads": 0,
-  "new_inference_calls": 0,
-  "GPU_allocations": 0,
-  "verification_scope": "Selected checkpoint hashes, reconstruction source bytes, provenance and safetensors structure; no additional numerical or quality claims."
+  "package_count": 3,
+  "verification_scope": "Checkpoint/package identities and tensor structure; no new inference."
 }

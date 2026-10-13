@@ -1,6 +1,5 @@
 {
   "recorded_at_utc": "2026-10-10T14:56:32.857144+00:00",
-  "status": "corrected_runtime_has_verified_valid_outputs_campaign_incomplete",
   "sources": {
     "versions/generator_pilot/large_benchmark.py": "8cf088ec0da6308347ec1fdcd522bdf588d626efea57e28c258b44a4a29bfb64",
     "versions/generator_pilot/large_benchmark_six.py": "1d1df03bb1ab00f20c965f77ecc66867ae2050adc5deba7e67a3f57c0b932824",
@@ -29,7 +28,6 @@
     }
   },
   "preserved_originals": "Original six-model and stream implementations are retained byte-for-byte for audit. Their model-mode PDF opener had the disclosed incompatibility; corrected stages bind the separately named v2 source bytes to the established import module names.",
-  "shared_utility": "large_benchmark.py supplies digest, table_replacements and non_table_identity. Its historical single-nominee main is not used by the six-model runtime.",
   "existing_dependencies": [
     "versions/generator_pilot/large_adapters.py",
     "versions/generator_pilot/supervision.py",
