@@ -281,7 +281,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--route", required=True, choices=["hybrid", "training"])
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--manifest", type=Path, default=Path(__file__).resolve().parents[1] / "artifacts" / (RELEASE + ".json"))
+    parser.add_argument("--manifest", type=Path, default=Path(__file__).resolve().parents[1] / "versions/V0/results" / (RELEASE + ".json"))
     parser.add_argument("--asset-dir", type=Path, help="Offline directory containing release chunks and external files at inventory-relative paths")
     args = parser.parse_args(argv)
     try:

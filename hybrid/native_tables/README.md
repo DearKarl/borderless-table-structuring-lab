@@ -12,7 +12,7 @@ and **99.2913812392524 structure TEDS**, versus fixed Raw
 **93.0862668980718 / 95.70961193860337**, on the 1,651-page local frozen
 Official OmniDocBench protocol. Both arms have 458 GT-table pages and
 665 matched samples, zero errors and zero timeouts.
-[Byte-bound paired summary](../../artifacts/results/native-tables/PAIRED_TABLE_SUMMARY.json).
+[Byte-bound paired summary](../../versions/V0/results/component_studies/native-tables/PAIRED_TABLE_SUMMARY.json).
 
 This is not public leaderboard acceptance. A new portable run is unscored
 until evaluated. The old result used a preserved mixed-MPS temporal prefix;
@@ -102,7 +102,7 @@ are not distributed. The old Hybrid asset Release contains MinerU weights
 for provenance but does not recreate that complete baseline runtime.
 
 For an invented one-page example, run
-`python examples/create_demo.py --output runs/demo-input`, then prepare/run
+`python tests/fixtures/create_demo.py --output runs/demo-input`, then prepare/run
 that directory. This is a real model smoke test, not a benchmark score.
 
 ### Runtime and resumption
@@ -198,7 +198,7 @@ already locates it.
 The release includes original aggregate result receipts but excludes all
 private predictions, caches, Gold, images and VPN/host configuration.
 Engineering tests and cached-output equivalence are not new TEDS results.
-The [validation record](../../artifacts/integrated-system-validation-2026.09.18.json)
+The validation record
 states exactly what was exercised, including unsupported/unverified paths.
 No upstream-author score, fixture or successful software check is relabeled as
 a new Official result.

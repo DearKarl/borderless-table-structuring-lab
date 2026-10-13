@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-RESULT = ROOT / "artifacts/results/native-tables"
+RESULT = ROOT / "versions/V0/results/component_studies/native-tables"
 
 
 def load(name):

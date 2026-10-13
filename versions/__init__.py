@@ -1,4 +1,4 @@
-"""Compatibility imports for scientific sources consolidated under Version/."""
+"""Compatibility imports for scientific sources consolidated under versions/."""
 from importlib.abc import MetaPathFinder
 from importlib.util import spec_from_file_location
 from importlib.machinery import ModuleSpec
@@ -18,7 +18,7 @@ class _VersionSources(MetaPathFinder):
         if len(parts) != 2 or parts[0] != __name__ or parts[1] not in _LOCATIONS:
             return None
         name = parts[1]
-        source = _ROOT / "Version" / _LOCATIONS[name] / "source" / name
+        source = _ROOT / "versions" / _LOCATIONS[name] / "source" / name
         local = _ROOT / "versions" / name
         search = [str(p) for p in (source, local) if p.is_dir()]
         if not search:

@@ -1,25 +1,7 @@
-# Frozen upstream source is SHA-bound, including its original whitespace/EOL.
+# Frozen upstream evaluator and format source retain exact bytes.
 evaluation/omnidocbench/** -text -whitespace
 hybrid/native_tables/vendor/omnidocbench/** -text -whitespace
 hybrid/native_tables/formats.py -text
 hybrid/native_tables/runtime/navidc_* -text
-
-# Archived source and nested hash locks retain their exact byte representation.
+# Scientific source, model and numeric output bytes survive organization unchanged.
 versions/** -text -whitespace
-releases/v6-v7-progress-20261007/** -text -whitespace
-artifacts/results/v6/** -text -whitespace
-artifacts/results/v7/** -text -whitespace
-V6/** -text -whitespace
-
-# Final V8 result tables and historical snapshots are bound by byte hashes.
-artifacts/results/v7_finetuning/large-lora-001/benchmark/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-artifacts/results/v7_finetuning/large-lora-001/confirmation/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-artifacts/results/v7_finetuning/large-lora-001/historical/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-artifacts/results/v7_finetuning/large-lora-001/MODEL_PACKAGES.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-
-# Lead-owned result summaries are published unchanged, including original EOLs.
-research/reports/V8_BENCHMARK_RESULTS_AND_NEXT_STEPS_20261011.html -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-research/reports/V8_BENCHMARK_RESULTS_AND_NEXT_STEPS_20261011.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-
-# Version consolidation preserves source, model and evidence bytes.
-Version/** -text -whitespace

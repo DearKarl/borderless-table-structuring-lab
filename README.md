@@ -1,53 +1,27 @@
 # Borderless Table Structuring Lab
 
-Research on reliable document parsing: how input processing, specialist models and learned adaptation can improve text, formulas and table structure while preserving correct content. The repository retains methods, complete available measurements and negative results across successive studies.
+Research on document parsing and table structure, retaining measured scientific
+outputs and the source needed to reproduce V0–V8.
 
-[Version: V0–V8](Version/README.md) · [Research Question](#research-question) · [Latest Version](#latest-version) · [History Version](#history-version) · [Results index](research/RESULTS.md) · [Reproduction](research/REPRODUCIBILITY.md) · [Contributing](CONTRIBUTING.md)
+[V0–V8](versions/README.md) · [Contributing](CONTRIBUTING.md)
 
-## Research Question
+| Version | Method |
+| --- | --- |
+| [V0](versions/V0/README.md) | MinerU + NaviDC table replacement and earlier table components |
+| [V1](versions/V1/README.md) | MinerU + Paddle formula replacement |
+| [V2](versions/V2/README.md) | TeleOCR + Paddle formula replacement |
+| [V3](versions/V3/README.md) | Layout/formula integration and Ovis text replacement |
+| [V4](versions/V4/README.md) | GBDT native-input selection |
+| [V5](versions/V5/README.md) | Original RGB inputs and regional rereading |
+| [V6](versions/V6/README.md) | GBDT/MLP regional scale controllers |
+| [V7](versions/V7/README.md) | Generator pilots and separate legacy selector |
+| [V8](versions/V8/README.md) | Large table-specialist LoRA comparisons |
 
-How can a document parser correct errors without damaging reliable native predictions, and do improvements transfer from isolated regions to complete documents? We study input choice, specialist integration and generator adaptation under matched controls. The research objective is an officially recognized OmniDocBench improvement and a generalizable contribution; no accepted leaderboard position or paper acceptance is claimed.
+Each directory contains its methods, available numerical results, limitations
+and reproduction sources. Different models and protocols are not a controlled
+cross-version ranking. Local scores do not establish an accepted leaderboard rank.
 
-## Latest Version
-
-### V8: table-specialist LoRA
-
-V8.1 uses ordinary LoRA, V8.2 adds LoRA-GA initialization, and V8.3 adds a training-only cell-location head. Each has seeds 0 and 1, trained on the same 20,000 real tables from 11,217 documents with default native 200-DPI inputs. DEV-selected checkpoints are fixed before independent evaluation.
-
-All eight policies below retain a 1,651-page evaluation universe. Table metrics use the official component denominators; these are not 1,651 separate tables.
-
-| Policy | Table TEDS ↑ /100 | Structure TEDS ↑ /100 | Table Edit Distance ↓ /1 | Overall ↑ /100 |
-| --- | --- | --- | --- | --- |
-| Matched native baseline | 96.962 | 98.296 | 0.034118 | 97.539 |
-| Legacy simple rule | 96.604 | 98.165 | 0.037184 | 97.420 |
-| V8.1/seed0 * | 90.299 | 93.213 | 0.085605 | 84.879 |
-| V8.1/seed1 | 93.295 | 96.321 | 0.060427 | 96.317 |
-| V8.2/seed0 * | 90.944 | 93.892 | 0.081719 | 85.095 |
-| V8.2/seed1 | 92.309 | 95.435 | 0.067085 | 95.988 |
-| V8.3/seed0 | 92.471 | 95.439 | 0.065634 | 96.042 |
-| V8.3/seed1 | 92.669 | 95.649 | 0.064097 | 96.108 |
-
-\* Execution qualifications: [see full results](Version/V8/README.md#execution-qualifications).
-
-The prespecified V8.3/seed0 nominee gains 4.2541 TEDS percentage points over matched native on 512 confirmation sources, but loses 4.4912 points on full-benchmark Table TEDS. The evidence does not support general parser replacement. These are matched Transformers results, not historical vLLM comparisons or an external leaderboard submission.
-
-[V8 methods and complete results](Version/V8/README.md) · [All eight official metrics](Version/V8/results/large-lora-001/benchmark/metrics/METRICS.csv) · [Confirmation analysis](Version/V8/results/large-lora-001/confirmation/metrics/CONFIRMATION_AGGREGATE.json) · [Figures](Version/V8/results/large-lora-001/FIGURES.md)
-
-**V8.4 / V8.5 are reserved, not implemented or started:** ordinary LoRA / LoRA-GA with the same full TDATR-style adapted supervision. The same TRAIN/DEV set is retained; diagnosis and a complete protocol freeze precede execution. [Version reservations](Version/V8/results/large-lora-001/NEXT_VERSIONS.md).
-
-## History Version
-
-Each introduction explains the method, available results, interpretation, implementation and original evidence. Different backbones and protocols are not a single controlled ranking. V3 has one entry with V3.1/V3.2 subsections; V7 separates its historical naming collisions.
-
-| Version | Methods | Source |
-| --- | --- | --- |
-| V0 | MinerU + NaviDC table replacement | [Introduction](Version/V0/README.md) |
-| V1 | MinerU + Paddle formula replacement | [Introduction](Version/V1/README.md) |
-| V2 | TeleOCR + Paddle formula replacement | [Introduction](Version/V2/README.md) |
-| V3 | Layout/formula integration (V3.1); text expert (V3.2) | [Introduction](Version/V3/README.md) |
-| V4 | GBDT selection of native input actions | [Introduction](Version/V4/README.md) |
-| V5 | Original RGB input and regional rereading | [Introduction](Version/V5/README.md) |
-| V6 | GBDT/MLP regional scale controllers | [Introduction](Version/V6/README.md) |
-| V7 | Generator LoRA pilots; separate legacy keep/replace selector | [Introduction](Version/V7/README.md) |
-
-The [version index](Version/README.md) keeps stable introductions as new studies become Latest Version. Original source, releases and measured artifacts remain at their existing paths. See [third-party notices](notices/THIRD_PARTY.md) for attribution and licensing.
+The shared application (`btsl`, `hybrid`), evaluator, download utilities and tests
+remain at the root because the versions reuse them. Third-party licenses and
+model notices are under [V0/notices](versions/V0/notices/THIRD_PARTY.md), with
+additional original notices retained alongside their source packages.

@@ -1,0 +1,5 @@
+!results/
+/results/*
+!/results/RESULTS.json
+!/results/METRICS.json
+!/results/PROVENANCE.json

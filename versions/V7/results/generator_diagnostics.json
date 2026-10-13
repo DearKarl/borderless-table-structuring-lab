@@ -1,0 +1,762 @@
+{
+  "scope": "Preserved measured V7 diagnostic tables; no new analysis",
+  "source_sha256": "aefb9324bfdb6d98fcf4aa80a924c61bd19cddd56b7bfeb32c36a5f8dff86a87",
+  "tables": [
+    {
+      "section": "Four-policy results",
+      "rows": [
+        [
+          "Policy",
+          "TEDS",
+          "Structure TEDS",
+          "Typography-stripped TEDS",
+          "Cell exact match",
+          "Character distance",
+          "Malformed",
+          "Content damage vs native"
+        ],
+        [
+          "Native",
+          "0.891100",
+          "0.933341",
+          "0.894532",
+          "0.784049",
+          "0.033078",
+          "0",
+          "0"
+        ],
+        [
+          "Legacy simple rule",
+          "0.902616",
+          "0.931999",
+          "0.909881",
+          "0.839004",
+          "0.020279",
+          "0",
+          "13"
+        ],
+        [
+          "V7.1 ordinary SFT",
+          "0.890519",
+          "0.932313",
+          "0.894783",
+          "0.787277",
+          "0.032666",
+          "0",
+          "5"
+        ],
+        [
+          "V7.2 targeted SFT",
+          "0.890484",
+          "0.932313",
+          "0.894739",
+          "0.787169",
+          "0.032886",
+          "0",
+          "4"
+        ]
+      ]
+    },
+    {
+      "section": "Paired comparisons",
+      "rows": [
+        [
+          "Left minus right",
+          "Mean TEDS difference",
+          "95% CI",
+          "Gain / harm / tie"
+        ],
+        [
+          "V7.2 targeted SFT \u2212 V7.1 ordinary SFT",
+          "-0.000035",
+          "[-0.000117, +0.000013]",
+          "1 / 2 / 61"
+        ],
+        [
+          "V7.2 targeted SFT \u2212 Native",
+          "-0.000615",
+          "[-0.008792, +0.007633]",
+          "7 / 4 / 53"
+        ],
+        [
+          "V7.2 targeted SFT \u2212 Legacy simple rule",
+          "-0.012132",
+          "[-0.027149, +0.000880]",
+          "16 / 21 / 27"
+        ],
+        [
+          "V7.1 ordinary SFT \u2212 Native",
+          "-0.000580",
+          "[-0.008763, +0.007637]",
+          "9 / 5 / 50"
+        ],
+        [
+          "V7.1 ordinary SFT \u2212 Legacy simple rule",
+          "-0.012097",
+          "[-0.027122, +0.000908]",
+          "17 / 21 / 26"
+        ]
+      ]
+    },
+    {
+      "section": "Prespecified gate",
+      "rows": [
+        [
+          "Requirement",
+          "Met"
+        ],
+        [
+          "All 64 sources complete in all inference arms",
+          "Yes"
+        ],
+        [
+          "Targeted minus ordinary mean TEDS at least 0.005",
+          "No"
+        ],
+        [
+          "Targeted has a positive lower confidence bound against each of three controls",
+          "No"
+        ],
+        [
+          "Targeted malformed count does not exceed any control",
+          "Yes"
+        ],
+        [
+          "Targeted mean character distance does not exceed native",
+          "Yes"
+        ]
+      ]
+    },
+    {
+      "section": "Training and data",
+      "rows": [
+        [
+          "Arm",
+          "Sequence tokens",
+          "Target tokens",
+          "Image tokens",
+          "Allocated training seconds",
+          "Fresh-base reload exact"
+        ],
+        [
+          "V7.1 ordinary SFT",
+          "132764",
+          "40164",
+          "87188",
+          "48.599",
+          "Yes"
+        ],
+        [
+          "V7.2 targeted SFT",
+          "132768",
+          "40168",
+          "87188",
+          "49.357",
+          "Yes"
+        ]
+      ]
+    },
+    {
+      "section": "Inference, validation and cost",
+      "rows": [
+        [
+          "Recognition path",
+          "Calls",
+          "Prompt tokens",
+          "Image tokens",
+          "Generated tokens including EOS",
+          "EOS not reached",
+          "Decoder errors"
+        ],
+        [
+          "Native",
+          "64",
+          "61973",
+          "59477",
+          "41777",
+          "0",
+          "0"
+        ],
+        [
+          "Fixed reread candidate",
+          "64",
+          "19739",
+          "17243",
+          "41914",
+          "0",
+          "0"
+        ],
+        [
+          "V7.1 ordinary SFT",
+          "64",
+          "61973",
+          "59477",
+          "41806",
+          "0",
+          "0"
+        ],
+        [
+          "V7.2 targeted SFT",
+          "64",
+          "61973",
+          "59477",
+          "41809",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "section": "Output equality is now measured directly",
+      "rows": [
+        [
+          "Comparison",
+          "Raw OTSL exact",
+          "Canonical grid exact",
+          "Structure exact",
+          "TEDS ties"
+        ],
+        [
+          "targeted_sft - ordinary_sft",
+          "61/64",
+          "61/64",
+          "64/64",
+          "61/64"
+        ],
+        [
+          "ordinary_sft - native",
+          "50/64",
+          "50/64",
+          "60/64",
+          "50/64"
+        ],
+        [
+          "targeted_sft - native",
+          "53/64",
+          "53/64",
+          "60/64",
+          "53/64"
+        ]
+      ]
+    },
+    {
+      "section": "Matched forward and generation evidence",
+      "rows": [
+        [
+          "Group",
+          "Base mean NLL",
+          "Ordinary mean NLL",
+          "Targeted mean NLL"
+        ],
+        [
+          "real_train",
+          "0.019160",
+          "0.017268",
+          "0.017342"
+        ],
+        [
+          "development",
+          "0.026906",
+          "0.023871",
+          "0.024411"
+        ],
+        [
+          "prototype",
+          "0.116628",
+          "0.062126",
+          "0.064248"
+        ]
+      ]
+    },
+    {
+      "section": "Matched forward and generation evidence",
+      "rows": [
+        [
+          "Checkpoint",
+          "Prototype structure exact",
+          "DEV structure exact",
+          "DEV canonical exact",
+          "Prototype relation-token NLL",
+          "Wrong-image minus correct-image relation NLL"
+        ],
+        [
+          "base",
+          "0/32",
+          "5/8",
+          "3/8",
+          "0.342706",
+          "+0.727069"
+        ],
+        [
+          "ordinary_sft",
+          "0/32",
+          "5/8",
+          "3/8",
+          "0.361034",
+          "+0.653603"
+        ],
+        [
+          "targeted_sft",
+          "0/32",
+          "5/8",
+          "3/8",
+          "0.288303",
+          "+0.664818"
+        ]
+      ]
+    },
+    {
+      "section": "Matched forward and generation evidence",
+      "rows": [
+        [
+          "Teacher-forced group",
+          "Targeted\u2013ordinary RMS logit difference",
+          "KL(ordinary",
+          "",
+          "targeted)",
+          "Top-1 agreement"
+        ],
+        [
+          "real_train",
+          "0.050280",
+          "0.00002675",
+          "99.9848%"
+        ],
+        [
+          "development",
+          "0.056153",
+          "0.00001739",
+          "99.9821%"
+        ],
+        [
+          "prototype",
+          "0.075878",
+          "0.00246052",
+          "99.3880%"
+        ]
+      ]
+    },
+    {
+      "section": "Supervision and numerical checks",
+      "rows": [
+        [
+          "Objective quantity",
+          "Ordinary",
+          "Targeted"
+        ],
+        [
+          "Pure structure coefficient",
+          "48.7136%",
+          "48.7383%"
+        ],
+        [
+          "Structure plus mixed coefficient",
+          "52.8150%",
+          "52.8369%"
+        ],
+        [
+          "All prototype relation-edit coefficient",
+          "3.5200%",
+          "3.5761%"
+        ],
+        [
+          "Relation-edit coefficient in differing exposure slots",
+          "1.7600%",
+          "1.8161%"
+        ]
+      ]
+    },
+    {
+      "section": "Predeclared endpoint",
+      "rows": [
+        [
+          "Checkpoint",
+          "Both states correct",
+          "Prototype structure exact",
+          "Malformed prototypes",
+          "Prototype nonempty text sequence exact",
+          "DEV structure exact",
+          "DEV canonical exact"
+        ],
+        [
+          "targeted_sft",
+          "0/16",
+          "0/32",
+          "0/32",
+          "28/32",
+          "5/8",
+          "3/8"
+        ],
+        [
+          "structural_loss_weighted",
+          "0/16",
+          "0/32",
+          "0/32",
+          "29/32",
+          "5/8",
+          "3/8"
+        ]
+      ]
+    },
+    {
+      "section": "Matched conditional probabilities",
+      "rows": [
+        [
+          "Quantity",
+          "Original targeted V7.2",
+          "Weighted V7.2.1"
+        ],
+        [
+          "Real TRAIN mean NLL",
+          "0.017342",
+          "0.018022"
+        ],
+        [
+          "DEV mean NLL",
+          "0.024411",
+          "0.024762"
+        ],
+        [
+          "Prototype mean NLL",
+          "0.064248",
+          "0.065204"
+        ],
+        [
+          "Prototype empty/span branch NLL",
+          "0.439890",
+          "0.396256"
+        ],
+        [
+          "Prototype relation-edit NLL",
+          "0.288303",
+          "0.274803"
+        ],
+        [
+          "Wrong-image minus correct-image relation NLL",
+          "+0.664818",
+          "+0.655218"
+        ]
+      ]
+    },
+    {
+      "section": "Identifiability depends on the renderer domain",
+      "rows": [
+        [
+          "Scope",
+          "Result",
+          "What it supports"
+        ],
+        [
+          "Original renderer replay",
+          "32/32 exact",
+          "Current font/render code reconstructs the frozen inputs"
+        ],
+        [
+          "Restricted candidate set",
+          "Gold only in 32/32",
+          "Bounded distinction under equal widths and centered, unpadded text"
+        ],
+        [
+          "Non-gold candidates in that set",
+          "0/544 pixel collisions",
+          "No ambiguity demonstrated within this finite set"
+        ],
+        [
+          "Padding-aware extension",
+          "32/32 exact alternative images",
+          "Non-identifiability in this explicitly broader layout family"
+        ],
+        [
+          "Same input with conflicting training labels",
+          "0/32",
+          "The finite mapping is not logically impossible to memorize"
+        ]
+      ]
+    },
+    {
+      "section": "Interface and representation results",
+      "rows": [
+        [
+          "Saved prototype comparison",
+          "V7.2",
+          "V7.2.1"
+        ],
+        [
+          "Raw target string exact",
+          "0/32",
+          "0/32"
+        ],
+        [
+          "Canonical text-plus-grid exact",
+          "0/32",
+          "0/32"
+        ],
+        [
+          "Structure exact after parsing/reserialization",
+          "0/32",
+          "0/32"
+        ],
+        [
+          "Structure TEDS equal to 1",
+          "0/32",
+          "0/32"
+        ]
+      ]
+    },
+    {
+      "section": "Real-source HTML carries additional representation",
+      "rows": [
+        [
+          "Canonical target vs original HTML",
+          "34 TRAIN mean",
+          "8 DEV mean"
+        ],
+        [
+          "Full TEDS",
+          "0.938627",
+          "0.935427"
+        ],
+        [
+          "Structure TEDS",
+          "0.961897",
+          "0.950518"
+        ],
+        [
+          "Typography-stripped TEDS",
+          "0.955214",
+          "0.943127"
+        ],
+        [
+          "Structure TEDS after section-wrapper removal",
+          "1.000000",
+          "1.000000"
+        ],
+        [
+          "TEDS after section and typography removal",
+          "1.000000",
+          "1.000000"
+        ]
+      ]
+    },
+    {
+      "section": "Completed work",
+      "rows": [
+        [
+          "Native input outcome",
+          "Ruled fixtures",
+          "Borderless controls"
+        ],
+        [
+          "Required",
+          "8",
+          "8"
+        ],
+        [
+          "Complete unique table regions",
+          "8",
+          "0"
+        ],
+        [
+          "Missing table regions",
+          "0",
+          "8"
+        ],
+        [
+          "Actual crops visually reviewed",
+          "8",
+          "0, unavailable"
+        ]
+      ]
+    },
+    {
+      "section": "V7.2.2 ruled-only learnability control",
+      "rows": [
+        [
+          "Model",
+          "Exact structure",
+          "Both-state pairs",
+          "Malformed",
+          "Full canonical exact",
+          "Nonempty text exact",
+          "Full TEDS",
+          "Structure TEDS"
+        ],
+        [
+          "base",
+          "8/8",
+          "4/4",
+          "0/8",
+          "8/8",
+          "8/8",
+          "1.000000",
+          "1.000000"
+        ],
+        [
+          "checkpoint25",
+          "8/8",
+          "4/4",
+          "0/8",
+          "8/8",
+          "8/8",
+          "1.000000",
+          "1.000000"
+        ],
+        [
+          "checkpoint50",
+          "8/8",
+          "4/4",
+          "0/8",
+          "8/8",
+          "8/8",
+          "1.000000",
+          "1.000000"
+        ],
+        [
+          "checkpoint100",
+          "8/8",
+          "4/4",
+          "0/8",
+          "8/8",
+          "8/8",
+          "1.000000",
+          "1.000000"
+        ],
+        [
+          "checkpoint200",
+          "8/8",
+          "4/4",
+          "0/8",
+          "8/8",
+          "8/8",
+          "1.000000",
+          "1.000000"
+        ]
+      ]
+    },
+    {
+      "section": "Conditional losses and image swaps",
+      "rows": [
+        [
+          "Model",
+          "All-token NLL",
+          "Empty/span branch NLL",
+          "Relation-edit NLL",
+          "Wrong-image minus correct-image relation NLL",
+          "Empty positions exact",
+          "Span positions exact"
+        ],
+        [
+          "base",
+          "0.000171664",
+          "0.000175173",
+          "0.000271688",
+          "+3.727243",
+          "8/8",
+          "8/8"
+        ],
+        [
+          "checkpoint25",
+          "2.42035e-05",
+          "5.52575e-06",
+          "9.64461e-06",
+          "+4.885025",
+          "8/8",
+          "8/8"
+        ],
+        [
+          "checkpoint50",
+          "7.5233e-06",
+          "5.77951e-07",
+          "1.13249e-06",
+          "+5.586115",
+          "8/8",
+          "8/8"
+        ],
+        [
+          "checkpoint100",
+          "3.18247e-06",
+          "2.07907e-07",
+          "4.13507e-07",
+          "+5.910286",
+          "8/8",
+          "8/8"
+        ],
+        [
+          "checkpoint200",
+          "2.29603e-06",
+          "1.3411e-07",
+          "2.68221e-07",
+          "+6.084100",
+          "8/8",
+          "8/8"
+        ]
+      ]
+    },
+    {
+      "section": "Saved generation results",
+      "rows": [
+        [
+          "Measure",
+          "Result"
+        ],
+        [
+          "Complete generations / denominator",
+          "34 / 34"
+        ],
+        [
+          "Canonical grid and text exact",
+          "8 / 34"
+        ],
+        [
+          "Structure including empty-cell identity exact",
+          "25 / 34"
+        ],
+        [
+          "Original-source-HTML mean TEDS",
+          "0.863120241"
+        ],
+        [
+          "Canonical mean TEDS",
+          "0.915531142"
+        ],
+        [
+          "Canonical structure-only mean TEDS",
+          "0.939753090"
+        ],
+        [
+          "Section/typography-normalized source mean TEDS, diagnostic only",
+          "0.915531142"
+        ],
+        [
+          "Malformed / failed / length-limited",
+          "0 / 0 / 0"
+        ]
+      ]
+    },
+    {
+      "section": "Disposition and next-fit decision",
+      "rows": [
+        [
+          "Frozen primary category",
+          "Tables"
+        ],
+        [
+          "Reliable text/content error",
+          "1"
+        ],
+        [
+          "Unsupported representation-only difference, retention eligible",
+          "8"
+        ],
+        [
+          "Source-label mismatch or visual ambiguity, excluded",
+          "25"
+        ],
+        [
+          "Reliable structural, combined, crop fault, invalid/missing, or fully source-exact correct",
+          "0"
+        ]
+      ]
+    }
+  ]
+}

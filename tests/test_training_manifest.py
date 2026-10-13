@@ -6,13 +6,13 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location("training_verifier", ROOT / "training/verify_checkpoint.py")
+SPEC = importlib.util.spec_from_file_location("training_verifier", ROOT / "versions/V0/source/explicit_v2/verify_checkpoint.py")
 VERIFIER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(VERIFIER)
 
 
 def test_manifest_truthful():
-    manifest = json.loads((ROOT / "training/model_manifest.json").read_text())
+    manifest = json.loads((ROOT / "versions/V0/source/explicit_v2/model_manifest.json").read_text())
     assert manifest["availability"] == "EXACT_WEIGHTS_GITHUB_RELEASE"
     assert manifest["download_url"].endswith('/training-explicit-v2-original-2026.09.13.1/model.safe-state')
     assert set(manifest['files']) == {'model.safe-state'}
@@ -22,9 +22,9 @@ def test_manifest_truthful():
 
 
 def test_inference_source_bytes_match_archive():
-    manifest = json.loads((ROOT / 'training/model_manifest.json').read_text())
+    manifest = json.loads((ROOT / 'versions/V0/source/explicit_v2/model_manifest.json').read_text())
     for name, expected in manifest['inference_source_files'].items():
-        assert hashlib.sha256((ROOT / 'training' / name).read_bytes()).hexdigest() == expected
+        assert hashlib.sha256((ROOT / 'versions/V0/source/explicit_v2' / name).read_bytes()).hexdigest() == expected
 
 
 def test_wrong_or_missing_file_rejected(tmp_path):

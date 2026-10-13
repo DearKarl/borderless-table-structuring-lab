@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-SPEC = importlib.util.spec_from_file_location('training_download', Path(__file__).resolve().parents[1] / 'training/download_model.py')
+SPEC = importlib.util.spec_from_file_location('training_download', Path(__file__).resolve().parents[1] / 'versions/V0/source/explicit_v2/download_model.py')
 download = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(download)
 
