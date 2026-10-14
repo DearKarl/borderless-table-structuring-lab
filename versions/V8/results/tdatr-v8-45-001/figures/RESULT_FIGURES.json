@@ -1,0 +1,25 @@
+{
+  "status": "visually_reviewed",
+  "result_sha256": "d8d6ffab1fa7d9970f3f3dd091409d7a04936b25e1ce7f2fdc56b5cb5289d539",
+  "figures": {
+    "generation_loss_curves.png": "9449dac3868b51a030d0441216cebb3910462aa8dc00cadccaef9a586ba95796",
+    "generation_loss_curves.svg": "b5e0df306eefffef4c4fd743677a0371340bc1f4048bebf7b31c8951d202760b",
+    "native_CE_diagnostics.png": "62f51f8482e8975e6f89ec153f679d16b480755e55c84a31750ddd9cb0dc57aa",
+    "native_CE_diagnostics.svg": "dbb25d7e3a2c3af1fd1663651c7856df4f40a25e57b71d66b872169a882233c1",
+    "localization_loss_components.png": "8113a1091adbc9ed5ac2034f3e3565c7b94cc8cc1db1b3911f102c44cac2eed4",
+    "localization_loss_components.svg": "162a270f13b57f3f532a62dbec27fa630ffa5e58d1877431ad7051b8aee39db2",
+    "training_runtime_diagnostics.png": "b78e68d929a7c4c658417b8ac2f91b8c708cece30d9321ec2b7f69582a3d97e6",
+    "training_runtime_diagnostics.svg": "40f14e22e7b178b7a74c63defb6c0ef02e5e46c08feb6d498b52c3ae55334ec3",
+    "full_benchmark_table_metrics.png": "716152e873f66a5ffe3ddd4d6709306991eba6fa4f47ca5c69f48d3f696d5e2b",
+    "full_benchmark_table_metrics.svg": "69f69b6b2c8b8ba806c941fa786e1cb1347a1ab50687be769f624fab73770492",
+    "confirmation_benchmark_contrasts.png": "2db4ece5b0527a30f39e7e3e93d271d845030d60875d8a7b62f9f166b008c44c",
+    "confirmation_benchmark_contrasts.svg": "ead75ad410b2d3dd266e3c91735eec882e9314cf8d9568237b25134e4176560d",
+    "new_campaign_compute.png": "b2a351189f2a67591698d81ffb8179c59ee7a4f88cb47de786d0b865a157021d",
+    "new_campaign_compute.svg": "51bd29bd0d6702ba04e6da44867e6afbed16282739090b6ec8645827e7fc91a1"
+  },
+  "smoothing": "Trailing50 update mean, separately within stages for generation loss",
+  "no_model_calls": true,
+  "reviewed_at_utc": "2026-10-14T22:01:18.205195+00:00",
+  "reviewed_png_count": 7,
+  "review": "All seven PNGs inspected. GIoU loss title corrected and comparison legend placed outside data; both changed PNGs re-inspected, five other PNGs byte-identical to inspected renders. Labels, scales, failure hatching and all curves are readable. Matching SVG hashes preserved."
+}

@@ -8,7 +8,7 @@ import sys
 _ROOT = Path(__file__).resolve().parent.parent
 _LOCATIONS = {
     "v0": "V0", "v1": "V1", "v2": "V2", "v3_1": "V3", "v3_2": "V3",
-    "v5": "V5", "v5_native": "V6", "v7": "V7", "generator_pilot": "V8",
+    "v5": "V5", "v5_native": "V6", "v7": "V7", "generator_pilot": "V8", "tdatr_adaptation": "V8",
 }
 
 

@@ -1,0 +1,7 @@
+{
+  "kind": "terminology_only",
+  "protocol_sha256": "45c9cd6613e8b27c516ca01005719359747abaaa1c9523d7e510e981a666a89e",
+  "correction": "The frozen implementation mapping calls the20,256 audited items sources in two sentences. They are table examples:20,000 TRAIN tables from11,217 unique sources plus256 DEV tables/sources. Numeric cohorts and executable bindings are unchanged.",
+  "scientific_protocol_changed": false,
+  "training_restarted": false
+}

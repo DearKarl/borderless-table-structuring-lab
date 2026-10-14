@@ -1,0 +1,250 @@
+{
+  "status": "input_and_protocol_evidence_results_reported_separately",
+  "at_utc": "2026-10-12T20:15:52.383844+00:00",
+  "train": {
+    "tables": 20000,
+    "unique_sources": 11217,
+    "cells": 1783555,
+    "empty_cells": 107506,
+    "span_cells": 90138,
+    "max_cells": 817,
+    "max_native_sequence_tokens": 9218
+  },
+  "dev": {
+    "sources": 256,
+    "eligible_native_inputs": 244,
+    "missing_native_inputs": 12
+  },
+  "confirmation_sources": 512,
+  "benchmark_pages_per_version": 1651,
+  "audit": {
+    "completed_table_examples": 20256,
+    "exact_native_cache_reconstructions": 20244,
+    "exact_full_cell_token_ranges": 20244,
+    "adjacent_cell_shared_token_incidences": 306128,
+    "eligible_tasks": {
+      "train:box_text": 9741,
+      "train:box_text_spotting": 9741,
+      "train:cell_detection": 20000,
+      "train:html": 20000,
+      "train:markdown": 20000,
+      "train:ordered_text": 10587,
+      "train:ordered_text_spotting": 10571,
+      "train:row_column_detection": 19771,
+      "train:span_detection": 20000,
+      "dev:markdown": 244,
+      "dev:html": 244,
+      "dev:cell_detection": 244,
+      "dev:span_detection": 244,
+      "dev:row_column_detection": 239,
+      "dev:ordered_text_spotting": 134,
+      "dev:ordered_text": 134,
+      "dev:box_text_spotting": 117,
+      "dev:box_text": 117
+    },
+    "unavailable_tasks": {
+      "train:box_text_spotting:no_complete_proper_subset_query": 846,
+      "train:box_text:no_complete_proper_subset_query": 846,
+      "train:ordered_text_spotting:source_lines_unavailable": 9413,
+      "train:ordered_text:source_lines_unavailable": 9413,
+      "train:box_text_spotting:source_lines_unavailable": 9413,
+      "train:box_text:source_lines_unavailable": 9413,
+      "train:ordered_text_spotting:token_limit": 16,
+      "train:row_column_detection:row_column_geometry_unavailable": 202,
+      "train:row_column_detection:token_limit": 27,
+      "dev:ordered_text_spotting:source_lines_unavailable": 110,
+      "dev:ordered_text:source_lines_unavailable": 110,
+      "dev:box_text_spotting:source_lines_unavailable": 110,
+      "dev:box_text:source_lines_unavailable": 110,
+      "dev:box_text_spotting:no_complete_proper_subset_query": 17,
+      "dev:box_text:no_complete_proper_subset_query": 17,
+      "dev:missing_native_input": 12,
+      "dev:row_column_detection:row_column_geometry_unavailable": 5
+    },
+    "sequence_length_quantiles": {
+      "train:box_text": {
+        "0.5": 830,
+        "0.9": 2061,
+        "0.99": 3014,
+        "1": 3608
+      },
+      "train:box_text_spotting": {
+        "0.5": 873,
+        "0.9": 2104,
+        "0.99": 3055,
+        "1": 3652
+      },
+      "train:cell_detection": {
+        "0.5": 1968,
+        "0.9": 4796,
+        "0.99": 7908,
+        "1": 15923
+      },
+      "train:html": {
+        "0.5": 1591,
+        "0.9": 3886,
+        "0.99": 5848,
+        "1": 10115
+      },
+      "train:markdown": {
+        "0.5": 1540,
+        "0.9": 3743,
+        "0.99": 5692,
+        "1": 10122
+      },
+      "train:ordered_text": {
+        "0.5": 1164,
+        "0.9": 2923,
+        "0.99": 4411,
+        "1": 6929
+      },
+      "train:ordered_text_spotting": {
+        "0.5": 2517,
+        "0.9": 6266,
+        "0.99": 10524,
+        "1": 15872
+      },
+      "train:row_column_detection": {
+        "0.5": 2905,
+        "0.9": 6951,
+        "0.99": 11516,
+        "1": 16299
+      },
+      "train:span_detection": {
+        "0.5": 987,
+        "0.9": 2314,
+        "0.99": 3348,
+        "1": 4468
+      },
+      "dev:markdown": {
+        "0.5": 1036,
+        "0.9": 3119,
+        "0.99": 5609,
+        "1": 7483
+      },
+      "dev:html": {
+        "0.5": 1106,
+        "0.9": 3352,
+        "0.99": 5602,
+        "1": 7476
+      },
+      "dev:cell_detection": {
+        "0.5": 1363,
+        "0.9": 3844,
+        "0.99": 7799,
+        "1": 9028
+      },
+      "dev:span_detection": {
+        "0.5": 710,
+        "0.9": 1875,
+        "0.99": 3118,
+        "1": 3214
+      },
+      "dev:row_column_detection": {
+        "0.5": 2033,
+        "0.9": 5487,
+        "0.99": 11701,
+        "1": 13222
+      },
+      "dev:ordered_text_spotting": {
+        "0.5": 1851,
+        "0.9": 4844,
+        "0.99": 11815,
+        "1": 13139
+      },
+      "dev:ordered_text": {
+        "0.5": 843,
+        "0.9": 2442,
+        "0.99": 4244,
+        "1": 5786
+      },
+      "dev:box_text_spotting": {
+        "0.5": 614,
+        "0.9": 1706,
+        "0.99": 2410,
+        "1": 2506
+      },
+      "dev:box_text": {
+        "0.5": 574,
+        "0.9": 1664,
+        "0.99": 2368,
+        "1": 2448
+      }
+    },
+    "maximum_task_tokens": {
+      "train:ordered_text_spotting": 15872,
+      "train:ordered_text": 6929,
+      "train:box_text_spotting": 3652,
+      "train:box_text": 3608,
+      "train:markdown": 10122,
+      "train:html": 10115,
+      "train:cell_detection": 15923,
+      "train:span_detection": 4468,
+      "train:row_column_detection": 16299,
+      "dev:markdown": 7483,
+      "dev:html": 7476,
+      "dev:cell_detection": 9028,
+      "dev:span_detection": 3214,
+      "dev:row_column_detection": 13222,
+      "dev:ordered_text_spotting": 13139,
+      "dev:ordered_text": 5786,
+      "dev:box_text_spotting": 2506,
+      "dev:box_text": 2448
+    }
+  },
+  "formal_versions": {
+    "V8.4": "Ordinary attention LoRA plus complete TDATR-style adapted detail/fusion supervision",
+    "V8.5": "LoRA-GA plus the identical detail/fusion supervision"
+  },
+  "formal_fits_per_version": 1,
+  "user_fixed_seed": null,
+  "task_exposures_per_version": {
+    "html": 6667,
+    "row_column_detection": 6667,
+    "markdown": 6667,
+    "span_detection": 6667,
+    "cell_detection": 6666,
+    "box_text_spotting": 6666,
+    "box_text": 6666,
+    "ordered_text": 6667,
+    "ordered_text_spotting": 6667,
+    "native_otsl": 60000
+  },
+  "epochs_per_stage": 3,
+  "optimizer_updates_per_version": 7500,
+  "exposures_per_version": 120000,
+  "detail_updates": 3750,
+  "fusion_updates": 3750,
+  "prior_control_exposures_per_version": 60000,
+  "protocol_sha256": "45c9cd6613e8b27c516ca01005719359747abaaa1c9523d7e510e981a666a89e",
+  "shared_exposures_sha256": "f60d194bfcafaa1e24af92df31d48201735c64c076898bbc7b3d9d5631fea063",
+  "reconstruction_inputs_sha256": "b6b000cddb189334d8a6e0acc0669e01bd4f4207688081ae2bf30f6308bfa71f",
+  "original_cohorts_unchanged": true,
+  "no_target_truncation": true,
+  "new_real_or_synthetic_examples": 0,
+  "checkpoint_selection": {
+    "eligible": "Fusion epoch 1,2,3 only",
+    "metric": "Full 256-source mean TEDS",
+    "tie": "Earlier epoch",
+    "separate_per_version": true,
+    "confirmation_gate": false,
+    "benchmark_tuning": false,
+    "technical_failures_retained": true
+  },
+  "inference": {
+    "backend": "transformers",
+    "default_native_processor": true,
+    "presence_frequency_penalties_applied": false,
+    "historical_vllm_equivalence": false,
+    "localization": "One extra forward on own generated OTSL; labels absent; cost and unavailability explicit; official native text/HTML not rewritten"
+  },
+  "limitations": [
+    "Adapted TDATR reproduction; native VLM features and OTSL differ from the paper.",
+    "New fits have twice the exposure count of completed three-pass controls.",
+    "One fit per method cannot establish optimization-seed stability.",
+    "Previously evaluated confirmation and benchmark cohorts are exposed tests.",
+    "Task eligibility varies with source annotations and the fixed token limit; unavailable tasks do not remove cohort members."
+  ],
+  "original_snapshot_status": "input_and_protocol_evidence_only_results_pending",
+  "completed_results_file": "RESULTS.json"
+}

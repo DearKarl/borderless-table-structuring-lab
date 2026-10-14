@@ -1,0 +1,18 @@
+{
+  "status": "complete_numeric_history",
+  "result_sha256": "d8d6ffab1fa7d9970f3f3dd091409d7a04936b25e1ce7f2fdc56b5cb5289d539",
+  "files": {
+    "V8.4.csv": {
+      "sha256": "723b82c1a9ad8d409da3abb6ff0887e2b70f7fa1cd57663655604e57a800cbd0",
+      "rows": 7500,
+      "source_sha256": "dba48ef777b2666eaa10cde7295283176b7838a8b8f4e6d32cc33635a7fdd4fe"
+    },
+    "V8.5.csv": {
+      "sha256": "8a3ddb3fdc0f05c727d8d7ef5b3e4f27fc5820a30d285b1965733464a3978bac",
+      "rows": 7500,
+      "source_sha256": "93b7cf9d23b56b65f314e130a3d48723783892f44601e510417e4f091dbeeca5"
+    }
+  },
+  "blank_cells": "Unavailable during this stage; never imputed as zero",
+  "raw_GT_or_prediction_bodies_included": false
+}

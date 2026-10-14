@@ -1,0 +1,267 @@
+{
+  "status": "source_provenance_recorded",
+  "sources": {
+    "versions/tdatr_adaptation/__init__.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/__init__.py",
+      "sha256": "53e731cfa08f84484deb8b822a065d20e08c51717be5a4fe0a21081a307076c1",
+      "original_source_sha256": "53e731cfa08f84484deb8b822a065d20e08c51717be5a4fe0a21081a307076c1",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/audit_inputs.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/audit_inputs.py",
+      "sha256": "43a7ec31a386150478dd4ea456228aa66da7767571ec23657d16e64e7e80b867",
+      "original_source_sha256": "43a7ec31a386150478dd4ea456228aa66da7767571ec23657d16e64e7e80b867",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/audit_recovery.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/audit_recovery.py",
+      "sha256": "82eac6b23f716648ab9fbe65fed614086f1ec78335b5f55f9610657a9eeb6671",
+      "original_source_sha256": "82eac6b23f716648ab9fbe65fed614086f1ec78335b5f55f9610657a9eeb6671",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/backbone.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/backbone.py",
+      "sha256": "2565749850f8427b6fc9f8da36c3c8b62f07a7fe492d2c9c10d8c2e36a7a0865",
+      "original_source_sha256": "2565749850f8427b6fc9f8da36c3c8b62f07a7fe492d2c9c10d8c2e36a7a0865",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/benchmark.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/benchmark.py",
+      "sha256": "1a225fc12a534f2b1de5915af347425312c9538b8f979926b1735c73ff94c185",
+      "original_source_sha256": "1a225fc12a534f2b1de5915af347425312c9538b8f979926b1735c73ff94c185",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/benchmark_recovery.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/benchmark_recovery.py",
+      "sha256": "527503525d0ee1f504ca643d06171e93e183c4de2e1455708cc6a06136fe65f2",
+      "original_source_sha256": "527503525d0ee1f504ca643d06171e93e183c4de2e1455708cc6a06136fe65f2",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/benchmark_recovery_contract.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/benchmark_recovery_contract.py",
+      "sha256": "623d58f2b033c408acc86ccf8e7b76fb5291d5b482927504efb73a53d20fcd89",
+      "original_source_sha256": "623d58f2b033c408acc86ccf8e7b76fb5291d5b482927504efb73a53d20fcd89",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/calibrate.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/calibrate.py",
+      "sha256": "57bc0f7775c7d73880645b67054ab5c508f2f9ca0d04ab73bc48c1274d20f9ab",
+      "original_source_sha256": "57bc0f7775c7d73880645b67054ab5c508f2f9ca0d04ab73bc48c1274d20f9ab",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/cell_tokens.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/cell_tokens.py",
+      "sha256": "007ae060b71cc37e4a5404e0f598bb1a4770c068455f8946ccc1449caa24f136",
+      "original_source_sha256": "007ae060b71cc37e4a5404e0f598bb1a4770c068455f8946ccc1449caa24f136",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/execution.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/execution.py",
+      "sha256": "242a1405e0233a4ea058931efdeffda19fbeb5a791988fa8f9e1135e99c55952",
+      "original_source_sha256": "242a1405e0233a4ea058931efdeffda19fbeb5a791988fa8f9e1135e99c55952",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/export_curves.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/export_curves.py",
+      "sha256": "f1d56e6ce9a3c4975538884de7b81f5a55b68366c1755b8848f9ed0749736e13",
+      "original_source_sha256": "f1d56e6ce9a3c4975538884de7b81f5a55b68366c1755b8848f9ed0749736e13",
+      "relation": "post_fit_delivery_source"
+    },
+    "versions/tdatr_adaptation/freeze_plan.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/freeze_plan.py",
+      "sha256": "f32db55790deb647b0940cf4d2313f55b320c5453a6ebb2854e0a20a8a9096cb",
+      "original_source_sha256": "f32db55790deb647b0940cf4d2313f55b320c5453a6ebb2854e0a20a8a9096cb",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/generate.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/generate.py",
+      "sha256": "6422c1806e727c030405f020a6b00905f1587cffa6d13ad7b1518e936fa38fd0",
+      "original_source_sha256": "6422c1806e727c030405f020a6b00905f1587cffa6d13ad7b1518e936fa38fd0",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/heldout_score.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/heldout_score.py",
+      "sha256": "cbd6f80d089fcb0351a9e58627b0a81c2fd732468fd910993d5ea4ed1abe71e0",
+      "original_source_sha256": "cbd6f80d089fcb0351a9e58627b0a81c2fd732468fd910993d5ea4ed1abe71e0",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/inference.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/inference.py",
+      "sha256": "44f6d6665e09266e08cdafd7541efd6db330ff60358d2402e5386c5a0dbe43a2",
+      "original_source_sha256": "44f6d6665e09266e08cdafd7541efd6db330ff60358d2402e5386c5a0dbe43a2",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/inputs.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/inputs.py",
+      "sha256": "353306a2778748e3e0bf2cf55d58c5f1bedec1a0dbe5893d0e77583a97d035a4",
+      "original_source_sha256": "353306a2778748e3e0bf2cf55d58c5f1bedec1a0dbe5893d0e77583a97d035a4",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/integration_smoke.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/integration_smoke.py",
+      "sha256": "432e521176ef6a71be9a2f621bf646900ba77b1c65dc5fc6e766a229025f4971",
+      "original_source_sha256": "432e521176ef6a71be9a2f621bf646900ba77b1c65dc5fc6e766a229025f4971",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/model.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/model.py",
+      "sha256": "c553aa3afcfb4d9041fbe09df196922d68be1a88a8fd17606a6d8a1ecc59b1c6",
+      "original_source_sha256": "c553aa3afcfb4d9041fbe09df196922d68be1a88a8fd17606a6d8a1ecc59b1c6",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/package_model.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/package_model.py",
+      "sha256": "f86ad022b804d6c2c0b81264c41dfca90e7539022368c1979e25d9786d8b953c",
+      "original_source_sha256": "5d1c9e5cbd211d006a810d779beea1477ff621d846361fb9d2d2312795b99a6a",
+      "relation": "post_fit_delivery_source_with_public_path_resolution"
+    },
+    "versions/tdatr_adaptation/plot_results.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/plot_results.py",
+      "sha256": "8e56ef5892104c31147cf310f3279effb37c12847525250f24133b32feac0de8",
+      "original_source_sha256": "8e56ef5892104c31147cf310f3279effb37c12847525250f24133b32feac0de8",
+      "relation": "post_fit_delivery_source"
+    },
+    "versions/tdatr_adaptation/portable_load.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/portable_load.py",
+      "sha256": "9a26cf4479a096cd8bdf38f8312004e0321574518929ae9e02857bbe98e6fd7d",
+      "original_source_sha256": "9a26cf4479a096cd8bdf38f8312004e0321574518929ae9e02857bbe98e6fd7d",
+      "relation": "post_fit_delivery_source"
+    },
+    "versions/tdatr_adaptation/report_results.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/report_results.py",
+      "sha256": "335919642eaba6d797d86e1bbac3aa72e9b0f364226a4d575c019ad3d2a29ce1",
+      "original_source_sha256": "335919642eaba6d797d86e1bbac3aa72e9b0f364226a4d575c019ad3d2a29ce1",
+      "relation": "post_fit_delivery_source"
+    },
+    "versions/tdatr_adaptation/runtime_smoke.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/runtime_smoke.py",
+      "sha256": "e2b8be400c578c46574b7862e56241eae8f8aec7836bdea21544ef84e093e09b",
+      "original_source_sha256": "e2b8be400c578c46574b7862e56241eae8f8aec7836bdea21544ef84e093e09b",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/select.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/select.py",
+      "sha256": "74f6f49f75867f36cd6d9d387bf8f88f412ea8e8834597c6c247a5c23e80315d",
+      "original_source_sha256": "74f6f49f75867f36cd6d9d387bf8f88f412ea8e8834597c6c247a5c23e80315d",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/sgcl.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/sgcl.py",
+      "sha256": "9236e3943d9ae97b726013fabe7ee2be544b9edab136e7f8fc880b3fa9f05451",
+      "original_source_sha256": "9236e3943d9ae97b726013fabe7ee2be544b9edab136e7f8fc880b3fa9f05451",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/summarize_results.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/summarize_results.py",
+      "sha256": "e7eab75892efa49bb63b0785a2035e79cf2fd1ec249d0b609b5c342617b4b9b1",
+      "original_source_sha256": "e7eab75892efa49bb63b0785a2035e79cf2fd1ec249d0b609b5c342617b4b9b1",
+      "relation": "post_fit_delivery_source"
+    },
+    "versions/tdatr_adaptation/targets.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/targets.py",
+      "sha256": "ff5a64a5f68ecf760d835e91a6125a6ea36f5bbbc572a96605c447f5988e1849",
+      "original_source_sha256": "ff5a64a5f68ecf760d835e91a6125a6ea36f5bbbc572a96605c447f5988e1849",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/test_audit_recovery.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/test_audit_recovery.py",
+      "sha256": "5256d6ec10a4a3c9c1809b9f807fc5f62181abfb777890485d59c3713f264639",
+      "original_source_sha256": "5256d6ec10a4a3c9c1809b9f807fc5f62181abfb777890485d59c3713f264639",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/test_backbone.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/test_backbone.py",
+      "sha256": "a7b42e46c3648ca1ca066f51ef20464564bb23e729de1e8f09a0e0215f032a05",
+      "original_source_sha256": "a7b42e46c3648ca1ca066f51ef20464564bb23e729de1e8f09a0e0215f032a05",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/test_benchmark_recovery.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/test_benchmark_recovery.py",
+      "sha256": "49fe5700d6ca06bc50f50ea9f8ae406e84f57b194a768c358fc00d5973de4b40",
+      "original_source_sha256": "49fe5700d6ca06bc50f50ea9f8ae406e84f57b194a768c358fc00d5973de4b40",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/test_cell_tokens.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/test_cell_tokens.py",
+      "sha256": "f54befcfe1baacb5fca441f5cfae4490ee29856d1f1bba2e0a862c14a9fa1a1b",
+      "original_source_sha256": "f54befcfe1baacb5fca441f5cfae4490ee29856d1f1bba2e0a862c14a9fa1a1b",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/test_selection.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/test_selection.py",
+      "sha256": "dbaffd600b10fc942a0f38f8c354f99e34d9087f08eb65ea4c3fcfc00804c858",
+      "original_source_sha256": "dbaffd600b10fc942a0f38f8c354f99e34d9087f08eb65ea4c3fcfc00804c858",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/test_sgcl.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/test_sgcl.py",
+      "sha256": "92b309d3f8f08707186b699bd583dac662132bf2829de937071f90b2f07b741a",
+      "original_source_sha256": "92b309d3f8f08707186b699bd583dac662132bf2829de937071f90b2f07b741a",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/test_summarize_results.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/test_summarize_results.py",
+      "sha256": "0c53c94194bdfb1f2323f271893277bf725465518e5ba758344aac70a479049b",
+      "original_source_sha256": "0c53c94194bdfb1f2323f271893277bf725465518e5ba758344aac70a479049b",
+      "relation": "post_fit_delivery_source"
+    },
+    "versions/tdatr_adaptation/test_targets.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/test_targets.py",
+      "sha256": "fd1ea399de68ceffcca0568d4d60e2bd9562e847d3c5f7faa9bdf107a8c2c06b",
+      "original_source_sha256": "fd1ea399de68ceffcca0568d4d60e2bd9562e847d3c5f7faa9bdf107a8c2c06b",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/train.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/train.py",
+      "sha256": "6201051f97a8f42f148219090c9d29f6975e51d5c9799dea8bcbcca93ffd8653",
+      "original_source_sha256": "6201051f97a8f42f148219090c9d29f6975e51d5c9799dea8bcbcca93ffd8653",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/tdatr_adaptation/verify_packages.py": {
+      "published_path": "versions/V8/source/tdatr_adaptation/verify_packages.py",
+      "sha256": "1ce592bed3e9927d966ddbf42a992dcb1ac7c2668914ecacadfb381f46e70996",
+      "original_source_sha256": "3ea80c3c6dff467d6ceae7b95006d718a22e2a2b4bf34c505d1e4773af9ee0aa",
+      "relation": "post_fit_delivery_source_with_public_path_resolution"
+    },
+    "versions/generator_pilot/common.py": {
+      "published_path": "versions/V8/source/generator_pilot/common.py",
+      "sha256": "d286521887341456155ac6799a80ca3f61dbc7b51a23d25eb17abe033e5c3dcd",
+      "original_source_sha256": "f3dc69c2cb19101bb6f9d9c476250a245ddb172071bafa3f39e75364de572ff1",
+      "relation": "same_utility_functions_public_output_paths"
+    },
+    "versions/generator_pilot/targets.py": {
+      "published_path": "versions/V8/source/generator_pilot/targets.py",
+      "sha256": "59f52fb5ee28c08609bfb08f5d267cc21ec78636336fe11255dcfb6ff7816cb2",
+      "original_source_sha256": "815aba4c86033f21a6b45f8fb78f65ccde808c7567f3def96163d6467ea76df1",
+      "relation": "same_table_algorithms_explicit_decoder_asset_path"
+    },
+    "versions/generator_pilot/strict_output.py": {
+      "published_path": "versions/V8/source/generator_pilot/strict_output.py",
+      "sha256": "c7c9f6ad0259ba08a144d06956ead3af09c2cec83c206787860be134fb2a0b98",
+      "original_source_sha256": "c7c9f6ad0259ba08a144d06956ead3af09c2cec83c206787860be134fb2a0b98",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/generator_pilot/large_score.py": {
+      "published_path": "versions/V8/source/generator_pilot/large_score.py",
+      "sha256": "0b155ddfc63a84f4546b0782b3d06a5bafd22137c684255a632958303517eaaf",
+      "original_source_sha256": "0b155ddfc63a84f4546b0782b3d06a5bafd22137c684255a632958303517eaaf",
+      "relation": "exact_frozen_scientific_source"
+    },
+    "versions/generator_pilot/large_six_score.py": {
+      "published_path": "versions/V8/source/generator_pilot/large_six_score.py",
+      "sha256": "8339605b6993225051dde214e16df48a0b65835931065003124d918058cff268",
+      "original_source_sha256": "89de5dc9bd15e181cd663c0d6fcd97b1df6a24da82aa665326ec8203161652f1",
+      "relation": "same_official_scoring_default_optional_interpreter_path"
+    }
+  },
+  "excluded_operational_scheduling_files": [
+    "benchmark_recovery_controller.py",
+    "cpu_score_runner.py",
+    "evaluation_controller.py",
+    "fit_controller.py",
+    "prepare_controller.py",
+    "stage_runner.py",
+    "test_stage_runner.py"
+  ],
+  "scientific_protocol_changed": false
+}
