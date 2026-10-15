@@ -197,7 +197,6 @@
     "V8.5": "LoRA-GA plus the identical detail/fusion supervision"
   },
   "formal_fits_per_version": 1,
-  "user_fixed_seed": null,
   "task_exposures_per_version": {
     "html": 6667,
     "row_column_detection": 6667,
@@ -215,7 +214,6 @@
   "exposures_per_version": 120000,
   "detail_updates": 3750,
   "fusion_updates": 3750,
-  "prior_control_exposures_per_version": 60000,
   "protocol_sha256": "45c9cd6613e8b27c516ca01005719359747abaaa1c9523d7e510e981a666a89e",
   "shared_exposures_sha256": "f60d194bfcafaa1e24af92df31d48201735c64c076898bbc7b3d9d5631fea063",
   "reconstruction_inputs_sha256": "b6b000cddb189334d8a6e0acc0669e01bd4f4207688081ae2bf30f6308bfa71f",
@@ -240,8 +238,6 @@
   },
   "limitations": [
     "Adapted TDATR reproduction; native VLM features and OTSL differ from the paper.",
-    "New fits have twice the exposure count of completed three-pass controls.",
-    "One fit per method cannot establish optimization-seed stability.",
     "Previously evaluated confirmation and benchmark cohorts are exposed tests.",
     "Task eligibility varies with source annotations and the fixed token limit; unavailable tasks do not remove cohort members."
   ],

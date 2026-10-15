@@ -783,18 +783,13 @@ token.json
 !/versions/V8/results/large-lora-001/training/figures/training_curves.svg
 
 # Completed V8.4/V8.5 scientific delivery.
-!/versions/V8/results/tdatr-v8-45-001/COMPUTE_CLOSURE.json
 !/versions/V8/results/tdatr-v8-45-001/DATASET_AND_PROTOCOL.md
 !/versions/V8/results/tdatr-v8-45-001/DATASET_FIGURES.json
 !/versions/V8/results/tdatr-v8-45-001/DATASET_SUMMARY.json
-!/versions/V8/results/tdatr-v8-45-001/figures/confirmation_benchmark_contrasts.png
-!/versions/V8/results/tdatr-v8-45-001/figures/confirmation_benchmark_contrasts.svg
 !/versions/V8/results/tdatr-v8-45-001/figures/detail_sequence_lengths.png
 !/versions/V8/results/tdatr-v8-45-001/figures/detail_sequence_lengths.svg
 !/versions/V8/results/tdatr-v8-45-001/figures/detail_task_eligibility.png
 !/versions/V8/results/tdatr-v8-45-001/figures/detail_task_eligibility.svg
-!/versions/V8/results/tdatr-v8-45-001/figures/full_benchmark_table_metrics.png
-!/versions/V8/results/tdatr-v8-45-001/figures/full_benchmark_table_metrics.svg
 !/versions/V8/results/tdatr-v8-45-001/figures/generation_loss_curves.png
 !/versions/V8/results/tdatr-v8-45-001/figures/generation_loss_curves.svg
 !/versions/V8/results/tdatr-v8-45-001/figures/localization_loss_components.png
@@ -803,17 +798,13 @@ token.json
 !/versions/V8/results/tdatr-v8-45-001/figures/native_CE_diagnostics.svg
 !/versions/V8/results/tdatr-v8-45-001/figures/new_campaign_compute.png
 !/versions/V8/results/tdatr-v8-45-001/figures/new_campaign_compute.svg
-!/versions/V8/results/tdatr-v8-45-001/figures/planned_training_exposures.png
-!/versions/V8/results/tdatr-v8-45-001/figures/planned_training_exposures.svg
 !/versions/V8/results/tdatr-v8-45-001/figures/RESULT_FIGURES.json
 !/versions/V8/results/tdatr-v8-45-001/figures/training_runtime_diagnostics.png
 !/versions/V8/results/tdatr-v8-45-001/figures/training_runtime_diagnostics.svg
 !/versions/V8/results/tdatr-v8-45-001/METRICS.csv
 !/versions/V8/results/tdatr-v8-45-001/MODEL_PACKAGES.json
-!/versions/V8/results/tdatr-v8-45-001/PAIRED_OUTCOMES.json
 !/versions/V8/results/tdatr-v8-45-001/PROTOCOL.json
 !/versions/V8/results/tdatr-v8-45-001/PROTOCOL_TERMINOLOGY_NOTE.json
-!/versions/V8/results/tdatr-v8-45-001/REPORT.md
 !/versions/V8/results/tdatr-v8-45-001/RESULTS.json
 !/versions/V8/results/tdatr-v8-45-001/training_curves/MANIFEST.json
 !/versions/V8/results/tdatr-v8-45-001/training_curves/V8.4.csv
@@ -862,3 +853,9 @@ token.json
 !/versions/V8/source/tdatr_adaptation/test_targets.py
 !/versions/V8/source/tdatr_adaptation/train.py
 !/versions/V8/source/tdatr_adaptation/verify_packages.py
+!/versions/V8/results/tdatr-v8-45-001/figures/confirmation_metrics.png
+!/versions/V8/results/tdatr-v8-45-001/figures/confirmation_metrics.svg
+!/versions/V8/results/tdatr-v8-45-001/figures/official_metrics.png
+!/versions/V8/results/tdatr-v8-45-001/figures/official_metrics.svg
+!/versions/V8/results/tdatr-v8-45-001/figures/training_exposures.png
+!/versions/V8/results/tdatr-v8-45-001/figures/training_exposures.svg

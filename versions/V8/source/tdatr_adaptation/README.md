@@ -3,11 +3,11 @@
 V8.4 uses ordinary attention LoRA. V8.5 uses compensated LoRA-GA with the same
 detail and fusion supervision. Each version receives one fit with three detail
 passes and three fusion passes over the original 20,000-table TRAIN cohort:
-7,500 optimizer updates and 120,000 exposures. Older V8.1–V8.3 controls have half
+7,500 optimizer updates and 120,000 exposures. Older V8.1â€“V8.3 controls have half
 as many exposures and are reused without refitting.
 
 The [dataset and protocol](../../results/tdatr-v8-45-001/DATASET_AND_PROTOCOL.md)
-and [frozen scientific record](../../results/tdatr-v8-45-001/PROTOCOL.json)
+and [training parameters and source identities](../../results/tdatr-v8-45-001/PROTOCOL.json)
 describe task eligibility, inputs, optimization, selection, provenance and limits.
 Results require the saved completed score receipts; source availability is not
 evidence that the experiment completed or improved accuracy.
@@ -74,7 +74,7 @@ The repository compatibility loader exposes this directory as
 `versions.tdatr_adaptation`. The scored full benchmark used
 `benchmark_recovery.py`: its native keyword adapter repairs a pre-call recording
 error in the retained original `benchmark.py`. It keeps the frozen models,
-inputs and evaluator. See the [completed report](../../results/tdatr-v8-45-001/REPORT.md).
+inputs and evaluator. See the [completed numerical results](../../results/tdatr-v8-45-001/RESULTS.json).
 `SOURCE_HASHES.json` distinguishes exact executed modules from delivery utilities
 and explicit path-resolution changes in legacy helpers. Table parsing, scoring
 and fitted model algorithms are unchanged. The original private controller and

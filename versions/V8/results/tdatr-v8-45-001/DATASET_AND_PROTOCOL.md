@@ -1,7 +1,7 @@
 # V8.4 / V8.5 dataset and frozen protocol
 
 Status: both fits and official evaluations are complete. This page records the
-frozen inputs and design; [the report](REPORT.md) presents the measured results. V8.4 uses ordinary LoRA and V8.5 uses LoRA-GA; both receive the same
+frozen inputs and design; [the numerical results](RESULTS.json) presents the measured results. V8.4 uses ordinary LoRA and V8.5 uses LoRA-GA; both receive the same
 TDATR-style adapted detail and fusion supervision. Each is one formal fit.
 
 ## Cohorts and input identity
@@ -42,14 +42,13 @@ retains tokens that straddle adjacent cells;306,128 such incidences are audited.
 
 ![Complete sequence lengths](figures/detail_sequence_lengths.png)
 
-## Matched new fits and comparisons
+## Detail and fusion training
 
 Each new model receives three complete detail passes followed by three native
 OTSL fusion passes:60,000 exposures per stage and 120,000 total. Batch one and
 16-example accumulation give 3,750 updates per stage and 7,500 per model. Identical
 realized epoch orders and detail assignments are frozen once using system entropy.
-No user-selected fixed seed or seed sweep is introduced. Both use the same saved
-localizer initialization at the stage transition. V8.5's fresh 256-example TRAIN
+Both methods use the same saved localizer initialization at the stage transition. V8.5's fresh 256-example TRAIN
 gradient calibration uses its first assigned detail targets, with no optimizer
 updates; it preserves the original initial function by subtracting initial factors.
 
@@ -58,12 +57,10 @@ cosine schedule. Adapter/head LR is 1e-4, visual-merger LR1e-5, weight decay 0.0
 betas 0.9/0.999, epsilon 1e-8 and global gradient clipping 1. Localization coefficients
 are box 0.05, GIoU0.03, mask 0.03 and relation 0.05 alongside generation CE1.
 
-![Exposure comparison](figures/planned_training_exposures.png)
+![Training exposures](figures/training_exposures.png)
 
-The old V8.1–V8.3 controls are reused. They have half the example exposures of the
-new fits, so comparisons cannot isolate the supervision design from extra
-training. One fit per method does not establish seed stability. Confirmation and
-benchmark cohorts have already been exposed by earlier work.
+V8.1–V8.3 complete 60,000 exposures per fit; V8.4/V8.5 complete 120,000.
+Confirmation and benchmark cohorts have already been exposed by earlier work.
 
 Only fusion epochs 1/2/3 are eligible for selection, separately for each version.
 Selection uses full 256-source mean TEDS with earlier-epoch ties. TRAIN/DEV native

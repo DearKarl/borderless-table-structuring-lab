@@ -1,25 +1,24 @@
 {
-  "status": "visually_reviewed",
-  "result_sha256": "d8d6ffab1fa7d9970f3f3dd091409d7a04936b25e1ce7f2fdc56b5cb5289d539",
   "figures": {
+    "confirmation_metrics.png": "52785269c2fc98c100b1a3bcec364521a7ef6f169b13739b906312aef8a18d21",
+    "confirmation_metrics.svg": "1423467d20c30503b353632e6588652ddd7446a8f246a79f7af5a7279b4a3f30",
+    "detail_sequence_lengths.png": "4be873bf661cefc1090dff7c916cf016f3e7eb52145c4a0269ae9e0738e8d223",
+    "detail_sequence_lengths.svg": "30724ecc9afca29b6a3d16e5d43de087affd6fd6cbcf3912667a43c8af21cdb7",
+    "detail_task_eligibility.png": "80e34ed120e2e44c9c271b5f229d4de878c762da09f50245875fe0f7ef4d9712",
+    "detail_task_eligibility.svg": "187c9443412caf3304bed9fd4850091ff61de673121e575a12d06b9a29928d0e",
     "generation_loss_curves.png": "9449dac3868b51a030d0441216cebb3910462aa8dc00cadccaef9a586ba95796",
     "generation_loss_curves.svg": "b5e0df306eefffef4c4fd743677a0371340bc1f4048bebf7b31c8951d202760b",
-    "native_CE_diagnostics.png": "62f51f8482e8975e6f89ec153f679d16b480755e55c84a31750ddd9cb0dc57aa",
-    "native_CE_diagnostics.svg": "dbb25d7e3a2c3af1fd1663651c7856df4f40a25e57b71d66b872169a882233c1",
     "localization_loss_components.png": "8113a1091adbc9ed5ac2034f3e3565c7b94cc8cc1db1b3911f102c44cac2eed4",
     "localization_loss_components.svg": "162a270f13b57f3f532a62dbec27fa630ffa5e58d1877431ad7051b8aee39db2",
-    "training_runtime_diagnostics.png": "b78e68d929a7c4c658417b8ac2f91b8c708cece30d9321ec2b7f69582a3d97e6",
-    "training_runtime_diagnostics.svg": "40f14e22e7b178b7a74c63defb6c0ef02e5e46c08feb6d498b52c3ae55334ec3",
-    "full_benchmark_table_metrics.png": "716152e873f66a5ffe3ddd4d6709306991eba6fa4f47ca5c69f48d3f696d5e2b",
-    "full_benchmark_table_metrics.svg": "69f69b6b2c8b8ba806c941fa786e1cb1347a1ab50687be769f624fab73770492",
-    "confirmation_benchmark_contrasts.png": "2db4ece5b0527a30f39e7e3e93d271d845030d60875d8a7b62f9f166b008c44c",
-    "confirmation_benchmark_contrasts.svg": "ead75ad410b2d3dd266e3c91735eec882e9314cf8d9568237b25134e4176560d",
+    "native_CE_diagnostics.png": "62f51f8482e8975e6f89ec153f679d16b480755e55c84a31750ddd9cb0dc57aa",
+    "native_CE_diagnostics.svg": "dbb25d7e3a2c3af1fd1663651c7856df4f40a25e57b71d66b872169a882233c1",
     "new_campaign_compute.png": "b2a351189f2a67591698d81ffb8179c59ee7a4f88cb47de786d0b865a157021d",
-    "new_campaign_compute.svg": "51bd29bd0d6702ba04e6da44867e6afbed16282739090b6ec8645827e7fc91a1"
-  },
-  "smoothing": "Trailing50 update mean, separately within stages for generation loss",
-  "no_model_calls": true,
-  "reviewed_at_utc": "2026-10-14T22:01:18.205195+00:00",
-  "reviewed_png_count": 7,
-  "review": "All seven PNGs inspected. GIoU loss title corrected and comparison legend placed outside data; both changed PNGs re-inspected, five other PNGs byte-identical to inspected renders. Labels, scales, failure hatching and all curves are readable. Matching SVG hashes preserved."
+    "new_campaign_compute.svg": "51bd29bd0d6702ba04e6da44867e6afbed16282739090b6ec8645827e7fc91a1",
+    "official_metrics.png": "7cee49950a181ffc1ef31fcc5ea9a6e3c0861b58057e62b68da0898d9928f091",
+    "official_metrics.svg": "03481525578a47221ca6c873082aa6e1b89afef43ea871408b5ef75e3a26794e",
+    "training_exposures.png": "2ec94c80f7678d1f35049e3f0ccd6dc1420ec102afb38404f0dd371624ca8eed",
+    "training_exposures.svg": "4136750c19c21db9dbbff5ebebf19d65ddd8d14d6b6d65d3815f3b72542af31f",
+    "training_runtime_diagnostics.png": "b78e68d929a7c4c658417b8ac2f91b8c708cece30d9321ec2b7f69582a3d97e6",
+    "training_runtime_diagnostics.svg": "40f14e22e7b178b7a74c63defb6c0ef02e5e46c08feb6d498b52c3ae55334ec3"
+  }
 }

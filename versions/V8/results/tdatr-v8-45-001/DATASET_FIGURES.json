@@ -1,13 +1,10 @@
 {
-  "status": "visually_reviewed",
   "figures": {
-    "figures/detail_task_eligibility.png": "80e34ed120e2e44c9c271b5f229d4de878c762da09f50245875fe0f7ef4d9712",
-    "figures/detail_task_eligibility.svg": "187c9443412caf3304bed9fd4850091ff61de673121e575a12d06b9a29928d0e",
-    "figures/detail_sequence_lengths.png": "4be873bf661cefc1090dff7c916cf016f3e7eb52145c4a0269ae9e0738e8d223",
-    "figures/detail_sequence_lengths.svg": "30724ecc9afca29b6a3d16e5d43de087affd6fd6cbcf3912667a43c8af21cdb7",
-    "figures/planned_training_exposures.png": "2200bdb37410527f30ba5b8c593963543420b61adebdd71e3ec01fd19368c319",
-    "figures/planned_training_exposures.svg": "421c6a11bc48d1616e5979fe90fb8958f5499e98234758e069629cc3ce64768d"
-  },
-  "reviewed_png_count": 3,
-  "review": "Three PNGs inspected; legends moved outside data; labels, bars and context limit are readable. Matching SVG hashes preserved."
+    "detail_sequence_lengths.png": "4be873bf661cefc1090dff7c916cf016f3e7eb52145c4a0269ae9e0738e8d223",
+    "detail_sequence_lengths.svg": "30724ecc9afca29b6a3d16e5d43de087affd6fd6cbcf3912667a43c8af21cdb7",
+    "detail_task_eligibility.png": "80e34ed120e2e44c9c271b5f229d4de878c762da09f50245875fe0f7ef4d9712",
+    "detail_task_eligibility.svg": "187c9443412caf3304bed9fd4850091ff61de673121e575a12d06b9a29928d0e",
+    "training_exposures.png": "2ec94c80f7678d1f35049e3f0ccd6dc1420ec102afb38404f0dd371624ca8eed",
+    "training_exposures.svg": "4136750c19c21db9dbbff5ebebf19d65ddd8d14d6b6d65d3815f3b72542af31f"
+  }
 }

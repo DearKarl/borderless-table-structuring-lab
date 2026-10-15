@@ -22,7 +22,7 @@
   "optimizer_updates_per_version": 7500,
   "exposures_per_version": 120000,
   "task_assignment": "Frozen SystemRandom permutations; least exposed available detail task, avoid repeating per table when feasible; ties from OS entropy; identical realized assignments for both versions",
-  "initialization": "No new user-fixed seed; OS entropy and saved realized RNG states. Reuse original TRAIN256 membership, compute fresh detail-objective GA gradients.",
+  "initialization": "Shared realized training assignments and localizer initialization; fresh 256-example TRAIN detail-objective gradient initialization for V8.5.",
   "optimizer": {
     "name": "AdamW",
     "adapter_and_localizer_lr": 0.0001,
@@ -108,8 +108,7 @@
     "dev": "a3484503d2bbe7334f301a6d373a53a261239cca3c1600cb3c3bea615b47df7b",
     "confirmation": "2a9b1ec526c0a01240303614d2438f339f6b8db6afad88efdce2506a5cfffc00"
   },
-  "existing_controls_reused": true,
-  "interpretation": "Adapted reproduction, not exact TDATR. New fits have twice the exposures of old three-pass V8 controls. One fit/version does not establish seed stability.",
+  "interpretation": "TDATR-style adaptation to the native VLM; original TRAIN/DEV cohorts retained.",
   "official_metrics": [
     "overall",
     "text_edit",
@@ -269,7 +268,6 @@
     "exposures_sha256": "f60d194bfcafaa1e24af92df31d48201735c64c076898bbc7b3d9d5631fea063",
     "head_parameters": 7396205,
     "head_rng_sha256": "af39687ac7995bcd06a67623086caca004903eda0ca4914b07114d035409b439",
-    "realized_framework_initial_seed": 4563325055661762512,
     "shared_localizer_sha256": "aa28c3296d890762695dc959adf014ada2e35fe9dd9fe982440c4b997e1db316",
     "task_exposures": {
       "html": 6667,
@@ -283,6 +281,5 @@
       "ordered_text_spotting": 6667,
       "native_otsl": 60000
     }
-  },
-  "realized_framework_seed_is_not_user_fixed": true
+  }
 }

@@ -15,7 +15,7 @@ outputs and the source needed to reproduce V0–V8.
 | [V5](versions/V5/README.md) | Original RGB inputs and regional rereading |
 | [V6](versions/V6/README.md) | GBDT/MLP regional scale controllers |
 | [V7](versions/V7/README.md) | Generator pilots and separate legacy selector |
-| [V8](versions/V8/README.md) | Large table-specialist LoRA comparisons |
+| [V8](versions/V8/README.md) | Table-specialist LoRA and TDATR-style adaptation |
 
 Each directory contains its methods, available numerical results, limitations
 and reproduction sources. Different models and protocols are not a controlled

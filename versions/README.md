@@ -12,7 +12,7 @@
 | [V5](V5/README.md) | Input/rereading source and complete available metrics |
 | [V6](V6/README.md) | Scale-controller source, models, metrics and numeric statistics |
 | [V7](V7/README.md) | Generator diagnostic metrics and legacy-selector source, models and results |
-| [V8](V8/README.md) | LoRA source, metrics, curves, figures and input/method identities |
+| [V8](V8/README.md) | LoRA/TDATR-style adaptation source, V8.1–V8.5 metrics, curves and model identities |
 
 Only these nine version directories are published. `__init__.py` preserves old
 Python imports such as `versions.v5` without duplicating source. V3.1 and V3.2
